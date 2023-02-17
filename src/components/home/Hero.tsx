@@ -13,7 +13,7 @@ export const Hero = () => {
               <h1 className="hero__title">Digital agency studio</h1>
               <p className="hero__sub-title">With every single one of our clients, we
                 bring forth deep passion for
-                <span>creative problem solving</span>
+                <span> creative problem solving </span>
                 which is what we deliver.
               </p>
             </div>

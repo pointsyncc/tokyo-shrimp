@@ -1,10 +1,18 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-
+import Head from "next/head";
+import About from "@/components/home/About";
+import Brand from "@/components/home/Brand";
+import Counter from "@/components/home/Counter";
+import { Hero } from "@/components/home/Hero";
+import Portifolio from "@/components/home/Portifolio";
+import Roll from "@/components/home/Roll";
+import Service from "@/components/home/Service";
+import Workflow from "@/components/home/Workflow";
 import { MainLayout } from "@/components/layout/mainLayout/MainLayout";
 import { NextPageWithLayout } from "./_app";
-import { Hero } from "@/components/home/Hero";
+import Blog from "@/components/home/Blog";
+import Testimonial from "@/components/home/Testimonial";
+import CTA from "@/components/home/CTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,14 +27,24 @@ const Home: NextPageWithLayout = () => {
       </Head>
 
       <>
-      <Hero/>
+        <Hero />
+        <Roll />
+        <About />
+        <Service />
+        <Counter />
+        <Workflow />
+        <Portifolio />
+        <Brand />
+        <Testimonial />
+        <Blog />
+        <CTA />
       </>
     </>
   );
 };
 
 Home.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
+  return <MainLayout showFooter>{page}</MainLayout>;
 };
 
 export default Home;

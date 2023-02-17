@@ -8,12 +8,14 @@ export const Header = () => {
           <a href="index.html">
             <img
               className="logo-primary"
-              src="/imgs/logo/site-logo-white.png"
+              width={40}
+              src="/imgs/pointsyncc/logo/desktop/transparent-90.png"
               alt="Site Logo"
             />
             <img
               className="logo-secondary"
-              src="/imgs/logo/site-logo-white-2.png"
+              width={125}
+              src="/imgs/pointsyncc/logo/desktop/transparent.png"
               alt="Moibile Logo"
             />
           </a>
@@ -25,7 +27,7 @@ export const Header = () => {
         </div>
         <div className="header__support">
           <p>
-            Support center <a href="tel:+9587325902">+9 587 325 902</a>
+            Contact us <a href="tel:+9587325902">+385 99 2144 802</a>
           </p>
         </div>
       </div>

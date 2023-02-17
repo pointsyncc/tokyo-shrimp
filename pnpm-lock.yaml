@@ -8,6 +8,7 @@ specifiers:
   bootstrap: ^5.2.3
   eslint: 8.34.0
   eslint-config-next: 13.1.6
+  font-awesome: ^4.7.0
   next: 13.1.6
   react: 18.2.0
   react-bootstrap: ^2.7.2
@@ -23,6 +24,7 @@ dependencies:
   bootstrap: 5.2.3
   eslint: 8.34.0
   eslint-config-next: 13.1.6_7kw3g6rralp5ps6mg3uyzz6azm
+  font-awesome: 4.7.0
   next: 13.1.6_uh2utgby6xxgbzeysj4z6eduvm
   react: 18.2.0
   react-bootstrap: 2.7.2_zula6vjvt3wdocc4mwcxqa6nzi
@@ -1152,6 +1154,11 @@ packages:
 
   /flatted/3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
+    dev: false
+
+  /font-awesome/4.7.0:
+    resolution: {integrity: sha512-U6kGnykA/6bFmg1M/oT9EkFeIYv7JlX3bozwQJWiiLz6L0w3F5vBVPxHlwyX/vtNq1ckcpRKOB9f2Qal/VtFpg==}
+    engines: {node: '>=0.10.3'}
     dev: false
 
   /for-each/0.3.3:
