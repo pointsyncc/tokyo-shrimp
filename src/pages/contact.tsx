@@ -51,7 +51,7 @@ const Contact: NextPageWithLayout = () => {
                   <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                     <div className="contact__text">
                       <p>
-                        Great! We're excited to hear from you and let's start
+                        Great! We&apos;re excited to hear from you and let&apos;s start
                         something special togerter. call us for any inquery.
                       </p>
                     </div>
@@ -61,7 +61,7 @@ const Contact: NextPageWithLayout = () => {
                   <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
                     <div className="contact__info">
                       <h3 className="sub-title-anim-top animation__word_come">
-                        Don't be afraid man ! <br />
+                        Don&apos;t be afraid man ! <br />
                         say hello
                       </h3>
                       <ul>

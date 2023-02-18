@@ -18,7 +18,7 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
       <Header openMenu={() => setOpenMenu(!openMenu)} />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main>{children}</main>
+         {children}
         </div>
       </div>
       {showFooter && <Footer />}

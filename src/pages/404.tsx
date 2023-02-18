@@ -32,7 +32,7 @@ const Custom404: NextPageWithLayout = () => {
                         <img src="imgs/thumb/404.png" alt="Page not found" />
                         <h2>Sorry! Page not found.</h2>
                         <p>
-                          The page you are looking for doesn't exist or has been
+                          The page you are looking for doesn&apos;t exist or has been
                           moved.
                         </p>
                         <div className="btn_wrapper">
