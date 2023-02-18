@@ -2,7 +2,12 @@
 /*  34. CONTACT CSS START
 /*----------------------------------------*/
 
-
+.form__error__message{
+  // color: var(--primary) !important;
+  color: rgb(239 68 68) !important;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
 .contact {
 
   &__area {
@@ -86,6 +91,7 @@
 
     input,
     textarea {
+      resize: none;
       width: 100%;
       font-weight: 400;
       font-size: 16px;
@@ -99,7 +105,7 @@
       position: relative;
       z-index: 1;
       background: transparent;
-      margin-bottom: 35px;
+      margin-bottom: 10px;
 
       @media #{$lg} {
         padding: 10px 0;
@@ -126,7 +132,7 @@
     }
 
     textarea {
-      height: 55px;
+      height: 100px;
     }
 
     #btn_wrapper,
