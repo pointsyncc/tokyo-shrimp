@@ -20,44 +20,6 @@ export const Roll = () => {
 
   return (
     <section className="roll__area">
-      {/* <Swiper
-      wrapperClass="roll__wrapper"
-        modules={[Autoplay, FreeMode]}
-        className="roll__slider"
-        loop={true}
-        freeMode={true}
-        slidesPerView={1}
-        spaceBetween={0}
-        centeredSlides={true}
-        allowTouchMove={false}
-        speed={2000}
-        autoplay={{ delay: 1, disableOnInteraction: true }}
-        breakpoints={{
-          640: {
-            slidesPerView: 3,
-          },
-          800: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1300: {
-            slidesPerView: 5,
-          },
-          1900: {
-            slidesPerView: 8,
-          },
-        }}
-      >
-        {categories.map((category) => {
-          return (
-            <SwiperSlide className="roll__slide" key={category}>
-              <h2>{category}</h2>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper> */}
       <Splide
         className="roll__slider"
         extensions={{AutoScroll}}
@@ -68,7 +30,7 @@ export const Roll = () => {
           drag   : 'free',
           focus  : 'center',
           autoWidth:true,
-          padding:100,
+          gap:80,
           perPage: 3,
           autoScroll: {
             speed: 2,
@@ -100,55 +62,6 @@ export const Roll = () => {
           );
         })}
       </Splide>
-      {/* <div className="swiper roll__slider">
-        <div className="swiper-wrapper roll__wrapper">
-          <div className="swiper-slide roll__slide">
-            <h2>Development</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Studio</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Strategy</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Branding</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Agency</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>typhography</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Design</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Interaction</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Element</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>DIgital SOlution</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Strategy</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Branding</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Agency</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>Interaction</h2>
-          </div>
-          <div className="swiper-slide roll__slide">
-            <h2>DIgital SOlution</h2>
-          </div>
-        </div>
-      </div> */}
     </section>
   );
 };

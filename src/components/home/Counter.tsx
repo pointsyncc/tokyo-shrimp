@@ -1,4 +1,12 @@
 import React from "react";
+import dynamic from 'next/dynamic'
+
+
+
+const CountUp = dynamic(
+  () => import('react-countup'),
+  { ssr: false }
+)
 
 export default function Counter() {
   return (
@@ -10,7 +18,9 @@ export default function Counter() {
           <div className="col-xxl-12">
             <div className="counter__wrapper counter_animation">
               <div className="counter__item counter__anim">
-                <h2 className="counter__number">25k+</h2>
+                <h2 className="counter__number">
+                <CountUp  end={25} duration={2}  suffix="+"/>
+                  </h2>
                 <p>
                   Project <br />
                   completed

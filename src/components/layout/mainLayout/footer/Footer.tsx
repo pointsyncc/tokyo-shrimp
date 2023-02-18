@@ -1,16 +1,42 @@
-import React from "react";
+import { EMAIL_PATTERN } from "@/components/constants/constants";
+import { ErrorMessage } from "@hookform/error-message";
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { FaPaperPlane, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
+const ThemeSwitch = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <div className="theme__switch__wrapper">
+      <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  );
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
   return (
     <footer className="footer__area">
       <div className="footer__top">
         <div className="container footer-line"></div>
-        <img
-          src="imgs/thumb/footer.jpg"
-          alt="Footer Image"
-          data-speed="0.75"
-        />
+        <img src="imgs/thumb/footer.jpg" alt="Footer Image" data-speed="0.75" />
       </div>
 
       <div className="footer__btm">
@@ -33,51 +59,62 @@ const Footer = () => {
                     <li>
                       <a href="#">
                         <span>
-                          <i className="fa-brands fa-facebook-f"></i>
+                          <FaFacebookF />
                         </span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <span>
-                          <i className="fa-brands fa-twitter"></i>
+                          <FaTwitter />
                         </span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <span>
-                          <i className="fa-brands fa-instagram"></i>
+                          <FaInstagram />
                         </span>
                       </a>
                     </li>
                     <li>
                       <a href="#">
                         <span>
-                          <i className="fa-brands fa-linkedin"></i>
+                          <FaLinkedinIn />
                         </span>
                       </a>
                     </li>
                   </ul>
+                  <ThemeSwitch />
                 </div>
 
                 <div className="footer__widget-2">
                   <h2 className="footer__widget-title">Information</h2>
                   <ul className="footer__link">
                     <li>
-                      <a href="about.html">About Company</a>
+                      <Link href="/about">
+                        About Us
+                      </Link>
                     </li>
                     <li>
-                      <a href="portfolio.html">Case Study</a>
+                      <Link href="/services">
+                        Services
+                      </Link>
                     </li>
                     <li>
-                      <a href="career.html">Career</a>
+                      <Link href="/services">
+                        Services
+                      </Link>
                     </li>
                     <li>
-                      <a href="blog.html">blog</a>
+                      <Link href="/blog">
+                        Blog
+                      </Link>
                     </li>
                     <li>
-                      <a href="contact.html">contact</a>
+                      <Link href="/contact">
+                        Contact
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -85,7 +122,7 @@ const Footer = () => {
                 <div className="footer__widget-3">
                   <h2 className="footer__widget-title">Contact Us</h2>
                   <ul className="footer__contact">
-                    <li>Blaškovec, Mokrice 12, Donja Zelina 10382, Croatia</li>
+                    <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
                     <li>
                       <a href="tel:+385992144802" className="phone">
                         +385 99 2144 802{" "}
@@ -104,13 +141,10 @@ const Footer = () => {
                     Have a project in your mind?
                   </h2>
                   <div className="btn_wrapper">
-                    <a
-                      href="contact.html"
-                      className="wc-btn-primary btn-hover btn-item"
-                    >
+                    <Link href="/contact"  className="wc-btn-primary btn-hover btn-item">
                       <span></span> contact us{" "}
                       <i className="fa-solid fa-arrow-right"></i>
-                    </a>
+                    </Link>
                   </div>
                   <h3 className="contact-time">09 : 00 AM - 17 : 00 PM</h3>
                   <h4 className="contact-day">Monday - Friday</h4>
@@ -119,21 +153,34 @@ const Footer = () => {
                 <div className="footer__copyright">
                   <p>
                     © 2023 - {currentYear} | All Rights Reserved |{" "}
-                    <a href="https://wealcoder.com/" target="_blank">
+                    <a href="https://wealcoder.com/" target="_blank" rel="noreferrer">
                       POINTSYNCC d.o.o
                     </a>
                   </p>
                 </div>
 
                 <div className="footer__subscribe">
-                  <form action="#">
+                  <form onSubmit={handleSubmit(onSubmit)}>
                     <input
                       type="email"
-                      name="email"
                       placeholder="Enter your email"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern: {
+                          value: EMAIL_PATTERN,
+                          message: "Invalid email address",
+                        },
+                      })}
+                    />
+                    <ErrorMessage
+                      errors={errors}
+                      name="email"
+                      render={({ message }) => (
+                        <p className="form__error__message">{message}</p>
+                      )}
                     />
                     <button type="submit" className="subs-btn">
-                      <i className="fa-solid fa-paper-plane"></i>
+                      <FaPaperPlane />
                     </button>
                   </form>
                 </div>
