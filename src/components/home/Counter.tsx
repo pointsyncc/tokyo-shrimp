@@ -1,5 +1,10 @@
 import React from "react";
 
+
+
+
+import CountUp from 'react-countup'
+
 export default function Counter() {
   return (
     <section className="counter__area">
@@ -10,7 +15,9 @@ export default function Counter() {
           <div className="col-xxl-12">
             <div className="counter__wrapper counter_animation">
               <div className="counter__item counter__anim">
-                <h2 className="counter__number">25k+</h2>
+                <h2 className="counter__number">
+                <CountUp  end={25} duration={2}  suffix="+"/>
+                  </h2>
                 <p>
                   Project <br />
                   completed

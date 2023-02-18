@@ -153,7 +153,7 @@ const Footer = () => {
                 <div className="footer__copyright">
                   <p>
                     © 2023 - {currentYear} | All Rights Reserved |{" "}
-                    <a href="https://wealcoder.com/" target="_blank">
+                    <a href="https://wealcoder.com/" target="_blank" rel="noreferrer">
                       POINTSYNCC d.o.o
                     </a>
                   </p>

@@ -112,14 +112,13 @@
 // Font Family | newYork
 @font-face {
   font-family: newYork;
-  src: url('/assets/fonts/newyork/FontsFree-Net-NewYork.ttf');
+  src: url('../../../public/fonts/newyork/FontsFree-Net-NewYork.ttf');
   font-weight: 400;
 }
 
 
 
 // Font Family
-$font_primary: 'Kanit', sans-serif;
 $font_awesome: 'Font Awesome 6 Free';
 $font_newyork: 'newYork';
 
