@@ -1,12 +1,6 @@
 import React from "react";
-import dynamic from 'next/dynamic'
 
-
-
-const CountUp = dynamic(
-  () => import('react-countup'),
-  { ssr: false }
-)
+import CountUp from "react-countup";
 
 export default function Counter() {
   return (
@@ -19,8 +13,8 @@ export default function Counter() {
             <div className="counter__wrapper counter_animation">
               <div className="counter__item counter__anim">
                 <h2 className="counter__number">
-                <CountUp  end={25} duration={2}  suffix="+"/>
-                  </h2>
+                  <CountUp end={25} duration={3} suffix="k+" />
+                </h2>
                 <p>
                   Project <br />
                   completed
@@ -28,7 +22,9 @@ export default function Counter() {
                 <span className="counter__border"></span>
               </div>
               <div className="counter__item counter__anim">
-                <h2 className="counter__number">8k+</h2>
+                <h2 className="counter__number">
+                  <CountUp end={8} duration={1} suffix="k+" />
+                </h2>
                 <p>
                   Happy <br />
                   customers
@@ -36,7 +32,9 @@ export default function Counter() {
                 <span className="counter__border"></span>
               </div>
               <div className="counter__item counter__anim">
-                <h2 className="counter__number">15</h2>
+                <h2 className="counter__number">
+                <CountUp end={15} duration={2} />
+                </h2>
                 <p>
                   Years <br />
                   experiences
@@ -44,7 +42,9 @@ export default function Counter() {
                 <span className="counter__border"></span>
               </div>
               <div className="counter__item counter__anim">
-                <h2 className="counter__number">98</h2>
+                <h2 className="counter__number">
+                <CountUp end={98} duration={4} />
+                </h2>
                 <p>
                   Awards <br />
                   achievement

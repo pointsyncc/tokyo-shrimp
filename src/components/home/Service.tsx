@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 export default function Service() {
+  const [activeEl, setActiveEl] = useState(0);
   return (
     <section className="service__area pt-110 pb-150">
       <div className="container">
@@ -31,7 +32,7 @@ export default function Service() {
                   className="btn-item wc-btn-secondary btn-hover"
                 >
                   <span></span> View <br />
-                  all services <i className="fa-solid fa-arrow-right"></i>
+                  all services <FaArrowRight rotate={-45}/>
                 </a>
               </div>
             </div>
@@ -45,36 +46,47 @@ export default function Service() {
                 <img
                   src="imgs/service/1/1.jpg"
                   alt="Service Image"
-                  className="service__img img-1 active"
+                  className={`service__img img-1 ${
+                    activeEl === 0 ? "active" : ""
+                  }`}
                 />
                 <img
                   src="imgs/service/1/2.png"
                   alt="Service Image"
-                  className="service__img img-2"
+                  className={`service__img img-2 ${
+                    activeEl === 1 ? "active" : ""
+                  }`}
+             
                 />
                 <img
                   src="imgs/service/1/3.png"
                   alt="Service Image"
-                  className="service__img img-3"
+                  className={`service__img img-3 ${
+                    activeEl === 2 ? "active" : ""
+                  }`}
                 />
                 <img
                   src="imgs/service/1/4.png"
                   alt="Service Image"
-                  className="service__img img-4"
+                  className={`service__img img-4 ${
+                    activeEl === 3 ? "active" : ""
+                  }`}
                 />
 
-                <span className="shape-box-1 current"></span>
-                <span className="shape-box-2"></span>
-                <span className="shape-box-3"></span>
-                <span className="shape-box-4"></span>
+                <span className={`shape-box-1 ${activeEl === 0 ? 'current' : ''}` }></span>
+                <span className={`shape-box-2 ${activeEl === 1 ? 'current' : ''}` }></span>
+                <span className={`shape-box-3 ${activeEl === 2 ? 'current' : ''}` }></span>
+                <span className={`shape-box-4 ${activeEl === 3 ? 'current' : ''}` }></span>
               </div>
             </div>
             <div className="col-xxl-8 col-xl-8 col-lg-12 col-md-12">
               <div className="service__list">
-                <a href="service-details.html">
+                <a href="service-details.html" className={`${activeEl === 0 ? 'active' : ''}`}>
                   <div
                     className="service__item animation_home1_service"
                     data-service="1"
+                    onMouseEnter={setActiveEl.bind(null, 0)}
+
                   >
                     <div className="service__number">
                       <span>01</span>
@@ -93,16 +105,18 @@ export default function Service() {
                     </div>
                     <div className="service__link">
                       <p>
-                        <i className="fa-solid fa-arrow-right"></i>
+                        <FaArrowRight rotate={-45}/>
                       </p>
                     </div>
                   </div>
                 </a>
 
-                <a href="service-details.html">
+                <a href="service-details.html" className={`${activeEl === 1 ? 'active' : ''}`}>
                   <div
                     className="service__item  animation_home1_service"
                     data-service="2"
+                    onMouseEnter={setActiveEl.bind(null, 1)}
+
                   >
                     <div className="service__number">
                       <span>02</span>
@@ -122,16 +136,18 @@ export default function Service() {
                     </div>
                     <div className="service__link">
                       <p>
-                        <i className="fa-solid fa-arrow-right"></i>
+                        <FaArrowRight rotate={-45}/>
                       </p>
                     </div>
                   </div>
                 </a>
 
-                <a href="service-details.html">
+                <a href="service-details.html" className={`${activeEl === 2 ? 'active' : ''}`}>
                   <div
                     className="service__item  animation_home1_service"
                     data-service="3"
+                    onMouseEnter={setActiveEl.bind(null, 2)}
+
                   >
                     <div className="service__number">
                       <span>03</span>
@@ -151,16 +167,18 @@ export default function Service() {
                     </div>
                     <div className="service__link">
                       <p>
-                        <i className="fa-solid fa-arrow-right"></i>
+                        <FaArrowRight rotate={-45}/>
                       </p>
                     </div>
                   </div>
                 </a>
 
-                <a href="service-details.html">
+                <a href="service-details.html" className={`${activeEl === 3 ? 'active' : ''}`}>
                   <div
                     className="service__item  animation_home1_service"
                     data-service="4"
+                    onMouseEnter={setActiveEl.bind(null, 3)}
+
                   >
                     <div className="service__number">
                       <span>04</span>
@@ -177,7 +195,7 @@ export default function Service() {
                     </div>
                     <div className="service__link">
                       <p>
-                        <i className="fa-solid fa-arrow-right"></i>
+                        <FaArrowRight rotate={-45}/>
                       </p>
                     </div>
                   </div>
