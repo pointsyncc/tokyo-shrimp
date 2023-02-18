@@ -1,25 +1,102 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+// Use this for triggering the counter:
+// The counters will be paused initially and only start when the container is visible
+// https://greensock.com/docs/v3/Plugins/ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  const comp = useRef(null);
+  const container = useRef(null);
+  const titleAnim = useRef(null);
+  const imgAnim1 = useRef(null);
+  const imgAnim2 = useRef(null);
+  const textAnim = useRef(null);
+  useLayoutEffect(() => {
+    // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: titleAnim.current,
+
+          scrub: 1,
+        }, // start the animation when ".box" enters the viewport (once)
+      });
+      tl.fromTo(
+        titleAnim.current,
+        { opacity: 0, y: 50, delay: 1 },
+        { opacity: 1, y: 0, duration: 1 }
+      );
+
+      tl.fromTo(
+        textAnim.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 }
+      );
+
+      tl.fromTo(
+        imgAnim1.current,
+        { opacity: 0, x: -50 },
+        { opacity: 1, x: 0, duration: 1 },
+        1.25
+      );
+      tl.fromTo(
+        imgAnim2.current,
+        { opacity: 0, x: 50 },
+        { opacity: 1, x: 0, duration: 1 },
+        1.5
+      );
+
+      // splitTitleLines.forEach(splitTextLine => {
+      //   const tl = gsap.timeline({
+      //     scrollTrigger: {
+      //       trigger: splitTextLine,
+      //       start: 'top 90%',
+      //       end: 'bottom 60%',
+      //       scrub: false,
+      //       markers: false,
+      //       toggleActions: 'play none none none'
+      //     }
+      //   });
+
+      // const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
+      // gsap.set(splitTextLine, { perspective: 400 });
+      // itemSplitted.split({ type: "lines" })
+      // tl.from(itemSplitted.lines, { duration: 1, delay: 0.3, opacity: 0, rotationX: -80, force3D: true, transformOrigin: "top center -50", stagger: 0.1 });
+    }, comp); // <- IMPORTANT! Scopes selector text
+
+    return () => ctx.revert(); // cleanup
+  }, []);
   return (
-    <section className="about__area">
-      <div className="container line g-0 pt-140 pb-130">
+    <section className="about__area" ref={comp}>
+      <div className="container line g-0 pt-140 pb-130" ref={container}>
         <span className="line-3"></span>
         <div className="row">
           <div className="col-xxl-12">
             <div className="about__title-wrapper">
-              <h3 className="sec-title title-anim">We unlock the potential of your business
-                with creative design</h3>
+              <h3 className="sec-title title-anim" ref={titleAnim}>
+                We unlock the potential of your business with creative design
+              </h3>
             </div>
 
             <div className="about__content-wrapper">
               <div className="about__img">
-                <div className="img-anim">
-                  <img src="imgs/about/1/1.jpg" alt="About Image" data-speed="0.3"/>
+                <div className="img-anim" ref={imgAnim1}>
+                  <img
+                    src="imgs/about/1/1.jpg"
+                    alt="About Image"
+                    data-speed="0.3"
+                  />
                 </div>
 
-                <div className="about__img-right">
-                  <img src="imgs/about/1/2.jpg" alt="About Image Right" data-speed="0.5"/>
+                <div className="about__img-right" ref={imgAnim2}>
+                  <img
+                    src="imgs/about/1/2.jpg"
+                    alt="About Image Right"
+                    data-speed="0.5"
+                  />
                   <div className="shape">
                     <div className="secondary" data-speed="0.9"></div>
                     <div className="primary"></div>
@@ -28,24 +105,29 @@ export default function About() {
               </div>
 
               <div className="about__content text-anim">
-                <p>From traditional PR and thought leadership campaigns to
-                  storytelling and creative social media
-                  management we’ve got you covered. Something is not your average order-taking vendor. We are
-                  proud to
-                  be the go-to partner for some of the world’s biggest agencies and brands because they trust our
-                  expertise</p>
+                <p ref={textAnim}>
+                  From traditional PR and thought leadership campaigns to
+                  storytelling and creative social media management we’ve got
+                  you covered. Something is not your average order-taking
+                  vendor. We are proud to be the go-to partner for some of the
+                  world’s biggest agencies and brands because they trust our
+                  expertise
+                </p>
 
                 <div className="cursor-btn btn_wrapper">
-                  <a className="btn-item wc-btn-primary btn-hover" href="about.html"><span></span> Explore Us <i
-                      className="fa-solid fa-arrow-right"></i></a>
-
+                  <a
+                    className="btn-item wc-btn-primary btn-hover"
+                    href="about.html"
+                  >
+                    <span></span> Explore Us{" "}
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </a>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
