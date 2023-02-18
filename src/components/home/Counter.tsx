@@ -1,9 +1,9 @@
 import React from "react";
-import dynamic from 'next/dynamic'
 
 
 
-const CountUp = 'react-countup'
+
+import CountUp from 'react-countup'
 
 export default function Counter() {
   return (

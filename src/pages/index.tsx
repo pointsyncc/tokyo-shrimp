@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import About from "@/components/home/About";
 import Brand from "@/components/home/Brand";
@@ -13,7 +12,6 @@ import { NextPageWithLayout } from "./_app";
 import Blog from "@/components/home/Blog";
 import Testimonial from "@/components/home/Testimonial";
 import CTA from "@/components/home/CTA";
-
 
 
 const Home: NextPageWithLayout = () => {
