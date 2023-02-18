@@ -3,10 +3,7 @@ import dynamic from 'next/dynamic'
 
 
 
-const CountUp = dynamic(
-  () => import('react-countup'),
-  { ssr: false }
-)
+const CountUp = 'react-countup'
 
 export default function Counter() {
   return (
