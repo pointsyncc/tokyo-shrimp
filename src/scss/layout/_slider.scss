@@ -33,7 +33,7 @@
 
   &__wrapper {
     -webkit-transition-timing-function: linear;
-    transition-timing-function: linear;
+    transition-timing-function: linear !important;
   }
 
   &__slide {
