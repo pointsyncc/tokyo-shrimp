@@ -48,7 +48,7 @@ export default function Counter() {
       gsap.set(".counter_animation .counter__anim", { y: -100, opacity: 0, })
       if (device_width < 1023) {
 
-        counterArray.forEach((item, i) => {
+        counterArray.forEach((item: any, i) => {
           let counterTl = gsap.timeline({
             scrollTrigger: {
               trigger: item,
