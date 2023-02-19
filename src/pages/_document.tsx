@@ -6,8 +6,21 @@ export default function Document() {
       <Head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='theme-color' content='#000000' />
         <link rel='shortcut icon' href='/favicon.svg' />
+        <meta property="og:title" content="Pointsyncc"/>
+        <meta property="og:description" content="Enter the digital world."/>
+        <meta property="og:image" content="https://pointsyncc.com/imgs/pointsyncc/logo/desktop/transparent.png"/>
+        <meta property="og:url" content="https://pointsyncc.com"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="Pointsyncc"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@pointsyncc"/>
+        <meta name="twitter:creator" content="@pointsyncc"/>
+        <meta name="twitter:title" content="Pointsyncc"/>
+        <meta name="twitter:description" content="Enter the digital world."/>
+        <meta name="twitter:image" content="https://pointsyncc.com/imgs/pointsyncc/logo/desktop/transparent.png"/>
+        <meta name="twitter:image:alt" content="Pointsyncc logo"/>
+        <meta name="twitter:domain" content="pointsyncc.com"/>
       </Head>
       <body>
         <Main />
