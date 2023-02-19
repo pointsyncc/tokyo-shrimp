@@ -1,10 +1,13 @@
 import { EMAIL_PATTERN } from '@/components/constants/constants';
+import footerImage from '@/public/imgs/pointsyncc/footer.jpg';
+import footerLogo from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaPaperPlane, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
+
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -36,7 +39,9 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <img src='imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
+        {/* <img src={footerImage} alt='Footer Image' data-speed='0.75' /> */}
+
+        <Image src={footerImage} width={1160} alt='Footer image' data-speed='0.75' />
       </div>
 
       <div className='footer__btm'>
@@ -45,10 +50,10 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <img
+                  <Image
                     className='footer__logo'
-                    width={220}
-                    src='imgs/pointsyncc/logo/desktop/transparent.png'
+                    width={180}
+                    src={footerLogo}
                     alt='Footer Logo'
                   />
                   <p>

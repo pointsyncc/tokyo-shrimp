@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+
+
 export default function Service() {
   const [activeEl, setActiveEl] = useState(0);
   return (
@@ -39,11 +42,15 @@ export default function Service() {
           <div className='row'>
             <div className='col-xxl-4 col-xl-4 col-lg-0 col-md-0'>
               <div className='service__img-wrapper'>
-                <img
-                  src='imgs/service/1/1.jpg'
-                  alt='Service Image'
-                  className={`service__img img-1 ${activeEl === 0 ? 'active' : ''}`}
-                />
+                <div className={'image-container'}>
+                  <Image
+                    src={'/imgs/pointsyncc/homepage/christopher-gower-m_HRfLhgABo-unsplash.jpg'}
+                    fill
+                    alt='Service Image'
+                    className={'image'}
+                  />
+                </div>
+
                 <img
                   src='imgs/service/1/2.png'
                   alt='Service Image'
