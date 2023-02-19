@@ -5,9 +5,10 @@ import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLayoutEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
-
+import gsap from 'gsap';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -26,6 +27,8 @@ const ThemeSwitch = () => {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  const imageRef = useRef<HTMLImageElement>(null);
+
   const {
     register,
     handleSubmit,
@@ -35,13 +38,43 @@ const Footer = () => {
   const onSubmit = (data: any) => {
     console.log(data);
   };
+
+  useLayoutEffect(() => {
+    //use gsap to create parallax effect
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: imageRef.current,
+        scrub: true,
+        pin: false,
+      },
+    });
+
+    tl.from(imageRef.current, {
+      scaleY: 1.6,
+      transformOrigin: '50% 50%',
+      yPercent: -30,
+      ease: 'none',
+    }).to(imageRef.current, {
+      transformOrigin: '50% 50%',
+      scaleY: 1.6,
+      yPercent: 30,
+      ease: 'none',
+    });
+
+    return () => {
+      tl.kill();
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
         {/* <img src={footerImage} alt='Footer Image' data-speed='0.75' /> */}
 
-        <Image src={footerImage} width={1160} alt='Footer image' data-speed='0.75' />
+        <Image ref={imageRef} src={footerImage} width={1160} alt='Footer image' data-speed='0.75' />
       </div>
 
       <div className='footer__btm'>
@@ -50,12 +83,7 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <Image
-                    className='footer__logo'
-                    width={180}
-                    src={footerLogo}
-                    alt='Footer Logo'
-                  />
+                  <Image className='footer__logo' width={180} src={footerLogo} alt='Footer Logo' />
                   <p>
                     When do they work well, and when do they on us and finally, when do we actually
                     need how can we avoid them.
