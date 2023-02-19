@@ -19,12 +19,6 @@ const Contact: NextPageWithLayout = () => {
 
   return (
     <>
-      <Head>
-        <title>Pointsyncc - Contact</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-
       <div className="cursor1"></div>
       <div className="cursor2"></div>
 
@@ -51,8 +45,9 @@ const Contact: NextPageWithLayout = () => {
                   <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                     <div className="contact__text">
                       <p>
-                        Great! We&apos;re excited to hear from you and let&apos;s start
-                        something special togerter. call us for any inquery.
+                        Great! We&apos;re excited to hear from you and
+                        let&apos;s start something special togerter. call us for
+                        any inquery.
                       </p>
                     </div>
                   </div>
@@ -98,7 +93,15 @@ const Contact: NextPageWithLayout = () => {
                                 maxLength: 10,
                               })}
                             />
-                            <ErrorMessage errors={errors} name="name" render={({ message }) => <p className="form__error__message">{message}</p>} />
+                            <ErrorMessage
+                              errors={errors}
+                              name="name"
+                              render={({ message }) => (
+                                <p className="form__error__message">
+                                  {message}
+                                </p>
+                              )}
+                            />
                           </div>
                           <div className="col-xxl-6 col-xl-6 col-12">
                             <input
@@ -113,7 +116,15 @@ const Contact: NextPageWithLayout = () => {
                                 },
                               })}
                             />
-                            <ErrorMessage errors={errors} name="email" render={({ message }) => <p className="form__error__message">{message}</p>} />
+                            <ErrorMessage
+                              errors={errors}
+                              name="email"
+                              render={({ message }) => (
+                                <p className="form__error__message">
+                                  {message}
+                                </p>
+                              )}
+                            />
                           </div>
                         </div>
                         <div className="row g-3">
@@ -129,7 +140,15 @@ const Contact: NextPageWithLayout = () => {
                                 },
                               })}
                             />
-                            <ErrorMessage errors={errors} name="phone" render={({ message }) => <p className="form__error__message">{message}</p>} />
+                            <ErrorMessage
+                              errors={errors}
+                              name="phone"
+                              render={({ message }) => (
+                                <p className="form__error__message">
+                                  {message}
+                                </p>
+                              )}
+                            />
                           </div>
                           <div className="col-xxl-6 col-xl-6 col-12">
                             <input
@@ -139,7 +158,15 @@ const Contact: NextPageWithLayout = () => {
                                 required: "Subject is required",
                               })}
                             />
-                             <ErrorMessage errors={errors} name="subject" render={({ message }) => <p className="form__error__message">{message}</p>} />
+                            <ErrorMessage
+                              errors={errors}
+                              name="subject"
+                              render={({ message }) => (
+                                <p className="form__error__message">
+                                  {message}
+                                </p>
+                              )}
+                            />
                           </div>
                         </div>
                         <div className="row g-3">
@@ -150,7 +177,15 @@ const Contact: NextPageWithLayout = () => {
                                 required: "Message is required",
                               })}
                             ></textarea>
-                            <ErrorMessage errors={errors} name="message" render={({ message }) => <p className="form__error__message">{message}</p>} />
+                            <ErrorMessage
+                              errors={errors}
+                              name="message"
+                              render={({ message }) => (
+                                <p className="form__error__message">
+                                  {message}
+                                </p>
+                              )}
+                            />
                           </div>
                         </div>
                         <div className="row g-3">
