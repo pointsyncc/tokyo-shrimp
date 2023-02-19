@@ -2,7 +2,6 @@
 /*  22. PORTFOLIO CSS START
 /*----------------------------------------*/
 
-
 .portfolio {
   &__text {
     text-align: center;
@@ -236,7 +235,6 @@
           margin-top: -50px;
         }
       }
-
     }
 
     &-6 {
@@ -279,7 +277,7 @@
 
             &::before {
               position: absolute;
-              content: "";
+              content: '';
               width: 80px;
               height: 1px;
               background-color: var(--black-2);
@@ -351,7 +349,7 @@
           width: 50px;
           height: 50px;
           background: transparent;
-          border: 1px solid #D6D6D6;
+          border: 1px solid #d6d6d6;
           opacity: 1;
           position: relative;
           transition: all 0.3s;
@@ -378,13 +376,13 @@
 
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 6px;
             height: 6px;
             left: 50%;
             top: 50%;
             border-radius: 50px;
-            background-color: #D6D6D6;
+            background-color: #d6d6d6;
             transform: translate(-50%, -50%);
           }
 
@@ -441,7 +439,7 @@
 
           &::before {
             position: absolute;
-            content: "";
+            content: '';
             width: 60px;
             height: 1px;
             left: -10px;
@@ -552,7 +550,6 @@
           width: 100%;
         }
       }
-
     }
   }
 
@@ -767,10 +764,6 @@
     }
   }
 
-
-
-
-
   // Paginaton
   &__pagination {
     &-6 {
@@ -804,7 +797,6 @@
         padding-left: 0;
       }
     }
-
   }
 
   &__current {
@@ -841,7 +833,6 @@
     }
   }
 
-
   // Details
   &__detail {
     overflow: hidden;
@@ -851,7 +842,6 @@
     }
 
     &-top {
-
       .pt-110 {
         @media #{$lg} {
           padding-top: 140px;
@@ -1055,7 +1045,6 @@
     }
 
     .block {
-
       &-thumb {
         @include img_anim(100%, 65vh, 120%);
         z-index: 9;
@@ -1065,7 +1054,7 @@
           @include img_anim(100%, auto, auto);
 
           img {
-            position: unset
+            position: unset;
           }
         }
 
@@ -1073,7 +1062,7 @@
           @include img_anim(100%, auto, auto);
 
           img {
-            position: unset
+            position: unset;
           }
         }
       }
@@ -1142,7 +1131,6 @@
     }
   }
 
-
   // Portfolio V2
   &-v2 {
     &.pt-150 {
@@ -1160,7 +1148,6 @@
     }
   }
 
-
   // Portfolio V3
   &-v3 {
     .pt-100 {
@@ -1177,7 +1164,6 @@
       }
     }
   }
-
 
   // Portfolio V4
   &-v4 {
@@ -1265,7 +1251,6 @@
       }
     }
   }
-
 }
 
 .swiper-slide-active {
@@ -1274,8 +1259,7 @@
   }
 }
 
-
-// 
+//
 .bg_image {
   position: absolute;
   top: 0;
@@ -1289,9 +1273,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    content: "";
+    content: '';
   }
 
   img {

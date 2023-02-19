@@ -2,9 +2,7 @@
 /*  10. MODAL CSS START
 /*----------------------------------------*/
 
-
 .modal {
-
   &__testimonial {
     position: fixed;
     left: 0;
@@ -37,7 +35,6 @@
         width: 320px;
         height: 300px;
       }
-
 
       iframe {
         width: 100%;
@@ -287,11 +284,10 @@
     }
   }
 
-
   &-show {
     opacity: 1;
     visibility: visible;
-    transform: scale(1.0);
+    transform: scale(1);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
   }
 }

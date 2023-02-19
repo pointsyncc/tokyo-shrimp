@@ -2,7 +2,6 @@
 /*  31. FAQ CSS START
 /*----------------------------------------*/
 
-
 .faq {
   &__area {
     overflow: hidden;
@@ -22,7 +21,6 @@
         @media #{$sm} {
           padding-top: 120px;
         }
-
       }
 
       .sec-title-wrapper {
@@ -132,7 +130,6 @@
     padding-right: 1px;
 
     .accordion {
-
       &-body {
         padding-left: 0;
         min-height: 160px;
@@ -156,7 +153,7 @@
 
         &.collapsed::after {
           background-image: none;
-          content: "+";
+          content: '+';
           font-weight: 300;
           font-size: 30px;
           top: 6px;
@@ -165,14 +162,13 @@
           transform: rotate(0);
         }
 
-
         &:not(.collapsed) {
           box-shadow: none;
           background: transparent;
 
           &::after {
             background-image: none;
-            content: "-";
+            content: '-';
             font-weight: 300;
             font-size: 30px;
             top: 6px;
@@ -242,7 +238,6 @@
       }
     }
   }
-
 
   &__btm {
     text-align: center;

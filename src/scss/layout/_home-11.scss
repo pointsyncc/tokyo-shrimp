@@ -36,7 +36,7 @@
 
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 150px;
             height: 1px;
             background-color: var(--black-2);
@@ -222,8 +222,6 @@
         font-size: 36px;
       }
     }
-
-
   }
 
   &__sub-title-11 {
@@ -349,7 +347,6 @@
     color: var(--black-3);
   }
 
-
   // Home 11 New CSS
   &__nitems {
     display: block;
@@ -364,14 +361,10 @@
     &::-webkit-scrollbar {
       width: 0px;
     }
-
-
   }
 
   &__nitem {
-
     &.active {
-
       .portfolio__title-11 {
         font-size: 150px;
 
@@ -462,7 +455,6 @@
   }
 }
 
-
 // Home 8
 .hover_8 {
   &_wrap {
@@ -509,8 +501,6 @@
     }
   }
 }
-
-
 
 // scroll top
 .scroll {
@@ -589,8 +579,6 @@
   }
 }
 
-
-
 // Home 9
 
 #main .part .section {
@@ -653,7 +641,7 @@
 
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       width: 70px;
       height: 2px;
       left: 0;
@@ -698,11 +686,9 @@
   }
 }
 
-
-
-// 
+//
 // Home 13
-// 
+//
 .showcase {
   &__area {
     &-4 {
@@ -773,8 +759,6 @@
   }
 
   &__item {
-
-
     &-4 {
       overflow: hidden;
 
@@ -800,9 +784,11 @@
       padding-top: 30px;
       margin-bottom: 30px;
 
-      @media #{$lg} {}
+      @media #{$lg} {
+      }
 
-      @media #{$md} {}
+      @media #{$md} {
+      }
 
       @media #{$sm} {
         display: inline-block;
@@ -837,7 +823,6 @@
   animation: wcSpinner 5s infinite linear;
 }
 
-
 // home 16
 .showcase_16_hover {
   width: 300px;
@@ -863,7 +848,6 @@
 }
 
 .mixtup_btn {
-
   &#btn_wrapper,
   &.btn_wrapper {
     margin: 0 auto;
@@ -873,7 +857,7 @@
     display: inline-block;
     width: 170px;
     height: 170px;
-    border: 1px solid #C2C2C2;
+    border: 1px solid #c2c2c2;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -919,12 +903,6 @@
   }
 }
 
-
-
-
-
-
-
 // Dark Version
 .dark {
   .portfolio__area-12 .sec-title-wrapper {
@@ -932,7 +910,7 @@
       color: var(--white);
 
       span {
-        -webkit-text-stroke: 2px var(--white)
+        -webkit-text-stroke: 2px var(--white);
       }
     }
 
@@ -1027,9 +1005,6 @@ body {
   background-image: url(../../../public/imgs/essential-img/bg-axtra.png);
 }
 
-
-
-
 // ////////////////////////////////
 
 .portfolio__area-11 {
@@ -1054,11 +1029,10 @@ body {
     width: 100%;
     height: 100vh;
     float: left;
-    transition: opacity .6s ease, transform .3s ease;
+    transition: opacity 0.6s ease, transform 0.3s ease;
   }
 
   .main-slider11 {
-
     .swiper-image {
       width: 100%;
       height: 100%;
@@ -1115,7 +1089,6 @@ body {
         margin-top: 80px;
       }
 
-
       .swiper-slide {
         cursor: pointer;
 
@@ -1153,5 +1126,4 @@ body {
       flex-direction: column;
     }
   }
-
 }

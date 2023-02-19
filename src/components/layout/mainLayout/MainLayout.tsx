@@ -1,8 +1,8 @@
-import Menu from "@/components/navigation/Menu";
-import React from "react";
-import AnchorButton from "./anchor/AnchorButton";
-import Footer from "./footer/Footer";
-import { Header } from "./header/Header";
+import Menu from '@/components/navigation/Menu';
+import React from 'react';
+import AnchorButton from './anchor/AnchorButton';
+import Footer from './footer/Footer';
+import { Header } from './header/Header';
 
 interface IProps {
   children: React.ReactNode;
@@ -16,10 +16,8 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
     <>
       {openMenu && <Menu />}
       <Header openMenu={() => setOpenMenu(!openMenu)} />
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-         {children}
-        </div>
+      <div id='smooth-wrapper'>
+        <div id='smooth-content'>{children}</div>
       </div>
       {showFooter && <Footer />}
       <AnchorButton />

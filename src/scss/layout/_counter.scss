@@ -2,9 +2,7 @@
 /*  18. COUNTER CSS START
 /*----------------------------------------*/
 
-
 .counter {
-
   &__area {
     overflow: hidden;
 
@@ -15,7 +13,6 @@
     }
 
     &-3 {
-
       @media #{$lg} {
         background-color: var(--pink-4);
         padding: 100px 0;

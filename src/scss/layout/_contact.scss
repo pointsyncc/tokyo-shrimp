@@ -2,14 +2,13 @@
 /*  34. CONTACT CSS START
 /*----------------------------------------*/
 
-.form__error__message{
+.form__error__message {
   // color: var(--primary) !important;
   color: rgb(239 68 68) !important;
   font-size: 1rem;
   margin-bottom: 30px;
 }
 .contact {
-
   &__area {
     &-6 {
       overflow: hidden;
@@ -68,7 +67,6 @@
 
     ul {
       li {
-
         a {
           text-decoration-line: underline;
         }

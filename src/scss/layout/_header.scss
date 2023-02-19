@@ -2,7 +2,6 @@
 /*  12. HEADER CSS START
 /*----------------------------------------*/
 
-
 .header {
   &__area {
     position: fixed;
@@ -86,7 +85,6 @@
       top: 0;
       z-index: 99;
     }
-
   }
 
   &__inner {
@@ -200,7 +198,7 @@
         .menu-icon-2 {
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 180px;
             height: 180px;
             right: -60px;
@@ -226,7 +224,7 @@
 
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 1px;
             height: 20px;
             right: 25px;
@@ -254,7 +252,7 @@
         .menu-icon-2 {
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 180px;
             height: 180px;
             right: -60px;
@@ -265,7 +263,6 @@
           }
         }
       }
-
     }
   }
 
@@ -370,7 +367,6 @@
   }
 }
 
-
 // sticky Menu
 .sticky-2 {
   .header__nav-icon-2 .menu-icon-2::after {
@@ -379,7 +375,6 @@
     right: -20px;
     top: -30px;
   }
-
 
   .header__logo-5 img {
     filter: invert(1);
@@ -399,11 +394,9 @@
   }
 }
 
-
 // Logo
 .logo {
   &-primary {
-
     @media #{$lg} {
       display: none;
     }
@@ -433,7 +426,6 @@
     }
   }
 }
-
 
 // Dark Version
 .dark {

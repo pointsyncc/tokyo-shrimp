@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React, { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 // Use this for triggering the counter:
 // The counters will be paused initially and only start when the container is visible
@@ -27,27 +27,13 @@ export default function About() {
       tl.fromTo(
         titleAnim.current,
         { opacity: 0, y: 50, delay: 1 },
-        { opacity: 1, y: 0, duration: 1 }
+        { opacity: 1, y: 0, duration: 1 },
       );
 
-      tl.fromTo(
-        textAnim.current,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1 }
-      );
+      tl.fromTo(textAnim.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
 
-      tl.fromTo(
-        imgAnim1.current,
-        { opacity: 0, x: -50 },
-        { opacity: 1, x: 0, duration: 1 },
-        1.25
-      );
-      tl.fromTo(
-        imgAnim2.current,
-        { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 1 },
-        1.5
-      );
+      tl.fromTo(imgAnim1.current, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 1 }, 1.25);
+      tl.fromTo(imgAnim2.current, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 1 }, 1.5);
 
       // splitTitleLines.forEach(splitTextLine => {
       //   const tl = gsap.timeline({
@@ -70,57 +56,43 @@ export default function About() {
     return () => ctx.revert(); // cleanup
   }, []);
   return (
-    <section className="about__area" ref={comp}>
-      <div className="container line g-0 pt-140 pb-130" ref={container}>
-        <span className="line-3"></span>
-        <div className="row">
-          <div className="col-xxl-12">
-            <div className="about__title-wrapper">
-              <h3 className="sec-title title-anim" ref={titleAnim}>
+    <section className='about__area' ref={comp}>
+      <div className='container line g-0 pt-140 pb-130' ref={container}>
+        <span className='line-3'></span>
+        <div className='row'>
+          <div className='col-xxl-12'>
+            <div className='about__title-wrapper'>
+              <h3 className='sec-title title-anim' ref={titleAnim}>
                 We unlock the potential of your business with creative design
               </h3>
             </div>
 
-            <div className="about__content-wrapper">
-              <div className="about__img">
-                <div className="img-anim" ref={imgAnim1}>
-                  <img
-                    src="imgs/about/1/1.jpg"
-                    alt="About Image"
-                    data-speed="0.3"
-                  />
+            <div className='about__content-wrapper'>
+              <div className='about__img'>
+                <div className='img-anim' ref={imgAnim1}>
+                  <img src='imgs/about/1/1.jpg' alt='About Image' data-speed='0.3' />
                 </div>
 
-                <div className="about__img-right" ref={imgAnim2}>
-                  <img
-                    src="imgs/about/1/2.jpg"
-                    alt="About Image Right"
-                    data-speed="0.5"
-                  />
-                  <div className="shape">
-                    <div className="secondary" data-speed="0.9"></div>
-                    <div className="primary"></div>
+                <div className='about__img-right' ref={imgAnim2}>
+                  <img src='imgs/about/1/2.jpg' alt='About Image Right' data-speed='0.5' />
+                  <div className='shape'>
+                    <div className='secondary' data-speed='0.9'></div>
+                    <div className='primary'></div>
                   </div>
                 </div>
               </div>
 
-              <div className="about__content text-anim">
+              <div className='about__content text-anim'>
                 <p ref={textAnim}>
-                  From traditional PR and thought leadership campaigns to
-                  storytelling and creative social media management we’ve got
-                  you covered. Something is not your average order-taking
-                  vendor. We are proud to be the go-to partner for some of the
-                  world’s biggest agencies and brands because they trust our
-                  expertise
+                  From traditional PR and thought leadership campaigns to storytelling and creative
+                  social media management we’ve got you covered. Something is not your average
+                  order-taking vendor. We are proud to be the go-to partner for some of the world’s
+                  biggest agencies and brands because they trust our expertise
                 </p>
 
-                <div className="cursor-btn btn_wrapper">
-                  <a
-                    className="btn-item wc-btn-primary btn-hover"
-                    href="about.html"
-                  >
-                    <span></span> Explore Us{" "}
-                    <i className="fa-solid fa-arrow-right"></i>
+                <div className='cursor-btn btn_wrapper'>
+                  <a className='btn-item wc-btn-primary btn-hover' href='about.html'>
+                    <span></span> Explore Us <i className='fa-solid fa-arrow-right'></i>
                   </a>
                 </div>
               </div>

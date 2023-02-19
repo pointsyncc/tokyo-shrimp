@@ -40,7 +40,7 @@
 
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       top: 50%;
       transform: translateY(-50%);
       left: -20%;
@@ -72,7 +72,8 @@
 .buttons button {
   border: none;
   background-size: contain;
-  background: url(https://raw.githubusercontent.com/Rajacharles/GSAP-Fullscreen-Slider/master/images/down-arrow.png) no-repeat;
+  background: url(https://raw.githubusercontent.com/Rajacharles/GSAP-Fullscreen-Slider/master/images/down-arrow.png)
+    no-repeat;
   background-position: center;
   width: 10px;
   height: 30px;
@@ -120,7 +121,6 @@
   height: 100%;
 }
 
-
 .part:first-child h2 {
   display: block;
   top: 45% !important;
@@ -132,7 +132,6 @@
   height: 400px;
 }
 
-
 #header_10 {
   position: static;
   background: transparent;
@@ -140,7 +139,7 @@
 
 #home10_menu {
   li {
-    >a {
+    > a {
       color: var(--black);
     }
   }
@@ -254,7 +253,7 @@
         width: 90px;
         background: var(--black);
         height: 1px;
-        color: #1C1D20;
+        color: #1c1d20;
 
         @media #{$sm} {
           width: 50px;
@@ -274,7 +273,7 @@
           }
 
           &::before {
-            content: "0";
+            content: '0';
             position: absolute;
             left: -5px;
           }
@@ -286,7 +285,7 @@
           width: 48px;
 
           &::before {
-            content: "0";
+            content: '0';
             position: absolute;
             left: 8px;
           }
@@ -312,8 +311,6 @@
   }
 }
 
-
-
 // Home 10
 .hero10 {
   position: relative;
@@ -323,7 +320,7 @@
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     left: 0;
@@ -398,7 +395,6 @@
     z-index: 9;
     bottom: 0;
     transition: 0.5s;
-
 
     i {
       color: var(--white);
@@ -558,7 +554,7 @@
         position: relative;
 
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           top: 50%;
@@ -602,7 +598,7 @@
       height: 100%;
       padding: 100px 30px 0;
 
-      .swiper-horizontal>.swiper-pagination-bullets,
+      .swiper-horizontal > .swiper-pagination-bullets,
       .swiper-pagination-bullets.swiper-pagination-horizontal,
       .swiper-pagination-custom,
       .swiper-pagination-fraction {
@@ -617,14 +613,12 @@
         background: #121212;
       }
 
-      .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+      .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
       .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0 11px;
       }
 
       .gallery {
-
-
         &-slider {
           width: 100%;
           height: auto;
@@ -646,18 +640,12 @@
           .swiper-slide img {
             width: 150px;
           }
-
         }
-
-
       }
-
 
       .gallery-slider .swiper-slide {
         width: auto;
       }
-
-
     }
   }
 }
@@ -852,7 +840,7 @@
 
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       width: 1px;
       height: 100px;
       bottom: 0px;
@@ -882,8 +870,7 @@
   margin-bottom: 90px;
 }
 
-
-// 
+//
 // Home 15
 .hero__area-15 {
   padding: 0 30px;
@@ -894,12 +881,12 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     display: table;
   }
 
   &::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -908,7 +895,7 @@
     width: calc(100% - 160px);
     height: calc(100vh - 120px);
     float: left;
-    transition: opacity .6s ease, transform .3s ease;
+    transition: opacity 0.6s ease, transform 0.3s ease;
 
     @media #{$xl} {
       height: calc(100vh - 80px);
@@ -987,7 +974,6 @@
           outline-offset: 6px;
         }
       }
-
     }
   }
 
@@ -1060,7 +1046,6 @@
       .swiper-slide {
         cursor: pointer;
       }
-
     }
   }
 
@@ -1075,10 +1060,7 @@
       flex-direction: column;
     }
   }
-
 }
-
-
 
 // Home 16
 .showcase {
@@ -1132,7 +1114,6 @@
       object-fit: cover;
     }
   }
-
 
   &__info-16 {
     position: absolute;
@@ -1189,7 +1170,7 @@
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 50%;
@@ -1216,7 +1197,6 @@
       padding-left: 30px;
     }
   }
-
 }
 
 .showcase_info {
@@ -1240,7 +1220,6 @@
   height: 100vh;
 }
 
-
 // home 16 slider
 .showcase__content-16 {
   position: relative;
@@ -1263,9 +1242,6 @@
   }
 }
 
-
-
-
 // Tilt CSS
 .wc-tilt {
   display: inline-block;
@@ -1276,16 +1252,11 @@
   }
 }
 
-
-
-
 // Dark Version
 
 .dark {
-
   .hero__area-10 {
     .hero10_activition {
-
       .swiper-pagination-current {
         color: var(--white);
       }
@@ -1377,5 +1348,4 @@
       opacity: 1;
     }
   }
-
 }

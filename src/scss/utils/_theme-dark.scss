@@ -288,7 +288,6 @@
     &__step {
       color: var(--white);
     }
-
   }
 
   .brand {
@@ -317,7 +316,6 @@
       border-color: var(--bg-line);
     }
   }
-
 
   .service {
     &__area {
@@ -375,7 +373,6 @@
     }
 
     &__title {
-
       &-3:hover,
       &-2 {
         color: var(--white);
@@ -415,7 +412,6 @@
     }
   }
 
-
   .portfolio {
     &__area {
       background-color: var(--d-black-2);
@@ -452,7 +448,6 @@
         }
       }
     }
-
 
     &-v4 {
       background-color: var(--d-black-2);
@@ -518,7 +513,6 @@
       }
 
       &-text {
-
         p,
         li {
           color: var(--gray-2);
@@ -534,7 +528,6 @@
             color: var(--gray-2);
           }
         }
-
       }
     }
 
@@ -744,7 +737,6 @@
       transition: all 0.3s;
       border-color: var(--white);
     }
-
   }
 
   .client__name-3 {
@@ -754,7 +746,6 @@
   .client__role-3 {
     color: var(--gray-2);
   }
-
 
   .blog {
     &__area {
@@ -774,7 +765,6 @@
         @media #{$sm} {
           margin-bottom: 0;
         }
-
       }
 
       .pb-140 {
@@ -869,7 +859,6 @@
       }
 
       &-content {
-
         h1,
         h2,
         h3,
@@ -914,7 +903,6 @@
 
     &__member {
       &-name {
-
         &-6,
         &-7 {
           color: var(--white);
@@ -922,7 +910,6 @@
       }
 
       &-role {
-
         &-6,
         &-7 {
           color: var(--gray-2);
@@ -940,7 +927,6 @@
       }
 
       &-work {
-
         li a {
           color: var(--white);
 
@@ -964,7 +950,6 @@
       }
 
       &-page {
-
         .line-1,
         .line-2,
         .line-3 {
@@ -1063,7 +1048,6 @@
       }
     }
   }
-
 
   .footer {
     &__area {
@@ -1183,7 +1167,6 @@
     }
   }
 
-
   .award {
     &__area {
       background-color: var(--d-black-2);
@@ -1196,7 +1179,6 @@
         color: var(--white);
       }
     }
-
 
     .mega-menu li a {
       color: var(--black-2);
@@ -1343,7 +1325,6 @@
     }
 
     &__form {
-
       textarea,
       input,
       input::placeholder,
@@ -1352,7 +1333,6 @@
         border-color: var(--bg-line);
       }
 
-
       textarea:focus,
       input:focus {
         border-color: var(--white);
@@ -1360,7 +1340,6 @@
     }
 
     &__info {
-
       h3,
       ul li span,
       ul li a {
@@ -1368,7 +1347,6 @@
       }
     }
   }
-
 
   .faq {
     &__area {
@@ -1497,7 +1475,6 @@
     }
 
     &__img {
-
       &-1::after,
       &-2::after,
       &-3::after {
@@ -1523,7 +1500,6 @@
     }
   }
 
-
   .modal__apply {
     background-color: var(--d-black-2);
 
@@ -1533,9 +1509,8 @@
     }
 
     .input-apply-2 {
-
       p,
-      input[type="file"] {
+      input[type='file'] {
         color: var(--white);
       }
     }
@@ -1604,7 +1579,7 @@
   }
 
   .portfolio__area-5 .sec-line {
-    background-color: #D3D3D3;
+    background-color: #d3d3d3;
   }
 
   .modal__apply .input-apply textarea,
@@ -1652,5 +1627,4 @@
       filter: invert(1);
     }
   }
-
 }

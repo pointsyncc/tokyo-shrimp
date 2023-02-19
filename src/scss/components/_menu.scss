@@ -2,9 +2,8 @@
 /*  09. MENU CSS START
 /*----------------------------------------*/
 
-
 .main-menu {
-  >li {
+  > li {
     display: inline-block;
     margin: 0 38px;
 
@@ -30,7 +29,7 @@
       }
     }
 
-    >a {
+    > a {
       display: block;
       font-weight: 400;
       font-size: 18px;
@@ -40,7 +39,7 @@
       outline: none;
       text-transform: capitalize;
       transform: translateY(var(--y)) translateZ(0);
-      transition: transform .4s ease, box-shadow .4s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
 
       @include menu_anim(var(--white));
     }
@@ -53,7 +52,7 @@
       display: none;
     }
 
-    >li {
+    > li {
       display: inline-block;
       padding: 0 40px;
       margin: 0;
@@ -80,7 +79,7 @@
         }
       }
 
-      >a {
+      > a {
         display: block;
         font-weight: 400;
         font-size: 16px;
@@ -90,7 +89,7 @@
         outline: none;
         text-transform: capitalize;
         transform: translateY(var(--y)) translateZ(0);
-        transition: transform .4s ease, box-shadow .4s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
 
         @include menu_anim(var(--black-2));
       }
@@ -100,8 +99,8 @@
   &-4 {
     @extend .main-menu;
 
-    >li {
-      >a {
+    > li {
+      > a {
         color: var(--black-2);
         @include menu_anim(var(--black-2));
       }
@@ -169,7 +168,6 @@
     }
   }
 }
-
 
 // Megamenu
 .mega-menu {
@@ -253,7 +251,6 @@
     transform: translateX(-50%);
     grid-template-columns: repeat(4, 1fr);
   }
-
 }
 
 .menu-heading {
@@ -263,7 +260,6 @@
   padding-bottom: 10px;
   text-transform: capitalize;
 }
-
 
 // Footer Menu
 .footer-menu {
@@ -330,8 +326,6 @@
   }
 }
 
-
-
 /* mean menu customize */
 .offcanvas__menu-wrapper.mean-container {
   padding-top: 160px;
@@ -356,14 +350,14 @@
     padding-top: 40px;
   }
 
-  .mean-nav>ul {
+  .mean-nav > ul {
     padding: 0;
     margin: 0;
     width: 100%;
     list-style-type: none;
     display: block !important;
 
-    >li:last-child>a {
+    > li:last-child > a {
       border-bottom: 1px solid var(--black-4);
     }
   }
@@ -387,8 +381,7 @@
         align-items: center;
         outline: none;
         transform: translateY(var(--y)) translateZ(0);
-        transition: transform .4s ease,
-          box-shadow .4s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
 
         .menu-text {
           display: flex;
@@ -399,7 +392,7 @@
             display: block;
             backface-visibility: hidden;
             font-style: normal;
-            transition: transform .4s ease;
+            transition: transform 0.4s ease;
             transform: translateY(var(--m)) translateZ(0);
             $i: 1;
 
@@ -575,7 +568,6 @@
   }
 }
 
-
 .header__area-2 {
   .main-dropdown {
     background-color: var(--white);
@@ -596,8 +588,6 @@
       background-color: var(--white);
     }
   }
-
-
 
   .mega-menu {
     background-color: var(--white);
