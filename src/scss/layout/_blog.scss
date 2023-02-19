@@ -2,8 +2,6 @@
 /*  24. BLOG CSS START
 /*----------------------------------------*/
 
-
-
 .blog {
   &__area {
     overflow: hidden;
@@ -161,7 +159,7 @@
 
             &::after {
               position: absolute;
-              content: "";
+              content: '';
               left: 39%;
               top: 0;
               width: 1px;
@@ -228,7 +226,6 @@
       }
 
       .sec-title-wrapper {
-
         @media #{$md} {
           padding-top: 90px;
         }
@@ -422,8 +419,8 @@
 
       &::after {
         position: absolute;
-        content: "\f061";
-        font-family: "Font Awesome 6 Free";
+        content: '\f061';
+        font-family: 'Font Awesome 6 Free';
         font-weight: 900;
         left: -20px;
         bottom: -20px;
@@ -449,7 +446,6 @@
     }
   }
 
-
   &__text {
     display: flex;
     align-items: center;
@@ -464,7 +460,6 @@
       }
     }
   }
-
 
   // Blog Detail
   &__detail {
@@ -496,7 +491,7 @@
 
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           width: 4px;
           height: 4px;
           top: 11px;
@@ -649,7 +644,7 @@
 
           &::before {
             position: absolute;
-            content: "+";
+            content: '+';
             left: 0;
             font-size: 20px;
           }
@@ -754,8 +749,7 @@
     }
   }
 
-
-  // 
+  //
   &-v3 {
     &.blog__area-3 .sec-title-wrapper::after {
       position: unset;
@@ -796,8 +790,6 @@
   }
 }
 
-
-
 // Image Animation
 .img-box {
   position: relative;
@@ -820,7 +812,6 @@
   @media #{$sm} {
     height: auto;
   }
-
 
   img {
     position: absolute;
@@ -865,11 +856,9 @@
       filter: blur(0);
     }
   }
-
 }
 
-
-// 
+//
 .row.reset-grid {
   --bs-gutter-x: 60px;
 

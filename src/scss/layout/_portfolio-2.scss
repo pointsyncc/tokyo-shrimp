@@ -3,15 +3,13 @@
 /*----------------------------------------*/
 
 :root {
-  --pink-6: #EEE5DC;
+  --pink-6: #eee5dc;
 
-  --purple: #D9DBEB;
-  --purple-2: #CCCEDE;
+  --purple: #d9dbeb;
+  --purple-2: #cccede;
 
-  --green: #81C3A3;
-  --green-2: #DCE4E0;
-
-
+  --green: #81c3a3;
+  --green-2: #dce4e0;
 }
 
 @keyframes wcSpinner {
@@ -27,7 +25,6 @@
 }
 
 .portfolio {
-
   &__hero {
     position: relative;
     padding-bottom: 60px;
@@ -71,7 +68,7 @@
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 62px;
           height: 62px;
           right: -50px;
@@ -165,7 +162,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 100px;
         height: 100px;
         left: 80px;
@@ -189,7 +186,7 @@
 
     &::after {
       position: absolute;
-      content: "ABOUT";
+      content: 'ABOUT';
       width: 200px;
       height: 100%;
       right: 0px;
@@ -280,7 +277,7 @@
 
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           width: 90px;
           height: 1px;
           left: 0;
@@ -389,7 +386,7 @@
 
     &::after {
       position: absolute;
-      content: "work";
+      content: 'work';
       width: 200px;
       height: 100%;
       right: 0px;
@@ -483,12 +480,12 @@
 
         @media #{$xxl} {
           max-width: 430px;
-          max-height: 600px
+          max-height: 600px;
         }
 
         @media #{$xl} {
           max-width: 330px;
-          max-height: 450px
+          max-height: 450px;
         }
 
         img {
@@ -514,7 +511,8 @@
       z-index: 9;
       opacity: 0;
 
-      @media #{$md} {}
+      @media #{$md} {
+      }
 
       @media #{$sm} {
         top: 95%;
@@ -522,7 +520,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 50px;
         height: 1px;
         top: 13px;
@@ -549,7 +547,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 50px;
         height: 1px;
         top: 13px;
@@ -626,7 +624,6 @@
         margin-top: 30px;
       }
     }
-
   }
 
   &__service {
@@ -728,7 +725,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 23px;
         height: 76px;
         right: -2px;
@@ -736,11 +733,9 @@
         background: var(--black-2);
         transition: all 0.3s;
         border-radius: 15px 0px 0px 15px;
-
       }
 
       &:hover {
-
         .ps-title,
         ul li {
           color: var(--white);
@@ -828,7 +823,7 @@
 
   &__footer {
     margin-top: 150px;
-    border-top: 1px solid #E2E2E2;
+    border-top: 1px solid #e2e2e2;
 
     @media #{$xl} {
       margin-top: 30px;
@@ -839,7 +834,7 @@
     }
 
     &-area {
-      background-color: #F7F7F7;
+      background-color: #f7f7f7;
       background-image: url(../../../public/imgs/shape/18.png);
       background-repeat: no-repeat;
       background-position: top right;
@@ -847,7 +842,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 100px;
         height: 100px;
         left: 50px;
@@ -872,7 +867,7 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         width: 156px;
         height: 156px;
         left: calc(50% - 78px);
@@ -956,7 +951,6 @@
       }
 
       .pf-social {
-
         @media #{$sm} {
           margin-bottom: 40px;
         }
@@ -974,7 +968,7 @@
 
           &::after {
             position: absolute;
-            content: "";
+            content: '';
             width: 50px;
             height: 1px;
             top: 15px;
@@ -1048,7 +1042,6 @@
   }
 
   &__page {
-
     .wc-btn-dark,
     .contact__text,
     .contact__form,
@@ -1058,7 +1051,6 @@
     }
 
     .swiper-slide-active {
-
       .wc-btn-dark {
         animation: wcfadeUp 1s 0.7s forwards;
       }
@@ -1164,7 +1156,6 @@
       }
     }
 
-
     .wc-btn-dark {
       &:hover {
         color: var(--white);
@@ -1175,10 +1166,8 @@
   }
 }
 
-
 @media (max-width: 1300px) {
   .swiper-slide {
-
     .wc-btn-dark {
       animation: wcfadeUp 1s 0.7s forwards;
     }
@@ -1285,11 +1274,9 @@
   }
 }
 
-
 .menu-text-pp {
   color: var(--black-2);
 }
-
 
 // Circle Pagination
 .circle-pagination {
@@ -1408,7 +1395,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 6px;
         height: 6px;
         background-color: var(--black-2);

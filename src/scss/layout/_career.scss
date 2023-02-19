@@ -2,11 +2,8 @@
 /*  32. CAREER CSS START
 /*----------------------------------------*/
 
-
 .career {
-
   &__top {
-
     .sec-title-wrapper {
       height: 100%;
       display: flex;
@@ -117,10 +114,9 @@
       }
 
       @media #{$sm} {
-        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
       }
     }
-
   }
 
   &__gallery {
@@ -148,7 +144,7 @@
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 3px;
           height: 3px;
           right: 0;
@@ -267,7 +263,7 @@
         width: 240px;
         height: 240px;
         text-align: center;
-        border: 1px solid #C8C7C7;
+        border: 1px solid #c8c7c7;
         border-radius: 100%;
         margin-left: -30px;
         margin-top: -30px;
@@ -276,13 +272,13 @@
         color: var(--black-2);
 
         @media #{$xxxl} {
-          &:nth-child(3n+1) {
+          &:nth-child(3n + 1) {
             margin-left: 0;
           }
         }
 
         @media #{$xxl} {
-          &:nth-child(3n+1) {
+          &:nth-child(3n + 1) {
             margin-left: 0;
           }
         }
@@ -294,7 +290,7 @@
           margin-top: -20px;
           padding: 20px;
 
-          &:nth-child(3n+1) {
+          &:nth-child(3n + 1) {
             margin-left: 0;
           }
         }
@@ -306,7 +302,7 @@
           margin-top: -20px;
           padding: 20px;
 
-          &:nth-child(2n+1) {
+          &:nth-child(2n + 1) {
             margin-left: 0;
           }
         }
@@ -315,7 +311,7 @@
           width: 260px;
           height: 260px;
 
-          &:nth-child(3n+1) {
+          &:nth-child(3n + 1) {
             margin-left: 0;
           }
         }
@@ -328,19 +324,16 @@
           padding: 20px;
           font-size: 16px;
 
-          &:nth-child(2n+1) {
+          &:nth-child(2n + 1) {
             margin-left: 0;
           }
         }
-
       }
     }
   }
 }
 
-
-
-// Job 
+// Job
 .job {
   &__area {
     background-color: var(--black-2);
@@ -380,7 +373,6 @@
     }
 
     &:hover {
-
       .job__title {
         color: var(--white);
       }
@@ -446,8 +438,8 @@
     span {
       &::after {
         position: absolute;
-        content: "\f061";
-        font-family: "Font Awesome 6 Free";
+        content: '\f061';
+        font-family: 'Font Awesome 6 Free';
         font-weight: 900;
         right: 45px;
         bottom: -35px;
@@ -466,7 +458,6 @@
       transition: all 0.3s;
     }
   }
-
 
   // Job Details
 
@@ -644,7 +635,7 @@
 
           &::before {
             position: absolute;
-            content: "";
+            content: '';
             width: 5px;
             height: 5px;
             left: -18px;
@@ -658,7 +649,7 @@
 
     &-sidebar {
       margin-top: 70px;
-      background: #F9F9F9;
+      background: #f9f9f9;
       padding: 40px 30px;
       position: sticky;
       top: 70px;
@@ -693,10 +684,5 @@
         }
       }
     }
-
-
   }
-
-
-
 }

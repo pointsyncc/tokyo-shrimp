@@ -2,8 +2,6 @@
 /*  04. ANIMATION CSS START
 /*----------------------------------------*/
 
-
-
 @keyframes wcRotate {
   0% {
     transform: rotate(0deg) scale(1.1);
@@ -17,7 +15,6 @@
     transform: rotate(0deg) scale(1.1);
   }
 }
-
 
 // Bubble
 @keyframes wcBubble {
@@ -34,7 +31,6 @@
   }
 }
 
-
 // Zoom
 @keyframes wcZoom {
   0% {
@@ -50,8 +46,7 @@
   }
 }
 
-
-// Slide 
+// Slide
 @keyframes wcSlideBottom {
   0% {
     transform: translateY(0);
@@ -66,8 +61,7 @@
   }
 }
 
-
-// 
+//
 @keyframes reveal {
   to {
     opacity: 1;
@@ -91,7 +85,6 @@
     transform: translateY(0);
   }
 }
-
 
 // Spinner
 @keyframes wcSpinner {

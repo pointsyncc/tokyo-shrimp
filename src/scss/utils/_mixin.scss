@@ -2,14 +2,11 @@
 /*  02. MIXIN CSS START
 /*----------------------------------------*/
 
-
-
 // Z Index
 @mixin zi($n) {
   position: relative;
   z-index: $n;
 }
-
 
 // Footer Text
 @mixin footer_text {
@@ -19,14 +16,13 @@
   color: var(--gray-2);
 }
 
-
 // Border
 @mixin border_hover {
   position: relative;
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 100%;
     height: 1px;
     left: 0;
@@ -43,12 +39,12 @@
 }
 
 // Border Line
-@mixin borderLine($color, $left ) {
+@mixin borderLine($color, $left) {
   position: relative;
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 1px;
     height: 100%;
     left: $left;
@@ -94,7 +90,6 @@
   }
 }
 
-
 // Align Middle
 @mixin align_middle {
   display: flex;
@@ -111,7 +106,7 @@
 }
 
 // Image Animation
-@mixin img_anim($width, $height, $height2 ) {
+@mixin img_anim($width, $height, $height2) {
   overflow: hidden;
   position: relative;
   width: $width;
@@ -128,7 +123,6 @@
   }
 }
 
-
 // Menu Animation
 @mixin menu_anim($shadow_color) {
   .menu-text {
@@ -140,7 +134,7 @@
       display: block;
       backface-visibility: hidden;
       font-style: normal;
-      transition: transform .4s ease;
+      transition: transform 0.4s ease;
       transform: translateY(var(--m)) translateZ(0);
       $i: 1;
 
