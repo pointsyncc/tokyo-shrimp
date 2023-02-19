@@ -2,9 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-// Use this for triggering the counter:
-// The counters will be paused initially and only start when the container is visible
-// https://greensock.com/docs/v3/Plugins/ScrollTrigger
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
@@ -24,11 +22,11 @@ export default function About() {
           scrub: 1,
         }, // start the animation when ".box" enters the viewport (once)
       });
-      tl.fromTo(
-        titleAnim.current,
-        { opacity: 0, y: 50, delay: 1 },
-        { opacity: 1, y: 0, duration: 1 },
-      );
+      // tl.fromTo(
+      //   titleAnim.current,
+      //   { opacity: 0, y: 50, delay: 1 },
+      //   { opacity: 1, y: 0, duration: 1 },
+      // );
 
       tl.fromTo(textAnim.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
 
