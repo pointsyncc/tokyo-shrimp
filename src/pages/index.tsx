@@ -50,6 +50,11 @@ const Home: NextPageWithLayout = () => {
   }, []);
   return (
     <div ref={comp}>
+      //add head title
+      <Head>
+        <title>{process.env.WEBSITE_NAME} - Home</title>
+        <meta name='description' content='Home' />
+      </Head>
       <Hero />
       <Roll />
       <About />
