@@ -2,7 +2,6 @@
 /*  08. TITLE CSS START
 /*----------------------------------------*/
 
-
 // Section Title
 .sec {
   &-title {
@@ -203,7 +202,7 @@
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 100%;
           height: 2px;
           bottom: 10px;
@@ -227,7 +226,6 @@
     text-transform: capitalize;
   }
 }
-
 
 // Hero Title
 .hero {
@@ -253,9 +251,7 @@
       font-size: 36px;
     }
   }
-
 }
-
 
 .title-line {
   overflow: hidden;
@@ -344,11 +340,11 @@
           position: relative;
 
           &::before {
-            content: "";
+            content: '';
             position: absolute;
             right: 80px;
             top: 50%;
-            background-color: #D9D9D9;
+            background-color: #d9d9d9;
             width: 1090px;
             height: 1px;
 
@@ -397,7 +393,6 @@
   }
 }
 
-
 // Dark Version
 .dark {
   .sec-title {
@@ -426,7 +421,6 @@
     }
   }
 
-
   .section_title_wrapper {
     .title_right__inner__left span {
       color: var(--gray-2);
@@ -444,7 +438,4 @@
       }
     }
   }
-
-
-
 }

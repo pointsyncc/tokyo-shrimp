@@ -2,7 +2,6 @@
 /*  16. ABOUT CSS START
 /*----------------------------------------*/
 
-
 .about {
   &__area {
     overflow: hidden;
@@ -18,7 +17,6 @@
     }
 
     &-2 {
-      
       overflow: hidden;
       background-color: var(--black-2);
       background-image: url(../../../public/imgs/shape/2.png);
@@ -119,7 +117,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 1px;
         height: 100%;
         left: 60%;
@@ -263,7 +261,6 @@
         margin-bottom: 30px;
       }
     }
-
 
     &-wrapper {
       display: grid;
@@ -409,7 +406,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 48%;
     left: 60px;
@@ -487,7 +484,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 100%;
         height: 2px;
         left: 0;
@@ -501,7 +498,6 @@
         @media #{$sm} {
           bottom: 3px;
         }
-
       }
     }
   }
@@ -551,12 +547,9 @@
   @media #{$lg} {
     justify-content: center;
   }
-
-
 }
 
 .work8 {
-
   &:nth-child(2) {
     display: flex;
     justify-content: flex-end;
@@ -595,7 +588,8 @@
     justify-content: flex-end;
   }
 
-  @media #{$sm} {}
+  @media #{$sm} {
+  }
 
   @media #{$md} {
     margin-bottom: 50px;
@@ -718,9 +712,6 @@
     padding-bottom: 80px;
   }
 }
-
-
-
 
 // Dark Version
 .dark {

@@ -2,12 +2,8 @@
 /*  15. SLIDER CSS START
 /*----------------------------------------*/
 
-
-
-
 // Roll Slider
 .roll {
-
   &__area {
     background-color: var(--primary);
     padding: 31px 10px;
@@ -60,7 +56,6 @@
     .link {
       opacity: 1;
       visibility: visible;
-
     }
   }
 
@@ -96,7 +91,6 @@
     }
   }
 }
-
 
 // Pagination
 .rollslide {
@@ -178,8 +172,6 @@
     }
   }
 }
-
-
 
 // Dark Version
 .dark {

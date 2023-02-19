@@ -2,7 +2,6 @@
 /*  27. TEAM CSS START
 /*----------------------------------------*/
 
-
 .team {
   &__area {
     background-color: var(--black-2);
@@ -95,7 +94,6 @@
   }
 
   &__slider {
-
     @media #{$xxxl} {
       margin-left: 100px;
     }
@@ -224,7 +222,7 @@
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 150px;
           height: 1px;
           left: 0;
@@ -558,5 +556,4 @@
       }
     }
   }
-
 }

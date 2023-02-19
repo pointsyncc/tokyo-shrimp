@@ -2,7 +2,6 @@
 /*  14. HERO CSS START
 /*----------------------------------------*/
 
-
 .hero {
   &__area {
     background-color: var(--black);
@@ -11,7 +10,7 @@
 
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
       left: 0;
@@ -163,7 +162,7 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         width: 100%;
         height: 100%;
         left: 0;
@@ -176,7 +175,7 @@
 
       &::after {
         position: absolute;
-        content: "";
+        content: '';
         width: 50px;
         height: 50px;
         right: 50px;
@@ -238,7 +237,7 @@
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 90px;
           height: 1px;
           left: 100%;
@@ -281,12 +280,11 @@
         right: 0;
       }
 
-
       .wrapper {
         --clip-path: circle(65px at left);
         --clip-path-hover: circle(70px at left);
         --clip-path-clicked: circle(100vw at left);
-        --duration: .4s;
+        --duration: 0.4s;
         --timing-function: ease;
         display: flex;
         justify-content: center;
@@ -337,7 +335,6 @@
         top: 55px;
         left: 100px;
 
-
         &::before {
           position: absolute;
           top: -20px;
@@ -345,7 +342,7 @@
           width: 40px;
           height: 40px;
           background: url(../../../public/imgs/icon/play-icon.png);
-          content: "";
+          content: '';
           z-index: 999999999999;
           background-size: 100%;
         }
@@ -402,11 +399,11 @@
         }
 
         &:hover {
-          ~.video {
+          ~ .video {
             clip-path: var(--clip-path-hover);
           }
 
-          ~.text {
+          ~ .text {
             &::before {
               --r: 25px;
               --opacity: 1;
@@ -416,7 +413,7 @@
               clip-path: var(--clip-path-hover);
             }
 
-            >span {
+            > span {
               &::after {
                 clip-path: var(--clip-path-hover);
               }
@@ -432,19 +429,19 @@
           left: 0;
           bottom: 0;
 
-          ~.video {
+          ~ .video {
             clip-path: var(--clip-path-clicked);
           }
 
-          ~.text {
+          ~ .text {
             --opacity: 0;
-            transition: opacity .3s var(--timing-function);
+            transition: opacity 0.3s var(--timing-function);
 
             &::after {
               clip-path: var(--clip-path-clicked);
             }
 
-            >span {
+            > span {
               &::after {
                 clip-path: var(--clip-path-clicked);
               }
@@ -454,7 +451,6 @@
       }
 
       &.start-video {
-
         .hero3-img {
           opacity: 0;
         }
@@ -750,8 +746,8 @@
 
         &::after {
           position: absolute;
-          content: "\f061";
-          font-family: "Font Awesome 6 Free";
+          content: '\f061';
+          font-family: 'Font Awesome 6 Free';
           font-weight: 900;
           left: -20px;
           bottom: -20px;
@@ -764,7 +760,6 @@
     }
 
     img {
-
       // animation: wcSlideBottom 3s infinite;
       @media #{$xl} {
         max-width: 120px;
@@ -836,7 +831,7 @@
 
     &::after {
       position: absolute;
-      content: "Pro";
+      content: 'Pro';
       width: 70px;
       height: 45px;
       right: -80px;
@@ -1011,7 +1006,7 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         left: 75px;
         top: 50%;
         width: 250px;
@@ -1086,7 +1081,7 @@
       }
 
       @media #{$sm} {
-        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-right: calc(-0.5 * var(--bs-gutter-x));
       }
     }
   }
@@ -1129,8 +1124,8 @@
 
       &::after {
         position: absolute;
-        content: "\f061";
-        font-family: "Font Awesome 6 Free";
+        content: '\f061';
+        font-family: 'Font Awesome 6 Free';
         font-weight: 900;
         left: -20px;
         bottom: -20px;
@@ -1141,7 +1136,6 @@
       }
     }
   }
-
 }
 
 #hero {
@@ -1158,7 +1152,7 @@
   }
 }
 
-// hero portfolio 
+// hero portfolio
 .hero {
   &__content-8 {
     padding-top: 80px;
@@ -1244,7 +1238,6 @@
   }
 }
 
-
 .portfolio__big {
   text-align: center;
   padding-bottom: 395px;
@@ -1328,9 +1321,6 @@
     padding: 30px 15px;
   }
 }
-
-
-
 
 // Dark Version
 .dark {

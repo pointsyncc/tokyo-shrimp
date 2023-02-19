@@ -7,7 +7,6 @@
   padding: 0;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -64,16 +63,13 @@ img {
   @include zi(1);
 }
 
-
-
-
 //  Line CSS
 .line {
   position: relative;
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 1px;
     height: 100%;
     top: 0;
@@ -83,7 +79,7 @@ img {
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 1px;
     height: 100%;
     left: calc(50% - 1px);
@@ -93,7 +89,7 @@ img {
 
   &-3 {
     position: absolute;
-    content: "";
+    content: '';
     width: 1px;
     height: 100%;
     right: 0;
@@ -101,7 +97,6 @@ img {
     background: var(--white-4);
   }
 }
-
 
 // Shape
 .shape {
@@ -159,7 +154,7 @@ img {
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 1px;
     height: 500px;
     left: 0;
@@ -171,7 +166,6 @@ img {
     }
   }
 }
-
 
 // Scroll Top
 .scroll-top {

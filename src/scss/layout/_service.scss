@@ -2,9 +2,7 @@
 /*  17. SERVICE CSS START
 /*----------------------------------------*/
 
-
 .service {
-
   &__area {
     background-color: var(--black-2);
     overflow: hidden;
@@ -84,7 +82,7 @@
 
             &::after {
               position: absolute;
-              content: "";
+              content: '';
               left: 40%;
               top: 0;
               width: 1px;
@@ -151,7 +149,6 @@
       }
     }
 
-
     &-6 {
       padding-left: 100px;
       background-color: var(--black-2);
@@ -180,23 +177,23 @@
         margin-left: -180px;
 
         @media #{$xxl} {
-          margin-left: calc(-.5 * var(--bs-gutter-x));
+          margin-left: calc(-0.5 * var(--bs-gutter-x));
         }
 
         @media #{$xl} {
-          margin-left: calc(-.5 * var(--bs-gutter-x));
+          margin-left: calc(-0.5 * var(--bs-gutter-x));
         }
 
         @media #{$lg} {
-          margin-left: calc(-.5 * var(--bs-gutter-x));
+          margin-left: calc(-0.5 * var(--bs-gutter-x));
         }
 
         @media #{$md} {
-          margin-left: calc(-.5 * var(--bs-gutter-x));
+          margin-left: calc(-0.5 * var(--bs-gutter-x));
         }
 
         @media #{$sm} {
-          margin-left: calc(-.5 * var(--bs-gutter-x));
+          margin-left: calc(-0.5 * var(--bs-gutter-x));
         }
       }
 
@@ -333,7 +330,6 @@
     }
 
     &-btn {
-
       #btn_wrapper,
       .btn_wrapper {
         margin-left: auto;
@@ -432,7 +428,6 @@
   }
 
   &__items {
-
     &-6 {
       @media #{$md} {
         padding-top: 0;
@@ -462,9 +457,7 @@
     }
 
     &:hover {
-
       .service {
-
         &__number span,
         a {
           color: var(--white);
@@ -497,7 +490,7 @@
 
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         width: 1px;
         height: 100%;
         left: -90px;
@@ -513,7 +506,7 @@
         }
       }
 
-      &:nth-child(3n+1) {
+      &:nth-child(3n + 1) {
         &::before {
           position: unset;
         }
@@ -784,8 +777,8 @@
 
       &::after {
         position: absolute;
-        content: "\f061";
-        font-family: "Font Awesome 6 Free";
+        content: '\f061';
+        font-family: 'Font Awesome 6 Free';
         font-weight: 900;
         left: -20px;
         bottom: -20px;
@@ -856,7 +849,6 @@
 
   &__list {
     .active {
-
       .service__number span,
       .service__title,
       .service__link p {
@@ -1016,8 +1008,6 @@
     }
   }
 
-
-
   // Service detail css
   &__detail {
     overflow: hidden;
@@ -1055,7 +1045,7 @@
 
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           width: 6px;
           height: 6px;
           left: calc(50% - 3px);
@@ -1066,7 +1056,7 @@
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           width: 170px;
           height: 2px;
           left: 50%;
@@ -1186,13 +1176,10 @@
         padding-top: 120px;
       }
     }
-
   }
-
 
   // Service Version 5
   &-v5 {
-
     .portfolio__service-item,
     &.portfolio__service .sec-title,
     &.portfolio__service .sec-text,
@@ -1223,8 +1210,6 @@
       text-indent: 0;
     }
   }
-
-
 }
 
 .service__list-6 li a.active {
@@ -1267,8 +1252,6 @@
 .service__image:nth-child(9) {
   z-index: 1;
 }
-
-
 
 // Service page 2
 .service__hero {
@@ -1363,7 +1346,6 @@
     }
 
     .image {
-
       &-1,
       &-3 {
         transform: translateX(-100px);
