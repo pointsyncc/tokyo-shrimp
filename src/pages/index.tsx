@@ -27,7 +27,7 @@ const Home: NextPageWithLayout = () => {
     let ctx = gsap.context(() => {
       gsap.set(".title-anim", { y: 50, opacity: 0, })
       let splitTitleLines = gsap.utils.toArray(".title-anim");
-      splitTitleLines.forEach((item)=>{
+      splitTitleLines.forEach((item: any)=>{
         let counterTl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
