@@ -11,7 +11,7 @@ export default function Document() {
         <meta property='og:description' content='Enter the digital world.' />
         <meta
           property='og:image'
-          content='https://pointsyncc.com/imgs/pointsyncc/logo/desktop/transparent.png'
+          content='https://pointsyncc.com/imgs/pointsyncc/logo/desktop/color.png'
         />
         <meta property='og:url' content='https://pointsyncc.com' />
         <meta property='og:type' content='website' />
@@ -23,7 +23,7 @@ export default function Document() {
         <meta name='twitter:description' content='Enter the digital world.' />
         <meta
           name='twitter:image'
-          content='https://pointsyncc.com/imgs/pointsyncc/logo/desktop/transparent.png'
+          content='https://pointsyncc.com/imgs/pointsyncc/logo/desktop/color.png'
         />
         <meta name='twitter:image:alt' content='Pointsyncc logo' />
         <meta name='twitter:domain' content='pointsyncc.com' />
