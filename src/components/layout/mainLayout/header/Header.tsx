@@ -48,7 +48,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
               openMenu();
             }}
           >
-            <CgMenuGridO fontSize={'1rem'} />
+            <CgMenuGridO fontSize={'2rem'} className="text-white"/>
           </button>
         </div>
         <div className='header__support'>
