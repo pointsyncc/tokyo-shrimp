@@ -1,7 +1,9 @@
 import gsap from 'gsap';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import { CgMenuGridO } from 'react-icons/cg';
+import logo from '@/public/imgs/pointsyncc/logo/desktop/transparent-90.png';
 
 interface HeaderProps {
   openMenu: () => void;
@@ -28,17 +30,12 @@ export const Header = ({ openMenu }: HeaderProps) => {
           <Link href='/'>
             <img
               className='logo-primary'
-              width={40}
+              width={35}
               src='/imgs/pointsyncc/logo/desktop/transparent-90.png'
               alt='Site Logo'
             />
             {/* <Image src={"/imgs/pointsyncc/logo/desktop/transparent-90.png"} fill  className="logo-primary"  alt="Site Logo" /> */}
-            <img
-              className='logo-secondary'
-              width={125}
-              src='/imgs/pointsyncc/logo/desktop/transparent.png'
-              alt='Moibile Logo'
-            />
+            <Image className='logo-secondary' width={125} src={logo} alt='Moibile Logo' />
           </Link>
         </div>
         <div className='header__nav-icon'>
@@ -48,7 +45,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
               openMenu();
             }}
           >
-            <CgMenuGridO fontSize={'2rem'} className="text-white"/>
+            <CgMenuGridO fontSize={'2rem'} className='text-white' />
           </button>
         </div>
         <div className='header__support'>
