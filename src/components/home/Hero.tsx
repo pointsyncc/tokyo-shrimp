@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 export const Hero = () => {
   const comp = useRef(null);
@@ -6,7 +6,7 @@ export const Hero = () => {
   const heroText = useRef(null);
   const experience = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       const tl = gsap.timeline();
@@ -41,8 +41,8 @@ export const Hero = () => {
               </a>
               <div className='hero__title-wrapper'>
                 <h1 className='hero__title' ref={heroHeading}>
-                  Digital agency studio
-                </h1>
+                  Enter the digital world ready
+                </h1>       
                 <p className='hero__sub-title' ref={heroText}>
                   With every single one of our clients, we bring forth deep passion for
                   <span> creative problem solving </span>

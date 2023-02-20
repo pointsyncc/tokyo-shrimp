@@ -2,7 +2,7 @@ import { EMAIL_PATTERN } from '@/components/constants/constants';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
 import gsap from 'gsap';
@@ -36,7 +36,7 @@ const Footer = () => {
     console.log(data);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     //use gsap to create parallax effect
     const tl = gsap.timeline({
       scrollTrigger: {
