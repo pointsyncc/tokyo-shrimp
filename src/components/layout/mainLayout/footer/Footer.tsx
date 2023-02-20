@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
+import gsap from 'gsap';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
