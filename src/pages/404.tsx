@@ -6,6 +6,10 @@ import { NextPageWithLayout } from './_app';
 const Custom404: NextPageWithLayout = () => {
   return (
     <>
+      <Head>
+        <title>{process.env.WEBSITE_NAME} - 404 Not found</title>
+        <meta name='description' content='404 Not found' />
+      </Head>
       <div className='has-smooth' id='has_smooth'></div>
 
       <button id='scroll_top' className='scroll-top'>
