@@ -1,9 +1,6 @@
 import { EMAIL_PATTERN } from '@/components/constants/constants';
-import footerImage from '@/public/imgs/pointsyncc/footer.jpg';
-import footerLogo from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
@@ -72,9 +69,7 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        {/* <img src={footerImage} alt='Footer Image' data-speed='0.75' /> */}
-
-        <Image ref={imageRef} src={footerImage} width={1160} alt='Footer image' data-speed='0.75' />
+        <img src='imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
       </div>
 
       <div className='footer__btm'>
@@ -83,7 +78,12 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <Image className='footer__logo' width={180} src={footerLogo} alt='Footer Logo' />
+                  <img
+                    className='footer__logo'
+                    width={220}
+                    src='imgs/pointsyncc/logo/desktop/transparent.png'
+                    alt='Footer Logo'
+                  />
                   <p>
                     When do they work well, and when do they on us and finally, when do we actually
                     need how can we avoid them.
