@@ -15,7 +15,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
       <div className='header__inner'>
         <div className='header__logo'>
           <Link href='/'>
-            <Image className='logo-primary' width={35} src={logoPrimary} alt='Pointsyncc Logo' />
+            <Image className='logo-primary' width={30} src={logoPrimary} alt='Pointsyncc Logo' />
             <Image
               className='logo-secondary'
               width={125}
