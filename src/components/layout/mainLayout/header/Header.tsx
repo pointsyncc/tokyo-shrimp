@@ -1,43 +1,26 @@
-import gsap from 'gsap';
+import logoPrimary from '@/public/imgs/pointsyncc/logo/desktop/transparent-90.png';
+import logoSecondary from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
+import Image from 'next/image';
 import Link from 'next/link';
-import { useLayoutEffect, useRef } from 'react';
 import { CgMenuGridO } from 'react-icons/cg';
+
 
 interface HeaderProps {
   openMenu: () => void;
 }
 
 export const Header = ({ openMenu }: HeaderProps) => {
-  // const boxRef = useRef();
-
-  // useLayoutEffect(() => {
-  //   // Refs allow you to access DOM nodes
-  //   console.log(boxRef); // { current: div.box }
-  //   // then we can animate them like so...
-  //   if (boxRef.current) {
-  //     gsap.to(boxRef.current, {
-  //       rotation: "+=360",
-  //     });
-  //   }
-  // });
-
   return (
     <header className='header__area'>
       <div className='header__inner'>
         <div className='header__logo'>
           <Link href='/'>
-            <img
-              className='logo-primary'
-              width={40}
-              src='/imgs/pointsyncc/logo/desktop/transparent-90.png'
-              alt='Site Logo'
-            />
-            {/* <Image src={"/imgs/pointsyncc/logo/desktop/transparent-90.png"} fill  className="logo-primary"  alt="Site Logo" /> */}
-            <img
+            <Image className='logo-primary' width={35} src={logoPrimary} alt='Pointsyncc Logo' />
+            <Image
               className='logo-secondary'
               width={125}
-              src='/imgs/pointsyncc/logo/desktop/transparent.png'
-              alt='Moibile Logo'
+              src={logoSecondary}
+              alt='Pointsyncc Logo'
             />
           </Link>
         </div>
@@ -48,7 +31,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
               openMenu();
             }}
           >
-            <CgMenuGridO fontSize={'1rem'} />
+            <CgMenuGridO fontSize={'2rem'} className='text-white' />
           </button>
         </div>
         <div className='header__support'>
