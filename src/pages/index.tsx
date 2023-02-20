@@ -12,7 +12,7 @@ import { NextPageWithLayout } from './_app';
 import Blog from '@/components/home/Blog';
 import Testimonial from '@/components/home/Testimonial';
 import CTA from '@/components/home/CTA';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -22,7 +22,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 const Home: NextPageWithLayout = () => {
   const comp = useRef(null)
-  useLayoutEffect(() => {
+  useEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       gsap.set(".title-anim", { y: 50, opacity: 0, })
@@ -51,7 +51,7 @@ const Home: NextPageWithLayout = () => {
   return (
     <div ref={comp}>
       <Head>
-        <title>{process.env.WEBSITE_NAME} - Home</title>
+        <title>Pointsyncc - Home</title>
         <meta name='description' content='Home' />
       </Head>
       <Hero />
