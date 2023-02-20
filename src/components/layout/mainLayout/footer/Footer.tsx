@@ -1,8 +1,11 @@
 import { EMAIL_PATTERN } from '@/components/constants/constants';
 import footerImage from '@/public/imgs/pointsyncc/footer.jpg';
 import footerLogo from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
+import footerImage from '@/public/imgs/pointsyncc/footer.jpg';
+import footerLogo from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLayoutEffect, useRef } from 'react';
