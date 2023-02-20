@@ -19,6 +19,10 @@ const Contact: NextPageWithLayout = () => {
 
   return (
     <>
+      <Head>
+        <title>{process.env.WEBSITE_NAME} - Contact</title>
+        <meta name='description' content='Contact' />
+      </Head>
       <div className='cursor1'></div>
       <div className='cursor2'></div>
 
