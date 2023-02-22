@@ -18,19 +18,40 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useForm } from 'react-hook-form';
 import { Input } from '@/components/forms/controls/Input/Input';
 import { EMAIL_PATTERN } from '@/components/constants/constants';
+import { CheckInput } from '@/components/forms/controls/checkInputGroup/CheckInputGroup';
+
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { SelectInput } from '@/components/forms/controls/selectInput/SelectInput';
 
 // Create reusable animations with gsap, create in _app with classes (same as for title)
 
 gsap.registerPlugin(ScrollTrigger);
+
+type IFields = {
+  email: string;
+  password: string;
+  message: string;
+  gender: string;
+  city: string;
+};
 const Home: NextPageWithLayout = () => {
+  const schema = yup.object({
+    email: yup.string().email().required(),
+    password: yup.string().required(),
+    message: yup.string().required(),
+    gender: yup.string().required(),
+    city: yup.string().required(),
+  });
   const {
-    control,
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFields>({
+    resolver: yupResolver(schema),
     defaultValues: {
-      gender: 'male',
+      email: 'shumaslaghari@gmail.com',
+      city: '',
     },
   });
 
@@ -62,10 +83,11 @@ const Home: NextPageWithLayout = () => {
 
     return () => ctx.revert(); // cleanup
   }, []);
+
   return (
     <div ref={comp}>
       <Head>
-        <title>{process.env.WEBSITE_NAME} - Home</title>
+        <title>Pointsyncc - Home</title>
         <meta name='description' content='Home' />
       </Head>
       {/* <Hero />
@@ -84,69 +106,83 @@ const Home: NextPageWithLayout = () => {
         <div className='row g-3'>
           <div className='col-xxl-6 col-xl-6 col-12'>
             <Input
+              errors={errors}
               label='Email'
               labelProps={{ required: true }}
-              control={control}
+              register={register}
               name='email'
               placeholder='Enter your email'
-              rules={{
-                required: 'Email is required',
-                //email pattern
-                pattern: {
-                  value: EMAIL_PATTERN,
-                  message: 'Invalid email address',
-                },
-              }}
             />
             <Input
+              errors={errors}
               type='password'
               name='password'
               label='password'
-              control={control}
+              register={register}
               labelProps={{ required: true }}
               placeholder='Enter your password'
-              rules={{
-                required: 'Password is required',
-              }}
             />
             <Input
+              errors={errors}
               rows={5}
               as='textarea'
               name='message'
               label='message'
-              control={control}
+              register={register}
               labelProps={{ required: true }}
               placeholder='Enter your message'
-              rules={{
-                required: 'Message is required',
-              }}
+            />
+            <CheckInput
+              label='Gender'
+              labelProps={{ required: true }}
+              checks={[
+                { label: 'Male', value: 'male' },
+                { label: 'Female', value: 'female' },
+              ]}
+              errors={errors}
+              register={register}
+              name='gender'
+            />
+            <SelectInput
+              label='City'
+              labelProps={{ required: true }}
+              errors={errors}
+              name='city'
+              options={[
+                { label: 'Select a city', value: '' },
+                { label: 'Hyderabad', value: 'hyderabad' },
+                { label: 'Karachi', value: 'karachi' },
+              ]}
+              register={register}
             />
 
-            <Input
+            {/* <Input
+              errors={errors}
               className='form-check-input'
               type='radio'
               name='gender'
               label='Male'
               value='male'
-              control={control}
+              register={register}
               labelProps={{ required: true }}
               rules={{
                 required: 'Gender is required',
               }}
-            />
+            /> */}
 
-            <Input
+            {/* <Input
+              errors={errors}
               className='form-check-input'
               type='radio'
-              name='gender'
+              name="gender"
+              register={register}
               label='Female'
               value='female'
-              control={control}
               labelProps={{ required: true }}
               rules={{
                 required: 'Gender is required',
               }}
-            />
+            /> */}
           </div>
         </div>
         <div className='btn_wrapper'>

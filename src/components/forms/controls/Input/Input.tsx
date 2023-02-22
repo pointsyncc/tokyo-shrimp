@@ -1,19 +1,12 @@
-import { FormInputBase } from '@/types/forms';
-import { ComponentAttrs } from '@/types/general';
+import { ICommonProps } from '@/types/forms';
+
 import { classNames } from '@/utils/classNames';
-import { ErrorMessage } from '@hookform/error-message';
-import { FieldValues, Controller } from 'react-hook-form';
+
+import { FieldValues} from 'react-hook-form';
 import Error from '../../error/Error';
 import Label, { ILabelProps } from '../../label/Label';
 
-interface ICommonProps<TFormValues extends FieldValues>
-  extends ComponentAttrs,
-    FormInputBase<TFormValues> {
-  label?: string;
-  labelProps?: ILabelProps;
-  InputPrepend?: React.ReactNode;
-  InputAppend?: React.ReactNode;
-}
+
 
 type ITextarea<TFormValues extends FieldValues> =
   React.TextareaHTMLAttributes<HTMLTextAreaElement> &
@@ -26,30 +19,53 @@ type IInput<TFormValues extends FieldValues> = React.InputHTMLAttributes<HTMLInp
 
 type IInputProps<TFormValues extends FieldValues> = ITextarea<TFormValues> | IInput<TFormValues>;
 
-export const Input = <TFormValues extends Record<string, unknown>, T extends 'input' | 'textarea'>({
+// Instead of passing errors pass error message directly as a prop
+export const Input = <TFormValues extends Record<string, unknown>, T extends 'input' | 'textarea' = 'input'>({
   name,
   className = 'form-control',
   rules,
   children,
   label,
   labelProps,
-  control,
-
+  register,
+  showError = true,
+  errors,
+  containerClassName = 'mb-3',
   as = 'input',
+  htmlFor,
   ...rest
 }: T extends 'input' ? IInputProps<TFormValues> : ITextarea<TFormValues>) => {
   const As = as;
 
+  
+//    // If the name is in a FieldArray, it will be 'fields.index.fieldName' and errors[name] won't return anything, so i should fix this
+  const hasError = !!(errors && errors[name]);
+  const classes = classNames(hasError ? 'text-danger' : '', className);
+
   return (
-    <div className='mb-3'>
-      <Controller
+    <div className={containerClassName}>
+      {label && (
+        <Label {...labelProps} htmlFor={htmlFor ? htmlFor :name}>
+          {label}
+        </Label>
+      )}
+      <As id={htmlFor ? htmlFor : name} className={classes} {...rest} {...(register && register(name, rules))} />
+      {showError && hasError && (
+        <Error className='mt-1'>{errors[name]?.message}</Error>
+        // <ErrorMessage
+        //   errors={errors}
+        //   name={name as any}
+        //   render={({ message }) => <Error className='mt-1'>{message}</Error>}
+        // />
+      )}
+      {/* <Controller
         name={name}
         control={control}
         rules={rules}
         render={({ field, formState, fieldState }) => {
           const classes = classNames(fieldState.invalid ? 'border-danger' : '', className);
 
-         
+          // console.log(field,formState,fieldState)
           return (
             <>
               {label && (
@@ -67,7 +83,7 @@ export const Input = <TFormValues extends Record<string, unknown>, T extends 'in
             </>
           );
         }}
-      />
+      /> */}
 
       {/* <Control id={name} className={classes} {...(register && register(name, rules))} {...rest} /> */}
     </div>

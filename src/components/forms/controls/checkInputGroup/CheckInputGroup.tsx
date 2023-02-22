@@ -1,43 +1,57 @@
 import { ErrorMessage } from '@hookform/error-message';
 import React from 'react';
 import Error from '../../error/Error';
-import Label from '../../label/Label';
+import Label, { ILabelProps } from '../../label/Label';
 
 import { FormInputBase } from '@/types/forms';
 import { ComponentAttrs } from '@/types/general';
 import { FieldValues } from 'react-hook-form';
-import { classNames } from '@/utils/classNames';
+
+import { Input } from '../Input/Input';
 
 interface ICheckInputProps<TFormValues extends FieldValues>
   extends ComponentAttrs,
     FormInputBase<TFormValues> {
-  checks: React.InputHTMLAttributes<HTMLInputElement>[];
+  checks: { value: string; label: string }[];
   label?: string;
   labelProps?: ILabelProps;
+  type?: 'checkbox' | 'radio';
 }
 
 export const CheckInput = <TFormValues extends Record<string, unknown>>({
   name,
-
   checks,
-
-  rules,
+  register,
+  type = 'radio',
   label,
   labelProps,
   className = 'form-check-input',
   errors,
   ...rest
 }: ICheckInputProps<TFormValues>) => {
-  const hasError = !!errors && errors[name];
-  const classes = classNames(hasError ? 'border-danger' : '', className);
   return (
-    <div className='form-group'>
+    <div className='mb-3'>
       {label && (
         <Label {...labelProps} htmlFor={name}>
           {label}
         </Label>
       )}
-      <input id={name} className={classes} {...(register && register(name, rules))} {...rest} />
+      {checks.map((check, i) => (
+        <Input
+          labelProps={{ className: 'mb-0' }}
+          containerClassName='form-check'
+          className='form-check-input'
+          type={type}
+          errors={errors}
+          showError={false}
+          key={i}
+          {...rest}
+          name={name}
+          {...check}
+          htmlFor={check.value}
+          register={register}
+        />
+      ))}
       <ErrorMessage
         errors={errors}
         name={name as any}

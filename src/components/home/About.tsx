@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -12,7 +12,7 @@ export default function About() {
   const imgAnim1 = useRef(null);
   const imgAnim2 = useRef(null);
   const textAnim = useRef(null);
-  useLayoutEffect(() => {
+  useEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({

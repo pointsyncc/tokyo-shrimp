@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import Link from 'next/link';
-import { useLayoutEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import classes from './menu.module.scss';
 
@@ -10,7 +10,7 @@ interface IProps {
 }
 export default function Menu({ open, setOpen }: IProps) {
   const comp = useRef(null);
-  useLayoutEffect(() => {
+  useEffect(() => {
     let ctx = gsap.context(() => {
       const targets = document.querySelectorAll('.menu-anim li');
       gsap.set(targets, { x: 30, opacity: 0 });
@@ -40,6 +40,7 @@ export default function Menu({ open, setOpen }: IProps) {
 
     return () => ctx.revert(); // cleanup
   }, [open]);
+
 
   const links = [
     {

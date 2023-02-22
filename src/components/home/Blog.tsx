@@ -1,12 +1,12 @@
 import gsap from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Blog() {
   //use gsap and ref to create parallax effect on blog image on scroll
 
   const imageRef = useRef<HTMLImageElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     //use gsap to create parallax effect
     const tl = gsap.timeline({
       scrollTrigger: {

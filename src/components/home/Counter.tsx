@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import CountUp from 'react-countup';
 import gsap from 'gsap';
@@ -40,7 +40,7 @@ export default function Counter() {
       duration:2
     }
   ]
-  useLayoutEffect(() => {
+  useEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       let device_width = window.innerWidth;
