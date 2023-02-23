@@ -11,7 +11,7 @@ import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { NextPageWithLayout } from './_app';
 import Blog from '@/components/home/Blog';
 import Testimonial from '@/components/home/Testimonial';
-import CTA from '@/components/home/CTA';
+import CTA from '@/components/common/CTA';
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';

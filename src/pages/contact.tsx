@@ -22,36 +22,27 @@ const Contact: NextPageWithLayout = () => {
     {
       name: 'name',
       placeholder: 'Name *',
-      // label:'Name',
       control: Control.TextInput,
-      // labelProps:{required:true}
     },
     {
       name: 'email',
       placeholder: 'Email *',
       labelProps: { required: true },
-      // label:'Email',
       control: Control.TextInput,
     },
     {
       name: 'phone',
       placeholder: 'Phone',
-      // labelProps:{required:true},
-      // label:'Phone',
       control: Control.TextInput,
     },
     {
       name: 'subject',
       placeholder: 'Subject *',
-      // labelProps:{required:true},
-      // label:'Phone',
       control: Control.TextInput,
     },
     {
       name: 'message',
       placeholder: 'Message *',
-      // labelProps:{required:true},
-      // label:'Phone',
       control: Control.TextInput,
       as: 'textarea',
       colProps: {
