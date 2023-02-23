@@ -2,16 +2,63 @@ import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import Head from 'next/head';
 import React from 'react';
 import { NextPageWithLayout } from './_app';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { EMAIL_PATTERN } from '@/components/constants/constants';
 
+import { object, string } from 'yup';
+import GeneralForm from '@/components/forms/generalForm/GeneralForm';
+import { Control, FormControl } from '@/components/forms/controls/control/Control';
+import CircleButton from '@/components/ui/button/CircleButton';
+
 const Contact: NextPageWithLayout = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const schema = object({
+    name: string().max(10).required(),
+    email: string().email().required(),
+    message: string().max(255).required(),
+    subject: string().required(),
+  });
+  const controls: FormControl<FieldValues>[] = [
+    {
+      name: 'name',
+      placeholder: 'Name *',
+      // label:'Name',
+      control: Control.TextInput,
+      // labelProps:{required:true}
+    },
+    {
+      name: 'email',
+      placeholder: 'Email *',
+      labelProps: { required: true },
+      // label:'Email',
+      control: Control.TextInput,
+    },
+    {
+      name: 'phone',
+      placeholder: 'Phone',
+      // labelProps:{required:true},
+      // label:'Phone',
+      control: Control.TextInput,
+    },
+    {
+      name: 'subject',
+      placeholder: 'Subject *',
+      // labelProps:{required:true},
+      // label:'Phone',
+      control: Control.TextInput,
+    },
+    {
+      name: 'message',
+      placeholder: 'Message *',
+      // labelProps:{required:true},
+      // label:'Phone',
+      control: Control.TextInput,
+      as: 'textarea',
+      colProps: {
+        className: 'col-12',
+      },
+    },
+  ];
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -78,7 +125,19 @@ const Contact: NextPageWithLayout = () => {
                   </div>
                   <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
                     <div className='contact__form'>
-                      <form className='contact__form-2' onSubmit={handleSubmit(onSubmit)}>
+                      <GeneralForm
+                        submitBtnText='Send Messages'
+                        schema={schema}
+                        controls={controls}
+                        onSubmit={onSubmit}
+                        customSubmitButton={
+                          <CircleButton>
+                            <span></span> Send <br />
+                            Messages <i className='fa-solid fa-arrow-right'></i>
+                          </CircleButton>
+                        }
+                      />
+                      {/* <form className='contact__form-2' onSubmit={handleSubmit(onSubmit)}>
                         <div className='row g-3'>
                           <div className='col-xxl-6 col-xl-6 col-12'>
                             <input
@@ -184,7 +243,7 @@ const Contact: NextPageWithLayout = () => {
                             </div>
                           </div>
                         </div>
-                      </form>
+                      </form> */}
                     </div>
                   </div>
                 </div>

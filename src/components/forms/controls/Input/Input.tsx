@@ -17,7 +17,7 @@ type ITextarea<TFormValues extends FieldValues> =
 type IInput<TFormValues extends FieldValues> = React.InputHTMLAttributes<HTMLInputElement> &
   ICommonProps<TFormValues> & { as?: 'input' };
 
-type IInputProps<TFormValues extends FieldValues> = ITextarea<TFormValues> | IInput<TFormValues>;
+export type IInputProps<TFormValues extends FieldValues> = ITextarea<TFormValues> | IInput<TFormValues>;
 
 // Instead of passing errors pass error message directly as a prop
 export const Input = <TFormValues extends Record<string, unknown>, T extends 'input' | 'textarea' = 'input'>({

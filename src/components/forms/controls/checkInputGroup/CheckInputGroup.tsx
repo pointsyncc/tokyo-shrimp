@@ -7,7 +7,7 @@ import { FormInputBase } from '@/types/forms';
 import { ComponentAttrs } from '@/types/general';
 import { FieldValues } from 'react-hook-form';
 
-import { Input } from '../Input/Input';
+import { Input } from '../input/Input';
 
 interface ICheckInputProps<TFormValues extends FieldValues>
   extends ComponentAttrs,
