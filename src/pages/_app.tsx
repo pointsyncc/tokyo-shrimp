@@ -1,5 +1,5 @@
 import '../scss/master.scss';
-import { Kanit } from '@next/font/google';
+import { Kanit } from "next/font/google";
 
 import { NextPage } from 'next';
 import { ThemeProvider } from 'next-themes';
@@ -20,7 +20,7 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page);
   return (
-    <main className={kanit.className} >
+    <main className={kanit.className}>
       <ThemeProvider attribute='class' enableSystem={true}>
         {getLayout(<Component {...pageProps} />)}
       </ThemeProvider>

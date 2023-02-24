@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface ILabelProps extends React.HTMLAttributes<HTMLLabelElement> {
   required?: boolean;
-  htmlFor?:string;
+  htmlFor?: string;
 }
 
 const Label = ({ children, required, className = 'form-label', ...rest }: ILabelProps) => {

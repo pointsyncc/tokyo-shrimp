@@ -1,15 +1,11 @@
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import Head from 'next/head';
-import React from 'react';
+import { FieldValues } from 'react-hook-form';
 import { NextPageWithLayout } from './_app';
-import { FieldValues, useForm } from 'react-hook-form';
-import { ErrorMessage } from '@hookform/error-message';
-import { EMAIL_PATTERN } from '@/components/constants/constants';
-
-import { object, string } from 'yup';
-import GeneralForm from '@/components/forms/generalForm/GeneralForm';
 import { Control, FormControl } from '@/components/forms/controls/control/Control';
+import GeneralForm from '@/components/forms/generalForm/GeneralForm';
 import CircleButton from '@/components/ui/button/CircleButton';
+import { object, string } from 'yup';
 
 const Contact: NextPageWithLayout = () => {
   const schema = object({
