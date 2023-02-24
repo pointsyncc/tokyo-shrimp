@@ -4,10 +4,12 @@ import NextLink, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import { ComponentAttrs } from '@/types/general';
 
-export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface IProps extends ComponentAttrs {
   activeClassName?: string;
   asButton?: boolean;
   applyLinkStyles?:boolean;
+  href?:any,
+  onClick?:any
 }
 
 export const Link = ({
