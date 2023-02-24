@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import About from '@/components/home/About';
 import Brand from '@/components/home/Brand';
-import Counter from '@/components/home/Counter';
+import Counter from '@/components/common/Counter';
 import { Hero } from '@/components/home/Hero';
 import Portifolio from '@/components/home/Portifolio';
 import { Roll } from '@/components/home/Roll';

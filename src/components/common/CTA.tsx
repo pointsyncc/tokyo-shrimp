@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function CTA() {
@@ -13,9 +14,9 @@ export default function CTA() {
                 We would love to hear more about your project
               </h2>
               <div className='btn_wrapper'>
-                <a href='contact.html' className='wc-btn-primary btn-hover btn-item'>
+                <Link href='/contact' className='wc-btn-primary btn-hover btn-item'>
                   <span></span>Let’s talk us <i className='fa-solid fa-arrow-right'></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
