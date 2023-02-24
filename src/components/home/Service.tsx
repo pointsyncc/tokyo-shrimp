@@ -45,9 +45,10 @@ export default function Service() {
                 <div className={'image-container'}>
                   <Image
                     src={'/imgs/pointsyncc/homepage/christopher-gower-m_HRfLhgABo-unsplash.jpg'}
-                    fill
+                    width={280}
+                    height={380}
                     alt='Service Image'
-                    className={'image'}
+                    className={`service__img img-2 ${activeEl === 0 ? 'active' : ''}`}
                   />
                 </div>
 
