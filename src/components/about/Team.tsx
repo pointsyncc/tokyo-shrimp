@@ -43,7 +43,7 @@ export const Team = () => {
           arrows: false,
           pagination: false,
           gap: 30,
-        //   focus: 'center',
+          //   focus: 'center',
           type: 'loop',
           drag: 'free',
           speed: 2000,
@@ -61,9 +61,9 @@ export const Team = () => {
           },
         }}
       >
-        {slides.map((slide,i) => {
+        {slides.map((slide, i) => {
           return (
-            <SplideSlide  key={slide.name}>
+            <SplideSlide key={slide.name}>
               <a href='team-details.html'>
                 <img className='img-fluid' src={slide.imgSrc} alt='Team Member' />
                 <div className='team__info'>

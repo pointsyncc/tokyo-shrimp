@@ -42,7 +42,7 @@ export const Hero = () => {
               <div className='hero__title-wrapper'>
                 <h1 className='hero__title' ref={heroHeading}>
                   Enter the digital world ready
-                </h1>       
+                </h1>
                 <p className='hero__sub-title' ref={heroText}>
                   With every single one of our clients, we bring forth deep passion for
                   <span> creative problem solving </span>

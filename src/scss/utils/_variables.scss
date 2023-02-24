@@ -146,11 +146,11 @@ $input-bg: var(--gray-17) !default;
 // Check input resets
 $form-check-input-checked-color: var(--primary) !default;
 $form-check-input-checked-bg-color: var(--white) !default;
-$form-check-input-border:1px solid var(--primary) !default;
+$form-check-input-border: 1px solid var(--primary) !default;
 $form-check-input-checked-border-color: var(--primary) !default;
-$form-check-input-width:1.5em !default;
+$form-check-input-width: 1.5em !default;
 
-$form-check-radio-checked-bg-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#e94f23'/></svg>") !default;
+$form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#e94f23'/></svg>") !default;
 
 // $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{var(--primary)}'/></svg>") !default;
 // $form-check-input-bg: var(--primary) !default;

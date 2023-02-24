@@ -7,9 +7,9 @@ import { ComponentAttrs } from '@/types/general';
 export interface IProps extends ComponentAttrs {
   activeClassName?: string;
   asButton?: boolean;
-  applyLinkStyles?:boolean;
-  href?:any,
-  onClick?:any
+  applyLinkStyles?: boolean;
+  href?: any;
+  onClick?: any;
 }
 
 export const Link = ({
