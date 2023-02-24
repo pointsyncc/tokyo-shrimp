@@ -13,7 +13,6 @@
     "@babel/core": "^7.21.0",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^2.9.11",
-    "@next/font": "13.1.6",
     "@popperjs/core": "^2.11.6",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
