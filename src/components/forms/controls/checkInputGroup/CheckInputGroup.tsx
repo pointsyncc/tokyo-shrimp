@@ -1,13 +1,10 @@
 import { ErrorMessage } from '@hookform/error-message';
-import React from 'react';
 import Error from '../../error/Error';
 import Label, { ILabelProps } from '../../label/Label';
-
 import { FormInputBase } from '@/types/forms';
 import { ComponentAttrs } from '@/types/general';
 import { FieldValues } from 'react-hook-form';
-
-import { Input } from '../input/Input';
+import { Input } from '../Input/Input';
 
 interface ICheckInputProps<TFormValues extends FieldValues>
   extends ComponentAttrs,
