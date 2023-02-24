@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '../ui/link/Link';
 
 export default function Portifolio() {
   return (
@@ -66,11 +67,15 @@ export default function Portifolio() {
 
         <div className='row row_bottom'>
           <div className='col-xxl-12'>
-            <div className='portfolio__btn btn_wrapper' data-speed='1' data-lag='0.2'>
-              <a className='wc-btn-secondary btn-hover btn-item' href='portfolio.html'>
+            <div className='portfolio__btn btn_wrapper'>
+              <Link
+                href='/portfolio'
+                className='wc-btn-secondary btn-hover btn-item'
+                applyLinkStyles={false}
+              >
                 <span></span>View <br />
                 all projects <i className='fa-solid fa-arrow-right'></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

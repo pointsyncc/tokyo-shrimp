@@ -1,17 +1,51 @@
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import Head from 'next/head';
-import React from 'react';
+import { FieldValues } from 'react-hook-form';
 import { NextPageWithLayout } from './_app';
-import { useForm } from 'react-hook-form';
-import { ErrorMessage } from '@hookform/error-message';
-import { EMAIL_PATTERN } from '@/components/constants/constants';
+import { Control, FormControl } from '@/components/forms/controls/control/Control';
+import GeneralForm from '@/components/forms/generalForm/GeneralForm';
+import CircleButton from '@/components/ui/button/CircleButton';
+import { object, string } from 'yup';
 
 const Contact: NextPageWithLayout = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const schema = object({
+    name: string().max(10).required(),
+    email: string().email().required(),
+    message: string().max(255).required(),
+    subject: string().required(),
+  });
+  const controls: FormControl<FieldValues>[] = [
+    {
+      name: 'name',
+      placeholder: 'Name *',
+      control: Control.TextInput,
+    },
+    {
+      name: 'email',
+      placeholder: 'Email *',
+      labelProps: { required: true },
+      control: Control.TextInput,
+    },
+    {
+      name: 'phone',
+      placeholder: 'Phone',
+      control: Control.TextInput,
+    },
+    {
+      name: 'subject',
+      placeholder: 'Subject *',
+      control: Control.TextInput,
+    },
+    {
+      name: 'message',
+      placeholder: 'Message *',
+      control: Control.TextInput,
+      as: 'textarea',
+      colProps: {
+        className: 'col-12',
+      },
+    },
+  ];
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -78,113 +112,18 @@ const Contact: NextPageWithLayout = () => {
                   </div>
                   <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
                     <div className='contact__form'>
-                      <form className='contact__form-2' onSubmit={handleSubmit(onSubmit)}>
-                        <div className='row g-3'>
-                          <div className='col-xxl-6 col-xl-6 col-12'>
-                            <input
-                              type='text'
-                              placeholder='Name *'
-                              {...register('name', {
-                                required: 'Name is required',
-                                maxLength: 10,
-                              })}
-                            />
-                            <ErrorMessage
-                              errors={errors}
-                              name='name'
-                              render={({ message }) => (
-                                <p className='form__error__message'>{message}</p>
-                              )}
-                            />
-                          </div>
-                          <div className='col-xxl-6 col-xl-6 col-12'>
-                            <input
-                              type='email'
-                              placeholder='Email *'
-                              {...register('email', {
-                                required: 'Email is required',
-                                //email pattern
-                                pattern: {
-                                  value: EMAIL_PATTERN,
-                                  message: 'Invalid email address',
-                                },
-                              })}
-                            />
-                            <ErrorMessage
-                              errors={errors}
-                              name='email'
-                              render={({ message }) => (
-                                <p className='form__error__message'>{message}</p>
-                              )}
-                            />
-                          </div>
-                        </div>
-                        <div className='row g-3'>
-                          <div className='col-xxl-6 col-xl-6 col-12'>
-                            <input
-                              type='tel'
-                              placeholder='Phone'
-                              {...register('phone', {
-                                required: 'Phone is required',
-                                pattern: {
-                                  value: /^[0-9]*$/,
-                                  message: 'Invalid phone number',
-                                },
-                              })}
-                            />
-                            <ErrorMessage
-                              errors={errors}
-                              name='phone'
-                              render={({ message }) => (
-                                <p className='form__error__message'>{message}</p>
-                              )}
-                            />
-                          </div>
-                          <div className='col-xxl-6 col-xl-6 col-12'>
-                            <input
-                              type='text'
-                              placeholder='Subject *'
-                              {...register('subject', {
-                                required: 'Subject is required',
-                              })}
-                            />
-                            <ErrorMessage
-                              errors={errors}
-                              name='subject'
-                              render={({ message }) => (
-                                <p className='form__error__message'>{message}</p>
-                              )}
-                            />
-                          </div>
-                        </div>
-                        <div className='row g-3'>
-                          <div className='col-12'>
-                            <textarea
-                              placeholder='Messages *'
-                              {...register('message', {
-                                required: 'Message is required',
-                              })}
-                            ></textarea>
-                            <ErrorMessage
-                              errors={errors}
-                              name='message'
-                              render={({ message }) => (
-                                <p className='form__error__message'>{message}</p>
-                              )}
-                            />
-                          </div>
-                        </div>
-                        <div className='row g-3'>
-                          <div className='col-12'>
-                            <div className='btn_wrapper'>
-                              <button className='wc-btn-primary btn-hover btn-item'>
-                                <span></span> Send <br />
-                                Messages <i className='fa-solid fa-arrow-right'></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
+                      <GeneralForm
+                        submitBtnText='Send Messages'
+                        schema={schema}
+                        controls={controls}
+                        onSubmit={onSubmit}
+                        customSubmitButton={
+                          <CircleButton>
+                            <span></span> Send <br />
+                            Messages <i className='fa-solid fa-arrow-right'></i>
+                          </CircleButton>
+                        }
+                      />
                     </div>
                   </div>
                 </div>
