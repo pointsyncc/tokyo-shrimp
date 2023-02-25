@@ -1,3 +1,4 @@
+import { CookieBanner } from '@/components/common/cookieConsent/CookieConsent';
 import Menu from '@/components/navigation/Menu';
 import React from 'react';
 import AnchorButton from './anchor/AnchorButton';
@@ -21,6 +22,8 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
       </div>
       {showFooter && <Footer />}
       <AnchorButton />
+
+      <CookieBanner/>
     </>
   );
 };

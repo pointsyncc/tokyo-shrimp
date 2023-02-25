@@ -11,3 +11,5 @@ export interface ComponentAttrs {
   style?: CSSProperties;
   id?: string;
 }
+
+export type Size = 'sm' | 'md' | 'lg';

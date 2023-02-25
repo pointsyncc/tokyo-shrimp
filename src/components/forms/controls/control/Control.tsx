@@ -1,6 +1,8 @@
 import { FieldValues } from 'react-hook-form';
 import { IInputProps, Input } from '../Input/Input';
 
+
+
 export enum Control {
   TextInput = 'Input',
   // SelectInput = 'SelectInput',
@@ -12,10 +14,9 @@ export interface FormControlBase {
   control: Control;
 }
 
-export type FormControl<T extends FieldValues> = {
-  colProps?: React.HTMLAttributes<HTMLDivElement>;
-} & FormControlBase &
-  IInputProps<T>;
+export type FormControl<T extends FieldValues> = { colProps?: React.HTMLAttributes<HTMLDivElement>} & FormControlBase &
+  (IInputProps<T>);
+
 
 export const FormControl = ({ control, ...rest }: { control: string } & IInputProps<any>) => {
   switch (control) {

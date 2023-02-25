@@ -16,7 +16,7 @@ type IProps<T extends FieldValues, U> = React.FormHTMLAttributes<HTMLFormElement
   title?: React.ReactNode;
   titleClasses?: string;
   buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
-  customSubmitButton?: React.ReactNode;
+  customSubmitButton?:React.ReactNode
 };
 
 const GeneralForm = <T extends FieldValues, U extends Object>({
