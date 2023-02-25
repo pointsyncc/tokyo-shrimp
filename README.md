@@ -1,3 +1,5 @@
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/mzd6.svg)](https://betteruptime.com/?utm_source=status_badge)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
