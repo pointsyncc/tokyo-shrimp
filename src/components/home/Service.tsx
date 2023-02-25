@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-
 export default function Service() {
   const [activeEl, setActiveEl] = useState(0);
   return (

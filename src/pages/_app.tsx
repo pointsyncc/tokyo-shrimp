@@ -1,5 +1,5 @@
 import '../scss/master.scss';
-import { Kanit } from '@next/font/google';
+import { Kanit } from "next/font/google";
 
 import { NextPage } from 'next';
 import { ThemeProvider } from 'next-themes';

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '../ui/link/Link';
+import { Link } from '../ui/link/Link';
 
 export default function Portifolio() {
   return (
