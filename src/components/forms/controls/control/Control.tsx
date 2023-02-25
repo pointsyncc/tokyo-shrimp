@@ -1,5 +1,7 @@
 import { FieldValues } from 'react-hook-form';
-import { Input, IInputProps } from '../input/Input';
+import { IInputProps, Input } from '../Input/Input';
+
+
 
 export enum Control {
   TextInput = 'Input',
