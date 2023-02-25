@@ -4,12 +4,10 @@ import NextLink, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import { ComponentAttrs } from '@/types/general';
 
-export interface IProps extends ComponentAttrs {
+export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   activeClassName?: string;
   asButton?: boolean;
-  applyLinkStyles?: boolean;
-  href?: any;
-  onClick?: any;
+  applyLinkStyles?:boolean;
 }
 
 export const Link = ({
@@ -48,15 +46,15 @@ export const Link = ({
     </NextLink>
   );
 
-  if (typeof href === 'string' && href.startsWith('http')) {
-    link = normalAnchorTag;
-  } else if (asButton && onClick) {
-    link = (
-      <button onClick={onClick} className={classes}>
-        {children}
-      </button>
-    );
-  }
+  // if (typeof href === 'string' && href.startsWith('http')) {
+  //   link = normalAnchorTag;
+  // } else if (asButton && onClick) {
+  //   link = (
+  //     <button onClick={onClick} className={classes}>
+  //       {children}
+  //     </button>
+  //   );
+  // }
 
-  return link;
+  return normalAnchorTag;;
 };

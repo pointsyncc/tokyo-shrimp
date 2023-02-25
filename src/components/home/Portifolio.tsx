@@ -68,14 +68,11 @@ export default function Portifolio() {
         <div className='row row_bottom'>
           <div className='col-xxl-12'>
             <div className='portfolio__btn btn_wrapper'>
-              <Link
-                href='/portfolio'
-                className='wc-btn-secondary btn-hover btn-item'
-                applyLinkStyles={false}
-              >
-                <span></span>View <br />
+              <Link href="/portfolio" className='wc-btn-secondary btn-hover btn-item' applyLinkStyles={false}>
+              <span></span>View <br />
                 all projects <i className='fa-solid fa-arrow-right'></i>
               </Link>
+
             </div>
           </div>
         </div>

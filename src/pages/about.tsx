@@ -2,11 +2,12 @@ import { Team } from '@/components/about/Team';
 import Counter from '@/components/common/Counter';
 import CTA from '@/components/common/CTA';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
+import React from 'react';
 import { NextPageWithLayout } from './_app';
 
-const About: NextPageWithLayout = () => {
+const About:NextPageWithLayout = () => {
   return (
-    <>
+      <>
       <section className='hero__about'>
         <div className='container g-0 line'>
           <span className='line-3'></span>
@@ -108,8 +109,8 @@ const About: NextPageWithLayout = () => {
         </div>
       </section>
 
-      <Counter />
-      <Team />
+      <Counter/>
+      <Team/>
 
       <section className='brand__area'>
         <div className='container g-0 line pt-140 pb-140'>
@@ -243,9 +244,10 @@ const About: NextPageWithLayout = () => {
       </section>
 
       <CTA />
-    </>
+      </>
   );
 };
+
 
 About.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;

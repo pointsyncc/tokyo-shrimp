@@ -2,51 +2,10 @@ import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import Head from 'next/head';
 import { FieldValues } from 'react-hook-form';
 import { NextPageWithLayout } from './_app';
-import { Control, FormControl } from '@/components/forms/controls/control/Control';
-import GeneralForm from '@/components/forms/generalForm/GeneralForm';
-import CircleButton from '@/components/ui/button/CircleButton';
-import { object, string } from 'yup';
+
+import { ContactForm } from '@/components/contact/ContactForm';
 
 const Contact: NextPageWithLayout = () => {
-  const schema = object({
-    name: string().max(10).required(),
-    email: string().email().required(),
-    message: string().max(255).required(),
-    subject: string().required(),
-  });
-  const controls: FormControl<FieldValues>[] = [
-    {
-      name: 'name',
-      placeholder: 'Name *',
-      control: Control.TextInput,
-    },
-    {
-      name: 'email',
-      placeholder: 'Email *',
-      labelProps: { required: true },
-      control: Control.TextInput,
-    },
-    {
-      name: 'phone',
-      placeholder: 'Phone',
-      control: Control.TextInput,
-    },
-    {
-      name: 'subject',
-      placeholder: 'Subject *',
-      control: Control.TextInput,
-    },
-    {
-      name: 'message',
-      placeholder: 'Message *',
-      control: Control.TextInput,
-      as: 'textarea',
-      colProps: {
-        className: 'col-12',
-      },
-    },
-  ];
-
   const onSubmit = (data: any) => {
     console.log(data);
   };
@@ -111,20 +70,7 @@ const Contact: NextPageWithLayout = () => {
                     </div>
                   </div>
                   <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
-                    <div className='contact__form'>
-                      <GeneralForm
-                        submitBtnText='Send Messages'
-                        schema={schema}
-                        controls={controls}
-                        onSubmit={onSubmit}
-                        customSubmitButton={
-                          <CircleButton>
-                            <span></span> Send <br />
-                            Messages <i className='fa-solid fa-arrow-right'></i>
-                          </CircleButton>
-                        }
-                      />
-                    </div>
+                    <ContactForm />
                   </div>
                 </div>
               </div>
