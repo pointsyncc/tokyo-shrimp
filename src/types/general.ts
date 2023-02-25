@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties } from 'react';
 
 export enum ThemeOptions {
   LIGHT = 'light',
@@ -11,3 +11,5 @@ export interface ComponentAttrs {
   style?: CSSProperties;
   id?: string;
 }
+
+export type Size = 'sm' | 'md' | 'lg';
