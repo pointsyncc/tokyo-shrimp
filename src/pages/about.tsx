@@ -1,6 +1,7 @@
 import { Team } from '@/components/about/Team';
 import Counter from '@/components/common/Counter';
 import CTA from '@/components/common/CTA';
+import Testimonial from '@/components/about/Testimonial';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import React from 'react';
 import { NextPageWithLayout } from './_app';
@@ -182,7 +183,8 @@ const About:NextPageWithLayout = () => {
             </div>
 
             <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
-              <div className='testimonial__slider-wrapper-2'>
+              <Testimonial/>
+              {/* <div className='testimonial__slider-wrapper-2'>
                 <div className='swiper testimonial__slider'>
                   <div className='swiper-wrapper'>
                     <div className='swiper-slide testimonial__slide'>
@@ -237,7 +239,7 @@ const About:NextPageWithLayout = () => {
                     <i className='fa-solid fa-arrow-left'></i>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

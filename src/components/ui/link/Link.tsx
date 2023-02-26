@@ -46,9 +46,10 @@ export const Link = ({
     </NextLink>
   );
 
-  // if (typeof href === 'string' && href.startsWith('http')) {
-  //   link = normalAnchorTag;
-  // } else if (asButton && onClick) {
+  if (typeof href === 'string' && href.startsWith('http')) {
+    link = normalAnchorTag;
+  } 
+  // else if (asButton && onClick) {
   //   link = (
   //     <button onClick={onClick} className={classes}>
   //       {children}
@@ -56,5 +57,5 @@ export const Link = ({
   //   );
   // }
 
-  return normalAnchorTag;;
+  return link;
 };
