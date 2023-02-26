@@ -16,13 +16,18 @@ interface IValues {
 import { pointSynccAPI } from '@/utils/axios';
 import { toast } from 'react-hot-toast';
 import { useAppStore } from '@/stores/store';
+import { PHONE_REGEX } from '@/utils/contants';
 export const ContactForm = () => {
   const { setLoading, loadingStates } = useAppStore();
   const schema = object({
-    name: string().max(10).required(),
+    name: string().max(20).required(),
     email: string().email().required(),
     message: string().max(255).required(),
     subject: string().required(),
+    phone: string().matches(PHONE_REGEX, {
+      message: 'Invalid Phone Number, valid phone number +[country_code][mobile_number]',
+      excludeEmptyString: true,
+    }),
   });
   const controls: FormControl<IValues>[] = [
     {
@@ -80,8 +85,7 @@ export const ContactForm = () => {
       });
       toast.success('Your feedback has been submitted');
     } catch (error) {
-      console.log(error);
-      toast.error('Something went wrong');
+      toast.error(error.errors[0].message);
     } finally {
       setLoading('contactForm', false);
     }

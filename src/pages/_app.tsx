@@ -7,6 +7,21 @@ import type { AppProps } from 'next/app';
 
 import '../scss/master.scss';
 import { PSToaster } from '@/components/common/toast/Toast';
+import { setLocale } from 'yup';
+
+
+setLocale({
+  mixed: {
+    required: ({path})=>`${path} is required`,
+  },
+  string: {
+    // min: ({ min }) => `validations.min|${JSON.stringify({ min })}`,
+    // max: ({ max }) => `validations.max|${JSON.stringify({ max })}`,
+    email:'Please provide a valid email address',
+  },
+
+});
+
 const kanit = Kanit({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
