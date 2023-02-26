@@ -84,7 +84,7 @@ export const ContactForm = () => {
         body: data,
       });
       toast.success('Your feedback has been submitted');
-    } catch (error) {
+    } catch (error:any) {
       toast.error(error.errors[0].message);
     } finally {
       setLoading('contactForm', false);

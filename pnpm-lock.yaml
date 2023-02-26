@@ -52,18 +52,7 @@ dependencies:
   next-themes: 0.2.1_qgtcjgzkkjtbiyvnx7d32fl5vu
   react: 18.2.0
   react-cookie-consent: 8.0.1_react@18.2.0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  react-countup: 6.4.1_react@18.2.0
-=======
-=======
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
   react-countup: 6.4.1_q2tyk3gci27qk4qoatek53e4vi
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
-=======
-  react-countup: 6.4.1_q2tyk3gci27qk4qoatek53e4vi
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.43.1_react@18.2.0
   react-hot-toast: 2.4.0_biqbaboplfbrettd7655fr4n2y
@@ -170,7 +159,7 @@ packages:
     resolution: {integrity: sha512-0NFvs3VkuSYbFi1x2Vd6tKrywq+z/cLeYC/RJNFrIX/30Bf5aiGYbtvGXolEktzJH8o5E5KJ3tT+nkxuuZFVlA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.21.2
+      '@babel/types': 7.20.7
     dev: false
 
   /@babel/helper-module-transforms/7.21.2:
@@ -278,6 +267,15 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@babel/types/7.20.7:
+    resolution: {integrity: sha512-69OnhBxSSgK0OzTJai4kyPDiKTIe3j+ctaHdIGVbRahTLAT7L3R9oeXHC2aVSuGYt3cVnoAMDmOCgJ2yaiLMvg==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-string-parser': 7.19.4
+      '@babel/helper-validator-identifier': 7.19.1
+      to-fast-properties: 2.0.0
     dev: false
 
   /@babel/types/7.21.2:
@@ -548,18 +546,7 @@ packages:
     resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  /@rollup/plugin-babel/6.0.3:
-=======
-=======
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
   /@rollup/plugin-babel/6.0.3_@babel+core@7.21.0:
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
-=======
-  /@rollup/plugin-babel/6.0.3_@babel+core@7.21.0:
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
     resolution: {integrity: sha512-fKImZKppa1A/gX73eg4JGo+8kQr/q1HBQaCGKECZ0v4YBBv3lFqi14+7xyApECzvkLTHCifx+7ntcrvtBIRcpg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1086,22 +1073,10 @@ packages:
       esutils: 2.0.3
     dev: false
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
-=======
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
   /electron-to-chromium/1.4.311:
     resolution: {integrity: sha512-RoDlZufvrtr2Nx3Yx5MB8jX3aHIxm8nRWPJm3yVvyHmyKaRvn90RjzB6hNnt0AkhS3IInJdyRfQb4mWhPvUjVw==}
     dev: false
 
-<<<<<<< HEAD
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
-=======
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
   /emoji-regex/9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
     dev: false
@@ -2839,14 +2814,6 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: false
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
-=======
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
   /update-browserslist-db/1.0.10_browserslist@4.21.5:
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
     hasBin: true
@@ -2858,10 +2825,6 @@ packages:
       picocolors: 1.0.0
     dev: false
 
-<<<<<<< HEAD
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
-=======
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
   /uri-js/4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:

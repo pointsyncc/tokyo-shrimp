@@ -1,38 +1,26 @@
-import Counter from '@/components/common/Counter';
-import CTA from '@/components/common/CTA';
 import About from '@/components/home/About';
-import Blog from '@/components/home/Blog';
+
 import Brand from '@/components/home/Brand';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import Counter from '@/components/common/Counter';
-=======
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
-=======
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
+
 import { Hero } from '@/components/home/Hero';
 import Portifolio from '@/components/home/Portifolio';
 import { Roll } from '@/components/home/Roll';
 import Service from '@/components/home/Service';
-import Testimonial from '@/components/home/Testimonial';
+
 import Workflow from '@/components/home/Workflow';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import { NextPageWithLayout } from './_app';
 import Blog from '@/components/home/Blog';
 import Testimonial from '@/components/home/Testimonial';
 import CTA from '@/components/common/CTA';
-import { useLayoutEffect, useRef } from 'react';
-=======
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
-=======
->>>>>>> aaba14a042dd38cd6dfeb16a5c9ff6140c280b30
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Head from 'next/head';
 import { useLayoutEffect, useRef } from 'react';
-import { NextPageWithLayout } from './_app';
 
 gsap.registerPlugin(ScrollTrigger);
 
