@@ -18,11 +18,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/public/*": ["./public/*"],
-<<<<<<< HEAD
-      "@/components/*": ["./src/components/*"],
-=======
       "@/components/*": ["./src/components/*"]
->>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
