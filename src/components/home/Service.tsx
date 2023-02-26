@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from '../ui/link/Link';
 
 export default function Service() {
   const [activeEl, setActiveEl] = useState(0);
@@ -28,10 +29,10 @@ export default function Service() {
           <div className='col-xxl-3 col-xl-3 col-lg-3 col-md-3'>
             <div className='service__top-btn'>
               <div className='btn_wrapper'>
-                <a href='service.html' className='btn-item wc-btn-secondary btn-hover'>
+                <Link href='/services' className='btn-item wc-btn-secondary btn-hover'>
                   <span></span> View <br />
                   all services <FaArrowRight rotate={-45} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
