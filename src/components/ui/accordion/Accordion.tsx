@@ -1,8 +1,9 @@
 import React from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
-import classNames from 'classnames';
+
 
 import { FaPlus } from 'react-icons/fa';
+import { classNames } from '@/utils/classNames';
 
 type AccordionProps =
   | ({ type: 'single' } & Accordion.AccordionSingleProps)
