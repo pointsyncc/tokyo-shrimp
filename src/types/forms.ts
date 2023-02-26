@@ -26,7 +26,6 @@ export interface FormInputBase<TFormValues extends FieldValues> {
   // errors?: Partial<DeepMap<TFormValues, FieldError>>;
 }
 
-
 export interface ICommonProps<TFormValues extends FieldValues>
   extends ComponentAttrs,
     FormInputBase<TFormValues> {

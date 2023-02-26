@@ -1,13 +1,12 @@
-.offcanvas{
-    &__menu{
-        a{
-            font-size: 3rem;
-            color: white;
-            text-transform: capitalize;
-            border-bottom: solid 1px #1d1d1d;
-            display: block;
-            width: 100%;
-        }
+.offcanvas {
+  &__menu {
+    a {
+      font-size: 3rem;
+      color: white;
+      text-transform: capitalize;
+      border-bottom: solid 1px #1d1d1d;
+      display: block;
+      width: 100%;
     }
-
+  }
 }

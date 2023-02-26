@@ -1,6 +1,6 @@
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import Head from 'next/head';
-import React from 'react';
+import { FieldValues } from 'react-hook-form';
 import { NextPageWithLayout } from './_app';
 
 import { ContactForm } from '@/components/contact/ContactForm';

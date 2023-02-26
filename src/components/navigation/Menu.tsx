@@ -41,7 +41,6 @@ export default function Menu({ open, setOpen }: IProps) {
     return () => ctx.revert(); // cleanup
   }, [open]);
 
-
   const links = [
     {
       href: '/',

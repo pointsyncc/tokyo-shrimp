@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CgMenuGridO } from 'react-icons/cg';
 
-
 interface HeaderProps {
   openMenu: () => void;
 }

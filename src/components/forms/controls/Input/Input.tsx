@@ -2,11 +2,9 @@ import { ICommonProps } from '@/types/forms';
 
 import { classNames } from '@/utils/classNames';
 
-import { FieldValues} from 'react-hook-form';
+import { FieldValues } from 'react-hook-form';
 import Error from '../../error/Error';
 import Label, { ILabelProps } from '../../label/Label';
-
-
 
 type ITextarea<TFormValues extends FieldValues> =
   React.TextareaHTMLAttributes<HTMLTextAreaElement> &
@@ -20,7 +18,10 @@ type IInput<TFormValues extends FieldValues> = React.InputHTMLAttributes<HTMLInp
 export type IInputProps<TFormValues extends FieldValues> = ITextarea<TFormValues> | IInput<TFormValues>;
 
 // Instead of passing errors pass error message directly as a prop
-export const Input = <TFormValues extends Record<string, unknown>, T extends 'input' | 'textarea' = 'input'>({
+export const Input = <
+  TFormValues extends Record<string, unknown>,
+  T extends 'input' | 'textarea' = 'input',
+>({
   name,
   className = 'form-control',
   rules,
@@ -37,19 +38,23 @@ export const Input = <TFormValues extends Record<string, unknown>, T extends 'in
 }: T extends 'input' ? IInputProps<TFormValues> : ITextarea<TFormValues>) => {
   const As = as;
 
-  
-//    // If the name is in a FieldArray, it will be 'fields.index.fieldName' and errors[name] won't return anything, so i should fix this
+  //    // If the name is in a FieldArray, it will be 'fields.index.fieldName' and errors[name] won't return anything, so i should fix this
   const hasError = !!(errors && errors[name]);
   const classes = classNames(hasError ? 'text-danger' : '', className);
 
   return (
     <div className={containerClassName}>
       {label && (
-        <Label {...labelProps} htmlFor={htmlFor ? htmlFor :name}>
+        <Label {...labelProps} htmlFor={htmlFor ? htmlFor : name}>
           {label}
         </Label>
       )}
-      <As id={htmlFor ? htmlFor : name} className={classes} {...rest} {...(register && register(name, rules))} />
+      <As
+        id={htmlFor ? htmlFor : name}
+        className={classes}
+        {...rest}
+        {...(register && register(name, rules))}
+      />
       {showError && hasError && (
         <Error className='mt-1'>{errors[name]?.message}</Error>
         // <ErrorMessage

@@ -1,5 +1,5 @@
 import '../scss/master.scss';
-import { Kanit } from '@next/font/google';
+import { Kanit } from "next/font/google";
 
 import { NextPage } from 'next';
 import { ThemeProvider } from 'next-themes';
@@ -7,6 +7,7 @@ import type { AppProps } from 'next/app';
 
 import '../scss/master.scss';
 import { PSToaster } from '@/components/common/toast/Toast';
+<<<<<<< HEAD
 import { setLocale } from 'yup';
 
 
@@ -22,6 +23,8 @@ setLocale({
 
 });
 
+=======
+>>>>>>> 8546a24e01805ae28144cccc778912bc6e7202b4
 const kanit = Kanit({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
