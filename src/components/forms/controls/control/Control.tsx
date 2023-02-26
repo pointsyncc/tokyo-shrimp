@@ -1,5 +1,5 @@
 import { FieldValues } from 'react-hook-form';
-import { IInputProps, Input } from '../Input/Input';
+import { IInputProps, Input } from '../customInput/CustomInput';
 
 
 

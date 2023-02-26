@@ -55,10 +55,10 @@ const Contact: NextPageWithLayout = () => {
                       </h3>
                       <ul>
                         <li>
-                          <a href='tel:+(2)578365379'>+385 99 2144 802</a>
+                          <a className='d-inline' href='tel:+(2)578365379'>+385 99 2144 802</a>
                         </li>
                         <li>
-                          <a href='mailto:hello@example.com'>info@pointsyncc.com</a>
+                          <a className='d-inline' href='mailto:hello@example.com'>info@pointsyncc.com</a>
                         </li>
                         <li>
                           <span>
