@@ -73,22 +73,32 @@ export const ContactForm = () => {
     //   success: 'Your feedback has been submitted',
     //   error: (err) => `This just happened: ${err.toString()}`
     // });
-    try {
-      setLoading('contactForm', true);
-      toast.loading('Sending your feedback...', {
-        duration: 2000,
-      });
-      await pointSynccAPI.sendRequest({
-        method: 'post',
-        url: '/user/contact',
-        body: data,
-      });
-      toast.success('Your feedback has been submitted');
-    } catch (error:any) {
-      toast.error(error.errors && Array.isArray(error.errors) ? error.errors[0].message : error.message);
-    } finally {
-      setLoading('contactForm', false);
-    }
+    // try {
+    //   setLoading('contactForm', true);
+    //   toast.loading('Sending your feedback...', {
+    //     duration: 2000,
+    //   });
+    //   await pointSynccAPI.sendRequest({
+    //     method: 'post',
+    //     url: '/user/contact',
+    //     body: data,
+    //   });
+    //   toast.success('Your feedback has been submitted');
+    // } catch (error) {
+    //   console.log(error);
+    //   toast.error('Something went wrong');
+    // } finally {
+    //   setLoading('contactForm', false);
+    // }
+    toast.promise(pointSynccAPI.sendRequest({
+      method: 'post',
+      url: '/user/contact',
+      body: data,
+    }), {
+      loading: 'Sending your feedback...',
+      success: 'Your feedback has been submitted',
+      error: (err) => `This just happened: ${err.toString()}`
+    });
   };
   return (
     <div className='contact__form'>

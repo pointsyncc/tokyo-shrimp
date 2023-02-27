@@ -6,6 +6,9 @@ import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
 import gsap from 'gsap';
+import { toast } from 'react-hot-toast';
+import { pointSynccAPI } from '@/utils/axios';
+import { useAppStore } from '@/stores/store';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -32,8 +35,39 @@ const Footer = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const { setLoading, loadingStates } = useAppStore();
+
+  const sendForm = async (data: any) => {
+    await pointSynccAPI.sendRequest({
+      method: 'post',
+      url: '/user/newsletter',
+      body: data,
+    });
+  };
+
+  const onSubmit = async (data: any) => {
+    // try {
+    //   setLoading('newsletterForm', true);
+    //   toast.loading('Sending your request...', {
+    //     duration: 2000,
+    //   });
+    //   await pointSynccAPI.sendRequest({
+    //     method: 'post',
+    //     url: '/user/newsletter',
+    //     body: data,
+    //   });
+    //   toast.success('You are now subscribed to our newsletter!');
+    // } catch (error) {
+    //   console.log(error);
+    //   toast.error('Something went wrong 🫠. Please try again later.');
+    // } finally {
+    //   setLoading('newsletterForm', false);
+    // }
+    toast.promise(sendForm(data), {
+      loading: 'Sending your request...',
+      success: 'You are now subscribed to our newsletter!',
+      error: (err) => `This just happened: ${err.toString()}`,
+    });
   };
 
   useEffect(() => {

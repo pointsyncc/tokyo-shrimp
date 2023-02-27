@@ -2,6 +2,7 @@ import { StateCreator } from 'zustand';
 
 export interface LoadingNames {
   contactForm?: boolean;
+  newsletterForm?: boolean;
 }
 
 export interface LoadingSlice {
