@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import About from '@/components/home/About';
 
 import Brand from '@/components/home/Brand';
@@ -75,5 +76,14 @@ const Home: NextPageWithLayout = () => {
 Home.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale)),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 export default Home;

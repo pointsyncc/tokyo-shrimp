@@ -4,10 +4,10 @@ import { Kanit } from 'next/font/google';
 import { NextPage } from 'next';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
-
+import NextNProgress from 'nextjs-progressbar';
 import '../scss/master.scss';
 import { PSToaster } from '@/components/common/toast/Toast';
-
+import { appWithTranslation } from 'next-i18next'
 import { setLocale } from 'yup';
 
 setLocale({
@@ -33,14 +33,19 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-export default function App({ Component, pageProps }: AppPropsWithLayout) {
+const App = ({ Component, pageProps }: AppPropsWithLayout)=> {
   const getLayout = Component.getLayout || ((page) => page);
   return (
-    <main className={kanit.className}>
-      <ThemeProvider attribute='class' enableSystem={true}>
-        {getLayout(<Component {...pageProps} />)}
-        <PSToaster />
-      </ThemeProvider>
-    </main>
+    <>
+      <NextNProgress color='#e94f23' />
+      <main className={kanit.className}>
+        <ThemeProvider attribute='class' enableSystem={true}>
+          {getLayout(<Component {...pageProps} />)}
+          <PSToaster />
+        </ThemeProvider>
+      </main>
+    </>
   );
 }
+
+export default appWithTranslation(App);
