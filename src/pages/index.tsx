@@ -77,7 +77,7 @@ Home.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }:any) {
   return {
     props: {
       ...(await serverSideTranslations(locale)),
