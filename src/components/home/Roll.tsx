@@ -21,8 +21,8 @@ export const Roll = () => {
 
   return (
     <section className='roll__area'>
-                <DropdownMenuDemo/>
-      {/* <Splide
+                {/* <DropdownMenuDemo/> */}
+      <Splide
         className='roll__slider'
         extensions={{ AutoScroll }}
         options={{
@@ -63,7 +63,7 @@ export const Roll = () => {
             </SplideSlide>
           );
         })}
-      </Splide> */}
+      </Splide>
     </section>
   );
 };
