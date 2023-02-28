@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FieldValues } from 'react-hook-form';
 import { object, string } from 'yup';
 import { Control, FormControl } from '../forms/controls/control/Control';
 import GeneralForm from '../forms/generalForm/GeneralForm';
 import CircleButton from '../ui/button/CircleButton';
+
 
 interface IValues {
   name: string;
@@ -18,6 +19,7 @@ import { toast } from 'react-hot-toast';
 import { useAppStore } from '@/stores/store';
 import { PHONE_REGEX } from '@/utils/contants';
 export const ContactForm = () => {
+
   const { setLoading, loadingStates } = useAppStore();
   const schema = object({
     name: string().max(20).required(),
@@ -34,22 +36,34 @@ export const ContactForm = () => {
       name: 'name',
       placeholder: 'Name *',
       control: Control.TextInput,
+      colProps: {
+        className: 'col-12 col-sm-6 mb-3',
+      },
     },
     {
       name: 'email',
       placeholder: 'Email *',
       labelProps: { required: true },
       control: Control.TextInput,
+      colProps: {
+        className: 'col-12 col-sm-6 mb-3',
+      },
     },
     {
       name: 'phone',
       placeholder: 'Phone',
       control: Control.TextInput,
+      colProps: {
+        className: 'col-12 col-sm-6 mb-3',
+      },
     },
     {
       name: 'subject',
       placeholder: 'Subject *',
       control: Control.TextInput,
+      colProps: {
+        className: 'col-12 col-sm-6 mb-3',
+      },
     },
     {
       name: 'message',
@@ -57,7 +71,7 @@ export const ContactForm = () => {
       control: Control.TextInput,
       as: 'textarea',
       colProps: {
-        className: 'col-12',
+        className: 'col-12 mb-3',
       },
     },
   ];
@@ -90,16 +104,31 @@ export const ContactForm = () => {
     // } finally {
     //   setLoading('contactForm', false);
     // }
-    toast.promise(pointSynccAPI.sendRequest({
-      method: 'post',
-      url: '/user/contact',
-      body: data,
-    }), {
-      loading: 'Sending your feedback...',
-      success: 'Your feedback has been submitted',
-      error: (err) => `This just happened: ${err.toString()}`
-    });
+
+    setLoading('contactForm', true);
+    toast.promise(
+      pointSynccAPI.sendRequest({
+        method: 'post',
+        url: '/user/contact',
+        body: data,
+      }),
+      {
+        loading: 'Sending your feedback...',
+        success: () => {
+          setLoading('contactForm', false);
+          return 'Your feedback has been submitted';
+        },
+        error: (err) => {
+          setLoading('contactForm', false);
+          return `This just happened: ${err.toString()}`;
+        },
+      },
+    );
   };
+
+
+
+
   return (
     <div className='contact__form'>
       <GeneralForm<IValues, any>

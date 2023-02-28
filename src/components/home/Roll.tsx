@@ -2,6 +2,7 @@ import React from 'react';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import DropdownMenuDemo from '../ui/dropdown/Dropdown';
 // import { Autoplay, FreeMode } from "swiper";
 // import { Swiper, SwiperSlide } from "swiper/react";
 export const Roll = () => {
@@ -20,6 +21,7 @@ export const Roll = () => {
 
   return (
     <section className='roll__area'>
+                {/* <DropdownMenuDemo/> */}
       <Splide
         className='roll__slider'
         extensions={{ AutoScroll }}

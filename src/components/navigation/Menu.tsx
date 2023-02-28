@@ -1,7 +1,9 @@
 import gsap from 'gsap';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import DropdownMenuDemo from '../ui/dropdown/Dropdown';
 import classes from './menu.module.scss';
 
 interface IProps {
@@ -9,6 +11,7 @@ interface IProps {
   setOpen: (open: boolean) => void;
 }
 export default function Menu({ open, setOpen }: IProps) {
+  const router = useRouter();
   const comp = useRef(null);
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -40,6 +43,20 @@ export default function Menu({ open, setOpen }: IProps) {
 
     return () => ctx.revert(); // cleanup
   }, [open]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setOpen(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events,setOpen]);
 
   const links = [
     {
@@ -135,12 +152,14 @@ export default function Menu({ open, setOpen }: IProps) {
         </div>
         <div className='offcanvas__right'>
           <div className='offcanvas__search'>
+      
             <form action='#'>
               <input type='text' name='search' placeholder='Search keyword' />
               <button>
                 <i className='fa-solid fa-magnifying-glass'></i>
               </button>
             </form>
+
           </div>
           <div className='offcanvas__contact'>
             <h3>Get in touch</h3>

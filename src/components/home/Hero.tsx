@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useTranslation } from 'next-i18next'
 export const Hero = () => {
+  const { t } = useTranslation()
   const comp = useRef(null);
   const heroHeading = useRef(null);
   const heroText = useRef(null);
@@ -28,6 +30,7 @@ export const Hero = () => {
     return () => ctx.revert(); // cleanup
   }, []);
   return (
+    
     <section className='hero__area' ref={comp}>
       <div className='container'>
         <div className='row'>
@@ -41,7 +44,7 @@ export const Hero = () => {
               </a>
               <div className='hero__title-wrapper'>
                 <h1 className='hero__title' ref={heroHeading}>
-                  Enter the digital world ready
+                  {t('pages.home.hero.title')}
                 </h1>
                 <p className='hero__sub-title' ref={heroText}>
                   With every single one of our clients, we bring forth deep passion for
