@@ -26,8 +26,10 @@ specifiers:
   prettier: 2.8.4
   react: 18.2.0
   react-cookie-consent: ^8.0.1
+  react-country-flag: ^3.0.2
   react-countup: ^6.4.1
   react-dom: 18.2.0
+  react-google-recaptcha-v3: ^1.10.1
   react-hook-form: ^7.43.1
   react-hot-toast: ^2.4.0
   react-i18next: ^12.2.0
@@ -63,8 +65,10 @@ dependencies:
   nextjs-progressbar: 0.0.16_next@13.2.1+react@18.2.0
   react: 18.2.0
   react-cookie-consent: 8.0.1_react@18.2.0
+  react-country-flag: 3.0.2_react@18.2.0
   react-countup: 6.4.1_q2tyk3gci27qk4qoatek53e4vi
   react-dom: 18.2.0_react@18.2.0
+  react-google-recaptcha-v3: 1.10.1_biqbaboplfbrettd7655fr4n2y
   react-hook-form: 7.43.1_react@18.2.0
   react-hot-toast: 2.4.0_biqbaboplfbrettd7655fr4n2y
   react-i18next: 12.2.0_3yopsigl4h4eb2nqrqfsy65uwi
@@ -2899,6 +2903,15 @@ packages:
       react: 18.2.0
     dev: false
 
+  /react-country-flag/3.0.2_react@18.2.0:
+    resolution: {integrity: sha512-JPaz+q3QD0/nZtHBKj5x3O7r/SgSG9kxbymdaIU0RqlDAcorJIe4KV0DFhWIdKh69q5cPVkIVERcMYGZdvXgAA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-countup/6.4.1_q2tyk3gci27qk4qoatek53e4vi:
     resolution: {integrity: sha512-FxQ7qaNnnbA+Px9RebOZY4Tbawa1bhgpVPlUqRemZb90mh3f3OqyHVgr1SZqnJgaRxR3uEYqgkszgkDgFVCeEw==}
     peerDependencies:
@@ -2921,6 +2934,17 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-google-recaptcha-v3/1.10.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-K3AYzSE0SasTn+XvV2tq+6YaxM+zQypk9rbCgG4OVUt7Rh4ze9basIKefoBz9sC0CNslJj9N1uwTTgRMJQbQJQ==}
+    peerDependencies:
+      react: ^16.3 || ^17.0 || ^18.0
+      react-dom: ^17.0 || ^18.0
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-hook-form/7.43.1_react@18.2.0:

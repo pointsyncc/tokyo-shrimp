@@ -6,6 +6,7 @@ import GeneralForm from '../forms/generalForm/GeneralForm';
 import CircleButton from '../ui/button/CircleButton';
 
 
+
 interface IValues {
   name: string;
   email: string;
@@ -19,6 +20,8 @@ import { toast } from 'react-hot-toast';
 import { useAppStore } from '@/stores/store';
 import { PHONE_REGEX } from '@/utils/contants';
 export const ContactForm = () => {
+
+
 
   const { setLoading, loadingStates } = useAppStore();
   const schema = object({
@@ -76,7 +79,9 @@ export const ContactForm = () => {
     },
   ];
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: IValues,recaptchaToken:string | undefined) => {
+    console.log(data);
+    console.log(recaptchaToken)
     // const req = pointSynccAPI.sendRequest({
     //   method: 'post',
     //   url: '/user/contact',
@@ -110,7 +115,10 @@ export const ContactForm = () => {
       pointSynccAPI.sendRequest({
         method: 'post',
         url: '/user/contact',
-        body: data,
+        body: {
+          ...data,
+          recaptchaToken,
+        },
       }),
       {
         loading: 'Sending your feedback...',
@@ -135,6 +143,7 @@ export const ContactForm = () => {
         submitBtnText='Send Messages'
         schema={schema}
         controls={controls}
+        withRecaptcha={true}
         onSubmit={onSubmit}
         customSubmitButton={
           <CircleButton disabled={loadingStates.contactForm} isLoading={loadingStates.contactForm}>
