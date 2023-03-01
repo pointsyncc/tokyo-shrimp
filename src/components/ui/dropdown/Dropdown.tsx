@@ -1,25 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-import { FaHamburger, FaDotCircle, FaCheck, FaChevronRight } from 'react-icons/fa';
-
 import classes from './dropdown.module.scss';
-const DropdownMenuDemo = () => {
-  const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
-  const [urlsChecked, setUrlsChecked] = React.useState(false);
-  const [person, setPerson] = React.useState('pedro');
+
+export interface IDropdownItem {
+  text: string;
+  textValue: string;
+  rightSlot?: React.ReactNode;
+  dropdownTriggerClasses?:string
+}
+
+interface IProps extends DropdownMenu.DropdownMenuProps {
+  items: IDropdownItem[];
+  onSelect: (item: IDropdownItem) => void;
+  dropdownTriggerClasses?:string
+}
+
+export const PSDropdown = ({ onOpenChange, open, items, onSelect,dropdownTriggerClasses }: IProps) => {
+  const [selectedOption, setSelectedOption] = useState(items[0]);
+  const onSelection = (item: IDropdownItem) => {
+    setSelectedOption(item);
+
+    if (onSelect) onSelect(item);
+  };
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
+    <DropdownMenu.Root  open={open} modal={false} onOpenChange={onOpenChange}>
+      <DropdownMenu.Trigger className={dropdownTriggerClasses} asChild>
         <button className={classes['dropdown__icon-btn']} aria-label='Customise options'>
-          <FaHamburger />
+          {selectedOption.text}
+          <div className={classes['dropdown__right-slot']}>
+            {selectedOption.rightSlot && selectedOption.rightSlot}
+          </div>
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content className={classes['dropdown__content']} sideOffset={5}>
-          <DropdownMenu.Item className={classes['dropdown__item']}>
+        <DropdownMenu.Content
+          style={{ zIndex: 10 }}
+          className={classes['dropdown__content']}
+          sideOffset={5}
+        >
+          {items.map((item) => {
+            return (
+              <DropdownMenu.Item
+                onSelect={onSelection.bind(null, item)}
+                key={item.textValue}
+                textValue={item.textValue}
+                className={classes['dropdown__item']}
+              >
+                {item.text}{' '}
+                {item.rightSlot && (
+                  <div className={classes['dropdown__right-slot']}>{item.rightSlot}</div>
+                )}
+              </DropdownMenu.Item>
+            );
+          })}
+          {/* <DropdownMenu.Item className={classes['dropdown__item']}>
             New Tab <div className={classes['dropdown__right-slot']}>⌘+T</div>
           </DropdownMenu.Item>
           <DropdownMenu.Item className={classes['dropdown__item']}>
@@ -27,8 +64,8 @@ const DropdownMenuDemo = () => {
           </DropdownMenu.Item>
           <DropdownMenu.Item className={classes['dropdown__item']} disabled>
             New Private Window <div className={classes['dropdown__right-slot']}>⇧+⌘+N</div>
-          </DropdownMenu.Item>
-          <DropdownMenu.Sub>
+          </DropdownMenu.Item> */}
+          {/* <DropdownMenu.Sub>
             <DropdownMenu.SubTrigger className={classes['dropdown__sub-trigger']}>
               More Tools
               <div className={classes['dropdown__right-slot']}>
@@ -37,6 +74,7 @@ const DropdownMenuDemo = () => {
             </DropdownMenu.SubTrigger>
             <DropdownMenu.Portal>
               <DropdownMenu.SubContent
+              style={{zIndex:10}}
                 className={classes['dropdown__sub-content']}
                 sideOffset={2}
                 alignOffset={-5}
@@ -97,7 +135,7 @@ const DropdownMenuDemo = () => {
               </DropdownMenu.ItemIndicator>
               Colm Tuite
             </DropdownMenu.RadioItem>
-          </DropdownMenu.RadioGroup>
+          </DropdownMenu.RadioGroup> */}
 
           <DropdownMenu.Arrow className={classes['dropdown__arrow']} />
         </DropdownMenu.Content>
@@ -105,5 +143,3 @@ const DropdownMenuDemo = () => {
     </DropdownMenu.Root>
   );
 };
-
-export default DropdownMenuDemo;

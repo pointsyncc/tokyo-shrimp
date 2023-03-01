@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { FormControl } from '../controls/control/Control';
@@ -7,16 +7,19 @@ import { Schema } from 'yup';
 
 import { DeepPartial, FieldValues, useForm } from 'react-hook-form';
 
-type IProps<T extends FieldValues, U> = React.FormHTMLAttributes<HTMLFormElement> & {
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+
+type IProps<T extends FieldValues, U> =  {
   initialValues?: DeepPartial<T>;
-  onSubmit: (values: T) => void;
+  onSubmit: (values: T, token?: string) => void;
   controls: FormControl<T>[];
   submitBtnText?: string;
   schema: Schema<U>;
   title?: React.ReactNode;
   titleClasses?: string;
   buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
-  customSubmitButton?:React.ReactNode
+  customSubmitButton?: React.ReactNode;
+  withRecaptcha?: boolean;
 };
 
 const GeneralForm = <T extends FieldValues, U extends Object>({
@@ -29,6 +32,7 @@ const GeneralForm = <T extends FieldValues, U extends Object>({
   titleClasses,
   buttonProps,
   customSubmitButton,
+  withRecaptcha = false,
   ...rest
 }: IProps<T, U>) => {
   const {
@@ -48,8 +52,26 @@ const GeneralForm = <T extends FieldValues, U extends Object>({
     );
   });
 
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleReCaptchaVerify = useCallback(
+    async (values: T) => {
+      if (!executeRecaptcha) {
+        console.log('Execute recaptcha not yet available');
+        return;
+      }
+      let token;
+      if (withRecaptcha) {
+        token = await executeRecaptcha('form_submit');
+      }
+
+      onSubmit(values, token);
+      // Do whatever you want with the token
+    },
+    [executeRecaptcha, withRecaptcha,onSubmit],
+  );
   return (
-    <form className='row' {...rest} onSubmit={handleSubmit(onSubmit)}>
+    <form className='row' {...rest} onSubmit={handleSubmit(handleReCaptchaVerify)}>
       {title && <h3 className={titleClasses}>{title}</h3>}
 
       {formGroups}

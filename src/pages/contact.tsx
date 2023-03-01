@@ -4,6 +4,7 @@ import { FieldValues } from 'react-hook-form';
 import { NextPageWithLayout } from './_app';
 
 import { ContactForm } from '@/components/contact/ContactForm';
+import { PSDropdown } from '@/components/ui/dropdown/Dropdown';
 
 const Contact: NextPageWithLayout = () => {
   const onSubmit = (data: any) => {
@@ -55,10 +56,14 @@ const Contact: NextPageWithLayout = () => {
                       </h3>
                       <ul>
                         <li>
-                          <a className='d-inline' href='tel:+(2)578365379'>+385 99 2144 802</a>
+                          <a className='d-inline' href='tel:+(2)578365379'>
+                            +385 99 2144 802
+                          </a>
                         </li>
                         <li>
-                          <a className='d-inline' href='mailto:hello@example.com'>info@pointsyncc.com</a>
+                          <a className='d-inline' href='mailto:hello@example.com'>
+                            info@pointsyncc.com
+                          </a>
                         </li>
                         <li>
                           <span>

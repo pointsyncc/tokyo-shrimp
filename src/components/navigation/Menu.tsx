@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import DropdownMenuDemo from '../ui/dropdown/Dropdown';
+
 import classes from './menu.module.scss';
 
 interface IProps {
