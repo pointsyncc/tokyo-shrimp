@@ -13,7 +13,7 @@ const LocaleSwitcher = () => {
     },
     {
       text: 'Crotian',
-      textValue: 'hr',
+      textValue: 'hr-HR',
       rightSlot: <ReactCountryFlag countryCode='HR' svg />,
     },
   ];

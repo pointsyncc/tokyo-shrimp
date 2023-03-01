@@ -6,7 +6,7 @@ export const CookieBanner = () => {
     overlay={true}
     acceptOnScroll={true}
     acceptOnScrollPercentage={10}
-    debug={true}
+    debug={false}
     style={{ background: "#2B373B" }}
     buttonStyle={{ padding:'.75rem',backgroundColor:  "var(--primary)", color:"var(--white)" }}>
       This website uses cookies to enhance the user experience.
