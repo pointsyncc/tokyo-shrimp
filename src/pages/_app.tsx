@@ -10,6 +10,10 @@ import { PSToaster } from '@/components/common/toast/Toast';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { setLocale } from 'yup';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+// gsap.registerPlugin(ScrollTrigger);
 setLocale({
   mixed: {
     required: ({ path }) => `${path} is required`,
@@ -33,8 +37,26 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+// gsap.registerEffect({
+//   name: 'fadeUp',
+//   effect(targets: any) {
+//     const tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: targets,
+//       },
+//     });
+//     tl.from(targets, { y: 50, opacity: 0 });
+//     tl.to(targets, {
+//       y: 0,
+//       opacity: 1,
+//       duration: 1.5,
+//     });
+//     return tl;
+//   },
+// });
+
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const {i18n} = useTranslation()
+  const { i18n } = useTranslation();
   const getLayout = Component.getLayout || ((page) => page);
   return (
     <GoogleReCaptchaProvider
