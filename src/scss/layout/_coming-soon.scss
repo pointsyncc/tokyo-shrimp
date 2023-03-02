@@ -1,0 +1,125 @@
+.bg__coming__soon {
+  background-image: url(https://tokyo.fra1.cdn.digitaloceanspaces.com/global%2Fpointsyncc%2Fassets%2Fwebsite%2Fpointsyncc_coming_soon_v1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: 100vh;
+    .header__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .heading__coming__soon {
+        font-size: 50px;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+
+  .lang__switcher {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.countdown__container {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  // justify-content: space-between;
+  // align-items: center;
+  .countdown__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .countdown__number {
+      font-size: 50px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+    }
+    .countdown__text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+.apply__news__container {
+  width: 34%;
+  height: 170px;
+  padding: 1rem 2rem;
+  color: #fff;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  //apply linear gradient from 603B30 to FD9001 with 65% opacity
+  background: linear-gradient(90deg, rgba(96, 59, 48, 0.65) 0%, rgba(253, 144, 1, 0.65) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  //add 45% opacity to the border
+  border: 1px solid rgba(251, 252, 114, 0.45);
+
+  .apply__news__title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+  }
+  .text__apply__news {
+    font-size: 18px;
+    font-weight: normal;
+    color: #fff;
+    text-align: left;
+  }
+
+  .input__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    //input to fill rest of the space
+    .input__email {
+      width: 100%;
+      padding: 0.5rem 1.5rem;
+      border-radius: 10px;
+      border: none;
+      color: #fff;
+      text-align: left;
+      border-radius: 8px;
+      border:2px solid black;
+      background-color: white;
+    }
+
+    .btn__apply__news {
+      //black background white text
+      background-color: black;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+    }
+  }
+}

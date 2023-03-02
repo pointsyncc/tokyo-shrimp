@@ -7,6 +7,9 @@ const nextConfig = {
     WEBSITE_NAME: process.env.WEBSITE_NAME,
   },
   i18n,
+  images: {
+    domains: ['tokyo.fra1.cdn.digitaloceanspaces.com'],
+  },
 };
 
 module.exports = nextConfig;
