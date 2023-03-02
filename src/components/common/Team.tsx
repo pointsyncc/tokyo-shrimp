@@ -8,7 +8,7 @@ interface IProps {
   // showHeadingArea?: boolean;
   // transparentBg?: boolean;
   // noPaddingLeft?: boolean;
-  alt: boolean;
+  alt?: boolean;
 }
 export const TeamSlider = ({
   alt = false,
