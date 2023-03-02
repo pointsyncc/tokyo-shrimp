@@ -72,6 +72,10 @@ export default function Menu({ open, setOpen }: IProps) {
       text: 'Service',
     },
     {
+      href: '/team',
+      text: 'Team',
+    },
+    {
       href: '/blog',
       text: 'Blog',
     },

@@ -1,4 +1,4 @@
-import { Team } from '@/components/about/Team';
+import { TeamSlider} from '@/components/common/Team';
 import Counter from '@/components/common/Counter';
 import CTA from '@/components/common/CTA';
 import Testimonial from '@/components/about/Testimonial';
@@ -111,7 +111,7 @@ const About:NextPageWithLayout = () => {
       </section>
 
       <Counter/>
-      <Team/>
+      <TeamSlider/>
 
       <section className='brand__area'>
         <div className='container g-0 line pt-140 pb-140'>

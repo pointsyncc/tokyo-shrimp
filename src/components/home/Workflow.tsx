@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import FadeUp from '../common/animations/FadeUp';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Workflow() {
   return (
@@ -9,7 +11,8 @@ export default function Workflow() {
           <div className='col-xxl-12'>
             <div className='sec-title-wrapper'>
               <h2 className='sec-sub-title title-anim'>Workflow</h2>
-              <h3 className='sec-title title-anim'>How we work</h3>
+
+              <SectionTitle>How we work</SectionTitle>
             </div>
           </div>
 

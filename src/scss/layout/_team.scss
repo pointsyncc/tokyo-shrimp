@@ -5,6 +5,7 @@
 .team {
   &__area {
     background-color: var(--black-2);
+
     overflow: hidden;
 
     @media #{$xxl} {
