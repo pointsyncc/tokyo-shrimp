@@ -10,6 +10,7 @@ import { PSToaster } from '@/components/common/toast/Toast';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { setLocale } from 'yup';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // import gsap from 'gsap';
 // import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -85,5 +86,12 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     </GoogleReCaptchaProvider>
   );
 };
+
+export const getServerSideProps = async ({ locale }: any) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'], null, ['en', 'hr'])),
+  },
+})
+
 
 export default appWithTranslation(App);
