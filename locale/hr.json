@@ -1,0 +1,22 @@
+{
+    "welcome_header": "",
+    "pages": {
+        "home": {
+            "hero": {
+                "title": "Uđite u digitalni svijet spremni"
+            }
+        },
+        "status": {
+            "coming-soon": {
+                "title": "Enter the digital world"
+            }
+        }
+    },
+    "global": {
+        "days": "Dana",
+        "hours": "Sati",
+        "minutes": "Minuta",
+        "seconds": "Sekunde"
+    },
+    "test_string": "Ovo je test"
+}
