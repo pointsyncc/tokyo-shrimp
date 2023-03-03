@@ -1,0 +1,1 @@
+export const logoURL = 'https://tokyo.fra1.cdn.digitaloceanspaces.com/global%2Fpointsyncc%2Fassets%2Fwebsite%2Flogos%2Flogo-color-trimmed-1024x0-v2.png';

@@ -8,7 +8,7 @@ const LocaleSwitcher = () => {
   const localeDropdownItems = [
     {
       text: 'English',
-      textValue: 'en-US',
+      textValue: 'en',
       rightSlot: <ReactCountryFlag countryCode='US' svg />,
     },
     {
