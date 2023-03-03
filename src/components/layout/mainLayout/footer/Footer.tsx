@@ -1,4 +1,4 @@
-import { EMAIL_PATTERN } from '@/components/constants/constants';
+import { EMAIL_PATTERN } from '@/utils/constants';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
@@ -103,7 +103,7 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <img src='imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
+        <img src='/imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
       </div>
 
       <div className='footer__btm'>
@@ -115,7 +115,7 @@ const Footer = () => {
                   <img
                     className='footer__logo'
                     width={220}
-                    src='imgs/pointsyncc/logo/desktop/transparent.png'
+                    src='/imgs/pointsyncc/logo/desktop/transparent.png'
                     alt='Footer Logo'
                   />
                   <p>

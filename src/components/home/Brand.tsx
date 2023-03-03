@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Brand() {
   return (
@@ -9,10 +10,10 @@ export default function Brand() {
           <div className='col-xxl-12'>
             <div className='sec-title-wrapper'>
               <h2 className='sec-sub-title title-anim'>Internation Brands</h2>
-              <h3 className='sec-title title-anim'>
+              <SectionTitle>
                 We are happy to work with global <br />
                 largest brands
-              </h3>
+              </SectionTitle>
             </div>
           </div>
 
