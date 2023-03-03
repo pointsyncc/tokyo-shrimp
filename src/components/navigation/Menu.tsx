@@ -68,8 +68,8 @@ export default function Menu({ open, setOpen }: IProps) {
       text: 'About',
     },
     {
-      href: '/service',
-      text: 'Service',
+      href: '/services',
+      text: 'Services',
     },
     {
       href: '/team',

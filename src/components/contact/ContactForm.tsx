@@ -138,6 +138,7 @@ export const ContactForm = () => {
 
 
   return (
+    <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
     <div className='contact__form'>
       <GeneralForm<IValues, any>
         submitBtnText='Send Messages'
@@ -152,6 +153,7 @@ export const ContactForm = () => {
           </CircleButton>
         }
       />
+    </div>
     </div>
   );
 };

@@ -21,37 +21,10 @@ import CTA from '@/components/common/CTA';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Head from 'next/head';
-import { useLayoutEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home: NextPageWithLayout = () => {
-  // const comp = useRef(null);
-  // useLayoutEffect(() => {
-  //   // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
-  //   let ctx = gsap.context(() => {
-  //     gsap.set('.title-anim', { y: 50, opacity: 0 });
-  //     let splitTitleLines = gsap.utils.toArray('.title-anim');
-  //     splitTitleLines.forEach((item: any) => {
-  //       let counterTl = gsap.timeline({
-  //         scrollTrigger: {
-  //           trigger: item,
-
-  //           start: 'top center+=200',
-  //         },
-  //       });
-  //       counterTl.to(item, {
-  //         y: 0,
-  //         opacity: 1,
-
-  //         duration: 1.5,
-  //       });
-  //     });
-  //   }, comp); // <- IMPORTANT! Scopes selector text
-
-  //   return () => ctx.revert(); // cleanup
-  // }, []);
-
   return (
     <div>
       <Head>
@@ -77,7 +50,7 @@ Home.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
 
-export async function getStaticProps({ locale }:any) {
+export async function getStaticProps({ locale }: any) {
   return {
     props: {
       ...(await serverSideTranslations(locale)),

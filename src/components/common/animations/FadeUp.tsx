@@ -5,8 +5,9 @@ import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
 interface IProps {
   vars?: gsap.TweenVars;
   children: React.ReactNode;
+  className?:string
 }
-const FadeUp = ({ vars, children }: IProps) => {
+const FadeUp = ({ vars, children,className }: IProps) => {
   const el = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
@@ -27,7 +28,7 @@ const FadeUp = ({ vars, children }: IProps) => {
     return () => ctx.revert();
   }, [vars]);
 
-  return <div ref={el}>{children}</div>;
+  return <div className={className} ref={el}>{children}</div>;
 };
 
 export default FadeUp;

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function CTA() {
   return (
@@ -10,9 +11,10 @@ export default function CTA() {
           <div className='col-xxl-12'>
             <div className='cta__content'>
               <p className='cta__sub-title'>Work with us</p>
-              <h2 className='cta__title title-anim'>
-                We would love to hear more about your project
-              </h2>
+              <SectionTitle className='cta__title'>
+              We would love to hear more about your project
+              </SectionTitle>
+
               <div className='btn_wrapper'>
                 <Link href='/contact' className='wc-btn-primary btn-hover btn-item'>
                   <span></span>Let’s talk us <i className='fa-solid fa-arrow-right'></i>
