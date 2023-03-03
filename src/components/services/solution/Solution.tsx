@@ -1,3 +1,4 @@
+import {SplitCome} from '@/components/common/animations/SplitCome';
 import React from 'react';
 
 const Solution = () => {
@@ -15,7 +16,10 @@ const Solution = () => {
         </div>
 
         <div className='solution__mid'>
-          <h1 className='solution__title animation__char_come'>Digital Solution</h1>
+          <SplitCome>
+          <h1 className='solution__title animation__char_come animation-char'>Digital Solution</h1>
+          </SplitCome>
+    
           <p>
             We’re designing digital experiences that enrich human lives and it helps to grow your
             business globally trends.

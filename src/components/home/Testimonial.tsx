@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Testimonial() {
   return (
@@ -20,10 +21,11 @@ export default function Testimonial() {
               </div>
               <div className='sec-title-wrapper text-anim'>
                 <h4 className='sec-sub-title'>Testimonials</h4>
-                <h5 className='sec-title title-anim'>
+                <SectionTitle>
                   Clients <br />
                   feedback
-                </h5>
+                </SectionTitle>
+
                 <p>
                   Our happy customers give us impactfull and positive feedback on our services,
                   customer supports & etc.

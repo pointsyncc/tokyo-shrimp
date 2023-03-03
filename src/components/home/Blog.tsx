@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Blog() {
   //use gsap and ref to create parallax effect on blog image on scroll
@@ -42,7 +43,7 @@ export default function Blog() {
           <div className='col-xxl-12 col-xl-12 col-lg-12 col-md-12'>
             <div className='sec-title-wrapper'>
               <h2 className='sec-sub-title'>recent blog</h2>
-              <h3 className='sec-title'>News insignt</h3>
+              <SectionTitle>News insignt</SectionTitle>
             </div>
           </div>
           <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>

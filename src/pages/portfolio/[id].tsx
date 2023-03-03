@@ -1,4 +1,6 @@
+import {SplitCome} from '@/components/common/animations/SplitCome';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
+import SectionTitle from '@/components/ui/sectionTitle/SectionTitle';
 import React from 'react';
 import { NextPageWithLayout } from '../_app';
 
@@ -12,10 +14,12 @@ const PortfolioDetails: NextPageWithLayout = () => {
           <div className='row'>
             <div className='col-xxl-8 col-xl-8 col-lg-7 col-md-7'>
               <div className='sec-title-wrapper'>
-                <h2 className='sec-title animation__char_come'>
-                  Lionpro- <br />
-                  Agency
-                </h2>
+                <SplitCome>
+                  <h2 className='sec-title animation__char_come'>
+                    Lionpro- <br />
+                    Agency
+                  </h2>
+                </SplitCome>
               </div>
             </div>
 
@@ -52,9 +56,10 @@ const PortfolioDetails: NextPageWithLayout = () => {
           <div className='block-content'>
             <div className='row'>
               <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
-                <h2 className='portfolio__detail-title title-anim'>
-                  Build, streamline and evolve together with solution
-                </h2>
+                <SectionTitle className='portfolio__detail-title title-anim'>
+                Build, streamline and evolve together with solution
+                </SectionTitle>
+
               </div>
 
               <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
@@ -86,9 +91,10 @@ const PortfolioDetails: NextPageWithLayout = () => {
           <div className='block-content  pt-140'>
             <div className='row'>
               <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
-                <h2 className='portfolio__detail-title title-anim'>
-                  Visual and typograpy hierarchy
-                </h2>
+              <SectionTitle className='portfolio__detail-title title-anim'>
+              Visual and typograpy hierarchy
+                </SectionTitle>
+
               </div>
 
               <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
