@@ -1,12 +1,13 @@
 import React from 'react';
+import { SplitCome } from '../common/animations/SplitCome';
 
 const ContactHeader = () => {
   return (
     <div className='row'>
       <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-6'>
-        <div className='sec-title-wrapper'>
+        <SplitCome className='sec-title-wrapper'>
           <h2 className='sec-title-2 animation__char_come'>Let’s get in touch</h2>
-        </div>
+        </SplitCome>
       </div>
       <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-6'>
         <div className='contact__text'>

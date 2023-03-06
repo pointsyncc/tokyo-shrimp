@@ -3,6 +3,7 @@ import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from '../ui/link/Link';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 interface IProps {
   // showHeadingArea?: boolean;
@@ -48,7 +49,7 @@ IProps) => {
       {!alt && (
         <div className='sec-title-wrapper'>
           <h2 className='sec-sub-title title-anim'>Our Team</h2>
-          <h3 className='sec-title title-anim'>How we work</h3>
+          <SectionTitle>How we work</SectionTitle>
         </div>
       )}
 

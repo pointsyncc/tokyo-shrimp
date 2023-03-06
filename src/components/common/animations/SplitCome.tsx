@@ -7,8 +7,9 @@ interface IProps {
   vars?: gsap.TweenVars;
   children: React.ReactNode;
   type?: 'words' | 'chars';
+  className?:string
 }
-export const SplitCome = ({ vars, children, type = 'chars' }: IProps) => {
+export const SplitCome = ({ className,vars, children, type = 'chars' }: IProps) => {
   const el = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
@@ -29,7 +30,7 @@ export const SplitCome = ({ vars, children, type = 'chars' }: IProps) => {
     return () => ctx.revert();
   }, [vars]);
 
-  return <div ref={el}>{children}</div>;
+  return <div className={className} ref={el}>{children}</div>;
 };
 
 
