@@ -22,7 +22,7 @@ export default function Brand() {
             <div className='brand__list'>
               {[1, 2, 3, 4, 5, 6, 3, 4, 5, 6, 1, 2].map((item, i) => {
                 return (
-                  <div key={item + i} className='brand__item fade_bottom'>
+                  <div key={i} className='brand__item fade_bottom'>
                     <Image
                       raw={true}
                       style={{ position: 'relative', height: 'auto',width:'auto' }}
