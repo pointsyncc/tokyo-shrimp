@@ -54,18 +54,25 @@ export default function Service() {
                   />
                 </div>
 
-                <img
-                  src='imgs/service/1/2.png'
+                <Image
+                  src='/imgs/service/1/2.png'
+                  width={280}
+                  height={380}
                   alt='Service Image'
                   className={`service__img img-2 ${activeEl === 1 ? 'active' : ''}`}
                 />
-                <img
-                  src='imgs/service/1/3.png'
+                <Image
+                  src='/imgs/service/1/3.png'
+                  width={280}
+                  height={380}
                   alt='Service Image'
                   className={`service__img img-3 ${activeEl === 2 ? 'active' : ''}`}
                 />
-                <img
-                  src='imgs/service/1/4.png'
+
+                <Image
+                  src='/imgs/service/1/4.png'
+                  width={280}
+                  height={380}
                   alt='Service Image'
                   className={`service__img img-4 ${activeEl === 3 ? 'active' : ''}`}
                 />

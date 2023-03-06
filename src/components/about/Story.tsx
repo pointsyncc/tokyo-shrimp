@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 const Story = () => {
   return (
@@ -13,7 +14,10 @@ const Story = () => {
           <div className='row'>
             <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
               <h2 className='sec-sub-title title-anim'>Digital Studio</h2>
-              <h3 className='sec-title title-anim'>Our story</h3>
+              <SectionTitle>
+              Our story
+              </SectionTitle>
+              {/* <h3 className='sec-title title-anim'>Our story</h3> */}
             </div>
             <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
               <div className='story__text'>
