@@ -1,6 +1,6 @@
 import React from 'react';
 import { Service } from '../service/Service';
-
+import Image from '@/components/ui/image/Image';
 const ServiceArea = () => {
   const services = [
     {
@@ -134,7 +134,14 @@ const ServiceArea = () => {
               </div>
 
               <div className='mid-content'>
-                <div className='service__image'>
+                {[1, 2, 3, 4, 5,4].map((imgNum) => {
+                  return (
+                    <div key={imgNum} className='service__image'>
+                      <Image width={580} height={1000} raw={true}  src={`/imgs/service/${imgNum}.jpg`} alt='Service Image' />
+                    </div>
+                  );
+                })}
+                {/* <div className='service__image'>
                   <img src='/imgs/service/1.jpg' alt='Service Image' />
                 </div>
                 <div className='service__image'>
@@ -151,7 +158,7 @@ const ServiceArea = () => {
                 </div>
                 <div className='service__image'>
                   <img src='/imgs/service/4.jpg' alt='Service Image' />
-                </div>
+                </div> */}
               </div>
 
               <div className='right-content'>

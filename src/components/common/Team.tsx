@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from '../ui/link/Link';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
+import Image from '../ui/image/Image';
 
 interface IProps {
   // showHeadingArea?: boolean;
@@ -81,7 +82,8 @@ IProps) => {
           return (
             <SplideSlide key={slide.name}>
               <Link href={`/team/${i + 1}`}>
-                <img className='img-fluid' src={slide.imgSrc} alt='Team Member' />
+                <Image src={slide.imgSrc} alt='Team Member' />
+                {/* <img className='img-fluid' src={slide.imgSrc} alt='Team Member' /> */}
                 <div className='team__info'>
                   <h4 className={`team__member-name ${alt ? 'team__member-name-6' : ''}`}>
                     {slide.name}
