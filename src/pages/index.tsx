@@ -1,7 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import About from '@/components/home/About';
 
-import Brand from '@/components/home/Brand';
+import Brand from '@/components/common/Brand';
 
 import Counter from '@/components/common/Counter';
 
