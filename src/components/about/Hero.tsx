@@ -1,6 +1,7 @@
 import React from 'react';
 import FadeUp from '../common/animations/FadeUp';
 import { SplitCome } from '../common/animations/SplitCome';
+import Image from '../ui/image/Image';
 
 const Hero = () => {
   return (
@@ -36,7 +37,14 @@ const Hero = () => {
                 </FadeUp>
 
                 <div className='hero__about-award'>
-                  <img src='/imgs/about/award.png' alt='Best Studio Award' />
+                  <Image
+                    priority={true}
+                    width={126}
+                    height={82}
+                    raw={true}
+                    src='/imgs/about/award.png'
+                    alt='Best Studio Award'
+                  />
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
+import Image from '../ui/image/Image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,12 +68,28 @@ export default function About() {
 
             <div className='about__content-wrapper'>
               <div className='about__img'>
-                <div className='img-anim' ref={imgAnim1}>
-                  <img src='imgs/about/1/1.jpg' alt='About Image' data-speed='0.3' />
+                <div className='img-anim bring-front' ref={imgAnim1}>
+                  <Image
+                    raw={true}
+                    style={{ position: 'relative',height:'auto' }}
+                    width={440}
+                    height={564}
+                    src='/imgs/about/1/1.jpg'
+                    alt='About Image'
+                  />
+                  {/* <img src='imgs/about/1/1.jpg' alt='About Image' data-speed='0.3' /> */}
                 </div>
 
-                <div className='about__img-right' ref={imgAnim2}>
-                  <img src='imgs/about/1/2.jpg' alt='About Image Right' data-speed='0.5' />
+                <div className='about__img-right bring-front' ref={imgAnim2}>
+                <Image
+                    raw={true}
+                    style={{ position: 'relative',height:'auto' }}
+                    width={220}
+                    height={250}
+                    src='/imgs/about/1/2.jpg'
+                    alt='About Image Right'
+                  />
+                  {/* <img src='imgs/about/1/2.jpg' alt='About Image Right' data-speed='0.5' /> */}
                   <div className='shape'>
                     <div className='secondary' data-speed='0.9'></div>
                     <div className='primary'></div>

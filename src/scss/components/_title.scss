@@ -259,6 +259,7 @@
 
 @media (min-width: 1200px) {
   .img-anim {
+
     @include img_anim(100%, 565px, 120%);
   }
 }

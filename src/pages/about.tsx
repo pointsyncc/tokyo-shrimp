@@ -7,7 +7,7 @@ import React from 'react';
 import { NextPageWithLayout } from './_app';
 import Hero from '@/components/about/Hero';
 import Story from '@/components/about/Story';
-import Brand from '@/components/home/Brand';
+import Brand from '@/components/common/Brand';
 
 const About: NextPageWithLayout = () => {
   return (
