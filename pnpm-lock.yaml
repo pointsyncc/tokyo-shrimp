@@ -27,6 +27,7 @@ specifiers:
   prettier: 2.8.4
   react: 18.2.0
   react-cookie-consent: ^8.0.1
+  react-countdown: ^2.3.5
   react-country-flag: ^3.0.2
   react-countup: ^6.4.1
   react-dom: 18.2.0
@@ -68,6 +69,7 @@ dependencies:
   nextjs-progressbar: 0.0.16_next@13.2.3+react@18.2.0
   react: 18.2.0
   react-cookie-consent: 8.0.1_react@18.2.0
+  react-countdown: 2.3.5_biqbaboplfbrettd7655fr4n2y
   react-country-flag: 3.0.2_react@18.2.0
   react-countup: 6.4.1_q2tyk3gci27qk4qoatek53e4vi
   react-dom: 18.2.0_react@18.2.0
@@ -2907,6 +2909,17 @@ packages:
     dependencies:
       js-cookie: 2.2.1
       react: 18.2.0
+    dev: false
+
+  /react-countdown/2.3.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-K26ENYEesMfPxhRRtm1r+Pf70SErrvW3g4CArLi/x6MPFjgfDFYePT4UghEj8p2nI0cqVV7/JjDgjyr//U60Og==}
+    peerDependencies:
+      react: '>= 15'
+      react-dom: '>= 15'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-country-flag/3.0.2_react@18.2.0:

@@ -7,7 +7,14 @@
         },
         "status": {
             "coming-soon": {
-                "title": "Enter the digital world"
+                "title": "Uđite u digitalni svijet pun mogućnosti",
+                "subtitle": "We are working hard to bring you the best experience possible.",
+                "newsletter": {
+                    "title": "Prijavi se na naš newsletter",
+                    "subtitle": "Unesite svoju adresu e-pošte kako biste dobili obavijest kada pokrenemo našu web stranicu kako biste mogli istražiti naše proizvode i usluge.",
+                    "placeholder": "Tvoja e-mail adresa",
+                    "button": "Prijavi se"
+                }
             }
         }
     },
