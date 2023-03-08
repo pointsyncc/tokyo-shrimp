@@ -46,12 +46,12 @@
 
       @media #{$lg} {
         margin-bottom: -300px;
-        width: 90%;
+        width: 90% !important;
       }
 
       @media #{$md} {
         margin-bottom: -250px;
-        width: 100%;
+        width: 100% !important;
       }
 
       @media #{$sm} {

@@ -1,3 +1,4 @@
+import Image from '@/components/ui/image/Image';
 import SectionTitle from '@/components/ui/sectionTitle/SectionTitle';
 import React from 'react';
 
@@ -12,7 +13,19 @@ const Brands = () => {
               We are happy to work with global largest brands
             </SectionTitle>
             <div className='brand__list brand-gap'>
-              <div className='brand__item-2 fade_bottom'>
+              {[1, 2, 3, 4, 5, 6].map((imgNum) => (
+                <div className='brand__item-2 fade_bottom' key={imgNum}>
+                  <Image
+                    style={{ height: 'auto', width: 'auto' }}
+                    raw={true}
+                    width={100}
+                    height={100}
+                    src={`/imgs/brand/${imgNum}.png`}
+                    alt='Brand Logo'
+                  />
+                </div>
+              ))}
+              {/* <div className='brand__item-2 fade_bottom'>
                 <img src='/imgs/brand/1.png' alt='Brand Logo' />
               </div>
               <div className='brand__item-2 fade_bottom'>
@@ -29,7 +42,7 @@ const Brands = () => {
               </div>
               <div className='brand__item-2 fade_bottom'>
                 <img src='/imgs/brand/6.png' alt='Brand Logo' />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

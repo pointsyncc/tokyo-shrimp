@@ -7,12 +7,12 @@ import { NextPageWithLayout } from '../_app';
 
 const TeamMember: NextPageWithLayout = () => {
   return (
-    <main>
+
       <div className='team__detail-page'>
         <MemberDetails />
         <CTA />
       </div>
-    </main>
+ 
   );
 };
 
