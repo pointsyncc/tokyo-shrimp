@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import { toast } from 'react-hot-toast';
 import { pointSynccAPI } from '@/utils/axios';
 import { useAppStore } from '@/stores/store';
+import Image from '@/components/ui/image/Image';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -103,7 +104,7 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <img src='/imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
+        <Image width={1160} height={662} raw={true} style={{height:'auto !important'}} src='/imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
       </div>
 
       <div className='footer__btm'>

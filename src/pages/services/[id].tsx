@@ -1,6 +1,8 @@
 import CTA from '@/components/common/CTA';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { PSAccordion } from '@/components/ui/accordion/Accordion';
+import Image from '@/components/ui/image/Image';
+
 import React from 'react';
 import { NextPageWithLayout } from '../_app';
 
@@ -62,12 +64,13 @@ const Service: NextPageWithLayout = () => {
             </div>
             <div className='col-xxl-8 col-xl-8 col-lg-8 col-md-8'>
               <div className='development__img'>
-                <img src='/imgs/thumb/dev-1.jpg' alt='Development Image' data-speed='auto' />
+                <Image src='/imgs/thumb/dev-1.jpg' alt='Development Image' data-speed='auto' />
               </div>
             </div>
             <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
               <div className='development__img'>
-                <img src='/imgs/thumb/dev-2.jpg' alt='Development Image' />
+              <Image src='/imgs/thumb/dev-2.jpg' alt='Development Image' data-speed='auto' />
+
               </div>
             </div>
           </div>
@@ -154,8 +157,10 @@ const Service: NextPageWithLayout = () => {
             </div>
             <div className='col-xxl-9 col-xl-9 col-lg-9 col-md-9'>
               <div className='service__detail-img'>
-                <img src='/imgs/thumb/service-detail.png' alt='Service detail image' />
-                <img src='/imgs/icon/shape-6.png' alt='Service shape image' className='sd-shape' />
+                <Image src='/imgs/thumb/service-detail.png' alt='Service detail image' />
+                {/* <img src='/imgs/thumb/service-detail.png' alt='Service detail image' /> */}
+                <Image raw={true} width={51} height={51} src='/imgs/icon/shape-6.png' alt='Service shape image' className='sd-shape'/>
+                {/* <img src='/imgs/icon/shape-6.png' alt='Service shape image' className='sd-shape' /> */}
               </div>
               <div className='service__detail-content'>
                 <p>
@@ -181,7 +186,7 @@ const Service: NextPageWithLayout = () => {
           <div className='row'>
             <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-6'>
               <div className='faq__img'>
-                <img src='/imgs/thumb/faq.jpg' alt='FAQ Image' data-speed='auto' />
+                <Image src='/imgs/thumb/faq.jpg' alt='FAQ Image' data-speed='auto' />
               </div>
             </div>
             <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-6'>

@@ -1,5 +1,6 @@
 import {SplitCome} from '@/components/common/animations/SplitCome';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
+import Image from '@/components/ui/image/Image';
 import SectionTitle from '@/components/ui/sectionTitle/SectionTitle';
 import React from 'react';
 import { NextPageWithLayout } from '../_app';
@@ -45,9 +46,9 @@ const PortfolioDetails: NextPageWithLayout = () => {
         </div>
       </div>
 
-      <div className='portfolio__detail-thumb'>
-        <img src='/imgs/portfolio/detail/1.jpg' alt='Portfolio Thumbnail' data-speed='auto' />
-      </div>
+      {/* <div className='portfolio__detail-thumb'> */}
+        <Image containerClasses='portfolio__detail-thumb' src='/imgs/portfolio/detail/1.jpg' alt='Portfolio Thumbnail' data-speed='auto' />
+      {/* </div> */}
 
       <div className='portfolio__detail-content'>
         <div className='container g-0 line pt-140'>
@@ -85,7 +86,7 @@ const PortfolioDetails: NextPageWithLayout = () => {
           </div>
 
           <div className='block-thumb'>
-            <img src='/imgs/portfolio/detail/2.jpg' alt='Portfolio Image' data-speed='0.5' />
+            <Image src='/imgs/portfolio/detail/2.jpg' alt='Portfolio Image' data-speed='0.5' />
           </div>
 
           <div className='block-content  pt-140'>
@@ -108,7 +109,7 @@ const PortfolioDetails: NextPageWithLayout = () => {
                   </p>
 
                   <div className='fonts'>
-                    <img src='/imgs/portfolio/detail/shape.png' alt='Font Style' />
+                    <Image style={{height:'auto'}} raw={true} width={253} height={170} src='/imgs/portfolio/detail/shape.png' alt='Font Style' />
                     <ul>
                       <li className='regular'>
                         <span>regular</span> This is text message
@@ -130,17 +131,17 @@ const PortfolioDetails: NextPageWithLayout = () => {
           </div>
 
           <div className='block-gallery'>
-            <img src='/imgs/portfolio/detail/3.jpg' alt='Portfolio Image' />
-            <img src='/imgs/portfolio/detail/4.jpg' alt='Portfolio Image' />
+            <Image className='position-relative'  raw={true} fill src='/imgs/portfolio/detail/3.jpg' alt='Portfolio Image' />
+            <Image className='position-relative'  raw={true} fill src='/imgs/portfolio/detail/4.jpg' alt='Portfolio Image' />
           </div>
 
           <div className='block-thumb'>
-            <img src='/imgs/portfolio/detail/5.jpg' alt='Portfolio Image' data-speed='0.5' />
+            <Image className='position-relative'  raw={true} fill src='/imgs/portfolio/detail/5.jpg' alt='Portfolio Image' data-speed='0.5' />
           </div>
 
           <div className='block-img-text'>
-            <img src='/imgs/portfolio/detail/6.jpg' alt='Portfolio Image' />
-            <img src='/imgs/portfolio/detail/7.jpg' alt='Portfolio Image' />
+            <Image className='position-relative'  raw={true} fill src='/imgs/portfolio/detail/6.jpg' alt='Portfolio Image' />
+            <Image className='position-relative'  raw={true} fill src='/imgs/portfolio/detail/7.jpg' alt='Portfolio Image' />
             <p>
               For those of us who are blessed with good sight. So we seldom consider it. That’s why
               going off to investigate the whys and hows involved is a little like trying to get

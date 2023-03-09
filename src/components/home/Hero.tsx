@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useTranslation } from 'next-i18next'
 import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
+import Image from '../ui/image/Image';
 export const Hero = () => {
   const { t } = useTranslation()
   const comp = useRef(null);
@@ -53,7 +54,7 @@ export const Hero = () => {
                   which is what we deliver.
                 </p>
               </div>
-              <img src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' />
+              <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' />
               <div className='experience' ref={experience}>
                 <h2 className='title'>25k+</h2>
                 <p>
@@ -66,7 +67,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <img src='/imgs/hero/1/1-bg.png' alt='image' className='hero1_bg' />
+      <Image raw={true} priority={true} fill={true} src='/imgs/hero/1/1-bg.png' alt='image' className='hero1_bg' />
     </section>
   );
 };

@@ -1,3 +1,4 @@
+import Image from '@/components/ui/image/Image';
 import { Link } from '@/components/ui/link/Link';
 import React from 'react';
 import { IntersectionOptions, useInView } from 'react-intersection-observer';
@@ -17,7 +18,7 @@ const PortfolioItem = ({ id, imgSrc, title, date, onVisibilityChange }: IPortfol
   return (
     <div className='portfolio__item-6' ref={ref}>
       <Link href={`/portfolio/${id}`}>
-        <img src={imgSrc} alt='Portfolio Image' />
+        <Image src={imgSrc} alt='Portfolio Image' />
         <div className='portfolio__content-6'>
           <h4 className='portfolio__title-6'>{title}</h4>
           <h5 className='portfolio__date'>{date}</h5>

@@ -1,4 +1,5 @@
 import { SplitCome } from '@/components/common/animations/SplitCome';
+import Image from '@/components/ui/image/Image';
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 const MemberDetails = () => {
@@ -9,7 +10,7 @@ const MemberDetails = () => {
         <div className='row'>
           <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-8 offset-lg-0 offset-md-2'>
             <div className='team__member-img'>
-              <img src='/imgs/team/detail.jpg' alt='Team Member Picture' data-speed='0.5' />
+              <Image src='/imgs/team/detail.jpg' alt='Team Member Picture' data-speed='0.5' />
             </div>
           </div>
           <div className='col-xxl-6 col-xl-6 col-lg-6 col-md-12'>
