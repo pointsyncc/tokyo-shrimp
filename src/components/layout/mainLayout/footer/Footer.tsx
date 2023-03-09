@@ -10,6 +10,7 @@ import { toast } from 'react-hot-toast';
 import { pointSynccAPI } from '@/utils/axios';
 import { useAppStore } from '@/stores/store';
 import Image from '@/components/ui/image/Image';
+import { Logo } from '@/components/ui/logo/Logo';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -104,7 +105,15 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <Image width={1160} height={662} raw={true} style={{height:'auto !important'}} src='/imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
+        <Image
+          width={1160}
+          height={662}
+          raw={true}
+          style={{ height: 'auto !important' }}
+          src='/imgs/thumb/footer.jpg'
+          alt='Footer Image'
+          data-speed='0.75'
+        />
       </div>
 
       <div className='footer__btm'>
@@ -113,12 +122,13 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <img
+                  <Logo  className='footer__logo' type="secondary" width={220} />
+                  {/* <img
                     className='footer__logo'
                     width={220}
                     src='/imgs/pointsyncc/logo/desktop/transparent.png'
                     alt='Footer Logo'
-                  />
+                  /> */}
                   <p>
                     When do they work well, and when do they on us and finally, when do we actually
                     need how can we avoid them.

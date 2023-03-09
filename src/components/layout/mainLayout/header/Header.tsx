@@ -1,3 +1,4 @@
+import { Logo } from '@/components/ui/logo/Logo';
 import logoPrimary from '@/public/imgs/pointsyncc/logo/desktop/transparent-90.png';
 import logoSecondary from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
 import Image from 'next/image';
@@ -13,15 +14,17 @@ export const Header = ({ openMenu }: HeaderProps) => {
     <header className='header__area'>
       <div className='header__inner'>
         <div className='header__logo'>
-          <Link href='/'>
-            <Image className='logo-primary' width={30} src={logoPrimary} alt='Pointsyncc Logo' />
-            <Image
+          {/* <Link href='/'> */}
+            <Logo/>
+            {/* <Image className='logo-primary' width={30} src={logoPrimary} alt='Pointsyncc Logo' /> */}
+            <Logo type="secondary"/>
+            {/* <Image
               className='logo-secondary'
               width={125}
               src={logoSecondary}
               alt='Pointsyncc Logo'
-            />
-          </Link>
+            /> */}
+           {/* </Link> */}
         </div>
         <div className='header__nav-icon'>
           <button
