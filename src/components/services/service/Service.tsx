@@ -1,3 +1,4 @@
+import Image from '@/components/ui/image/Image';
 import { Link } from '@/components/ui/link/Link';
 import { ComponentAttrs } from '@/types/general';
 import React from 'react';
@@ -14,7 +15,8 @@ export const Service = ({ id,title, imgSrc, description, subServices }: IProps) 
   return (
     <div className='service__item-6' id='service_2' data-secid='2'>
       <div className='image-tab'>
-        <img src={imgSrc} alt='Service Image' />
+        <Image src={imgSrc} width={580} height={1000} raw={true} alt='Service Image'/>
+        {/* <img  src={imgSrc} alt='Service Image' /> */}
       </div>
 
       <div className='animation__service_page'>

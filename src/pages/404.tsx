@@ -1,4 +1,5 @@
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
+import Image from '@/components/ui/image/Image';
 import Head from 'next/head';
 import Link from 'next/link';
 import { NextPageWithLayout } from './_app';
@@ -25,7 +26,7 @@ const Custom404: NextPageWithLayout = () => {
                 <div className='row'>
                   <div className='col-xxl-12'>
                     <div className='error__content'>
-                      <img src='imgs/thumb/404.png' alt='Page not found' />
+                      <Image raw={true} width={384} height={147} style={{height:'auto'}}  src='/imgs/thumb/404.png' alt='Page not found' />
                       <h2>Sorry! Page not found.</h2>
                       <p>The page you are looking for doesn&apos;t exist or has been moved.</p>
                       <div className='btn_wrapper'>

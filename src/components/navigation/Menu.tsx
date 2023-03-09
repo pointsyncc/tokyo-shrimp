@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import Image from '../ui/image/Image';
+import { Logo } from '../ui/logo/Logo';
 
 import classes from './menu.module.scss';
 
@@ -96,13 +98,14 @@ export default function Menu({ open, setOpen }: IProps) {
       <div className='offcanvas__body'>
         <div className='offcanvas__left'>
           <div className='offcanvas__logo'>
-            <Link href='/'>
-              <img
+            {/* <Link href='/'> */}
+              <Logo className='logo' type="secondary" width={180}/>
+              {/* <img
                 width={180}
                 src='imgs/pointsyncc/logo/desktop/transparent.png'
                 alt='PointSync logo'
-              />
-            </Link>
+              /> */}
+            {/* </Link> */}
           </div>
           <div className='offcanvas__social'>
             <h3 className='social-title'>Follow Us</h3>
@@ -178,8 +181,10 @@ export default function Menu({ open, setOpen }: IProps) {
               <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
             </ul>
           </div>
-          <img src='/imgs/shape/11.png' alt='shape' className='shape-1' />
-          <img src='/imgs/shape/12.png' alt='shape' className='shape-2' />
+          <Image style={{height:'auto'}} raw={true} src='/imgs/shape/11.png' alt='shape' className='shape-1' width={189} height={94}/>
+          {/* <img src='/imgs/shape/11.png' alt='shape' className='shape-1' /> */}
+          <Image raw={true} width={81} height={80} style={{height:'auto'}} src='/imgs/shape/12.png' alt='shape' className='shape-2' />
+          {/* <img src='/imgs/shape/12.png' alt='shape' className='shape-2' /> */}
         </div>
         <div className='offcanvas__close'>
           <button type='button' id='close_offcanvas' onClick={setOpen.bind(null, false)}>
