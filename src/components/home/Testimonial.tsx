@@ -1,4 +1,7 @@
 import React from 'react';
+import Image from '../ui/image/Image';
+
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Testimonial() {
   return (
@@ -11,8 +14,28 @@ export default function Testimonial() {
               <div className='testimonial__item item-1'>
                 <div className='button modal-trigger'>
                   <div className='testimonial__img b-right'>
-                    <img src='imgs/testimonial/1/1.png' alt='Testimonial Image' />
+                    <Image
+                      raw={true}
+                      style={{ position: 'relative',height:'auto' }}
+                      width={330}
+                      height={430}
+                      src='/imgs/testimonial/1/1.png'
+                      alt='Testimonial Image'
+                    />
                   </div>
+                  {/* <div className='testimonial__img b-right'> */}
+                  {/* <Image
+                  className='position-relative'
+                  sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  33vw"
+                    src='/imgs/testimonial/1/1.png'
+                    alt='Testimonial Image'
+                    width={330}
+                    height={430}
+                  /> */}
+                  {/* <img src='imgs/testimonial/1/1.png' alt='Testimonial Image' /> */}
+                  {/* </div> */}
 
                   <h2 className='testimonial__title'>Jessica Sherlock</h2>
                   <h3 className='testimonial__role'>Manager, Oitaka</h3>
@@ -20,10 +43,11 @@ export default function Testimonial() {
               </div>
               <div className='sec-title-wrapper text-anim'>
                 <h4 className='sec-sub-title'>Testimonials</h4>
-                <h5 className='sec-title title-anim'>
+                <SectionTitle>
                   Clients <br />
                   feedback
-                </h5>
+                </SectionTitle>
+
                 <p>
                   Our happy customers give us impactfull and positive feedback on our services,
                   customer supports & etc.
@@ -34,7 +58,15 @@ export default function Testimonial() {
             <div className='testimonial__item item-2'>
               <div className='button modal-trigger-2'>
                 <div className='testimonial__img b-left'>
-                  <img src='imgs/testimonial/1/3.png' alt='Testimonial Image' />
+                  <Image
+                    raw={true}
+                    style={{ position: 'relative',height:'auto' }}
+                    width={220}
+                    height={300}
+                    src='/imgs/testimonial/1/3.png'
+                    alt='Testimonial Image'
+                  />
+                  {/* <img src='imgs/testimonial/1/3.png' alt='Testimonial Image' /> */}
                 </div>
 
                 <h2 className='testimonial__title'>Jessica Sherlock</h2>
@@ -46,7 +78,15 @@ export default function Testimonial() {
             <div className='testimonial__item item-3 img-'>
               <div className='button modal-trigger-3'>
                 <div className='testimonial__img b-left'>
-                  <img src='imgs/testimonial/1/2.png' alt='Testimonial Image' />
+                  <Image
+                    raw={true}
+                    style={{ position: 'relative',height:'auto' }}
+                    width={260}
+                    height={360}
+                    src='/imgs/testimonial/1/2.png'
+                    alt='Testimonial Image'
+                  />
+                  {/* <img src='imgs/testimonial/1/2.png' alt='Testimonial Image' /> */}
                 </div>
 
                 <h2 className='testimonial__title'>adam Smith</h2>

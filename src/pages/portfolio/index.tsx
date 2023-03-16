@@ -17,43 +17,43 @@ const Portolio: NextPageWithLayout = () => {
   const portfolioItems: IPortfolioItemProps[] = [
     {
       id: '1',
-      imgSrc: 'imgs/portfolio/6/1.jpg',
+      imgSrc: '/imgs/portfolio/6/1.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
     {
       id: '2',
-      imgSrc: 'imgs/portfolio/6/2.jpg',
+      imgSrc: '/imgs/portfolio/6/2.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
     {
       id: '3',
-      imgSrc: 'imgs/portfolio/6/3.jpg',
+      imgSrc: '/imgs/portfolio/6/3.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
     {
       id: '4',
-      imgSrc: 'imgs/portfolio/6/4.jpg',
+      imgSrc: '/imgs/portfolio/6/4.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
     {
       id: '5',
-      imgSrc: 'imgs/portfolio/6/5.jpg',
+      imgSrc: '/imgs/portfolio/6/5.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
     {
       id: '6',
-      imgSrc: 'imgs/portfolio/6/6.jpg',
+      imgSrc: '/imgs/portfolio/6/6.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
     {
       id: '7',
-      imgSrc: 'imgs/portfolio/6/7.jpg',
+      imgSrc: '/imgs/portfolio/6/7.jpg',
       title: 'Lionpro Agency',
       date: '02 May 2021',
     },
@@ -66,7 +66,7 @@ const Portolio: NextPageWithLayout = () => {
         <meta name='description' content='Portfolio' />
       </Head>
 
-      <main>
+      <>
         <section className='portfolio__area-6'>
           <div className='container line pt-100 pb-140'>
             <span className='line-3'></span>
@@ -97,7 +97,7 @@ const Portolio: NextPageWithLayout = () => {
         </section>
 
         <CTA />
-      </main>
+      </>
     </div>
   );
 };

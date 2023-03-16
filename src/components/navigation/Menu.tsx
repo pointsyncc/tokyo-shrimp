@@ -1,7 +1,11 @@
 import gsap from 'gsap';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import Image from '../ui/image/Image';
+import { Logo } from '../ui/logo/Logo';
+
 import classes from './menu.module.scss';
 
 interface IProps {
@@ -9,6 +13,7 @@ interface IProps {
   setOpen: (open: boolean) => void;
 }
 export default function Menu({ open, setOpen }: IProps) {
+  const router = useRouter();
   const comp = useRef(null);
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -41,6 +46,20 @@ export default function Menu({ open, setOpen }: IProps) {
     return () => ctx.revert(); // cleanup
   }, [open]);
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setOpen(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events,setOpen]);
+
   const links = [
     {
       href: '/',
@@ -51,13 +70,18 @@ export default function Menu({ open, setOpen }: IProps) {
       text: 'About',
     },
     {
-      href: '/service',
-      text: 'Service',
+      href: '/services',
+      text: 'Services',
     },
     {
-      href: '/blog',
-      text: 'Blog',
+      href: '/portfolio',
+      text: 'Portfolio',
     },
+    {
+      href: '/team',
+      text: 'Team',
+    },
+
     {
       href: '/contact',
       text: 'Contact',
@@ -74,13 +98,14 @@ export default function Menu({ open, setOpen }: IProps) {
       <div className='offcanvas__body'>
         <div className='offcanvas__left'>
           <div className='offcanvas__logo'>
-            <Link href='/'>
-              <img
+            {/* <Link href='/'> */}
+              <Logo className='logo' type="secondary" width={180}/>
+              {/* <img
                 width={180}
                 src='imgs/pointsyncc/logo/desktop/transparent.png'
                 alt='PointSync logo'
-              />
-            </Link>
+              /> */}
+            {/* </Link> */}
           </div>
           <div className='offcanvas__social'>
             <h3 className='social-title'>Follow Us</h3>
@@ -135,12 +160,14 @@ export default function Menu({ open, setOpen }: IProps) {
         </div>
         <div className='offcanvas__right'>
           <div className='offcanvas__search'>
+      
             <form action='#'>
               <input type='text' name='search' placeholder='Search keyword' />
               <button>
                 <i className='fa-solid fa-magnifying-glass'></i>
               </button>
             </form>
+
           </div>
           <div className='offcanvas__contact'>
             <h3>Get in touch</h3>
@@ -154,8 +181,10 @@ export default function Menu({ open, setOpen }: IProps) {
               <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
             </ul>
           </div>
-          <img src='/imgs/shape/11.png' alt='shape' className='shape-1' />
-          <img src='/imgs/shape/12.png' alt='shape' className='shape-2' />
+          <Image style={{height:'auto'}} raw={true} src='/imgs/shape/11.png' alt='shape' className='shape-1' width={189} height={94}/>
+          {/* <img src='/imgs/shape/11.png' alt='shape' className='shape-1' /> */}
+          <Image raw={true} width={81} height={80} style={{height:'auto'}} src='/imgs/shape/12.png' alt='shape' className='shape-2' />
+          {/* <img src='/imgs/shape/12.png' alt='shape' className='shape-2' /> */}
         </div>
         <div className='offcanvas__close'>
           <button type='button' id='close_offcanvas' onClick={setOpen.bind(null, false)}>

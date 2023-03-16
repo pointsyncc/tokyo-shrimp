@@ -2,7 +2,22 @@ import React from 'react';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-export const Team = () => {
+import { Link } from '../ui/link/Link';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
+import Image from '../ui/image/Image';
+
+interface IProps {
+  // showHeadingArea?: boolean;
+  // transparentBg?: boolean;
+  // noPaddingLeft?: boolean;
+  alt?: boolean;
+}
+export const TeamSlider = ({
+  alt = false,
+}: // showHeadingArea = true,
+// transparentBg = false,
+// noPaddingLeft = false,
+IProps) => {
   const slides = [
     {
       imgSrc: '/imgs/team/1.jpg',
@@ -31,11 +46,13 @@ export const Team = () => {
     },
   ];
   return (
-    <section className='team__area pt-140 pb-140'>
-      <div className='sec-title-wrapper'>
-        <h2 className='sec-sub-title title-anim'>Our Team</h2>
-        <h3 className='sec-title title-anim'>How we work</h3>
-      </div>
+    <section className={`pt-140 pb-140 ${alt ? 'bg-transparent' : ''} ${alt ? '' : 'team__area'}`}>
+      {!alt && (
+        <div className='sec-title-wrapper'>
+          <h2 className='sec-sub-title title-anim'>Our Team</h2>
+          <SectionTitle>How we work</SectionTitle>
+        </div>
+      )}
 
       <Splide
         className='team__slider'
@@ -63,14 +80,19 @@ export const Team = () => {
       >
         {slides.map((slide,i) => {
           return (
-            <SplideSlide  key={slide.name}>
-              <a href='team-details.html'>
-                <img className='img-fluid' src={slide.imgSrc} alt='Team Member' />
+            <SplideSlide key={slide.name}>
+              <Link href={`/team/${i + 1}`}>
+                <Image src={slide.imgSrc} alt='Team Member' />
+                {/* <img className='img-fluid' src={slide.imgSrc} alt='Team Member' /> */}
                 <div className='team__info'>
-                  <h4 className='team__member-name'>{slide.name}</h4>
-                  <h5 className='team__member-role'>{slide.role}</h5>
+                  <h4 className={`team__member-name ${alt ? 'team__member-name-6' : ''}`}>
+                    {slide.name}
+                  </h4>
+                  <h5 className={`team__member-role ${alt ? 'team__member-role-6' : ''}`}>
+                    {slide.role}
+                  </h5>
                 </div>
-              </a>
+              </Link>
             </SplideSlide>
           );
         })}

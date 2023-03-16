@@ -1,4 +1,4 @@
-import { EMAIL_PATTERN } from '@/components/constants/constants';
+import { EMAIL_PATTERN } from '@/utils/constants';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
@@ -6,6 +6,11 @@ import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
 import gsap from 'gsap';
+import { toast } from 'react-hot-toast';
+import { pointSynccAPI } from '@/utils/axios';
+import { useAppStore } from '@/stores/store';
+import Image from '@/components/ui/image/Image';
+import { Logo } from '@/components/ui/logo/Logo';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -32,8 +37,39 @@ const Footer = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const { setLoading, loadingStates } = useAppStore();
+
+  const sendForm = async (data: any) => {
+    await pointSynccAPI.sendRequest({
+      method: 'post',
+      url: '/user/newsletter',
+      body: data,
+    });
+  };
+
+  const onSubmit = async (data: any) => {
+    // try {
+    //   setLoading('newsletterForm', true);
+    //   toast.loading('Sending your request...', {
+    //     duration: 2000,
+    //   });
+    //   await pointSynccAPI.sendRequest({
+    //     method: 'post',
+    //     url: '/user/newsletter',
+    //     body: data,
+    //   });
+    //   toast.success('You are now subscribed to our newsletter!');
+    // } catch (error) {
+    //   console.log(error);
+    //   toast.error('Something went wrong 🫠. Please try again later.');
+    // } finally {
+    //   setLoading('newsletterForm', false);
+    // }
+    toast.promise(sendForm(data), {
+      loading: 'Sending your request...',
+      success: 'You are now subscribed to our newsletter!',
+      error: (err) => `This just happened: ${err.toString()}`,
+    });
   };
 
   useEffect(() => {
@@ -69,7 +105,15 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <img src='imgs/thumb/footer.jpg' alt='Footer Image' data-speed='0.75' />
+        <Image
+          width={1160}
+          height={662}
+          raw={true}
+          style={{ height: 'auto !important' }}
+          src='/imgs/thumb/footer.jpg'
+          alt='Footer Image'
+          data-speed='0.75'
+        />
       </div>
 
       <div className='footer__btm'>
@@ -78,12 +122,13 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <img
+                  <Logo  className='footer__logo' type="secondary" width={220} />
+                  {/* <img
                     className='footer__logo'
                     width={220}
-                    src='imgs/pointsyncc/logo/desktop/transparent.png'
+                    src='/imgs/pointsyncc/logo/desktop/transparent.png'
                     alt='Footer Logo'
-                  />
+                  /> */}
                   <p>
                     When do they work well, and when do they on us and finally, when do we actually
                     need how can we avoid them.

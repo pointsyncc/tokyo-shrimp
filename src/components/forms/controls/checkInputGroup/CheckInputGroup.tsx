@@ -4,7 +4,7 @@ import Label, { ILabelProps } from '../../label/Label';
 import { FormInputBase } from '@/types/forms';
 import { ComponentAttrs } from '@/types/general';
 import { FieldValues } from 'react-hook-form';
-import { Input } from '../Input/Input';
+import { Input } from '../customInput/CustomInput';
 
 interface ICheckInputProps<TFormValues extends FieldValues>
   extends ComponentAttrs,

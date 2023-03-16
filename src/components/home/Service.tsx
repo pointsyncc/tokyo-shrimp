@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from '../ui/link/Link';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Service() {
   const [activeEl, setActiveEl] = useState(0);
@@ -11,10 +13,11 @@ export default function Service() {
           <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
             <div className='sec-title-wrapper wrap'>
               <h2 className='sec-sub-title title-anim'>service</h2>
-              <h3 className='sec-title title-anim'>
+
+              <SectionTitle>
                 Solution we <br />
                 provide
-              </h3>
+              </SectionTitle>
             </div>
           </div>
           <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
@@ -28,10 +31,10 @@ export default function Service() {
           <div className='col-xxl-3 col-xl-3 col-lg-3 col-md-3'>
             <div className='service__top-btn'>
               <div className='btn_wrapper'>
-                <a href='service.html' className='btn-item wc-btn-secondary btn-hover'>
+                <Link href='/services' className='btn-item wc-btn-secondary btn-hover'>
                   <span></span> View <br />
                   all services <FaArrowRight rotate={-45} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -51,18 +54,25 @@ export default function Service() {
                   />
                 </div>
 
-                <img
-                  src='imgs/service/1/2.png'
+                <Image
+                  src='/imgs/service/1/2.png'
+                  width={280}
+                  height={380}
                   alt='Service Image'
                   className={`service__img img-2 ${activeEl === 1 ? 'active' : ''}`}
                 />
-                <img
-                  src='imgs/service/1/3.png'
+                <Image
+                  src='/imgs/service/1/3.png'
+                  width={280}
+                  height={380}
                   alt='Service Image'
                   className={`service__img img-3 ${activeEl === 2 ? 'active' : ''}`}
                 />
-                <img
-                  src='imgs/service/1/4.png'
+
+                <Image
+                  src='/imgs/service/1/4.png'
+                  width={280}
+                  height={380}
                   alt='Service Image'
                   className={`service__img img-4 ${activeEl === 3 ? 'active' : ''}`}
                 />

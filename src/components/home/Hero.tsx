@@ -1,12 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useTranslation } from 'next-i18next'
+import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
+import Image from '../ui/image/Image';
 export const Hero = () => {
+  const { t } = useTranslation()
   const comp = useRef(null);
   const heroHeading = useRef(null);
   const heroText = useRef(null);
   const experience = useRef(null);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       const tl = gsap.timeline();
@@ -18,16 +22,17 @@ export const Hero = () => {
       );
       tl.fromTo(
         heroText.current,
-        { opacity: 0, scale: 0.5 },
-        { opacity: 1, scale: 1, duration: 1.5 },
+        { opacity: 0, scale: 0.7 },
+        { opacity: 1, scale: 1, duration: 1 },
         '<+=.5',
       );
-      tl.fromTo(experience.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0 }, 1.25);
+      tl.fromTo(experience.current, { opacity: 0, y: 50 }, { opacity: 1, y: 0 }, 1);
     }, comp); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
   }, []);
   return (
+    
     <section className='hero__area' ref={comp}>
       <div className='container'>
         <div className='row'>
@@ -41,7 +46,7 @@ export const Hero = () => {
               </a>
               <div className='hero__title-wrapper'>
                 <h1 className='hero__title' ref={heroHeading}>
-                  Enter the digital world ready
+                  {t('pages.home.hero.title')}
                 </h1>
                 <p className='hero__sub-title' ref={heroText}>
                   With every single one of our clients, we bring forth deep passion for
@@ -49,7 +54,7 @@ export const Hero = () => {
                   which is what we deliver.
                 </p>
               </div>
-              <img src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' />
+              <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' />
               <div className='experience' ref={experience}>
                 <h2 className='title'>25k+</h2>
                 <p>
@@ -62,7 +67,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <img src='/imgs/hero/1/1-bg.png' alt='image' className='hero1_bg' />
+      <Image raw={true} priority={true} fill={true} src='/imgs/hero/1/1-bg.png' alt='image' className='hero1_bg' />
     </section>
   );
 };

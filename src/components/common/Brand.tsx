@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from '../ui/image/Image';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Brand() {
   return (
@@ -9,16 +11,32 @@ export default function Brand() {
           <div className='col-xxl-12'>
             <div className='sec-title-wrapper'>
               <h2 className='sec-sub-title title-anim'>Internation Brands</h2>
-              <h3 className='sec-title title-anim'>
+              <SectionTitle>
                 We are happy to work with global <br />
                 largest brands
-              </h3>
+              </SectionTitle>
             </div>
           </div>
 
           <div className='col-xxl-12'>
             <div className='brand__list'>
-              <div className='brand__item fade_bottom'>
+              {[1, 2, 3, 4, 5, 6, 3, 4, 5, 6, 1, 2].map((item, i) => {
+                return (
+                  <div key={i} className='brand__item fade_bottom'>
+                    <Image
+                      raw={true}
+                      style={{ position: 'relative', height: 'auto',width:'auto' }}
+                      width={100}
+                      height={100}
+                      src={`/imgs/brand/${item}.png`}
+                      alt='Brand Logo'
+                 
+                    />
+       
+                  </div>
+                );
+              })}
+              {/* <div className='brand__item fade_bottom'>
                 <img src='imgs/brand/1.png' alt='Brand Logo' />
               </div>
               <div className='brand__item fade_bottom'>
@@ -53,7 +71,7 @@ export default function Brand() {
               </div>
               <div className='brand__item fade_bottom'>
                 <img src='imgs/brand/2.png' alt='Brand Logo' />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

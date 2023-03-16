@@ -1,5 +1,7 @@
 import { CookieBanner } from '@/components/common/cookieConsent/CookieConsent';
+import LocaleSwitcher from '@/components/common/localeSwitcher/LocaleSwitcher';
 import Menu from '@/components/navigation/Menu';
+
 import React from 'react';
 import AnchorButton from './anchor/AnchorButton';
 import Footer from './footer/Footer';
@@ -15,6 +17,7 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
 
   return (
     <>
+      <LocaleSwitcher/>
       <Menu open={openMenu} setOpen={setOpenMenu} />
       <Header openMenu={() => setOpenMenu(!openMenu)} />
       <div id='smooth-wrapper'>
@@ -24,6 +27,8 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
       <AnchorButton />
 
       <CookieBanner/>
+
+      <CookieBanner />
     </>
   );
 };

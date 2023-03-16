@@ -1,0 +1,20 @@
+{
+    "pages": {
+        "home": {
+            "hero": {
+                "title": "Enter the digital world ready"
+            }
+        },
+        "status": {
+            "coming-soon": {
+                "title": "Enter the digital world"
+            }
+        }
+    },
+    "global": {
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds"
+    }
+}

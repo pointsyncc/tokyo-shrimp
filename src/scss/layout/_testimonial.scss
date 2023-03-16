@@ -210,6 +210,7 @@
 
           img {
             width: 100%;
+
           }
         }
       }
@@ -426,7 +427,7 @@
     @media #{$xl} {
       transform: unset;
       top: unset;
-      bottom: 110px;
+      bottom: -33px;
       z-index: 9;
     }
 
