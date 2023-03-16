@@ -1,4 +1,5 @@
 import { CookieBanner } from '@/components/common/cookieConsent/CookieConsent';
+import { CookieBanner } from '@/components/common/cookieConsent/CookieConsent';
 import LocaleSwitcher from '@/components/common/localeSwitcher/LocaleSwitcher';
 import Menu from '@/components/navigation/Menu';
 
@@ -25,6 +26,8 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
       </div>
       {showFooter && <Footer />}
       <AnchorButton />
+
+      <CookieBanner/>
 
       <CookieBanner />
     </>

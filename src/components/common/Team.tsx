@@ -60,7 +60,7 @@ IProps) => {
           arrows: false,
           pagination: false,
           gap: 30,
-          //   focus: 'center',
+        //   focus: 'center',
           type: 'loop',
           drag: 'free',
           speed: 2000,
@@ -78,7 +78,7 @@ IProps) => {
           },
         }}
       >
-        {slides.map((slide, i) => {
+        {slides.map((slide,i) => {
           return (
             <SplideSlide key={slide.name}>
               <Link href={`/team/${i + 1}`}>

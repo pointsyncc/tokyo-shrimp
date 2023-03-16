@@ -5,8 +5,10 @@ import { useRouter } from 'next/router';
 import { ComponentAttrs } from '@/types/general';
 
 export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   activeClassName?: string;
   asButton?: boolean;
+  applyLinkStyles?:boolean;
   applyLinkStyles?:boolean;
 }
 
@@ -57,5 +59,5 @@ export const Link = ({
   //   );
   // }
 
-  return link;
+  return normalAnchorTag;;
 };
