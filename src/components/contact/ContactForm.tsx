@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import { FieldValues } from 'react-hook-form';
+import { FieldValues, UseFormReset } from 'react-hook-form';
 import { object, string } from 'yup';
 import { Control, FormControl } from '../forms/controls/control/Control';
 import GeneralForm from '../forms/generalForm/GeneralForm';
 import CircleButton from '../ui/button/CircleButton';
-
-
 
 interface IValues {
   name: string;
@@ -20,9 +18,6 @@ import { toast } from 'react-hot-toast';
 import { useAppStore } from '@/stores/store';
 import { PHONE_REGEX } from '@/utils/contants';
 export const ContactForm = () => {
-
-
-
   const { setLoading, loadingStates } = useAppStore();
   const schema = object({
     name: string().max(20).required(),
@@ -79,9 +74,13 @@ export const ContactForm = () => {
     },
   ];
 
-  const onSubmit = async (data: IValues,recaptchaToken:string | undefined) => {
+  const onSubmit = async (
+    data: IValues,
+    reset: UseFormReset<IValues>,
+    recaptchaToken?: string | undefined,
+  ) => {
     console.log(data);
-    console.log(recaptchaToken)
+    console.log(recaptchaToken);
     // const req = pointSynccAPI.sendRequest({
     //   method: 'post',
     //   url: '/user/contact',
@@ -124,6 +123,8 @@ export const ContactForm = () => {
         loading: 'Sending your feedback...',
         success: () => {
           setLoading('contactForm', false);
+
+          reset();
           return 'Your feedback has been submitted';
         },
         error: (err) => {
@@ -134,26 +135,26 @@ export const ContactForm = () => {
     );
   };
 
-
-
-
   return (
     <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7'>
-    <div className='contact__form'>
-      <GeneralForm<IValues, any>
-        submitBtnText='Send Messages'
-        schema={schema}
-        controls={controls}
-        withRecaptcha={true}
-        onSubmit={onSubmit}
-        customSubmitButton={
-          <CircleButton disabled={loadingStates.contactForm} isLoading={loadingStates.contactForm}>
-            <span></span> Send <br />
-            Messages <i className='fa-solid fa-arrow-right'></i>
-          </CircleButton>
-        }
-      />
-    </div>
+      <div className='contact__form'>
+        <GeneralForm<IValues, any>
+          submitBtnText='Send Messages'
+          schema={schema}
+          controls={controls}
+          withRecaptcha={true}
+          onSubmit={onSubmit}
+          customSubmitButton={
+            <CircleButton
+              disabled={loadingStates.contactForm}
+              isLoading={loadingStates.contactForm}
+            >
+              <span></span> Send <br />
+              Messages <i className='fa-solid fa-arrow-right'></i>
+            </CircleButton>
+          }
+        />
+      </div>
     </div>
   );
 };

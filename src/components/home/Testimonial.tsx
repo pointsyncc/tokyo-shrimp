@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedImage from '../ui/image/AnimatedImage';
 import Image from '../ui/image/Image';
 
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
@@ -13,7 +14,16 @@ export default function Testimonial() {
             <div className='testimonial__wrapper'>
               <div className='testimonial__item item-1'>
                 <div className='button modal-trigger'>
-                  <div className='testimonial__img b-right'>
+                  <AnimatedImage
+                    containerClasses='testimonial__img b-right'
+                    raw={true}
+                    style={{ position: 'relative', height: 'auto' }}
+                    width={330}
+                    height={430}
+                    src='/imgs/testimonial/1/1.png'
+                    alt='Testimonial Image'
+                  />
+                  {/* <div className='testimonial__img b-right'>
                     <Image
                       raw={true}
                       style={{ position: 'relative',height:'auto' }}
@@ -22,7 +32,7 @@ export default function Testimonial() {
                       src='/imgs/testimonial/1/1.png'
                       alt='Testimonial Image'
                     />
-                  </div>
+                  </div> */}
                   {/* <div className='testimonial__img b-right'> */}
                   {/* <Image
                   className='position-relative'
@@ -57,17 +67,25 @@ export default function Testimonial() {
 
             <div className='testimonial__item item-2'>
               <div className='button modal-trigger-2'>
-                <div className='testimonial__img b-left'>
+                <AnimatedImage
+                  containerClasses='testimonial__img b-left'
+                  raw={true}
+                  style={{ position: 'relative', height: 'auto' }}
+                  width={220}
+                  height={300}
+                  src='/imgs/testimonial/1/3.png'
+                  alt='Testimonial Image'
+                />
+                {/* <div className='testimonial__img b-left'>
                   <Image
                     raw={true}
-                    style={{ position: 'relative',height:'auto' }}
+                    style={{ position: 'relative', height: 'auto' }}
                     width={220}
                     height={300}
                     src='/imgs/testimonial/1/3.png'
                     alt='Testimonial Image'
                   />
-                  {/* <img src='imgs/testimonial/1/3.png' alt='Testimonial Image' /> */}
-                </div>
+                </div> */}
 
                 <h2 className='testimonial__title'>Jessica Sherlock</h2>
                 <h3 className='testimonial__role'>Manager, Oitaka</h3>
@@ -77,17 +95,26 @@ export default function Testimonial() {
           <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
             <div className='testimonial__item item-3 img-'>
               <div className='button modal-trigger-3'>
-                <div className='testimonial__img b-left'>
+                <AnimatedImage
+                  containerClasses='testimonial__img b-left'
+                  raw={true}
+                  style={{ position: 'relative', height: 'auto' }}
+                  width={260}
+                  height={360}
+                  src='/imgs/testimonial/1/2.png'
+                  alt='Testimonial Image'
+                />
+                {/* <div className='testimonial__img b-left'>
                   <Image
                     raw={true}
-                    style={{ position: 'relative',height:'auto' }}
+                    style={{ position: 'relative', height: 'auto' }}
                     width={260}
                     height={360}
                     src='/imgs/testimonial/1/2.png'
                     alt='Testimonial Image'
                   />
-                  {/* <img src='imgs/testimonial/1/2.png' alt='Testimonial Image' /> */}
-                </div>
+ 
+                </div> */}
 
                 <h2 className='testimonial__title'>adam Smith</h2>
                 <h3 className='testimonial__role'>Manager, Oitaka</h3>
