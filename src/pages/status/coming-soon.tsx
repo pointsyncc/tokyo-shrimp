@@ -29,13 +29,13 @@ export default function ComingSoon() {
   return (
     <div className='bg__coming__soon'>
       <main className='main__container'>
-        {/* HEADER */}
-        <div className='header__container'>
-          <h1 className='heading__coming__soon'>Enter the digital world</h1>
-          <Image src={logoURL} width='260' height={30} alt='Pointsyncc' />
+    
+       <div className='header__container'>
+          <h1 className='heading__coming__soon'>Coming soon</h1>
+          
         </div>
 
-        {/* APPLY TO GET NEWS */}
+ {/* 
         <div className='apply__news__container'>
           <p className='text__apply__news'>
             Enter your e-mail address to get notified when we launch our website so you can explore
@@ -45,13 +45,13 @@ export default function ComingSoon() {
             <input type='text' placeholder='Enter your email' className='input__email' />
             <button className='btn__apply__news'>{t('Apply')}</button>
           </div>
-        </div>
+        </div> */}
 
-        {/* FOOTER */}
-        <div className='footer__container'>
+        
+        {/* <div className='footer__container'>
           <div className='lang__switcher'>
             <p>EN</p>
-            {/* <LocaleSwitcher/> */}
+
           </div>
           <div className='countdown__cotainer' style={{display: 'flex', justifyContent: 'space-between'}}>
             {countdown.map((item, index) => (
@@ -60,9 +60,12 @@ export default function ComingSoon() {
                 <p className='countdown__text'>{item.text}</p>
               </div>
             ))}
-            <div></div>
+            <div>
           </div>
-        </div>
+        </div> */}
+      <footer>
+        <Image src={logoURL} width='260' height={30} alt='Pointsyncc' />
+      </footer>
       </main>
     </div>
   );

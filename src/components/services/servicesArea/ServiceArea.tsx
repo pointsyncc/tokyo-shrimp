@@ -74,7 +74,7 @@ const ServiceArea = () => {
       ],
     },
     {
-      imgSrc: '/imgs/service/6.jpg',
+      imgSrc: '/imgs/service/4.jpg',
       title: 'Illustrations & Prototype',
       description:
         'This is the second workshop of the UX design methodology. Given all the conclusions drawn in the personae workshop, we will project ourselves towards the production of ideal user journeys. In other words: how each persona can achieve their goal.',
@@ -137,7 +137,7 @@ const ServiceArea = () => {
                 {[1, 2, 3, 4, 5,4].map((imgNum) => {
                   return (
                     <div key={imgNum} className='service__image'>
-                      <Image width={580} height={1000} raw={true}  src={`/imgs/service/${imgNum}.jpg`} alt='Service Image' />
+                      <Image  width={580} height={1000} raw={true}  src={`/imgs/service/${imgNum}.jpg`} alt='Service Image' />
                     </div>
                   );
                 })}

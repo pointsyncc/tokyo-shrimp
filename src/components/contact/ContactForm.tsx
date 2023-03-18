@@ -79,8 +79,7 @@ export const ContactForm = () => {
     reset: UseFormReset<IValues>,
     recaptchaToken?: string | undefined,
   ) => {
-    console.log(data);
-    console.log(recaptchaToken);
+
     // const req = pointSynccAPI.sendRequest({
     //   method: 'post',
     //   url: '/user/contact',

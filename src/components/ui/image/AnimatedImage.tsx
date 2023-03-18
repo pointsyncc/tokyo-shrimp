@@ -13,7 +13,7 @@ const AnimatedImage = ({ children,containerClasses,className = '', ...rest }: IP
   const classes = classNames('anim-rotate-in', className);
   return (
     <RotateIn className={containerClasses}>
-      <Image className={classes} {...rest} />
+      <Image className={classes} {...rest} alt='' />
       {children}
     </RotateIn>
   );

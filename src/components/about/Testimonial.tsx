@@ -1,5 +1,4 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import React from 'react';
 import '@splidejs/react-splide/css';
 import { FaArrowLeft } from 'react-icons/fa';
 const Testimonial = () => {

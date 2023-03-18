@@ -137,13 +137,17 @@
     }
 
     @media #{$sm} {
-      margin-left: 0;
+      margin: auto;
       width: 160px;
       height: 160px;
     }
 
     &:first-child {
       margin-left: 0;
+
+      @media #{$sm} {
+        margin: auto;
+      }
     }
 
     p {
