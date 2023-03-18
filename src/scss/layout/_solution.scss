@@ -90,6 +90,9 @@
         padding-left: 80px;
         padding-bottom: 50px;
       }
+      @media #{$xs} {
+        padding-left:0;
+      }
 
       &::before {
         position: absolute;
@@ -118,6 +121,9 @@
 
         @media #{$sm} {
           width: 70px;
+        }
+        @media #{$xs} {
+          display:none;
         }
       }
     }
@@ -201,6 +207,9 @@
         @media #{$sm} {
           max-width: 300px;
         }
+        @media #{$xs} {
+          max-width: 100%;
+        }
       }
 
       &::after {
@@ -216,6 +225,10 @@
 
         @media #{$sm} {
           left: 20px;
+        }
+
+        @media #{$xs} {
+          left: 10px;
         }
       }
     }
@@ -235,6 +248,10 @@
         border: 1px solid var(--white-6);
         border-radius: 200px;
         z-index: -1;
+      }
+
+      @media #{$xs} {
+        float: unset;
       }
     }
 
@@ -262,6 +279,9 @@
 
         @media #{$sm} {
           max-width: 300px;
+        }
+        @media #{$xs} {
+          max-width: 100%;
         }
       }
 

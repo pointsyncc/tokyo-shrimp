@@ -1,6 +1,7 @@
 import { CookieBanner } from '@/components/common/cookieConsent/CookieConsent';
 import LocaleSwitcher from '@/components/common/localeSwitcher/LocaleSwitcher';
 import Menu from '@/components/navigation/Menu';
+import { useMatchMedia } from '@/hooks/useMatchMedia';
 
 import React from 'react';
 import AnchorButton from './anchor/AnchorButton';
@@ -14,11 +15,11 @@ interface IProps {
 
 export const MainLayout = ({ children, showFooter }: IProps) => {
   const [openMenu, setOpenMenu] = React.useState(false);
-
+  const {matches} = useMatchMedia("(min-width: 1199px)")
   return (
     <>
-      <LocaleSwitcher/>
-      <Menu open={openMenu} setOpen={setOpenMenu} />
+      {matches ? <LocaleSwitcher/> : null}
+      <Menu open={openMenu} setOpen={setOpenMenu} showLangSwitcher={!matches} />
       <Header openMenu={() => setOpenMenu(!openMenu)} />
       <div id='smooth-wrapper'>
         <div id='smooth-content'>{children}</div>
@@ -28,7 +29,7 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
 
       <CookieBanner/>
 
-      <CookieBanner />
+
     </>
   );
 };

@@ -45,7 +45,7 @@ export const Hero = () => {
                 </span>
               </a>
               <div className='hero__title-wrapper'>
-                <h1 className='hero__title' ref={heroHeading}>
+                <h1 className='hero__title mb-4 mb-md-5' ref={heroHeading}>
                   {t('pages.home.hero.title')}
                 </h1>
                 <p className='hero__sub-title' ref={heroText}>
@@ -54,7 +54,7 @@ export const Hero = () => {
                   which is what we deliver.
                 </p>
               </div>
-              <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' />
+              {/* <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' /> */}
               <div className='experience' ref={experience}>
                 <h2 className='title'>25k+</h2>
                 <p>

@@ -1,31 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 import classes from './dropdown.module.scss';
+import { classNames } from '@/utils/classNames';
 
 export interface IDropdownItem {
   text: string;
   textValue: string;
   rightSlot?: React.ReactNode;
-  dropdownTriggerClasses?:string
+  dropdownTriggerClasses?: string;
 }
 
 interface IProps extends DropdownMenu.DropdownMenuProps {
   items: IDropdownItem[];
   onSelect: (item: IDropdownItem) => void;
-  dropdownTriggerClasses?:string
+  dropdownTriggerClasses?: string;
+  initialSelectedOptionIndex?: number;
+  contentClasses?: string;
+  contentZIndex?:number
 }
 
-export const PSDropdown = ({ onOpenChange, open, items, onSelect,dropdownTriggerClasses }: IProps) => {
-  const [selectedOption, setSelectedOption] = useState(items[0]);
+export const PSDropdown = ({
+  onOpenChange,
+  open,
+  items,
+  onSelect,
+  dropdownTriggerClasses,
+  initialSelectedOptionIndex = 0,
+  contentClasses="",
+  contentZIndex = 10
+}: IProps) => {
+  const [selectedOption, setSelectedOption] = useState(items[initialSelectedOptionIndex]);
   const onSelection = (item: IDropdownItem) => {
     setSelectedOption(item);
 
     if (onSelect) onSelect(item);
   };
 
+  useEffect(()=>{
+    if(items[initialSelectedOptionIndex])
+    setSelectedOption(items[initialSelectedOptionIndex])
+  },[initialSelectedOptionIndex,items])
+
   return (
-    <DropdownMenu.Root  open={open} modal={false} onOpenChange={onOpenChange}>
+    <DropdownMenu.Root open={open} modal={false} onOpenChange={onOpenChange}>
       <DropdownMenu.Trigger className={dropdownTriggerClasses} asChild>
         <button className={classes['dropdown__icon-btn']} aria-label='Customise options'>
           {selectedOption.text}
@@ -37,8 +55,8 @@ export const PSDropdown = ({ onOpenChange, open, items, onSelect,dropdownTrigger
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          style={{ zIndex: 10 }}
-          className={classes['dropdown__content']}
+          style={{ zIndex: contentZIndex }}
+          className={classNames(classes['dropdown__content'],contentClasses)}
           sideOffset={5}
         >
           {items.map((item) => {

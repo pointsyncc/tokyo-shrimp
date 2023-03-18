@@ -807,66 +807,66 @@
 
   &__title {
     font-weight: 500;
-    font-size: 150px;
+    font-size: 7.5rem;
     line-height: 1;
     color: var(--white);
-    margin-top: 55px;
+    margin-top: 1rem;
     position: relative;
 
     @media #{$xl} {
-      font-size: 100px;
+      font-size: 6.25rem;
       line-height: 0.9;
     }
 
     @media #{$lg} {
-      font-size: 100px;
+      font-size: 5rem;
       line-height: 0.9;
     }
 
     @media #{$md} {
-      font-size: 80px;
+      font-size: 4.5rem;
     }
 
     @media #{$sm} {
-      font-size: 48px;
+      font-size: 3rem;
     }
 
-    &::after {
-      position: absolute;
-      content: 'Pro';
-      width: 70px;
-      height: 45px;
-      right: -80px;
-      top: 70px;
-      border: 2px solid var(--white);
-      border-radius: 15px;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 1.3;
-      color: var(--white);
-      text-align: center;
-      padding-top: 4px;
+    // &::after {
+    //   position: absolute;
+    //   content: 'Pro';
+    //   width: 70px;
+    //   height: 45px;
+    //   right: -80px;
+    //   top: 70px;
+    //   border: 2px solid var(--white);
+    //   border-radius: 15px;
+    //   font-weight: 600;
+    //   font-size: 24px;
+    //   line-height: 1.3;
+    //   color: var(--white);
+    //   text-align: center;
+    //   padding-top: 4px;
 
-      @media #{$xl} {
-        right: -30px;
-        top: 35px;
-      }
+    //   @media #{$xl} {
+    //     right: -30px;
+    //     top: 35px;
+    //   }
 
-      @media #{$lg} {
-        right: 60px;
-        top: 35px;
-      }
+    //   @media #{$lg} {
+    //     right: 60px;
+    //     top: 35px;
+    //   }
 
-      @media #{$md} {
-        right: 95px;
-        top: 30px;
-      }
+    //   @media #{$md} {
+    //     right: 95px;
+    //     top: 30px;
+    //   }
 
-      @media #{$sm} {
-        right: 0;
-        top: -40px;
-      }
-    }
+    //   @media #{$sm} {
+    //     right: 0;
+    //     top: -40px;
+    //   }
+    // }
 
     &-wrapper {
       max-width: 990px;
@@ -898,7 +898,7 @@
     line-height: 1.4;
     color: var(--gray-3);
     max-width: 410px;
-    position: absolute;
+    position: static;
     right: 60px;
     bottom: 15px;
 
@@ -919,7 +919,7 @@
 
     @media #{$sm} {
       position: unset;
-      padding-top: 15px;
+
     }
 
     span {

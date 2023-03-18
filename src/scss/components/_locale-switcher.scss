@@ -1,6 +1,18 @@
-.locale-switcher{
+.locale-switcher {
+
+
+  @media #{$xl} {
     position: fixed;
     z-index: 10;
     top: 10px;
     right: 10px;
+  }
 }
+
+
+// [data-radix-popper-content-wrapper]{
+//     z-index: 10000 !important;
+//     @media #{$lg} {
+//       z-index: 10 !important;
+//     }
+// }

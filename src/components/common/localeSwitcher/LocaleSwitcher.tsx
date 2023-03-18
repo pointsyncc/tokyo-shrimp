@@ -1,24 +1,38 @@
 import { IDropdownItem, PSDropdown } from '@/components/ui/dropdown/Dropdown';
-import React from 'react';
+import React, {  useState } from 'react';
 import ReactCountryFlag from 'react-country-flag';
-import { useTranslation } from 'next-i18next';
+
 import { useRouter } from 'next/router';
-const LocaleSwitcher = () => {
+import { useInit } from '@/hooks/useInit';
+
+const localeDropdownItems = [
+  {
+    text: 'EN',
+    textValue: 'en',
+    rightSlot: <ReactCountryFlag countryCode='US' svg />,
+  },
+  {
+    text: 'HR',
+    textValue: 'hr',
+    rightSlot: <ReactCountryFlag countryCode='HR' svg />,
+  },
+];
+const LocaleSwitcher = ({contentZIndex = 10}:{contentZIndex?:number}) => {
   const router = useRouter();
-  const localeDropdownItems = [
-    {
-      text: 'English',
-      textValue: 'en',
-      rightSlot: <ReactCountryFlag countryCode='US' svg />,
-    },
-    {
-      text: 'Crotian',
-      textValue: 'hr',
-      rightSlot: <ReactCountryFlag countryCode='HR' svg />,
-    },
-  ];
+
+  const [selectedOptionIdx, setSelectedOptionIdx] = useState(0);
+
+  const setCustomSelectedOption = () => {
+    const selectedLocale = localeDropdownItems.findIndex(
+      (item) => item.textValue === router.locale,
+    );
+    if (selectedLocale > -1) setSelectedOptionIdx(selectedLocale);
+  };
+
+  useInit(setCustomSelectedOption);
+
   const onLocaleChange = (item: IDropdownItem) => {
-    const { pathname, asPath, query } = router;
+    const { pathname, query } = router;
     router.push({ pathname, query }, router.asPath, { locale: item.textValue });
   };
   return (
@@ -26,6 +40,9 @@ const LocaleSwitcher = () => {
       dropdownTriggerClasses='locale-switcher'
       onSelect={onLocaleChange}
       items={localeDropdownItems}
+      initialSelectedOptionIndex={selectedOptionIdx}
+      contentClasses="local-switcher__content"
+      contentZIndex={contentZIndex}
     />
   );
 };
