@@ -4,7 +4,7 @@ import React from 'react';
 
 const Solution = () => {
   return (
-    <section className='solution__area'>
+    <section className='solution__area pt-5 pt-xl-0'>
       <div className='container hero-line'></div>
       <div className='solution__wrapper'>
         <div className='solution__left'>
@@ -61,7 +61,7 @@ const Solution = () => {
         {/* <img src='/imgs/icon/4.png' alt='Shape Image' className='shape-4' /> */}
         <Image priority={true} raw={true} width={62} height={110} src='/imgs/icon/4.png' alt='Shape Image' className='shape-4'/>
         {/* <img src='/imgs/icon/5.png' alt='Shape Image' className='shape-5' /> */}
-        <Image priority={true} raw={true} width={94} height={93} src='/imgs/icon/5.png' alt='Shape Image' className='shape-5'/>
+        <Image  priority={true} raw={true} width={94} height={93} src='/imgs/icon/5.png' alt='Shape Image' className='shape-5 d-none d-sm-block'/>
       </div>
     </section>
   );

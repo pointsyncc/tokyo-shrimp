@@ -63,21 +63,21 @@
 
   &__title-7 {
     font-weight: 500;
-    font-size: 130px;
+    font-size: 7.5rem;
     line-height: 1;
     color: var(--black-2);
     max-width: 1060px;
 
     @media #{$xl} {
-      font-size: 110px;
+      font-size: 6.25rem;
     }
 
     @media #{$lg} {
-      font-size: 100px;
+      font-size: 5rem;
     }
 
     @media #{$md} {
-      font-size: 70px;
+      font-size: 4.375rem;
 
       img {
         max-width: 90px;

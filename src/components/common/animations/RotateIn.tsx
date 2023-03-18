@@ -19,13 +19,13 @@ export const RotateIn = ({ vars, children, className }: IProps) => {
         },
       });
       tl.set(el.current, { perspective: 600 });
-      tl.set('.anim-rotate-in', { transformStyle: 'preserve-3d',transformOrigin:'bottom' });
+      tl.set('.anim-rotate-in', { transformStyle: 'preserve-3d', transformOrigin: 'bottom' });
       tl.from('.anim-rotate-in', { rotationX: 30, opacity: 0 });
       tl.to('.anim-rotate-in', {
         rotationX: 0,
         opacity: 1,
         duration: 1.4,
-        ease: "power2.out"
+        // ease: 'power2.out',
       });
     });
     return () => ctx.revert();

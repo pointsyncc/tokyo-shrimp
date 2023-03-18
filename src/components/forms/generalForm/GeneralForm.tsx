@@ -5,13 +5,13 @@ import { FormControl } from '../controls/control/Control';
 
 import { Schema } from 'yup';
 
-import { DeepPartial, FieldValues, useForm } from 'react-hook-form';
+import { DeepPartial, FieldValues, useForm, UseFormReset } from 'react-hook-form';
 
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 type IProps<T extends FieldValues, U> =  {
   initialValues?: DeepPartial<T>;
-  onSubmit: (values: T, token?: string) => void;
+  onSubmit: (values: T,reset: UseFormReset<T>, token?: string,) => void;
   controls: FormControl<T>[];
   submitBtnText?: string;
   schema: Schema<U>;
@@ -39,6 +39,7 @@ const GeneralForm = <T extends FieldValues, U extends Object>({
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm<T>({
     resolver: yupResolver(schema),
     defaultValues: initialValues,
@@ -65,10 +66,10 @@ const GeneralForm = <T extends FieldValues, U extends Object>({
         token = await executeRecaptcha('form_submit');
       }
 
-      onSubmit(values, token);
+      onSubmit(values, reset,token);
       // Do whatever you want with the token
     },
-    [executeRecaptcha, withRecaptcha,onSubmit],
+    [executeRecaptcha, withRecaptcha,onSubmit, reset],
   );
   return (
     <form className='row' {...rest} onSubmit={handleSubmit(handleReCaptchaVerify)}>

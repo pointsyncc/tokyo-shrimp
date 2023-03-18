@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import LocaleSwitcher from '../common/localeSwitcher/LocaleSwitcher';
 import Image from '../ui/image/Image';
 import { Logo } from '../ui/logo/Logo';
 
@@ -11,8 +12,9 @@ import classes from './menu.module.scss';
 interface IProps {
   open: boolean;
   setOpen: (open: boolean) => void;
+  showLangSwitcher: boolean;
 }
-export default function Menu({ open, setOpen }: IProps) {
+export default function Menu({ open, setOpen,showLangSwitcher }: IProps) {
   const router = useRouter();
   const comp = useRef(null);
   useEffect(() => {
@@ -58,7 +60,7 @@ export default function Menu({ open, setOpen }: IProps) {
     return () => {
       router.events.off('routeChangeStart', handleRouteChange);
     };
-  }, [router.events,setOpen]);
+  }, [router.events, setOpen]);
 
   const links = [
     {
@@ -99,8 +101,8 @@ export default function Menu({ open, setOpen }: IProps) {
         <div className='offcanvas__left'>
           <div className='offcanvas__logo'>
             {/* <Link href='/'> */}
-              <Logo className='logo' type="secondary" width={180}/>
-              {/* <img
+            <Logo className='logo' type='secondary' width={180} />
+            {/* <img
                 width={180}
                 src='imgs/pointsyncc/logo/desktop/transparent.png'
                 alt='PointSync logo'
@@ -145,8 +147,9 @@ export default function Menu({ open, setOpen }: IProps) {
             </ul>
           </div>
         </div>
-        <div className='offcanvas__mid d-flex justify-content-center align-items-center'>
-          <div className='offcanvas__menu-wrapper' style={{ flex: 1 }}>
+        <div className='offcanvas__mid d-flex justify-content-center align-items-center flex-column'>
+        {showLangSwitcher ? <LocaleSwitcher contentZIndex={10000} /> : null}
+          <div className='offcanvas__menu-wrapper'>
             <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
               <ul className='menu-anim d-flex align-items-stretch flex-column text-center'>
                 {links.map((link) => (
@@ -159,15 +162,15 @@ export default function Menu({ open, setOpen }: IProps) {
           </div>
         </div>
         <div className='offcanvas__right'>
+
           <div className='offcanvas__search'>
-      
+    
             <form action='#'>
               <input type='text' name='search' placeholder='Search keyword' />
               <button>
                 <i className='fa-solid fa-magnifying-glass'></i>
               </button>
             </form>
-
           </div>
           <div className='offcanvas__contact'>
             <h3>Get in touch</h3>
@@ -181,9 +184,25 @@ export default function Menu({ open, setOpen }: IProps) {
               <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
             </ul>
           </div>
-          <Image style={{height:'auto'}} raw={true} src='/imgs/shape/11.png' alt='shape' className='shape-1' width={189} height={94}/>
+          <Image
+            style={{ height: 'auto' }}
+            raw={true}
+            src='/imgs/shape/11.png'
+            alt='shape'
+            className='shape-1'
+            width={189}
+            height={94}
+          />
           {/* <img src='/imgs/shape/11.png' alt='shape' className='shape-1' /> */}
-          <Image raw={true} width={81} height={80} style={{height:'auto'}} src='/imgs/shape/12.png' alt='shape' className='shape-2' />
+          <Image
+            raw={true}
+            width={81}
+            height={80}
+            style={{ height: 'auto' }}
+            src='/imgs/shape/12.png'
+            alt='shape'
+            className='shape-2'
+          />
           {/* <img src='/imgs/shape/12.png' alt='shape' className='shape-2' /> */}
         </div>
         <div className='offcanvas__close'>
