@@ -1,9 +1,10 @@
 import { IDropdownItem, PSDropdown } from '@/components/ui/dropdown/Dropdown';
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import ReactCountryFlag from 'react-country-flag';
 
 import { useRouter } from 'next/router';
 import { useInit } from '@/hooks/useInit';
+import { classNames } from '@/utils/classNames';
 
 const localeDropdownItems = [
   {
@@ -17,7 +18,13 @@ const localeDropdownItems = [
     rightSlot: <ReactCountryFlag countryCode='HR' svg />,
   },
 ];
-const LocaleSwitcher = ({contentZIndex = 10}:{contentZIndex?:number}) => {
+const LocaleSwitcher = ({
+  contentZIndex = 10,
+  className = '',
+}: {
+  contentZIndex?: number;
+  className?: string;
+}) => {
   const router = useRouter();
 
   const [selectedOptionIdx, setSelectedOptionIdx] = useState(0);
@@ -37,11 +44,11 @@ const LocaleSwitcher = ({contentZIndex = 10}:{contentZIndex?:number}) => {
   };
   return (
     <PSDropdown
-      dropdownTriggerClasses='locale-switcher'
+      dropdownTriggerClasses={classNames('locale-switcher', className)}
       onSelect={onLocaleChange}
       items={localeDropdownItems}
       initialSelectedOptionIndex={selectedOptionIdx}
-      contentClasses="local-switcher__content"
+      contentClasses='locale-switcher__content'
       contentZIndex={contentZIndex}
     />
   );

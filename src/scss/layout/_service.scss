@@ -774,23 +774,23 @@
       font-size: 48px;
       color: var(--gray-2);
 
-      i {
-        transform: translate(0, 0) rotate(-45deg);
-        transition: all 0.3s;
-      }
+      // i {
+      //   transform: translate(0, 0) rotate(-45deg);
+      //   transition: all 0.3s;
+      // }
 
-      &::after {
-        position: absolute;
-        content: '\f061';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        left: -20px;
-        bottom: -20px;
-        transform: translate(0, 0) rotate(-45deg);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
-      }
+      // &::after {
+      //   position: absolute;
+      //   content: '\f061';
+      //   font-family: 'Font Awesome 6 Free';
+      //   font-weight: 900;
+      //   left: -20px;
+      //   bottom: -20px;
+      //   transform: translate(0, 0) rotate(-45deg);
+      //   opacity: 0;
+      //   visibility: hidden;
+      //   transition: all 0.3s;
+      // }
     }
   }
 

@@ -341,6 +341,10 @@
       @media #{$sm} {
         padding: 0 0 50px 0;
       }
+      @media #{$xs} {
+        margin-right: 0;
+      }
+
     }
 
     &-4 {
