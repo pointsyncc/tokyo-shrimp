@@ -15,7 +15,7 @@ const Team: NextPageWithLayout = () => {
 
           <div className='row'>
             <div className='col-xxl-8 col-xl-8 col-lg-8 col-md-8 offset-xxl-4 offset-xl-4'>
-              <div className='sec-title-wrapper'>
+              <div className='sec-title-wrapper  pb-0 pb-xl-5'>
                 <h2 className='sec-title animation__char_come'>Talented team </h2>
                 <p>
                   We’re a diverse team that works as fancies attention to details, enjoys beers on

@@ -70,7 +70,7 @@ const Portolio: NextPageWithLayout = () => {
         <section className='portfolio__area-6'>
           <div className='container line pt-100 pb-140'>
             <span className='line-3'></span>
-            <div className='zi-9'>
+            <div className='zi-9 pt-5 pt-md-0'>
               <div className='row'>
                 <div className='col-xxl-4 col-xl-5 col-lg-5 col-md-6'>
                   <FeaturedWork currentProjectNumber={currentProjectNumber} />

@@ -1,6 +1,6 @@
 import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import Image from '../ui/image/Image';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';

@@ -253,8 +253,12 @@
       }
 
       .sec-title {
-        font-size: 120px;
+        font-size: 7.5rem;
         padding-bottom: 20px;
+
+        @media #{$xs} {
+          font-size: 5rem;
+        }
 
         &-wrapper {
           position: sticky;
@@ -274,6 +278,9 @@
             @media #{$sm} {
               padding-left: 60px;
             }
+            @media #{$xs} {
+              padding-left: 0;
+            }
 
             &::before {
               position: absolute;
@@ -290,6 +297,9 @@
 
               @media #{$sm} {
                 width: 50px;
+              }
+              @media #{$xs} {
+                display: none;
               }
             }
           }
@@ -562,7 +572,7 @@
 
     @media #{$sm} {
       padding-left: 0;
-      padding-top: 180px;
+      padding-top: 20px;
     }
   }
 
@@ -1013,6 +1023,10 @@
 
           @media #{$lg} {
             width: 100%;
+          }
+
+          @media(max-width:300px){
+            width:100%;
           }
         }
 

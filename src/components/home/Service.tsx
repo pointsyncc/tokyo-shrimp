@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { FadeIn } from '../common/animations/FadeIn';
 import { Link } from '../ui/link/Link';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
@@ -21,12 +22,18 @@ export default function Service() {
             </div>
           </div>
           <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
-            <div className='service__top-text text-anim'>
+            <FadeIn direction='x' className='service__top-text text-anim' distance={-50}>
+            <p>
+                With every single one of our clients we bring forth a deep passion for{' '}
+                <span>creative problem solving innovations</span> forward thinking brands boundaries
+              </p>
+            </FadeIn>
+            {/* <div className='service__top-text text-anim'>
               <p>
                 With every single one of our clients we bring forth a deep passion for{' '}
                 <span>creative problem solving innovations</span> forward thinking brands boundaries
               </p>
-            </div>
+            </div> */}
           </div>
           <div className='col-xxl-3 col-xl-3 col-lg-3 col-md-3'>
             <div className='service__top-btn'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import FadeUp from '../common/animations/FadeUp';
+import {FadeIn} from '../common/animations/FadeIn';
 import { SplitCome } from '../common/animations/SplitCome';
 import Image from '../ui/image/Image';
 
@@ -28,13 +28,13 @@ const Hero = () => {
                     </a>
                   </div>
                 </div>
-                <FadeUp className='hero__about-text'>
+                <FadeIn className='hero__about-text'>
                   <p>
                     Think of the world&apos;s most iconica and successful brands easily findable,
                     impactful. Interactional and exceptional designs. Our story takes beginning in
                     2013
                   </p>
-                </FadeUp>
+                </FadeIn>
 
                 <div className='hero__about-award'>
                   <Image
