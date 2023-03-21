@@ -50,7 +50,7 @@ export default function Workflow() {
                 options={{
                   gap: 0,
                   trimSpace: true,
-                  type: 'loop',
+                  // type: 'loop',
                   drag: 'free',
 
                   speed: 2000,
