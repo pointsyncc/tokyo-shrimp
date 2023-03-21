@@ -1,7 +1,7 @@
 .locale-switcher {
 
 
-  @media #{$xl} {
+  @media (min-width:1199px) {
     position: fixed;
     z-index: 10;
     top: 10px;
