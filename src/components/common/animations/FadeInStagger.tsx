@@ -15,24 +15,22 @@ export const FadeInStagger = ({ children }: IProps) => {
     const ctx = gsap.context(() => {
 
 
-      if (device_width < 1023) {
-        gsap.set('.item', { y: 50, opacity: 0 });
-        const blogList = gsap.utils.toArray('.item');
-        blogList.forEach((item, i) => {
-          let blogTl = gsap.timeline({
-            scrollTrigger: {
-              trigger: comp.current ,
-
-            },
-          });
-          blogTl.to(item as any, {
-            y: 0,
-            opacity: 1,
-            ease: 'power2.out',
-            duration: 0.5,
-          });
-        });
-      } else {
+      // if (device_width < 1023) {
+      //   gsap.set(".item", { y: -20, opacity: 0, })
+      //   gsap.to(".item", {
+      //     scrollTrigger: {
+      //       trigger: ".item",
+      //       start: "top center+=300",
+      //     },
+      //     y: 0,
+      //     opacity: 1,
+      //     ease: "power2.out",
+      //     duration: 1,
+      //     stagger: {
+      //       each: 0.2,
+      //     }
+      //   })
+      // } else {
         gsap.set(".item", { x: -20, opacity: 0, })
         gsap.to(".item", {
           scrollTrigger: {
@@ -61,7 +59,7 @@ export const FadeInStagger = ({ children }: IProps) => {
         //     each: 0.2,
         //   }
         // });
-      }
+      // }
     }, comp);
     return () => ctx.revert();
   }, []);
