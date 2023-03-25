@@ -10,7 +10,7 @@ export const CookieBanner = () => {
       enableDeclineButton
       acceptOnScroll={true}
       acceptOnScrollPercentage={10}
-      debug={true}
+      debug={false}
       style={{
         background: 'red',
         maxWidth: '430px',
@@ -30,7 +30,7 @@ export const CookieBanner = () => {
     >
       <p className='text-white mb-3'>
         This site uses cookies to measure and improve your experience. Please read our {' '}
-        <Link className='text-decoration-underline' href='/privacy-policy' style={{color: 'var(--primary)'}}>
+        <Link className='text-decoration-underline text-primary' href='/privacy-policy' >
           Privacy Policy.
         </Link>
         {' '} to learn more about how we use cookies and how you can control them.
