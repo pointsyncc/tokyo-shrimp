@@ -8,6 +8,7 @@ import { Schema } from 'yup';
 import { DeepPartial, FieldValues, useForm, UseFormReset } from 'react-hook-form';
 
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
 
 type IProps<T extends FieldValues, U> =  {
   initialValues?: DeepPartial<T>;
@@ -76,7 +77,7 @@ const GeneralForm = <T extends FieldValues, U extends Object>({
       {title && <h3 className={titleClasses}>{title}</h3>}
 
       {formGroups}
-
+      {withRecaptcha ? <GoogleRecaptchaText/> : null}
       <div className='col-12'>
         {customSubmitButton ? (
           customSubmitButton
