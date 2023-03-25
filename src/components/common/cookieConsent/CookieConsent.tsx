@@ -1,7 +1,8 @@
 import { classNames } from '@/utils/classNames';
 import React from 'react';
-import CookieConsent from 'react-cookie-consent';
-import classes from './cookieConsent.module.scss'
+import CookieConsent, { Cookies } from 'react-cookie-consent';
+import classes from './cookieConsent.module.scss';
+
 export const CookieBanner = () => {
   return (
     <CookieConsent
@@ -12,7 +13,6 @@ export const CookieBanner = () => {
       style={{
         background: 'red',
         maxWidth: '430px',
-        inset: 'auto 10px 10px auto',
       }}
       contentStyle={{ margin: 0, flexBasis: 'auto' }}
       containerClasses={classNames(
@@ -22,14 +22,21 @@ export const CookieBanner = () => {
       buttonClasses='btn btn-outline-light bg-transparent m-0 border border-white text-white rounded d-block ms-auto'
       declineButtonText='Opt-out'
       buttonWrapperClasses='d-flex w-100'
-      declineButtonClasses='bg-transparent text-decoration-underline m-0 p-0'
+      declineButtonClasses='btn-link bg-transparent m-0 p-0 text-white'
       buttonStyle={{
         width: '120px',
       }}
     >
-      <p className='text-white mb-4'>
+      <div className='d-flex mb-4'>
+      <p className='text-white mb-2'>
         This site uses cookies to measure and improve your experience.
+        Read our privacy:
       </p>
+      <div className='d-flex text-white'>
+        <p className='text-white'> </p>
+   
+      </div>
+      </div>
     </CookieConsent>
   );
 };
