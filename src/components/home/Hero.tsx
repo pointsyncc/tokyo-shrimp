@@ -55,13 +55,13 @@ export const Hero = () => {
                 </p>
               </div>
               {/* <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' /> */}
-              <div className='experience' ref={experience}>
+              {/* <div className='experience' ref={experience}>
                 <h2 className='title'>25k+</h2>
                 <p>
                   Projects completed <br />
                   successfully
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

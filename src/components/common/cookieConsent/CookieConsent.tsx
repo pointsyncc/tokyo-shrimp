@@ -10,7 +10,7 @@ export const CookieBanner = () => {
       enableDeclineButton
       acceptOnScroll={true}
       acceptOnScrollPercentage={10}
-      debug={false}
+      debug={true}
       style={{
         background: 'red',
         maxWidth: '430px',

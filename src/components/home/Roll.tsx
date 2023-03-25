@@ -35,7 +35,7 @@ export const Roll = () => {
           gap: 80,
           perPage: 3,
           autoScroll: {
-            speed: 2,
+            speed: 0.5,
           },
           breakpoints: {
             640: {
