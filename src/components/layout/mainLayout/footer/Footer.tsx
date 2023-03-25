@@ -11,6 +11,7 @@ import { pointSynccAPI } from '@/utils/axios';
 import { useAppStore } from '@/stores/store';
 import Image from '@/components/ui/image/Image';
 import { Logo } from '@/components/ui/logo/Logo';
+import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -224,6 +225,7 @@ const Footer = () => {
 
                 <div className='footer__subscribe'>
                   <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className='mb-2'>
                     <input
                       type='email'
                       placeholder='Enter your email'
@@ -240,6 +242,8 @@ const Footer = () => {
                       name='email'
                       render={({ message }) => <p className='form__error__message'>{message}</p>}
                     />
+                    </div>
+                    <GoogleRecaptchaText/>
                     <button type='submit' className='subs-btn'>
                       <FaPaperPlane />
                     </button>

@@ -1,3 +1,4 @@
+import { Link } from '@/components/ui/link/Link';
 import { classNames } from '@/utils/classNames';
 import React from 'react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
@@ -27,16 +28,13 @@ export const CookieBanner = () => {
         width: '120px',
       }}
     >
-      <div className='d-flex mb-4'>
-      <p className='text-white mb-2'>
-        This site uses cookies to measure and improve your experience.
-        Read our privacy:
+      <p className='text-white mb-3'>
+        This site uses cookies to measure and improve your experience. Please read our {' '}
+        <Link className='text-decoration-underline text-primary' href='/privacy-policy' >
+          Privacy Policy.
+        </Link>
+        {' '} to learn more about how we use cookies and how you can control them.
       </p>
-      <div className='d-flex text-white'>
-        <p className='text-white'> </p>
-   
-      </div>
-      </div>
     </CookieConsent>
   );
 };
