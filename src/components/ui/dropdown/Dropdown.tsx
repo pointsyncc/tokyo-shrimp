@@ -8,6 +8,7 @@ export interface IDropdownItem {
   text: string;
   textValue: string;
   rightSlot?: React.ReactNode;
+  leftSlot?: React.ReactNode;
   dropdownTriggerClasses?: string;
 }
 
@@ -17,7 +18,8 @@ interface IProps extends DropdownMenu.DropdownMenuProps {
   dropdownTriggerClasses?: string;
   initialSelectedOptionIndex?: number;
   contentClasses?: string;
-  contentZIndex?:number
+  contentZIndex?: number;
+  showArrow?: boolean;
 }
 
 export const PSDropdown = ({
@@ -27,8 +29,9 @@ export const PSDropdown = ({
   onSelect,
   dropdownTriggerClasses,
   initialSelectedOptionIndex = 0,
-  contentClasses="",
-  contentZIndex = 10
+  contentClasses = '',
+  contentZIndex = 10,
+  showArrow = false,
 }: IProps) => {
   const [selectedOption, setSelectedOption] = useState(items[initialSelectedOptionIndex]);
   const onSelection = (item: IDropdownItem) => {
@@ -37,26 +40,30 @@ export const PSDropdown = ({
     if (onSelect) onSelect(item);
   };
 
-  useEffect(()=>{
-    if(items[initialSelectedOptionIndex])
-    setSelectedOption(items[initialSelectedOptionIndex])
-  },[initialSelectedOptionIndex,items])
+  useEffect(() => {
+    if (items[initialSelectedOptionIndex]) setSelectedOption(items[initialSelectedOptionIndex]);
+  }, [initialSelectedOptionIndex, items]);
 
   return (
     <DropdownMenu.Root open={open} modal={false} onOpenChange={onOpenChange}>
       <DropdownMenu.Trigger className={dropdownTriggerClasses} asChild>
         <button className={classes['dropdown__icon-btn']} aria-label='Customise options'>
+          {selectedOption.leftSlot ? (
+            <div className='pe-3'>{selectedOption.leftSlot && selectedOption.leftSlot}</div>
+          ) : null}
           {selectedOption.text}
-          <div className={classes['dropdown__right-slot']}>
-            {selectedOption.rightSlot && selectedOption.rightSlot}
-          </div>
+          {selectedOption.rightSlot ? (
+            <div className='ms-auto ps-3'>
+              {selectedOption.rightSlot && selectedOption.rightSlot}
+            </div>
+          ) : null}
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           style={{ zIndex: contentZIndex }}
-          className={classNames(classes['dropdown__content'],contentClasses)}
+          className={classNames(classes['dropdown__content'], contentClasses)}
           sideOffset={5}
         >
           {items.map((item) => {
@@ -65,7 +72,10 @@ export const PSDropdown = ({
                 onSelect={onSelection.bind(null, item)}
                 key={item.textValue}
                 textValue={item.textValue}
-                className={classes['dropdown__item']}
+                className={classNames(
+                  classes['dropdown__item'],
+                  item.textValue === selectedOption.textValue ? classes.selected : '',
+                )}
               >
                 {item.text}{' '}
                 {item.rightSlot && (
@@ -155,7 +165,7 @@ export const PSDropdown = ({
             </DropdownMenu.RadioItem>
           </DropdownMenu.RadioGroup> */}
 
-          <DropdownMenu.Arrow className={classes['dropdown__arrow']} />
+          {showArrow ? <DropdownMenu.Arrow className={classes['dropdown__arrow']} /> : null}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

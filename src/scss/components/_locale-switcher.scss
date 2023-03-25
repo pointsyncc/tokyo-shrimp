@@ -1,14 +1,15 @@
 .locale-switcher {
+  &__content {
+    min-width: 152px;
+  }
 
-
-  @media (min-width:1199px) {
+  @media (min-width: 1199px) {
     position: fixed;
     z-index: 10;
     top: 10px;
     right: 10px;
   }
 }
-
 
 // [data-radix-popper-content-wrapper]{
 //     z-index: 10000 !important;

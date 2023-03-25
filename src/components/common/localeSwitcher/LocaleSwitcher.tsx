@@ -1,21 +1,32 @@
 import { IDropdownItem, PSDropdown } from '@/components/ui/dropdown/Dropdown';
 import React, { useState } from 'react';
-import ReactCountryFlag from 'react-country-flag';
+
 
 import { useRouter } from 'next/router';
 import { useInit } from '@/hooks/useInit';
 import { classNames } from '@/utils/classNames';
+import Image from 'next/image';
+
+
 
 const localeDropdownItems = [
   {
-    text: 'EN',
+    text: 'English',
     textValue: 'en',
-    rightSlot: <ReactCountryFlag countryCode='US' svg />,
+    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    // rightSlot: <ReactCountryFlag countryCode='US' svg />,
   },
   {
-    text: 'HR',
+    text: 'German',
+    textValue: 'de',
+    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    // rightSlot: <ReactCountryFlag countryCode='HR' svg />,
+  },
+  {
+    text: 'Croatian',
     textValue: 'hr',
-    rightSlot: <ReactCountryFlag countryCode='HR' svg />,
+    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    // rightSlot: <ReactCountryFlag countryCode='HR' svg />,
   },
 ];
 const LocaleSwitcher = ({

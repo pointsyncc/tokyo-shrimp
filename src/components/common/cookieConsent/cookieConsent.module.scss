@@ -1,3 +1,9 @@
 .cookie-consent{
-    bottom:10px !important
+    inset: auto 10px 10px auto !important;
+
+    @media (max-width:575px) {
+        inset: auto auto 10px 50% !important;
+        transform: translateX(-50%);
+        width:95% !important;
+    }
 }
