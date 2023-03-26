@@ -18,27 +18,59 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NextPageWithLayout } from './_app';
-
- 
+import { NextSeo } from 'next-seo';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home: NextPageWithLayout = () => {
-
-  const router = useRouter()
-  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' })
+  const router = useRouter();
+  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer'])
-  }, [])
+    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer']);
+  }, []);
 
   return (
-    <div>
-      <Head>
+    <>
+      <NextSeo
+        title='Pointsyncc - Home'
+        description='Home'
+        canonical='https://www.canonical.ie/'
+        openGraph={{
+          url: 'https://www.url.ie/a',
+          title: 'Open Graph Title',
+          description: 'Open Graph Description',
+          images: [
+            {
+              url: 'https://www.example.ie/og-image-01.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+              type: 'image/jpeg',
+            },
+            {
+              url: 'https://www.example.ie/og-image-02.jpg',
+              width: 900,
+              height: 800,
+              alt: 'Og Image Alt Second',
+              type: 'image/jpeg',
+            },
+            { url: 'https://www.example.ie/og-image-03.jpg' },
+            { url: 'https://www.example.ie/og-image-04.jpg' },
+          ],
+          siteName: 'SiteName',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+      {/* <Head>
         <title>Pointsyncc - Home</title>
         <meta name='description' content='Home' />
-      </Head>
+      </Head> */}
       <Hero />
       <Roll />
       <About />
@@ -50,7 +82,7 @@ const Home: NextPageWithLayout = () => {
       <Testimonial />
       <Blog />
       <CTA />
-    </div>
+    </>
   );
 };
 
@@ -59,7 +91,12 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async ({ locale }: any) => {
-  const props = await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent', 'homepage'])
+  const props = await serverSideTranslations(locale, [
+    'common',
+    'footer',
+    'cookie-consent',
+    'homepage',
+  ]);
   return {
     props,
     // if using the approach with the live translation download, meaning using i18next-locize-backend on server side,
@@ -69,7 +106,7 @@ export const getStaticProps = async ({ locale }: any) => {
     // - When a request comes in
     // - At most once every hour
     // revalidate: 60 * 60, // in seconds
-  }
-}
+  };
+};
 
 export default Home;
