@@ -13,7 +13,8 @@
     border-right: 1px solid rgba(240, 240, 240, 0.07);
     //mix-blend-mode: exclusion;
     transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.5);
+    //background-color: rgba(0, 0, 0, 0.5);
+    background-color: black;
     backdrop-filter: blur(10px);
 
     @media #{$xxl} {

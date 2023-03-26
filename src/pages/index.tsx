@@ -84,7 +84,7 @@ const Home: NextPageWithLayout = () => {
       <Roll />
       <About />
       <Service />
-      <Counter />
+      {/* <Counter /> */}
       <Workflow />
       <Portifolio />
       <Brand />
