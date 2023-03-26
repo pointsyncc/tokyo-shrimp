@@ -20,6 +20,8 @@ specifiers:
   font-awesome: ^4.7.0
   gsap: ^3.11.4
   i18next: ^22.4.10
+  i18next-chained-backend: ^4.2.0
+  i18next-localstorage-backend: ^4.1.0
   i18next-locize-backend: ^6.2.1
   locize-cli: ^7.14.0
   next: 13.2.4
@@ -66,6 +68,8 @@ dependencies:
   font-awesome: 4.7.0
   gsap: 3.11.5
   i18next: 22.4.13
+  i18next-chained-backend: 4.2.0
+  i18next-localstorage-backend: 4.1.0
   i18next-locize-backend: 6.2.1
   next: 13.2.4_lpxbxhvdj65gzxdpbrqknapd3i
   next-i18next: 13.2.2_dt4g7v76vmr3y5vqc353t2czpa
@@ -2516,8 +2520,20 @@ packages:
       - supports-color
     dev: true
 
+  /i18next-chained-backend/4.2.0:
+    resolution: {integrity: sha512-p3qhv6GMouhpcFPnOBqSDsQyVrwZu+PKr+kXaEAGE+w9O39t4pbpBsFYjxh4Nvhn8MUEXstaDx4ZuQvsNlI5fg==}
+    dependencies:
+      '@babel/runtime': 7.21.0
+    dev: false
+
   /i18next-fs-backend/2.1.1:
     resolution: {integrity: sha512-FTnj+UmNgT3YRml5ruRv0jMZDG7odOL/OP5PF5mOqvXud2vHrPOOs68Zdk6iqzL47cnnM0ZVkK2BAvpFeDJToA==}
+    dev: false
+
+  /i18next-localstorage-backend/4.1.0:
+    resolution: {integrity: sha512-lxcuww2QSIvu3Ev5fiysTrAjNzWwhVh2u+/ZJCkxIg9Eo9KL5A8qQwmujlsdADs4YjfjxPm/GaivIYxcqWqKgg==}
+    dependencies:
+      '@babel/runtime': 7.21.0
     dev: false
 
   /i18next-locize-backend/6.2.1:

@@ -11,8 +11,7 @@ import { setLocale } from 'yup';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { withTranslateRoutes } from 'next-translate-routes'
-import i18next from "i18next";
-import Locize from "i18next-locize-backend";
+import nextI18NextConfig from '../../next-i18next.config.js'
 
 setLocale({
   mixed: {
@@ -30,15 +29,6 @@ const kanit = Kanit({
   weight: ['300', '400', '500', '600', '700'],
 });
 
-i18next.use(Locize).init({
-  backend: {
-    projectId: "b59ed47c-3553-4983-923f-e48008c88b26",
-    apiKey: "ce92c5d5-b438-49b4-bde7-e00d94f4d4c9",
-    version: "dev",
-    private: false,
-    referenceLng: "hr"
-  }
-});
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -88,4 +78,4 @@ export async function getStaticProps({ locale }: any) {
   };
 }
 
-export default appWithTranslation(withTranslateRoutes(App));
+export default withTranslateRoutes(appWithTranslation(App, nextI18NextConfig))
