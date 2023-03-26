@@ -1,0 +1,12 @@
+{
+    "/": {
+        "default": "pravo",
+        "de": "legal",
+        "en": "legal"
+    },
+    "privacy-policy": {
+        "default": "politika-privatnosti",
+        "de": "datenschutz",
+        "en": "privacy-policy"
+    }
+}

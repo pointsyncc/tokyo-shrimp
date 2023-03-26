@@ -1,4 +1,6 @@
 .locale-switcher {
+  padding: 0.6rem 2rem !important;
+
   &__content {
     min-width: 152px;
   }
@@ -6,8 +8,8 @@
   @media (min-width: 1199px) {
     position: absolute;
     z-index: 10;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
   }
 }
 

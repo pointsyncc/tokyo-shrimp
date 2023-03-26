@@ -1,7 +1,6 @@
 import { EMAIL_PATTERN } from '@/utils/constants';
 import { ErrorMessage } from '@hookform/error-message';
 import { useTheme } from 'next-themes';
-import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
@@ -12,6 +11,8 @@ import { useAppStore } from '@/stores/store';
 import Image from '@/components/ui/image/Image';
 import { Logo } from '@/components/ui/logo/Logo';
 import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
+import { Link } from '@/components/ui/link/Link';
+import { useTranslation } from 'react-i18next';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -102,6 +103,8 @@ const Footer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const {t} = useTranslation();
+
   return (
     <footer className='footer__area'>
       <div className='footer__top'>
@@ -131,8 +134,7 @@ const Footer = () => {
                     alt='Footer Logo'
                   /> */}
                   <p>
-                    When do they work well, and when do they on us and finally, when do we actually
-                    need how can we avoid them.
+                  {t('subtitle', { ns: 'footer' })}
                   </p>
                   <ul className='footer__social'>
                     <li>
@@ -168,28 +170,28 @@ const Footer = () => {
                 </div>
 
                 <div className='footer__widget-2'>
-                  <h2 className='footer__widget-title'>Information</h2>
+                  <h2 className='footer__widget-title'>{t('list.information.title', { ns: 'footer' })}</h2>
                   <ul className='footer__link'>
                     <li>
-                      <Link href='/about'>About Us</Link>
+                      <Link href='/about'>{t('list.information.items.about-us', { ns: 'footer' })}</Link>
                     </li>
                     <li>
-                      <Link href='/services'>Services</Link>
+                      <Link href='/services'>{t('list.information.items.services', { ns: 'footer' })}</Link>
                     </li>
                     <li>
-                      <Link href='/services'>Services</Link>
+                      <Link href='/services'>{t('list.information.items.configuration', { ns: 'footer' })}</Link>
                     </li>
                     <li>
-                      <Link href='/blog'>Blog</Link>
+                      <Link href='/blog'>{t('list.information.items.blog', { ns: 'footer' })}</Link>
                     </li>
                     <li>
-                      <Link href='/contact'>Contact</Link>
+                      <Link href='/contact'>{t('list.information.items.contact-us', { ns: 'footer' })}</Link>
                     </li>
                   </ul>
                 </div>
 
                 <div className='footer__widget-3'>
-                  <h2 className='footer__widget-title'>Contact Us</h2>
+                  <h2 className='footer__widget-title'>{t('contact.title', { ns: 'footer' })}</h2>
                   <ul className='footer__contact'>
                     <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
                     <li>
@@ -204,19 +206,19 @@ const Footer = () => {
                 </div>
 
                 <div className='footer__widget-4'>
-                  <h2 className='project-title'>Have a project in your mind?</h2>
+                  <h2 className='project-title'>{t('sidebar.title', { ns: 'footer' })}</h2>
                   <div className='btn_wrapper'>
                     <Link href='/contact' className='wc-btn-primary btn-hover btn-item'>
-                      <span></span> contact us <i className='fa-solid fa-arrow-right'></i>
+                      <span></span> {t('sidebar.call-to-action', { ns: 'footer' })} <i className='fa-solid fa-arrow-right'></i>
                     </Link>
                   </div>
                   <h3 className='contact-time'>09 : 00 AM - 17 : 00 PM</h3>
-                  <h4 className='contact-day'>Monday - Friday</h4>
+                  <h4 className='contact-day'>{t('global.days-in-week.monday')} - {t('global.days-in-week.friday')}</h4>
                 </div>
 
                 <div className='footer__copyright'>
                   <p>
-                    © 2023 - {currentYear} | All Rights Reserved |{' '}
+                    © 2023 - {currentYear} | {t('copyright.text', { ns: 'footer' })} |{' '}
                     <a href='https://wealcoder.com/' target='_blank' rel='noreferrer'>
                       POINTSYNCC d.o.o
                     </a>
@@ -228,7 +230,7 @@ const Footer = () => {
                     <div className='mb-2'>
                     <input
                       type='email'
-                      placeholder='Enter your email'
+                      placeholder={`${t('forms.newsletter.placeholder', { ns: 'footer' })}`}
                       {...register('email', {
                         required: 'Email is required',
                         pattern: {

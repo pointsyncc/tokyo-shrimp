@@ -1,6 +1,5 @@
 import '../scss/master.scss';
 import { Kanit } from 'next/font/google';
-
 import { NextPage } from 'next';
 import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
@@ -11,10 +10,10 @@ import { appWithTranslation, useTranslation } from 'next-i18next';
 import { setLocale } from 'yup';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { withTranslateRoutes } from 'next-translate-routes'
+import i18next from "i18next";
+import Locize from "i18next-locize-backend";
 
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// gsap.registerPlugin(ScrollTrigger);
 setLocale({
   mixed: {
     required: ({ path }) => `${path} is required`,
@@ -30,6 +29,17 @@ const kanit = Kanit({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
 });
+
+i18next.use(Locize).init({
+  backend: {
+    projectId: "b59ed47c-3553-4983-923f-e48008c88b26",
+    apiKey: "ce92c5d5-b438-49b4-bde7-e00d94f4d4c9",
+    version: "dev",
+    private: false,
+    referenceLng: "hr"
+  }
+});
+
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
 };
@@ -37,24 +47,6 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
-
-// gsap.registerEffect({
-//   name: 'fadeUp',
-//   effect(targets: any) {
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: targets,
-//       },
-//     });
-//     tl.from(targets, { y: 50, opacity: 0 });
-//     tl.to(targets, {
-//       y: 0,
-//       opacity: 1,
-//       duration: 1.5,
-//     });
-//     return tl;
-//   },
-// });
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const { i18n } = useTranslation();
@@ -87,11 +79,13 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   );
 };
 
-export const getServerSideProps = async ({ locale }: any) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'], null, ['en', 'hr'])),
-  },
-})
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent'],)),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
-
-export default appWithTranslation(App);
+export default appWithTranslation(withTranslateRoutes(App));

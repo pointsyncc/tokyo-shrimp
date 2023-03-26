@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "sync": "locize sync --path ./public/locales --project-id b59ed47c-3553-4983-923f-e48008c88b26 --api-key ce92c5d5-b438-49b4-bde7-e00d94f4d4c9"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
@@ -30,9 +31,11 @@
     "font-awesome": "^4.7.0",
     "gsap": "^3.11.4",
     "i18next": "^22.4.10",
+    "i18next-locize-backend": "^6.2.1",
     "next": "13.2.4",
     "next-i18next": "^13.1.6",
     "next-themes": "^0.2.1",
+    "next-translate-routes": "^1.9.2",
     "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-cookie-consent": "^8.0.1",
@@ -52,6 +55,7 @@
     "zustand": "^4.3.3"
   },
   "devDependencies": {
+    "locize-cli": "^7.14.0",
     "prettier": "2.8.4",
     "sass": "^1.58.1"
   }

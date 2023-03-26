@@ -1,0 +1,30 @@
+{
+    "subtitle": "Zakoračite u svijet digitalnih usluga.",
+    "list": {
+        "information": {
+            "title": "Korisni linkovi",
+            "items": {
+                "about-us": "O nama",
+                "services": "Usluge",
+                "configuration": "Konfigurator",
+                "blog": "Blog",
+                "contact-us": "Kontaktirajte nas"
+            }
+    }
+},
+    "contact": {
+        "title": "Kontakt"
+    },
+    "sidebar": {
+        "title": "Imate projekt na umu?",
+        "call-to-action": "Kontaktirajte nas"
+    },
+    "forms": {
+        "newsletter": {
+            "placeholder": "Vaša e-mail adresa"
+        }
+    },
+    "copyright": {
+        "text": "Sva prava pridržana"
+    }
+}

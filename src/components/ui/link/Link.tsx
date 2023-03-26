@@ -1,5 +1,5 @@
 import React from 'react';
-import NextLink, { LinkProps } from 'next/link';
+import {Link as NextLink} from 'next-translate-routes/link'
 
 import { useRouter } from 'next/router';
 import { ComponentAttrs } from '@/types/general';
@@ -41,8 +41,8 @@ export const Link = ({
   );
 
   let link = (
-    <NextLink className={classes} onClick={onClick} href={href} {...rest} passHref={true}>
-      {children}
+    <NextLink onClick={onClick} href={href} {...rest} passHref={true}>
+      <span className={classes}>{children}</span>
     </NextLink>
   );
 

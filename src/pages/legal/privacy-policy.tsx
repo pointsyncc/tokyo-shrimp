@@ -1,6 +1,6 @@
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import React from 'react';
-import { NextPageWithLayout } from './_app';
+import { NextPageWithLayout } from '../_app';
 
 const PrivacyPolicy: NextPageWithLayout = () => {
   return <div>Privacy and policy</div>;

@@ -47,11 +47,20 @@ const LocaleSwitcher = ({
     if (selectedLocale > -1) setSelectedOptionIdx(selectedLocale);
   };
 
+  const filteredLocaleDropdownItems = localeDropdownItems.filter(
+    (item) => item.textValue !== router.locale,
+  );
+
   useInit(setCustomSelectedOption);
+
+  const setCookie = (locale: string) => {
+    document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`
+}
 
   const onLocaleChange = (item: IDropdownItem) => {
     const { pathname, query } = router;
     router.push({ pathname, query }, router.asPath, { locale: item.textValue });
+    setCookie(item.textValue);
   };
   return (
     <PSDropdown

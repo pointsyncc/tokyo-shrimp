@@ -1,0 +1,30 @@
+{
+    "subtitle": "",
+    "list": {
+        "information": {
+            "title": "",
+            "items": {
+                "about-us": "",
+                "services": "",
+                "configuration": "",
+                "blog": "",
+                "contact-us": ""
+            }
+        }
+    },
+    "contact": {
+        "title": ""
+    },
+    "sidebar": {
+        "title": "",
+        "call-to-action": ""
+    },
+    "forms": {
+        "newsletter": {
+            "placeholder": ""
+        }
+    },
+    "copyright": {
+        "text": ""
+    }
+}

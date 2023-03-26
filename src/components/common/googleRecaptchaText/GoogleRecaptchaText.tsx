@@ -1,17 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const GoogleRecaptchaText = () => {
+
+  const {t} = useTranslation();
+
+  const privacyLink = (
+    <a  href='https://policies.google.com/privacy' target='_blank'>
+        {t('google-recaptcha.privacy-policy')}
+    </a>
+  );
+
+  const termsLink = (
+    <a  href='https://policies.google.com/terms' target='_blank'>
+      {t('google-recaptcha.terms-of-service')}
+    </a>
+  );
+
   return (
     <p className='text-muted fs-sm'>
-      This site is protected by reCAPTCHA and the Google{' '}
-      <a  href='https://policies.google.com/privacy' target='_blank'>
-      Privacy Policy
-      </a>{' '}
-      and{' '}
-      <a  href='https://policies.google.com/terms' target='_blank'>
-         Terms of Service
-      </a>{' '}
-      apply.
+     {t('google-recaptcha.info-text', {privacyLink, termsLink})}
     </p>
   );
 };
