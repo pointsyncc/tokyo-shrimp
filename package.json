@@ -36,6 +36,7 @@
     "i18next-locize-backend": "^6.2.1",
     "next": "13.2.4",
     "next-i18next": "^13.1.6",
+    "next-seo": "^5.15.0",
     "next-themes": "^0.2.1",
     "next-translate-routes": "^1.9.2",
     "nextjs-progressbar": "^0.0.16",

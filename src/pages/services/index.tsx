@@ -10,6 +10,7 @@ import { Service } from '@/components/services/service/Service';
 import Solution from '@/components/services/solution/Solution';
 import Brands from '@/components/services/brands/Brands';
 import ServiceArea from '@/components/services/servicesArea/ServiceArea';
+import { NextSeo } from 'next-seo';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -86,10 +87,40 @@ const Services: NextPageWithLayout = () => {
 
   return (
     <>
-      <Head>
-        <title>Pointsyncc - Services</title>
-        <meta name='description' content='Services' />
-      </Head>
+      <NextSeo
+        title='Pointsyncc - Services'
+        description='Services'
+        canonical='https://www.canonical.ie/'
+        openGraph={{
+          url: 'https://www.url.ie/a',
+          title: 'Open Graph Title',
+          description: 'Open Graph Description',
+          images: [
+            {
+              url: 'https://www.example.ie/og-image-01.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+              type: 'image/jpeg',
+            },
+            {
+              url: 'https://www.example.ie/og-image-02.jpg',
+              width: 900,
+              height: 800,
+              alt: 'Og Image Alt Second',
+              type: 'image/jpeg',
+            },
+            { url: 'https://www.example.ie/og-image-03.jpg' },
+            { url: 'https://www.example.ie/og-image-04.jpg' },
+          ],
+          siteName: 'SiteName',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <div ref={comp}>
         <Solution />
         <ServiceArea />

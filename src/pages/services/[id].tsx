@@ -2,6 +2,7 @@ import CTA from '@/components/common/CTA';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { PSAccordion } from '@/components/ui/accordion/Accordion';
 import Image from '@/components/ui/image/Image';
+import { NextSeo } from 'next-seo';
 
 import React from 'react';
 import { NextPageWithLayout } from '../_app';
@@ -31,6 +32,40 @@ const Service: NextPageWithLayout = () => {
   ];
   return (
     <>
+      <NextSeo
+        title='Pointsyncc - Service'
+        description='Service'
+        canonical='https://www.canonical.ie/'
+        openGraph={{
+          url: 'https://www.url.ie/a',
+          title: 'Open Graph Title',
+          description: 'Open Graph Description',
+          images: [
+            {
+              url: 'https://www.example.ie/og-image-01.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+              type: 'image/jpeg',
+            },
+            {
+              url: 'https://www.example.ie/og-image-02.jpg',
+              width: 900,
+              height: 800,
+              alt: 'Og Image Alt Second',
+              type: 'image/jpeg',
+            },
+            { url: 'https://www.example.ie/og-image-03.jpg' },
+            { url: 'https://www.example.ie/og-image-04.jpg' },
+          ],
+          siteName: 'SiteName',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <section className='development__area'>
         <div className='container g-0 line pt-130 pb-150'>
           <div className='line-3'></div>
@@ -69,8 +104,7 @@ const Service: NextPageWithLayout = () => {
             </div>
             <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
               <div className='development__img'>
-              <Image src='/imgs/thumb/dev-2.jpg' alt='Development Image' data-speed='auto' />
-
+                <Image src='/imgs/thumb/dev-2.jpg' alt='Development Image' data-speed='auto' />
               </div>
             </div>
           </div>
@@ -159,7 +193,14 @@ const Service: NextPageWithLayout = () => {
               <div className='service__detail-img'>
                 <Image src='/imgs/thumb/service-detail.png' alt='Service detail image' />
                 {/* <img src='/imgs/thumb/service-detail.png' alt='Service detail image' /> */}
-                <Image raw={true} width={51} height={51} src='/imgs/icon/shape-6.png' alt='Service shape image' className='sd-shape'/>
+                <Image
+                  raw={true}
+                  width={51}
+                  height={51}
+                  src='/imgs/icon/shape-6.png'
+                  alt='Service shape image'
+                  className='sd-shape'
+                />
                 {/* <img src='/imgs/icon/shape-6.png' alt='Service shape image' className='sd-shape' /> */}
               </div>
               <div className='service__detail-content'>
