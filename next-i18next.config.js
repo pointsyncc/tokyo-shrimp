@@ -17,11 +17,8 @@ module.exports = {
   backend: {
     backendOptions: [
       {
-        expirationTime: 60 * 60 * 1000, // 1 hour
-      },
-      {
         projectId: 'b59ed47c-3553-4983-923f-e48008c88b26',
-        apiKey: 'ce92c5d5-b438-49b4-bde7-e00d94f4d4c9',
+        apiKey: 'b3599cee-943c-4184-8e7d-952fce9f0199',
         version: 'dev',
       },
     ],
