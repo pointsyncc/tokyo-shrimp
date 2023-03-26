@@ -20,6 +20,8 @@ module.exports = {
     }, {
       projectId: process.env.NEXT_PUBLIC_LOCIZE_PROJECT_ID,
       version: process.env.NEXT_PUBLIC_LOCIZE_VERSION,
+      reloadInterval: typeof window !== 'undefined' ? false : 60 * 60 * 1000,
+      translatedPercentageThreshold: 0.8,
     }],
     backends: isBrowser ? [LocalStorageBackend, LocizeBackend] : [],
   },

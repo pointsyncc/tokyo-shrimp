@@ -58,7 +58,12 @@ export default function About() {
     return () => ctx.revert(); // cleanup
   }, []);
 
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation(['homepage'], { bindI18n: 'languageChanged loaded' });
+  // bindI18n: loaded is needed because of the reloadResources call
+  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
+  useEffect(() => {
+    i18n.reloadResources(i18n.resolvedLanguage, ['homepage']);
+  }, []);
 
   return (
     <section className='about__area' ref={comp}>
