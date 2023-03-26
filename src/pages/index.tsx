@@ -14,27 +14,36 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NextPageWithLayout } from './_app';
-import { NextSeo } from 'next-seo';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home: NextPageWithLayout = () => {
   const router = useRouter();
-  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' });
+  const { t, i18n } = useTranslation([
+    'common',
+    'footer',
+    'cookie-consent',
+    'homepage',
+  ], { bindI18n: 'languageChanged loaded' });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer']);
+    i18n.reloadResources(i18n.resolvedLanguage, [
+      'common',
+      'footer',
+      'cookie-consent',
+      'homepage',
+    ]);
   }, []);
 
   return (
     <>
       <NextSeo
-        title='Pointsyncc - Home'
+        title={`Pointsyncc - ${t('page.title', {ns: 'homepage'})}`}
         description='Home'
         canonical='https://www.canonical.ie/'
         openGraph={{

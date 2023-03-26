@@ -3,7 +3,7 @@ import { classNames } from '@/utils/classNames';
 import React from 'react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 import classes from './cookieConsent.module.scss';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 
 export const CookieBanner = () => {
 

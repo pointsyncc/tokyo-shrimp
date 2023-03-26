@@ -16,7 +16,7 @@ import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
 
 const ThemeSwitch = () => {

@@ -75,13 +75,13 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   );
 };
 
-export async function getStaticProps({ locale }: any) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent'])),
-      // Will be passed to the page component as props
-    },
-  };
-}
+// export async function getStaticProps({ locale }: any) {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent'])),
+//       // Will be passed to the page component as props
+//     },
+//   };
+// }
 
 export default withTranslateRoutes(appWithTranslation(App, nextI18NextConfig));
