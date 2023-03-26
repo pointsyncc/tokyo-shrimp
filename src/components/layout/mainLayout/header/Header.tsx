@@ -1,9 +1,6 @@
 import { Logo } from '@/components/ui/logo/Logo';
-import logoPrimary from '@/public/imgs/pointsyncc/logo/desktop/transparent-90.png';
-import logoSecondary from '@/public/imgs/pointsyncc/logo/desktop/transparent.png';
-import Image from 'next/image';
-import Link from 'next/link';
 import { CgMenuGridO } from 'react-icons/cg';
+
 
 interface HeaderProps {
   openMenu: () => void;

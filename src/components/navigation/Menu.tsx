@@ -1,12 +1,16 @@
+import {
+  COMPANY_ADDRESS,
+  COMPANY_CONTACT_EMAIL,
+  COMPANY_CONTACT_PHONE_NUMBER,
+} from '@/utils/contants';
 import gsap from 'gsap';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import LocaleSwitcher from '../common/localeSwitcher/LocaleSwitcher';
 import Image from '../ui/image/Image';
 import { Logo } from '../ui/logo/Logo';
-
 import classes from './menu.module.scss';
 
 interface IProps {
@@ -14,7 +18,7 @@ interface IProps {
   setOpen: (open: boolean) => void;
   showLangSwitcher: boolean;
 }
-export default function Menu({ open, setOpen,showLangSwitcher }: IProps) {
+export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
   const router = useRouter();
   const comp = useRef(null);
   useEffect(() => {
@@ -148,7 +152,9 @@ export default function Menu({ open, setOpen,showLangSwitcher }: IProps) {
           </div>
         </div>
         <div className='offcanvas__mid d-flex justify-content-center  flex-column'>
-        {showLangSwitcher ? <LocaleSwitcher className='align-self-center' contentZIndex={10000} /> : null}
+          {showLangSwitcher ? (
+            <LocaleSwitcher className='align-self-center' contentZIndex={10000} />
+          ) : null}
           <div className='offcanvas__menu-wrapper'>
             <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
               <ul className='menu-anim d-flex align-items-stretch flex-column text-center'>
@@ -162,9 +168,7 @@ export default function Menu({ open, setOpen,showLangSwitcher }: IProps) {
           </div>
         </div>
         <div className='offcanvas__right'>
-
           <div className='offcanvas__search'>
-    
             <form action='#'>
               <input type='text' name='search' placeholder='Search keyword' />
               <button>
@@ -176,12 +180,12 @@ export default function Menu({ open, setOpen,showLangSwitcher }: IProps) {
             <h3>Get in touch</h3>
             <ul>
               <li>
-                <a href='tel:02094980547'>+385 99 2144 802</a>
+                <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>{COMPANY_CONTACT_PHONE_NUMBER}</a>
               </li>
               <li>
-                <a href='mailto:info@pointsyncc.com'>info@pointsyncc.com</a>
+                <a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a>
               </li>
-              <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
+              <li>{COMPANY_ADDRESS}</li>
             </ul>
           </div>
           <Image

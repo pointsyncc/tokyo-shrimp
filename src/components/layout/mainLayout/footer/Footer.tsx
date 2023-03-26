@@ -1,18 +1,23 @@
+import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
+import Image from '@/components/ui/image/Image';
+import { Link } from '@/components/ui/link/Link';
+import { Logo } from '@/components/ui/logo/Logo';
+import { useAppStore } from '@/stores/store';
+import { pointSynccAPI } from '@/utils/axios';
 import { EMAIL_PATTERN } from '@/utils/constants';
+import {
+  COMPANY_ADDRESS,
+  COMPANY_CONTACT_EMAIL,
+  COMPANY_CONTACT_PHONE_NUMBER,
+} from '@/utils/contants';
 import { ErrorMessage } from '@hookform/error-message';
+import gsap from 'gsap';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
-import gsap from 'gsap';
 import { toast } from 'react-hot-toast';
-import { pointSynccAPI } from '@/utils/axios';
-import { useAppStore } from '@/stores/store';
-import Image from '@/components/ui/image/Image';
-import { Logo } from '@/components/ui/logo/Logo';
-import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
-import { Link } from '@/components/ui/link/Link';
 import { useTranslation } from 'react-i18next';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -103,12 +108,12 @@ const Footer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' })
+  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer'])
-  }, [])
+    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer']);
+  }, []);
 
   return (
     <footer className='footer__area'>
@@ -131,16 +136,14 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <Logo  className='footer__logo' type="secondary" width={220} />
+                  <Logo className='footer__logo' type='secondary' width={220} />
                   {/* <img
                     className='footer__logo'
                     width={220}
                     src='/imgs/pointsyncc/logo/desktop/transparent.png'
                     alt='Footer Logo'
                   /> */}
-                  <p>
-                  {t('subtitle', { ns: 'footer' })}
-                  </p>
+                  <p>{t('subtitle', { ns: 'footer' })}</p>
                   <ul className='footer__social'>
                     <li>
                       <a href='#'>
@@ -175,22 +178,32 @@ const Footer = () => {
                 </div>
 
                 <div className='footer__widget-2'>
-                  <h2 className='footer__widget-title'>{t('list.information.title', { ns: 'footer' })}</h2>
+                  <h2 className='footer__widget-title'>
+                    {t('list.information.title', { ns: 'footer' })}
+                  </h2>
                   <ul className='footer__link'>
                     <li>
-                      <Link href='/about'>{t('list.information.items.about-us', { ns: 'footer' })}</Link>
+                      <Link href='/about'>
+                        {t('list.information.items.about-us', { ns: 'footer' })}
+                      </Link>
                     </li>
                     <li>
-                      <Link href='/services'>{t('list.information.items.services', { ns: 'footer' })}</Link>
+                      <Link href='/services'>
+                        {t('list.information.items.services', { ns: 'footer' })}
+                      </Link>
                     </li>
                     <li>
-                      <Link href='/services'>{t('list.information.items.configuration', { ns: 'footer' })}</Link>
+                      <Link href='/services'>
+                        {t('list.information.items.configuration', { ns: 'footer' })}
+                      </Link>
                     </li>
                     <li>
                       <Link href='/blog'>{t('list.information.items.blog', { ns: 'footer' })}</Link>
                     </li>
                     <li>
-                      <Link href='/contact'>{t('list.information.items.contact-us', { ns: 'footer' })}</Link>
+                      <Link href='/contact'>
+                        {t('list.information.items.contact-us', { ns: 'footer' })}
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -198,14 +211,14 @@ const Footer = () => {
                 <div className='footer__widget-3'>
                   <h2 className='footer__widget-title'>{t('contact.title', { ns: 'footer' })}</h2>
                   <ul className='footer__contact'>
-                    <li>Zavrtnica 17, 10000 Zagreb, Croatia</li>
+                    <li>{COMPANY_ADDRESS}</li>
                     <li>
-                      <a href='tel:+385992144802' className='phone'>
-                        +385 99 2144 802{' '}
+                      <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>
+                        {COMPANY_CONTACT_PHONE_NUMBER}
                       </a>
                     </li>
                     <li>
-                      <a href='mailto:info@pointsyncc.com'>info@pointsyncc.com</a>
+                      <a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a>
                     </li>
                   </ul>
                 </div>
@@ -214,16 +227,19 @@ const Footer = () => {
                   <h2 className='project-title'>{t('sidebar.title', { ns: 'footer' })}</h2>
                   <div className='btn_wrapper'>
                     <Link href='/contact' className='wc-btn-primary btn-hover btn-item'>
-                      <span></span> {t('sidebar.call-to-action', { ns: 'footer' })} <i className='fa-solid fa-arrow-right'></i>
+                      <span></span> {t('sidebar.call-to-action', { ns: 'footer' })}{' '}
+                      <i className='fa-solid fa-arrow-right'></i>
                     </Link>
                   </div>
                   <h3 className='contact-time'>09 : 00 AM - 17 : 00 PM</h3>
-                  <h4 className='contact-day'>{t('global.days-in-week.monday')} - {t('global.days-in-week.friday')}</h4>
+                  <h4 className='contact-day'>
+                    {t('global.days-in-week.monday')} - {t('global.days-in-week.friday')}
+                  </h4>
                 </div>
 
                 <div className='footer__copyright'>
                   <p>
-                    © 2023 - {currentYear} | {t('copyright.text', { ns: 'footer' })} {t('copyright.text2', { ns: 'footer' })} |{' '}
+                    © 2023 | {t('copyright.text', { ns: 'footer' })} |{' '}
                     <a href='https://wealcoder.com/' target='_blank' rel='noreferrer'>
                       POINTSYNCC d.o.o
                     </a>
@@ -233,24 +249,24 @@ const Footer = () => {
                 <div className='footer__subscribe'>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='mb-2'>
-                    <input
-                      type='email'
-                      placeholder={`${t('forms.newsletter.placeholder', { ns: 'footer' })}`}
-                      {...register('email', {
-                        required: 'Email is required',
-                        pattern: {
-                          value: EMAIL_PATTERN,
-                          message: 'Invalid email address',
-                        },
-                      })}
-                    />
-                    <ErrorMessage
-                      errors={errors}
-                      name='email'
-                      render={({ message }) => <p className='form__error__message'>{message}</p>}
-                    />
+                      <input
+                        type='email'
+                        placeholder={`${t('forms.newsletter.placeholder', { ns: 'footer' })}`}
+                        {...register('email', {
+                          required: 'Email is required',
+                          pattern: {
+                            value: EMAIL_PATTERN,
+                            message: 'Invalid email address',
+                          },
+                        })}
+                      />
+                      <ErrorMessage
+                        errors={errors}
+                        name='email'
+                        render={({ message }) => <p className='form__error__message'>{message}</p>}
+                      />
                     </div>
-                    <GoogleRecaptchaText/>
+                    <GoogleRecaptchaText />
                     <button type='submit' className='subs-btn'>
                       <FaPaperPlane />
                     </button>
