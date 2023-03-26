@@ -1,11 +1,11 @@
 {
-    "hero": {
-        "title": "",
-        "subtitle": ""
-    },
-    "about":{
-        "title": "",
-        "subtitle": "",
-        "call-to-action": ""
-    }
+  "about": {
+    "call-to-action": "Our services",
+    "subtitle": "Give your clients...",
+    "title": "Expand your horizons, think the digital way"
+  },
+  "hero": {
+    "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
+    "title": "Enter the digital world"
+  }
 }

@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "sync": "locize sync --path ./public/locales --project-id b59ed47c-3553-4983-923f-e48008c88b26 --api-key ce92c5d5-b438-49b4-bde7-e00d94f4d4c9 --reference-language-only false"
+    "sync": "locize sync dev --path ./public/locales --project-id b59ed47c-3553-4983-923f-e48008c88b26 --api-key ce92c5d5-b438-49b4-bde7-e00d94f4d4c9 --reference-language-only false",
+    "download": "locize download --project-id b59ed47c-3553-4983-923f-e48008c88b26"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",

@@ -1,30 +1,30 @@
 {
-    "subtitle": "",
-    "list": {
-        "information": {
-            "title": "",
-            "items": {
-                "about-us": "",
-                "services": "",
-                "configuration": "",
-                "blog": "",
-                "contact-us": ""
-            }
-        }
-    },
-    "contact": {
-        "title": ""
-    },
-    "sidebar": {
-        "title": "",
-        "call-to-action": ""
-    },
-    "forms": {
-        "newsletter": {
-            "placeholder": ""
-        }
-    },
-    "copyright": {
-        "text": ""
+  "contact": {
+    "title": "Kontakt"
+  },
+  "copyright": {
+    "text": "Alle Rechte vorbehalten"
+  },
+  "forms": {
+    "newsletter": {
+      "placeholder": "E-mail"
     }
+  },
+  "list": {
+    "information": {
+      "items": {
+        "about-us": "Über uns",
+        "blog": "Blog",
+        "configuration": "Konfigurator",
+        "contact-us": "TEst",
+        "services": "TEst"
+      },
+      "title": "Nützliche Links"
+    }
+  },
+  "sidebar": {
+    "call-to-action": "Kontaktieren Sie uns",
+    "title": "Haben Sie ein Projekt im Sinn?"
+  },
+  "subtitle": "Tauchen Sie ein in die Welt der digitalen Services"
 }

@@ -103,7 +103,12 @@ const Footer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const {t} = useTranslation();
+  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' })
+  // bindI18n: loaded is needed because of the reloadResources call
+  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
+  useEffect(() => {
+    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer'])
+  }, [])
 
   return (
     <footer className='footer__area'>
@@ -193,7 +198,7 @@ const Footer = () => {
                 <div className='footer__widget-3'>
                   <h2 className='footer__widget-title'>{t('contact.title', { ns: 'footer' })}</h2>
                   <ul className='footer__contact'>
-                    <li>Ulica Mokrice 12, 10382 Donja Zelina, Croatia</li>
+                    <li>Zavrtnica 17, 10000 Zagreb, Croatia</li>
                     <li>
                       <a href='tel:+385992144802' className='phone'>
                         +385 99 2144 802{' '}
@@ -218,7 +223,7 @@ const Footer = () => {
 
                 <div className='footer__copyright'>
                   <p>
-                    © 2023 - {currentYear} | {t('copyright.text', { ns: 'footer' })} |{' '}
+                    © 2023 - {currentYear} | {t('copyright.text', { ns: 'footer' })} {t('copyright.text2', { ns: 'footer' })} |{' '}
                     <a href='https://wealcoder.com/' target='_blank' rel='noreferrer'>
                       POINTSYNCC d.o.o
                     </a>

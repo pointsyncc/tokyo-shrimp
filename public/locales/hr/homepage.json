@@ -1,11 +1,13 @@
 {
-    "hero": {
-        "title": "Zakorači u digitalnu evoluciju poslovanja",
-        "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver."
-    },
-    "about":{
-        "title": "Proširi horizonte, razmišljaj digitalno",
-        "subtitle": "Pružiti svojim postojećim i potencijalnim klijentima najbolje digitalne usluge i proizvode, a da istovremeno budu u skladu sa njihovim potrebama i željama.",
-        "call-to-action": "Naše usluge"
-    }
+  "about": {
+    "call-to-action": "Naše usluge",
+    "subtitle": "Omogućite svojim postojećim i potencijalnim klijentima neprekidan pristup Vašim proizvodima i uslugama, ojačajte korisničko iskustvo kroz višekanalnu digitalnu komunikaciju te osigurajte svome poslovanju održivu budućnost, koje je uvijek jedan korak ispred konkurencije.",
+    "title": "Proširi horizonte, razmišljaj digitalno!"
+  },
+  "hero": {
+    "button": "hero.button",
+    "call-to-action": "Istraži opcije",
+    "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
+    "title": "Zakorači u digitalnu evoluciju poslovanja"
+  }
 }

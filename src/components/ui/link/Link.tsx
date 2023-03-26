@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link as NextLink} from 'next-translate-routes/link'
+import { Link as NextLink } from 'next-translate-routes/link';
 
 import { useRouter } from 'next/router';
 import { ComponentAttrs } from '@/types/general';
@@ -7,7 +7,7 @@ import { ComponentAttrs } from '@/types/general';
 export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   activeClassName?: string;
   asButton?: boolean;
-  applyLinkStyles?:boolean;
+  applyLinkStyles?: boolean;
 }
 
 export const Link = ({
@@ -41,14 +41,16 @@ export const Link = ({
   );
 
   let link = (
-    <NextLink onClick={onClick} href={href} {...rest} passHref={true}>
-      <span className={classes}>{children}</span>
-    </NextLink>
+      <NextLink onClick={onClick} href={href} {...rest} passHref={true} legacyBehavior>
+        <a className={classes}>
+        {children}
+        </a>
+      </NextLink>
   );
 
   if (typeof href === 'string' && href.startsWith('http')) {
     link = normalAnchorTag;
-  } 
+  }
   // else if (asButton && onClick) {
   //   link = (
   //     <button onClick={onClick} className={classes}>

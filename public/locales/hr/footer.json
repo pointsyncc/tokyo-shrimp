@@ -1,30 +1,30 @@
 {
-    "subtitle": "Zakoračite u svijet digitalnih usluga.",
-    "list": {
-        "information": {
-            "title": "Korisni linkovi",
-            "items": {
-                "about-us": "O nama",
-                "services": "Usluge",
-                "configuration": "Konfigurator",
-                "blog": "Blog",
-                "contact-us": "Kontaktirajte nas"
-            }
+  "contact": {
+    "title": "Kontakt"
+  },
+  "copyright": {
+    "text": "Sva prava pridržana"
+  },
+  "forms": {
+    "newsletter": {
+      "placeholder": "Vaša e-mail adresa"
     }
-},
-    "contact": {
-        "title": "Kontakt"
-    },
-    "sidebar": {
-        "title": "Imate projekt na umu?",
-        "call-to-action": "Kontaktirajte nas"
-    },
-    "forms": {
-        "newsletter": {
-            "placeholder": "Vaša e-mail adresa"
-        }
-    },
-    "copyright": {
-        "text": "Sva prava pridržana"
+  },
+  "list": {
+    "information": {
+      "items": {
+        "about-us": "O nama",
+        "blog": "Blog",
+        "configuration": "Konfigurator",
+        "contact-us": "Kontaktirajte nas",
+        "services": "Usluge"
+      },
+      "title": "Korisni linkovi"
     }
+  },
+  "sidebar": {
+    "call-to-action": "Kontaktirajte nas",
+    "title": "Imate projekt na umu?"
+  },
+  "subtitle": "Zakoračite u svijet digitalnih usluga."
 }

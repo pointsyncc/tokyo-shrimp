@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { useTranslation } from 'next-i18next'
 import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
+import gsap from 'gsap';
+import { useTranslation } from 'next-i18next';
+import { Link } from 'next-translate-routes';
+import { useRef } from 'react';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import Image from '../ui/image/Image';
-import { Roll } from './Roll';
+
 export const Hero = () => {
   const { t } = useTranslation()
   const comp = useRef(null);
@@ -39,19 +41,25 @@ export const Hero = () => {
         <div className='row'>
           <div className='col-xxl-12'>
             <div className='hero__content animation__hero_one'>
-              <a href='#'>
+              {/* <a href='#'>
                 Strategy, Design, Solution Development{' '}
                 <span>
                   <i className='fa-solid fa-arrow-right'></i>
                 </span>
-              </a>
+              </a> */}
               <div className='hero__title-wrapper'>
                 <h1 className='hero__title mb-4 mb-md-5' ref={heroHeading}>
-                  {t('hero.title', { ns: 'homepage' })}
+                  
+                  {t('hero.title', {ns: 'homepage' })}
                 </h1>
-                <p className='hero__sub-title' ref={heroText}>
-                {t('hero.subtitle', { ns: 'homepage' })}
-                </p>
+                <button className='d-flex justify-content-center align-items-center gap-3'>
+                  <Link href='/contact' legacyBehavior>
+                    <a className=''>
+                      {t('hero.call-to-action', {ns: 'homepage' })}
+                    </a>
+                  </Link>
+                    <BsFillArrowRightCircleFill className='text-white' />
+                </button>
               </div>
               {/* <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' /> */}
               {/* <div className='experience' ref={experience}>

@@ -15,13 +15,12 @@ module.exports = {
     locales: ['hr', 'en', 'de'],
   },
   backend: {
-    backendOptions: [
-      {
-        projectId: 'b59ed47c-3553-4983-923f-e48008c88b26',
-        apiKey: 'b3599cee-943c-4184-8e7d-952fce9f0199',
-        version: 'dev',
-      },
-    ],
+    backendOptions: [{
+      expirationTime: 60 * 60 * 1000 // 1 hour
+    }, {
+      projectId: process.env.NEXT_PUBLIC_LOCIZE_PROJECT_ID,
+      version: process.env.NEXT_PUBLIC_LOCIZE_VERSION,
+    }],
     backends: isBrowser ? [LocalStorageBackend, LocizeBackend] : [],
   },
   serializeConfig: false,

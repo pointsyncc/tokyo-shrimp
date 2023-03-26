@@ -1,13 +1,17 @@
 {
-    "global": {
-        "days-in-week": {
-            "monday": "Monday",
-            "tuesday": "Tuesday",
-            "wednesday": "Wednesday",
-            "thursday": "Thursday",
-            "friday": "Friday",
-            "saturday": "Saturday",
-            "sunday": "Sunday"
-        }
+  "dictionary": {
+    "privacy-policy": "Terms of condition",
+    "terms-of-service": "Terms of service"
+  },
+  "global": {
+    "days-in-week": {
+      "friday": "Friday",
+      "monday": "Monday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "thursday": "Thursday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday"
     }
+  }
 }

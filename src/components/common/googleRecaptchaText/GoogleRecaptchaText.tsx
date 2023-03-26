@@ -1,25 +1,31 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const GoogleRecaptchaText = () => {
+const privacyLink = () => {
+  const { t } = useTranslation();
 
-  const {t} = useTranslation();
-
-  const privacyLink = (
-    <a  href='https://policies.google.com/privacy' target='_blank'>
-        {t('google-recaptcha.privacy-policy')}
+  return (
+    <a href='https://policies.google.com/privacy' target='_blank'>
+      {t('google-recaptcha.privacy-policy')}
     </a>
   );
+};
 
-  const termsLink = (
-    <a  href='https://policies.google.com/terms' target='_blank'>
+const termsLink = () => {
+  const { t } = useTranslation();
+  return (
+    <a href='https://policies.google.com/terms' target='_blank'>
       {t('google-recaptcha.terms-of-service')}
     </a>
   );
+};
+
+const GoogleRecaptchaText = () => {
+  const { t } = useTranslation();
 
   return (
     <p className='text-muted fs-sm'>
-     {t('google-recaptcha.info-text', {privacyLink, termsLink})}
+      {t('google-recaptcha.info-text', { privacyLink: 'Politika privatnosti', termsLink: 'Uvjeti korištenja usluge.' })}
     </p>
   );
 };

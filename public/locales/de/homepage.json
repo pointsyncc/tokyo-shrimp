@@ -1,11 +1,11 @@
 {
-    "hero": {
-        "title": "",
-        "subtitle": ""
-    },
-    "about":{
-        "title": "",
-        "subtitle": "",
-        "call-to-action": ""
-    }
+  "about": {
+    "call-to-action": "Unsere Dienste",
+    "subtitle": "Bereitstellung der besten digitalen Dienstleistungen und Produkte für unseren bestehenden und potenziellen Kunden, die ihren Bedürfnissen und Wünschen entsprechen.",
+    "title": "Erweitern Sie Ihren Horizont, denken Sie digital"
+  },
+  "hero": {
+    "subtitle": "Test",
+    "title": "Treten Sie ein in die digitale Evolution des Geschäfts"
+  }
 }

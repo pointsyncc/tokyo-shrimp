@@ -1,7 +1,7 @@
 {
-    "text": "",
-    "actions": {
-        "accept": "",
-        "cancel": ""
-    }
+  "actions": {
+    "accept": "Ich Akzeptiere",
+    "cancel": "Ich lehne ab"
+  },
+  "text": "Diese Website verwendet Cookies, um Ihre Erfahrung zu messen und zu verbessern. Bitte lesen Sie unsere Datenschutzrichtlinie, um mehr darüber zu erfahren, wie wir Cookies verwenden und wie Sie sie kontrollieren können."
 }
