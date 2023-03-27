@@ -75,7 +75,9 @@ const Footer = () => {
     toast.promise(sendForm(data), {
       loading: 'Sending your request...',
       success: 'You are now subscribed to our newsletter!',
-      error: (err) => `This just happened: ${err.toString()}`,
+      error: (err) => {
+        return err.message
+      },
     });
   };
 
