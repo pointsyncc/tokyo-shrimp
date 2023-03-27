@@ -13,5 +13,9 @@
       "tuesday": "Tuesday",
       "wednesday": "Wednesday"
     }
+  },
+  "google-recaptcha": {
+    "privacy-policy": "Terms of privacy",
+    "terms-of-service": "Terms of service"
   }
 }

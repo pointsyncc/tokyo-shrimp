@@ -1,13 +1,17 @@
 import { COMPANY_ADDRESS } from '@/utils/contants';
-import React from 'react';
+import { Trans, useTranslation } from 'next-i18next';
 
 const ContactInfo = () => {
+  const { t } = useTranslation('contact');
+
   return (
     <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
       <div className='contact__info'>
         <h3 className='sub-title-anim-top animation__word_come'>
-          Don&apos;t be afraid man ! <br />
-          say hello
+          <Trans i18nKey='page.text' t={t}>
+            Don&apos;t be afraid man ! <br />
+            say hello
+          </Trans>
         </h3>
         <ul>
           <li>
@@ -21,9 +25,7 @@ const ContactInfo = () => {
             </a>
           </li>
           <li>
-            <span>
-              {COMPANY_ADDRESS}
-            </span>
+            <span>{COMPANY_ADDRESS}</span>
           </li>
         </ul>
       </div>

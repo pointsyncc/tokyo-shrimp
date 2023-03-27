@@ -1,9 +1,10 @@
-import React from 'react';
-
-import SectionTitle from '../ui/sectionTitle/SectionTitle';
-import { FadeInStagger } from '../common/animations/FadeInStagger';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { useTranslation } from 'next-i18next';
+import { FadeInStagger } from '../common/animations/FadeInStagger';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
+
+
 export default function Workflow() {
   const workflow = [
     {
@@ -31,6 +32,9 @@ export default function Workflow() {
       text: 'Delicate and long-lasting with vitamins and nutritions',
     },
   ];
+
+  const {t} = useTranslation(['homepage']);
+
   return (
     <FadeInStagger>
       <section className='workflow__area'>
@@ -39,9 +43,9 @@ export default function Workflow() {
           <div className='row'>
             <div className='col-xxl-12'>
               <div className='sec-title-wrapper'>
-                <h2 className='sec-sub-title title-anim'>Workflow</h2>
+                <h2 className='sec-sub-title title-anim'>{t('workflow.subtitle')}</h2>
 
-                <SectionTitle>How we work</SectionTitle>
+                <SectionTitle>{t('workflow.title')}</SectionTitle>
               </div>
             </div>
 

@@ -3,11 +3,10 @@ import { classNames } from '@/utils/classNames';
 import React from 'react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 import classes from './cookieConsent.module.scss';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 
 export const CookieBanner = () => {
-
-  const {t} = useTranslation();
+  const { t } = useTranslation('cookie-consent');
 
   return (
     <CookieConsent
@@ -25,8 +24,8 @@ export const CookieBanner = () => {
         'p-3 flex-column border border-white rounded text-light bg-black',
       )}
       buttonClasses='btn btn-outline-light bg-transparent m-0 border border-white text-white rounded d-block ms-auto'
-      declineButtonText={`${t('actions.cancel', {ns: 'cookie-consent'})}`}
-      buttonText={`${t('actions.accept', {ns: 'cookie-consent'})}`}
+      declineButtonText={`${t('actions.cancel', { ns: 'cookie-consent' })}`}
+      buttonText={`${t('actions.accept', { ns: 'cookie-consent' })}`}
       buttonWrapperClasses='d-flex w-100'
       declineButtonClasses='btn-link bg-transparent m-0 p-0 text-white'
       buttonStyle={{
@@ -34,7 +33,14 @@ export const CookieBanner = () => {
       }}
     >
       <p className='text-white mb-3'>
-      {`${t('text', {ns: 'cookie-consent'})}`}
+        <Trans i18nKey='text.banner' t={t}>
+          Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Molimo pročitajte
+          našu{" "}
+          <Link href='/cookie-policy'>
+            Politiku privatnosti
+          </Link>{' '}
+          kako biste saznali više o tome kako koristimo kolačiće i kako ih možete kontrolirati. Nastavkom korištenja web stranice automatski prihvaćate sve kolačiće.
+        </Trans>
       </p>
     </CookieConsent>
   );

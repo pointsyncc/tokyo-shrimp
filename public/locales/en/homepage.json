@@ -1,11 +1,29 @@
 {
   "about": {
     "call-to-action": "Our services",
-    "subtitle": "Give your clients...",
-    "title": "Expand your horizons, think the digital way"
+    "subtitle": "Provide your existing and potential clients uninterrupted access to your products and services, strengthen the user experience through multi-channel digital communication and ensure a sustainable future for your business, which is always one step ahead of the competition.",
+    "title": "Expand your horizons, think digital!"
+  },
+  "blog": {
+    "subtitle": "Recent posts",
+    "title": "News insight"
+  },
+  "cta": {
+    "button-text": "Let's talk",
+    "title": "We would love to hear more about your project",
+    "work-with-us": "Work with us"
   },
   "hero": {
+    "call-to-action": "Explore the options",
     "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
     "title": "Enter the digital world"
+  },
+  "page": {
+    "title": "Homepage"
+  },
+  "service": {
+    "button": "<0></0> View <br/>all services <4></4>",
+    "subtitle": "Services",
+    "text": "With every single one of our clients we bring forth a deep passion for <2>creative problem solving innovations</2> forward thinking brands boundaries"
   }
 }

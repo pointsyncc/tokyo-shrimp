@@ -121,17 +121,17 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <Parallax  speed={-40}>
+        {/* <Parallax  speed={-20}>
         <Image
           width={1160}
           height={662}
           raw={true}
-          style={{ height: 'auto !important' }}
-          src='/imgs/thumb/footer.jpg'
+      
+          src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects%2Ftokyo-shrimp%2Ffooter-coworking-1.jpeg'
           alt='Footer Image'
-          data-speed='0.75'
+      
         />
-        </Parallax>
+        </Parallax> */}
 
       </div>
 

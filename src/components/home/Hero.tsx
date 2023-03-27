@@ -54,11 +54,11 @@ export const Hero = () => {
                 </h1>
                 <button className='d-flex justify-content-center align-items-center gap-3'>
                   <Link href='/contact' legacyBehavior>
-                    <a className=''>
+                    <a className='d-flex align-items-center gap-3'>
                       {t('hero.call-to-action', {ns: 'homepage' })}
+                    <BsFillArrowRightCircleFill className='text-white fs-xl' />
                     </a>
                   </Link>
-                    <BsFillArrowRightCircleFill className='text-white' />
                 </button>
               </div>
               {/* <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' /> */}

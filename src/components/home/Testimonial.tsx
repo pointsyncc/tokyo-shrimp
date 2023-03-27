@@ -3,8 +3,11 @@ import AnimatedImage from '../ui/image/AnimatedImage';
 import Image from '../ui/image/Image';
 
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
+import { Trans, useTranslation } from 'next-i18next';
 
 export default function Testimonial() {
+  const { t } = useTranslation(['homepage']);
+
   return (
     <section className='testimonial__area'>
       <div className='container g-0 line'>
@@ -52,16 +55,15 @@ export default function Testimonial() {
                 </div>
               </div>
               <div className='sec-title-wrapper text-anim'>
-                <h4 className='sec-sub-title'>Testimonials</h4>
+                <h4 className='sec-sub-title'>{t('testimonials.subtitle')}</h4>
                 <SectionTitle>
-                  Clients <br />
-                  feedback
+                  <Trans i18nKey='testimonials.title' t={t}>
+                    Clients <br />
+                    feedback
+                  </Trans>
                 </SectionTitle>
 
-                <p>
-                  Our happy customers give us impactfull and positive feedback on our services,
-                  customer supports & etc.
-                </p>
+                <p>{t('testimonials.text')}</p>
               </div>
             </div>
 
