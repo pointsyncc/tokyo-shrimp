@@ -5,7 +5,7 @@
 .header {
   &__area {
     position: fixed;
-    width: 100px;
+    width: 90px;
     height: 100%;
     left: 0;
     top: 0;
@@ -13,15 +13,16 @@
     border-right: 1px solid rgba(240, 240, 240, 0.07);
     //mix-blend-mode: exclusion;
     transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.5);
+    //background-color: rgba(0, 0, 0, 0.5);
+    background-color: black;
     backdrop-filter: blur(10px);
 
     @media #{$xxl} {
-      width: 62px;
+      width: 74px;
     }
 
     @media #{$xl} {
-      width: 62px;
+      width: 74px;
     }
 
     @media #{$lg} {
@@ -37,6 +38,7 @@
     }
 
     @media #{$sm} {
+      position: fixed;
       border-right: 0;
       border-bottom: 1px solid rgba(240, 240, 240, 0.07);
       padding: 0 15px;
@@ -92,7 +94,7 @@
   }
 
   &__inner {
-    padding: 50px 0 20px;
+    padding: 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -436,4 +438,8 @@
   .menu-icon img {
     filter: invert(1);
   }
+}
+
+.menu__grid__icon:hover {
+  color: var(--black-3) !important;
 }

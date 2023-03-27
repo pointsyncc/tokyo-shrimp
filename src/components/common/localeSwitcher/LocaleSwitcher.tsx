@@ -1,23 +1,41 @@
 import { IDropdownItem, PSDropdown } from '@/components/ui/dropdown/Dropdown';
-import React, {  useState } from 'react';
-import ReactCountryFlag from 'react-country-flag';
+import React, { useState } from 'react';
+
 
 import { useRouter } from 'next/router';
 import { useInit } from '@/hooks/useInit';
+import { classNames } from '@/utils/classNames';
+import Image from 'next/image';
+
+
 
 const localeDropdownItems = [
   {
-    text: 'EN',
+    text: 'English',
     textValue: 'en',
-    rightSlot: <ReactCountryFlag countryCode='US' svg />,
+    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    // rightSlot: <ReactCountryFlag countryCode='US' svg />,
   },
   {
-    text: 'HR',
+    text: 'German',
+    textValue: 'de',
+    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    // rightSlot: <ReactCountryFlag countryCode='HR' svg />,
+  },
+  {
+    text: 'Croatian',
     textValue: 'hr',
-    rightSlot: <ReactCountryFlag countryCode='HR' svg />,
+    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    // rightSlot: <ReactCountryFlag countryCode='HR' svg />,
   },
 ];
-const LocaleSwitcher = ({contentZIndex = 10}:{contentZIndex?:number}) => {
+const LocaleSwitcher = ({
+  contentZIndex = 10,
+  className = '',
+}: {
+  contentZIndex?: number;
+  className?: string;
+}) => {
   const router = useRouter();
 
   const [selectedOptionIdx, setSelectedOptionIdx] = useState(0);
@@ -29,19 +47,28 @@ const LocaleSwitcher = ({contentZIndex = 10}:{contentZIndex?:number}) => {
     if (selectedLocale > -1) setSelectedOptionIdx(selectedLocale);
   };
 
+  const filteredLocaleDropdownItems = localeDropdownItems.filter(
+    (item) => item.textValue !== router.locale,
+  );
+
   useInit(setCustomSelectedOption);
+
+  const setCookie = (locale: string) => {
+    document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`
+}
 
   const onLocaleChange = (item: IDropdownItem) => {
     const { pathname, query } = router;
     router.push({ pathname, query }, router.asPath, { locale: item.textValue });
+    setCookie(item.textValue);
   };
   return (
     <PSDropdown
-      dropdownTriggerClasses='locale-switcher'
+      dropdownTriggerClasses={classNames('locale-switcher', className)}
       onSelect={onLocaleChange}
       items={localeDropdownItems}
       initialSelectedOptionIndex={selectedOptionIdx}
-      contentClasses="local-switcher__content"
+      contentClasses='locale-switcher__content'
       contentZIndex={contentZIndex}
     />
   );

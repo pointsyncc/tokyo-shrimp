@@ -1,20 +1,22 @@
 {
-    "pages": {
-        "home": {
-            "hero": {
-                "title": "Uđite u digitalni svijet spremni"
-            }
-        },
-        "status": {
-            "coming-soon": {
-                "title": "Enter the digital world"
-            }
-        }
-    },
-    "global": {
-        "days": "Days",
-        "hours": "Hours",
-        "minutes": "Minutes",
-        "seconds": "Seconds"
+  "dictionary": {
+    "privacy-policy": "Pravila o privatnosti",
+    "terms-of-service": "Uvjeti pružanja usluge"
+  },
+  "global": {
+    "days-in-week": {
+      "friday": "Petak",
+      "monday": "Ponedjeljak",
+      "saturday": "Subota",
+      "sunday": "Nedjelja",
+      "thursday": "Četvrtak",
+      "tuesday": "Utorak",
+      "wednesday": "Srijeda"
     }
+  },
+  "google-recaptcha": {
+    "info-text": "Ova je stranica zaštićena reCAPTCHA-om i primjenjuju se Googleova {{- privacyLink}} i {{- termsLink}}.",
+    "privacy-policy": "Pravila o privatnosti",
+    "terms-of-service": "Uvjeti pružanja usluge"
+  }
 }

@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "title": "Contact"
+  },
+  "copyright": {
+    "text": "All right reserved"
+  },
+  "forms": {
+    "newsletter": {
+      "placeholder": "Enter e-mail address"
+    }
+  },
+  "list": {
+    "information": {
+      "items": {
+        "about-us": "About us",
+        "blog": "Blog",
+        "configuration": "Configurator",
+        "contact-us": "Contact us",
+        "services": "Services"
+      },
+      "title": "Links"
+    }
+  },
+  "sidebar": {
+    "call-to-action": "Contact us",
+    "title": "Have a project in mind?"
+  },
+  "subtitle": "Enter the digital world"
+}

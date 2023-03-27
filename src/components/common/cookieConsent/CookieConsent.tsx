@@ -1,30 +1,41 @@
+import { Link } from '@/components/ui/link/Link';
+import { classNames } from '@/utils/classNames';
 import React from 'react';
-import CookieConsent from 'react-cookie-consent';
+import CookieConsent, { Cookies } from 'react-cookie-consent';
+import classes from './cookieConsent.module.scss';
+import { useTranslation } from 'next-i18next';
+
 export const CookieBanner = () => {
+
+  const {t} = useTranslation();
+
   return (
     <CookieConsent
       enableDeclineButton
-      overlay={true}
       acceptOnScroll={true}
       acceptOnScrollPercentage={10}
-      debug={false}
+      debug={true}
       style={{
-        background:'red',
+        background: 'red',
         maxWidth: '430px',
-
-        inset:'auto 10px 10px auto',
       }}
       contentStyle={{ margin: 0, flexBasis: 'auto' }}
-      containerClasses='p-3 flex-column border border-white rounded text-light bg-black'
+      containerClasses={classNames(
+        classes['cookie-consent'],
+        'p-3 flex-column border border-white rounded text-light bg-black',
+      )}
       buttonClasses='btn btn-outline-light bg-transparent m-0 border border-white text-white rounded d-block ms-auto'
-      declineButtonText='Opt-out'
+      declineButtonText={`${t('actions.cancel', {ns: 'cookie-consent'})}`}
+      buttonText={`${t('actions.accept', {ns: 'cookie-consent'})}`}
       buttonWrapperClasses='d-flex w-100'
-      declineButtonClasses='bg-transparent text-decoration-underline m-0 p-0'
+      declineButtonClasses='btn-link bg-transparent m-0 p-0 text-white'
       buttonStyle={{
         width: '120px',
       }}
     >
-      <p className='text-white mb-4'>This site uses cookies to measure and improve your experience.</p>
+      <p className='text-white mb-3'>
+      {`${t('text', {ns: 'cookie-consent'})}`}
+      </p>
     </CookieConsent>
   );
 };

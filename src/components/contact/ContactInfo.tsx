@@ -1,3 +1,4 @@
+import { COMPANY_ADDRESS } from '@/utils/contants';
 import React from 'react';
 
 const ContactInfo = () => {
@@ -21,8 +22,7 @@ const ContactInfo = () => {
           </li>
           <li>
             <span>
-              Ulica Mokrice 12, 10382 Donja Zelina
-              <br /> Croatia
+              {COMPANY_ADDRESS}
             </span>
           </li>
         </ul>

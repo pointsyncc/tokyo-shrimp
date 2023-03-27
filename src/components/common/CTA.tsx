@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
+import { useTranslation } from 'next-i18next';
 
 export default function CTA() {
+
+  const {t} = useTranslation('homepage');
+
   return (
     <section className='cta__area'>
       <div className='container line pb-110'>
@@ -10,14 +14,14 @@ export default function CTA() {
         <div className='row'>
           <div className='col-xxl-12'>
             <div className='cta__content'>
-              <p className='cta__sub-title'>Work with us</p>
+              <p className='cta__sub-title'>{t('cta.work-with-us', {ns: 'homepage' })}</p>
               <SectionTitle className='cta__title'>
-              We would love to hear more about your project
+              {t('cta.title', {ns: 'homepage' })}
               </SectionTitle>
 
               <div className='btn_wrapper'>
                 <Link href='/contact' className='wc-btn-primary btn-hover btn-item'>
-                  <span></span>Let’s talk us <i className='fa-solid fa-arrow-right'></i>
+                  <span></span> {t('cta.button-text', {ns: 'homepage' })} <i className='fa-solid fa-arrow-right'></i>
                 </Link>
               </div>
             </div>

@@ -1,9 +1,10 @@
 import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import Image from '../ui/image/Image';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
+import { useTranslation } from 'next-i18next';
 
 export default function Blog() {
   const blogs = [
@@ -68,6 +69,8 @@ export default function Blog() {
     return () => ctx.revert();
   }, []);
 
+  const {t} = useTranslation('homepage')
+
   return (
     <section ref={comp} className='blog__area no-pb blog__animation'>
       <div className='container g-0 line pt-150 pb-140'>
@@ -75,8 +78,8 @@ export default function Blog() {
         <div className='row'>
           <div className='col-xxl-12 col-xl-12 col-lg-12 col-md-12'>
             <div className='sec-title-wrapper'>
-              <h2 className='sec-sub-title'>recent blog</h2>
-              <SectionTitle>News insignt</SectionTitle>
+              <h2 className='sec-sub-title'>  {t('blog.subtitle', {ns: 'homepage' })}</h2>
+              <SectionTitle>{t('blog.title', {ns: 'homepage'})}</SectionTitle>
             </div>
           </div>
           {blogs.map((blog) => {

@@ -6,8 +6,10 @@ interface IProps {
   vars?: gsap.TweenVars;
   children: React.ReactNode;
   className?:string
+  distance?:number,
+  direction?:'x' | 'y'
 }
-const FadeUp = ({ vars, children,className }: IProps) => {
+export const FadeIn = ({ vars, children,className,distance=50,direction = 'y' }: IProps) => {
   const el = useRef(null);
 
   useIsomorphicLayoutEffect(() => {
@@ -15,12 +17,12 @@ const FadeUp = ({ vars, children,className }: IProps) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: el.current,
-          start: 'top center+=300',
+          start: 'top center+=100',
         },
       });
-      tl.from(el.current, {  y: 50, opacity:0 });
+      tl.from(el.current, {  [direction]: distance, opacity:0 });
       tl.to(el.current, {
-        y: 0,
+        [direction]: 0,
         opacity: 1,
         duration: 1.5,
       });
@@ -31,4 +33,3 @@ const FadeUp = ({ vars, children,className }: IProps) => {
   return <div className={className} ref={el}>{children}</div>;
 };
 
-export default FadeUp;

@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "title": "Kontakt"
+  },
+  "copyright": {
+    "text": "Alle Rechte vorbehalten"
+  },
+  "forms": {
+    "newsletter": {
+      "placeholder": "E-mail"
+    }
+  },
+  "list": {
+    "information": {
+      "items": {
+        "about-us": "Über uns",
+        "blog": "Blog",
+        "configuration": "Konfigurator",
+        "contact-us": "Kontaktieren Sie uns",
+        "services": "Dienstleistungen"
+      },
+      "title": "Nützliche Links"
+    }
+  },
+  "sidebar": {
+    "call-to-action": "Kontaktieren Sie uns",
+    "title": "Haben Sie ein Projekt im Sinn?"
+  },
+  "subtitle": "Tauchen Sie ein in die Welt der digitalen Services"
+}

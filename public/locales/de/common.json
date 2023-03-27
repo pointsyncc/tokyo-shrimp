@@ -1,0 +1,13 @@
+{
+  "global": {
+    "days-in-week": {
+      "friday": "Freitag",
+      "monday": "Montag",
+      "saturday": "Samstag",
+      "sunday": "Sonntag",
+      "thursday": "Donnerstag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch"
+    }
+  }
+}

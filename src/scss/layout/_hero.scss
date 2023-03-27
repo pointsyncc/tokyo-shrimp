@@ -7,6 +7,7 @@
     background-color: var(--black);
     position: relative;
     overflow: hidden;
+    height: 100vh;
 
     &::after {
       position: absolute;
@@ -807,7 +808,7 @@
 
   &__title {
     font-weight: 500;
-    font-size: 7.5rem;
+    font-size: 7.2rem;
     line-height: 1;
     color: var(--white);
     margin-top: 1rem;
@@ -1335,4 +1336,10 @@
       color: var(--white);
     }
   }
+}
+
+.hero__border{
+  width: 150px;
+  height: 15px;
+  background: var(--secondary);
 }

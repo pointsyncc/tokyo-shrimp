@@ -1,0 +1,30 @@
+{
+  "contact": {
+    "title": "Kontakt"
+  },
+  "copyright": {
+    "text": "Sva prava pridržana"
+  },
+  "forms": {
+    "newsletter": {
+      "placeholder": "Vaša e-mail adresa"
+    }
+  },
+  "list": {
+    "information": {
+      "items": {
+        "about-us": "O nama",
+        "blog": "Blog",
+        "configuration": "Konfigurator",
+        "contact-us": "Kontaktirajte nas",
+        "services": "Usluge"
+      },
+      "title": "Korisni linkovi"
+    }
+  },
+  "sidebar": {
+    "call-to-action": "Kontaktirajte nas",
+    "title": "Imate projekt na umu?"
+  },
+  "subtitle": "Zakoračite u svijet digitalnih usluga."
+}
