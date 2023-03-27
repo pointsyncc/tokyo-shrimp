@@ -18,7 +18,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useTranslation } from 'next-i18next';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
-
+import {Parallax} from 'react-scroll-parallax'
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
 
@@ -121,6 +121,7 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
+        <Parallax speed={-40}>
         <Image
           width={1160}
           height={662}
@@ -130,6 +131,8 @@ const Footer = () => {
           alt='Footer Image'
           data-speed='0.75'
         />
+        </Parallax>
+
       </div>
 
       <div className='footer__btm'>

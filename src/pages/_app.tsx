@@ -15,6 +15,7 @@ import nextI18NextConfig from '../../next-i18next.config.js';
 import SEO from '../next-seo.config';
 import React from 'react';
 import { DefaultSeo } from 'next-seo';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 setLocale({
   mixed: {
@@ -65,10 +66,12 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
       >
         <NextNProgress color='#e94f23' />
         <main className={kanit.className}>
+        <ParallaxProvider>
           <ThemeProvider attribute='class' enableSystem={true}>
             {getLayout(<Component {...pageProps} />)}
             <PSToaster />
           </ThemeProvider>
+          </ParallaxProvider>
         </main>
       </GoogleReCaptchaProvider>
     </React.Fragment>
