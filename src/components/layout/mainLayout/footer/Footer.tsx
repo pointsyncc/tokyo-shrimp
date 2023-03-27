@@ -121,7 +121,7 @@ const Footer = () => {
     <footer className='footer__area'>
       <div className='footer__top'>
         <div className='container footer-line'></div>
-        <Parallax speed={-40}>
+        <Parallax  speed={-40}>
         <Image
           width={1160}
           height={662}
@@ -135,7 +135,7 @@ const Footer = () => {
 
       </div>
 
-      <div className='footer__btm'>
+      <div className='footer__btm position-relative'>
         <div className='container'>
           <div className='row footer__row'>
             <div className='col-xxl-12'>
