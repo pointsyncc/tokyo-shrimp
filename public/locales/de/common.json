@@ -1,4 +1,8 @@
 {
+  "dictionary": {
+    "privacy-policy": "Datenschutzerklärung",
+    "terms-of-service": "Nutzungsbedingungen"
+  },
   "global": {
     "days-in-week": {
       "friday": "Freitag",

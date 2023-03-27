@@ -4,28 +4,37 @@ import { FaArrowRight } from 'react-icons/fa';
 import { FadeIn } from '../common/animations/FadeIn';
 import { Link } from '../ui/link/Link';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
+import { Trans, useTranslation } from 'next-i18next';
 
 export default function Service() {
   const [activeEl, setActiveEl] = useState(0);
+
+  const { t } = useTranslation(['homepage']);
+
   return (
     <section className='service__area pt-110 pb-150'>
       <div className='container'>
         <div className='row'>
           <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
             <div className='sec-title-wrapper wrap'>
-              <h2 className='sec-sub-title title-anim'>service</h2>
+              <h2 className='sec-sub-title title-anim'>{t('service.subtitle', 'Service')}</h2>
 
               <SectionTitle>
-                Solution we <br />
-                provide
+                <Trans i18nKey='service.title' t={t}>
+                  Solution we <br />
+                  provide
+                </Trans>
               </SectionTitle>
             </div>
           </div>
           <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
             <FadeIn direction='x' className='service__top-text text-anim' distance={-50}>
-            <p>
-                With every single one of our clients we bring forth a deep passion for{' '}
-                <span>creative problem solving innovations</span> forward thinking brands boundaries
+              <p>
+                <Trans i18nKey='service.text' t={t}>
+                  With every single one of our clients we bring forth a deep passion for{' '}
+                  <span>creative problem solving innovations</span> forward thinking brands
+                  boundaries
+                </Trans>
               </p>
             </FadeIn>
             {/* <div className='service__top-text text-anim'>
@@ -39,8 +48,10 @@ export default function Service() {
             <div className='service__top-btn'>
               <div className='btn_wrapper'>
                 <Link href='/services' className='btn-item wc-btn-secondary btn-hover'>
-                  <span></span> View <br />
-                  all services <FaArrowRight rotate={-45} />
+                  <Trans i18nKey='service.button' t={t}>
+                    <span></span> View <br />
+                    all services <FaArrowRight rotate={-45} />
+                  </Trans>
                 </Link>
               </div>
             </div>

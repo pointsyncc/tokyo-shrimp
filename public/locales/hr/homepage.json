@@ -4,9 +4,30 @@
     "subtitle": "Omogućite svojim postojećim i potencijalnim klijentima neprekidan pristup Vašim proizvodima i uslugama, ojačajte korisničko iskustvo kroz višekanalnu digitalnu komunikaciju te osigurajte svome poslovanju održivu budućnost, koje je uvijek jedan korak ispred konkurencije.",
     "title": "Proširi horizonte, razmišljaj digitalno!"
   },
+  "blog": {
+    "subtitle": "Nedavne objave",
+    "title": "Novosti"
+  },
+  "cta": {
+    "button": "cta.button",
+    "button-text": "Kontaktirajte nas",
+    "title": "Rado bismo htjeli čuti nešto više o vašem projektu",
+    "work-with-us": "Surađujte sa nama"
+  },
   "hero": {
+    "button": "hero.button",
     "call-to-action": "Istraži opcije",
     "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
     "title": "Zakorači u digitalnu evoluciju poslovanja"
-  }
+  },
+  "page": {
+    "title": "Početna"
+  },
+  "service": {
+    "button": "<0></0> Pogledaj <br/>sve usluge<4></4>",
+    "subtitle": "Usluge",
+    "text": "Sa svakim našim klijentom donosimo duboku strast prema <2>kreativnim inovacijama u rješavanju problema</2> granicama robnih marki koje razmišljaju unaprijed",
+    "title": "Riješenja koja <br/>nudimo"
+  },
+  "test": "test"
 }
