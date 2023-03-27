@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { FieldValues, UseFormReset } from 'react-hook-form';
+import { UseFormReset } from 'react-hook-form';
 import { object, string } from 'yup';
 import { Control, FormControl } from '../forms/controls/control/Control';
 import GeneralForm from '../forms/generalForm/GeneralForm';
@@ -13,12 +12,17 @@ interface IValues {
   phone?: string;
 }
 
-import { pointSynccAPI } from '@/utils/axios';
-import { toast } from 'react-hot-toast';
 import { useAppStore } from '@/stores/store';
+import { pointSynccAPI } from '@/utils/axios';
 import { PHONE_REGEX } from '@/utils/contants';
+import { Trans, useTranslation } from 'next-i18next';
+import { toast } from 'react-hot-toast';
+
 export const ContactForm = () => {
   const { setLoading, loadingStates } = useAppStore();
+
+  const { t } = useTranslation(['common']);
+
   const schema = object({
     name: string().max(20).required(),
     email: string().email().required(),
@@ -32,7 +36,7 @@ export const ContactForm = () => {
   const controls: FormControl<IValues>[] = [
     {
       name: 'name',
-      placeholder: 'Name *',
+      placeholder: `${t('dictionary.name')} *`,
       control: Control.TextInput,
       colProps: {
         className: 'col-12 col-sm-6 mb-3',
@@ -40,7 +44,7 @@ export const ContactForm = () => {
     },
     {
       name: 'email',
-      placeholder: 'Email *',
+      placeholder: `${t('dictionary.email', { ns: 'common' })} *`,
       labelProps: { required: true },
       control: Control.TextInput,
       colProps: {
@@ -49,7 +53,7 @@ export const ContactForm = () => {
     },
     {
       name: 'phone',
-      placeholder: 'Phone',
+      placeholder: `${t('dictionary.phone', { ns: 'common' })}`,
       control: Control.TextInput,
       colProps: {
         className: 'col-12 col-sm-6 mb-3',
@@ -57,7 +61,7 @@ export const ContactForm = () => {
     },
     {
       name: 'subject',
-      placeholder: 'Subject *',
+      placeholder: `${t('dictionary.subject', { ns: 'common' })} *`,
       control: Control.TextInput,
       colProps: {
         className: 'col-12 col-sm-6 mb-3',
@@ -65,7 +69,7 @@ export const ContactForm = () => {
     },
     {
       name: 'message',
-      placeholder: 'Message *',
+      placeholder: `${t('dictionary.message', { ns: 'common' })} *`,
       control: Control.TextInput,
       as: 'textarea',
       colProps: {
@@ -79,7 +83,6 @@ export const ContactForm = () => {
     reset: UseFormReset<IValues>,
     recaptchaToken?: string | undefined,
   ) => {
-
     // const req = pointSynccAPI.sendRequest({
     //   method: 'post',
     //   url: '/user/contact',
@@ -148,8 +151,10 @@ export const ContactForm = () => {
               disabled={loadingStates.contactForm}
               isLoading={loadingStates.contactForm}
             >
-              <span></span> Send <br />
-              Messages <i className='fa-solid fa-arrow-right'></i>
+              <Trans i18nKey='form.button' ns='contact' t={t}>
+                <span></span> Send <br />
+                Messages <i className='fa-solid fa-arrow-right'></i>
+              </Trans>
             </CircleButton>
           }
         />

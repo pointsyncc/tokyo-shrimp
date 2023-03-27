@@ -1,11 +1,26 @@
 {
   "about": {
     "call-to-action": "Unsere Dienste",
-    "subtitle": "Bereitstellung der besten digitalen Dienstleistungen und Produkte für unseren bestehenden und potenziellen Kunden, die ihren Bedürfnissen und Wünschen entsprechen.",
-    "title": "Erweitern Sie Ihren Horizont, denken Sie digital"
+    "subtitle": "Bieten Sie Ihren bestehenden und potenziellen Kunden einen unterbrechungsfreien Zugang zu Ihren Produkten und Dienstleistungen, stärken Sie das Nutzererlebnis durch digitale Multichannel-Kommunikation und sichern Sie eine nachhaltige Zukunft für Ihr Unternehmen, das der Konkurrenz immer einen Schritt voraus ist.",
+    "title": "Erweitern Sie Ihren Horizont und denken Sie digital!"
+  },
+  "blog": {
+    "subtitle": "Kürzliche Posts",
+    "title": "Neuigkeiten"
+  },
+  "cta": {
+    "button": "cta.Knopf",
+    "button-text": "Kontaktieren Sie uns",
+    "title": "Wir würden gerne mehr über Ihr Projekt erfahren",
+    "work-with-us": "Arbeiten Sie mit uns zusammen"
   },
   "hero": {
+    "button": "hero.Knopf",
+    "call-to-action": "Entdecken Sie die Optionen",
     "subtitle": "Test",
     "title": "Treten Sie ein in die digitale Evolution des Geschäfts"
+  },
+  "page": {
+    "title": "Startseite"
   }
 }

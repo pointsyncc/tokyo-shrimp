@@ -1,8 +1,10 @@
-import React from 'react';
+import { Trans, useTranslation } from 'next-i18next';
 import Image from '../ui/image/Image';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Brand() {
+  const { t } = useTranslation(['homepage']);
+
   return (
     <section className='brand__area'>
       <div className='container g-0 line pt-140 pb-130'>
@@ -10,10 +12,12 @@ export default function Brand() {
         <div className='row'>
           <div className='col-xxl-12'>
             <div className='sec-title-wrapper'>
-              <h2 className='sec-sub-title title-anim'>Internation Brands</h2>
+              <h2 className='sec-sub-title title-anim'>{t('brands.subtitle')}</h2>
               <SectionTitle>
+                <Trans i18nKey='brands.title' t={t}>
                 We are happy to work with global <br />
                 largest brands
+                </Trans>
               </SectionTitle>
             </div>
           </div>
@@ -25,14 +29,12 @@ export default function Brand() {
                   <div key={i} className='brand__item fade_bottom'>
                     <Image
                       raw={true}
-                      style={{ position: 'relative', height: 'auto',width:'auto' }}
+                      style={{ position: 'relative', height: 'auto', width: 'auto' }}
                       width={100}
                       height={100}
                       src={`/imgs/brand/${item}.png`}
                       alt='Brand Logo'
-                 
                     />
-       
                   </div>
                 );
               })}

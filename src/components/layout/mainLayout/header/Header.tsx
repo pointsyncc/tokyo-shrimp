@@ -1,4 +1,5 @@
 import { Logo } from '@/components/ui/logo/Logo';
+import { useTranslation } from 'next-i18next';
 import { CgMenuGridO } from 'react-icons/cg';
 
 
@@ -7,6 +8,9 @@ interface HeaderProps {
 }
 
 export const Header = ({ openMenu }: HeaderProps) => {
+
+  const {t} = useTranslation(['common']);
+
   return (
     <header className='header__area'>
       <div className='header__inner'>
@@ -35,7 +39,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
         </div>
         <div className='header__support'>
           <p>
-            Contact us <a href='tel:+9587325902'>+385 99 2144 802</a>
+            {t('dictionary.contact-us')} <a href='tel:+9587325902'>+385 99 2144 802</a>
           </p>
         </div>
       </div>
