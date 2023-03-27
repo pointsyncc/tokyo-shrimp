@@ -15,6 +15,9 @@ import nextI18NextConfig from '../../next-i18next.config.js';
 import SEO from '../next-seo.config';
 import React from 'react';
 import { DefaultSeo } from 'next-seo';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { ErrorBoundary } from 'react-error-boundary';
+import error from './error'
 
 setLocale({
   mixed: {
@@ -65,10 +68,17 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
       >
         <NextNProgress color='#e94f23' />
         <main className={kanit.className}>
-          <ThemeProvider attribute='class' enableSystem={true}>
-            {getLayout(<Component {...pageProps} />)}
-            <PSToaster />
-          </ThemeProvider>
+          <ErrorBoundary
+            FallbackComponent={error}
+            onError={(error) => console.log(error.message)}
+          >
+            <ParallaxProvider>
+              <ThemeProvider attribute='class' enableSystem={true}>
+                {getLayout(<Component {...pageProps} />)}
+                <PSToaster />
+              </ThemeProvider>
+            </ParallaxProvider>
+          </ErrorBoundary>
         </main>
       </GoogleReCaptchaProvider>
     </React.Fragment>

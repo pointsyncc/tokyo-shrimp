@@ -37,12 +37,14 @@ specifiers:
   react-country-flag: ^3.0.2
   react-countup: ^6.4.1
   react-dom: 18.2.0
+  react-error-boundary: ^4.0.3
   react-google-recaptcha-v3: ^1.10.1
   react-hook-form: ^7.43.1
   react-hot-toast: ^2.4.0
   react-i18next: ^12.2.0
   react-icons: ^4.7.1
   react-intersection-observer: ^9.4.3
+  react-scroll-parallax: ^3.3.2
   sass: ^1.58.1
   sharp: ^0.31.3
   split-type: ^0.3.3
@@ -85,12 +87,14 @@ dependencies:
   react-country-flag: 3.0.2_react@18.2.0
   react-countup: 6.4.2_ogvc6ewgr3qq5z6tmbtquhqyui
   react-dom: 18.2.0_react@18.2.0
+  react-error-boundary: 4.0.3_react@18.2.0
   react-google-recaptcha-v3: 1.10.1_biqbaboplfbrettd7655fr4n2y
   react-hook-form: 7.43.8_react@18.2.0
   react-hot-toast: 2.4.0_owo25xnefcwdq3zjgtohz6dbju
   react-i18next: 12.2.0_2rh65uwnd6kial3dj4kteywnti
   react-icons: 4.8.0_react@18.2.0
   react-intersection-observer: 9.4.3_react@18.2.0
+  react-scroll-parallax: 3.3.2_biqbaboplfbrettd7655fr4n2y
   sharp: 0.31.3
   split-type: 0.3.3
   typescript: 4.9.5
@@ -1346,6 +1350,10 @@ packages:
 
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+    dev: false
+
+  /bezier-easing/2.1.0:
+    resolution: {integrity: sha512-gbIqZ/eslnUFC1tjEvtz0sgx+xTK20wDnYMIA27VA04R7w6xxXQPZDbibjA9DTWZRA2CXtwHykkVzlCaAJAZig==}
     dev: false
 
   /binary-extensions/2.2.0:
@@ -3377,6 +3385,13 @@ packages:
       p-limit: 3.1.0
     dev: false
 
+  /parallax-controller/1.6.0:
+    resolution: {integrity: sha512-IVRuEMMcLtAnlthB3MJ+bzkOQWz26DESXsP3x+CBsGjIjmXxLr+l1IkR799dQETXgGBZQTUyhRUXFaThBc6+lA==}
+    engines: {node: '>=12'}
+    dependencies:
+      bezier-easing: 2.1.0
+    dev: false
+
   /parent-module/1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -3591,6 +3606,15 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-error-boundary/4.0.3_react@18.2.0:
+    resolution: {integrity: sha512-IzNKP/ViHWp2QRDgsDMirEcf0XLsLueN6Wgzm1TVwgbAH+paX8Z42VyKvZcFFRHgd+rPK2P4TLrOrHC/dommew==}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.21.0
+      react: 18.2.0
+    dev: false
+
   /react-google-recaptcha-v3/1.10.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-K3AYzSE0SasTn+XvV2tq+6YaxM+zQypk9rbCgG4OVUt7Rh4ze9basIKefoBz9sC0CNslJj9N1uwTTgRMJQbQJQ==}
     peerDependencies:
@@ -3698,6 +3722,18 @@ packages:
       tslib: 2.5.0
       use-callback-ref: 1.3.0_pmekkgnqduwlme35zpnqhenc34
       use-sidecar: 1.1.2_pmekkgnqduwlme35zpnqhenc34
+    dev: false
+
+  /react-scroll-parallax/3.3.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-mLgcLqyFhrIp31gLjz11yYmWEwS8NJoOoCZ15ZFXPOcpPQK8R+jZfeuO59Trm9bReok/iDUyx3ZyCCZjkxj37Q==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.8.0-0 || >=17.0.1 || ^18.0.0
+      react-dom: ^16.8.0-0 || >=17.0.1 || ^18.0.0
+    dependencies:
+      parallax-controller: 1.6.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-style-singleton/2.2.1_pmekkgnqduwlme35zpnqhenc34:
