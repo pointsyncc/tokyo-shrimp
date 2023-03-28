@@ -156,12 +156,9 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
           </div>
         </div>
         <div className='offcanvas__mid d-flex justify-content-center  flex-column'>
-          {showLangSwitcher ? (
-            <LocaleSwitcher className='align-self-center' contentZIndex={10000} />
-          ) : null}
           <div className='offcanvas__menu-wrapper'>
             <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
-              <ul className='menu-anim d-flex align-items-stretch flex-column text-center'>
+              <ul className='menu-anim d-flex align-items-stretch flex-column justify-content-center text-center gap-2'>
                 {links.map((link) => (
                   <li key={link.href}>
                     <RouteTranslateLink href={link.href}>{link.text}</RouteTranslateLink>
@@ -170,6 +167,9 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               </ul>
             </nav>
           </div>
+                {showLangSwitcher ? (
+                  <LocaleSwitcher className='align-self-center mt-5' contentZIndex={10000} />
+                ) : null}
         </div>
         <div className='offcanvas__right'>
           <div className='offcanvas__search'>
