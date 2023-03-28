@@ -1,5 +1,4 @@
 import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
-import Image from '@/components/ui/image/Image';
 import { Link } from '@/components/ui/link/Link';
 import { Logo } from '@/components/ui/logo/Logo';
 import { useAppStore } from '@/stores/store';
@@ -12,13 +11,14 @@ import {
 } from '@/utils/contants';
 import { ErrorMessage } from '@hookform/error-message';
 import gsap from 'gsap';
+import { useTranslation } from 'next-i18next';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useTranslation } from 'next-i18next';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
-import {Parallax} from 'react-scroll-parallax'
+
+
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
 

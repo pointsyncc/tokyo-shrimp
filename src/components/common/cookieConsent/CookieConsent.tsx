@@ -34,12 +34,9 @@ export const CookieBanner = () => {
     >
       <p className='text-white mb-3'>
         <Trans i18nKey='text.banner' t={t}>
-          Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Molimo pročitajte
-          našu{" "}
-          <Link href='/cookie-policy'>
-            Politiku privatnosti
-          </Link>{' '}
-          kako biste saznali više o tome kako koristimo kolačiće i kako ih možete kontrolirati. Nastavkom korištenja web stranice automatski prihvaćate sve kolačiće.
+          Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Nastavkom
+          korištenja web stranice automatski prihvaćate našu{' '}
+          <Link href='/legal/privacy-policy'>politiku privatnosti</Link>.
         </Trans>
       </p>
     </CookieConsent>

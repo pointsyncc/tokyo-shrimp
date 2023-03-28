@@ -1,7 +1,8 @@
 import { Logo } from '@/components/ui/logo/Logo';
+import { useMatchMedia } from '@/hooks/useMatchMedia';
 import { useTranslation } from 'next-i18next';
 import { CgMenuGridO } from 'react-icons/cg';
-
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 interface HeaderProps {
   openMenu: () => void;
@@ -9,7 +10,9 @@ interface HeaderProps {
 
 export const Header = ({ openMenu }: HeaderProps) => {
 
-  const {t} = useTranslation(['common']);
+  const {t} = useTranslation('common');
+
+  const {matches} = useMatchMedia("(max-width: 450px)")
 
   return (
     <header className='header__area'>
@@ -34,7 +37,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
               openMenu();
             }}
           >
-            <CgMenuGridO fontSize={'2rem'} className='text-white' />
+            {matches ? <RxHamburgerMenu fontSize={'1.75rem'} className='text-white' /> : <CgMenuGridO fontSize={'2rem'} className='text-white' />}
           </button>
         </div>
         <div className='header__support'>

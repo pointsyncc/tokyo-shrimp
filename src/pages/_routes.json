@@ -3,5 +3,10 @@
         "default": "kontakt",
         "de": "kontakt",
         "en": "contact"
+    },
+    "about": {
+        "default": "o-nama",
+        "de": "uber-uns",
+        "en": "about-us"
     }
 }

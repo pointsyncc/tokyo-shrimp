@@ -20,18 +20,18 @@ export const TeamSlider = ({
 IProps) => {
   const slides = [
     {
-      imgSrc: '/imgs/team/1.jpg',
-      name: 'Kristijan Vidović',
-      role: 'Founder & CEO',
+      imgSrc: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects%2Ftokyo-shrimp%2Fteam%2Fteam-kristijan-vidovic-432x550-upscaled.jpg',
+      name: 'Kristijan',
+      role: 'CEO & Software Developer',
     },
     {
       imgSrc: '/imgs/team/2.jpg',
-      name: 'Muhammad Shumas',
+      name: 'Shumas',
       role: 'Lead Frontend Developer',
     },
     {
       imgSrc: '/imgs/team/3.jpg',
-      name: 'Muhammad Musab',
+      name: 'Musab',
       role: 'Lead Backend Developer',
     },
     {
@@ -41,8 +41,33 @@ IProps) => {
     },
     {
       imgSrc: '/imgs/team/5.jpg',
-      name: 'Daniel',
+      name: 'Danijel',
       role: 'Project Manager',
+    },
+    {
+      imgSrc: '/imgs/team/5.jpg',
+      name: 'Marko',
+      role: 'Project Manager',
+    },
+    {
+      imgSrc: '/imgs/team/5.jpg',
+      name: 'Monika',
+      role: 'Social Media Manager',
+    },
+    {
+      imgSrc: '/imgs/team/5.jpg',
+      name: 'Ena',
+      role: 'Social Media Expert',
+    },
+    {
+      imgSrc: '/imgs/team/5.jpg',
+      name: 'Martina',
+      role: 'Lector & Translator',
+    },
+    {
+      imgSrc: '/imgs/team/5.jpg',
+      name: 'Marija',
+      role: 'Financial Advisor',
     },
   ];
   return (
@@ -82,7 +107,7 @@ IProps) => {
           return (
             <SplideSlide key={slide.name}>
               <Link href={`/team/${i + 1}`}>
-                <Image src={slide.imgSrc} alt='Team Member' />
+                <Image src={slide.imgSrc} width={433} height={550} fill={false} alt='Team Member' />
                 {/* <img className='img-fluid' src={slide.imgSrc} alt='Team Member' /> */}
                 <div className='team__info'>
                   <h4 className={`team__member-name ${alt ? 'team__member-name-6' : ''}`}>
