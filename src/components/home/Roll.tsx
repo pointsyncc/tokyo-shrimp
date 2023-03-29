@@ -2,10 +2,14 @@ import React from 'react';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import { useTranslation } from 'next-i18next';
 
 // import { Autoplay, FreeMode } from "swiper";
 // import { Swiper, SwiperSlide } from "swiper/react";
 export const Roll = () => {
+
+  const {t} = useTranslation('homepage')
+
   const categories = [
     'Development',
     'Studio',

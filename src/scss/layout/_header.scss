@@ -40,7 +40,7 @@
     @media #{$sm} {
       position: fixed;
       border-right: 0;
-      border-bottom: 1px solid rgba(240, 240, 240, 0.07);
+      border-bottom: 1px solid rgba(240, 240, 240, 0.075);
       padding: 0 15px;
       width: 100%;
       height: auto;
@@ -115,7 +115,7 @@
     }
 
     @media #{$sm} {
-      padding: 5px 0;
+      padding: 0px 0;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
     }
