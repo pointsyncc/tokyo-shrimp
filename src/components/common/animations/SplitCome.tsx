@@ -11,7 +11,7 @@ interface IProps {
 }
 export const SplitCome = ({ className,vars, children, type = 'chars' }: IProps) => {
   const el = useRef(null);
-
+  
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       if (type === 'words') {
