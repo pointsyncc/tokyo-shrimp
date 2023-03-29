@@ -122,12 +122,12 @@ export const ContactForm = () => {
         },
       }),
       {
-        loading: 'Sending your feedback...',
+        loading: `${t('toasts.contact-us.loading', { ns: 'common' })}`,
         success: () => {
           setLoading('contactForm', false);
 
           reset();
-          return 'Your feedback has been submitted';
+          return `${t('toasts.contact-us.success', { ns: 'common' })}`
         },
         error: (err) => {
           setLoading('contactForm', false);

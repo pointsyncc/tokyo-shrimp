@@ -18,7 +18,6 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPaperPlane, FaTwitter } from 'react-icons/fa';
 
-
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
 
@@ -34,17 +33,17 @@ const ThemeSwitch = () => {
 };
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  // const currentYear = new Date().getFullYear();
 
   const imageRef = useRef<HTMLImageElement>(null);
+
+  const { t } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const { setLoading, loadingStates } = useAppStore();
 
   const sendForm = async (data: any) => {
     await pointSynccAPI.sendRequest({
@@ -55,28 +54,11 @@ const Footer = () => {
   };
 
   const onSubmit = async (data: any) => {
-    // try {
-    //   setLoading('newsletterForm', true);
-    //   toast.loading('Sending your request...', {
-    //     duration: 2000,
-    //   });
-    //   await pointSynccAPI.sendRequest({
-    //     method: 'post',
-    //     url: '/user/newsletter',
-    //     body: data,
-    //   });
-    //   toast.success('You are now subscribed to our newsletter!');
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error('Something went wrong 🫠. Please try again later.');
-    // } finally {
-    //   setLoading('newsletterForm', false);
-    // }
     toast.promise(sendForm(data), {
-      loading: 'Sending your request...',
-      success: 'You are now subscribed to our newsletter!',
+      loading: `${t('toasts.newsletter-subscribe.loading')}`,
+      success: `${t('toasts.newsletter-subscribe.success')}`,
       error: (err) => {
-        return err.message
+        return `${t('toasts.newsletter-subscribe.error')}`;
       },
     });
   };
@@ -110,12 +92,6 @@ const Footer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { t, i18n } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' });
-  // bindI18n: loaded is needed because of the reloadResources call
-  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
-  // useEffect(() => {
-  //   i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer']);
-  // }, []);
 
   return (
     <footer className='footer__area'>
