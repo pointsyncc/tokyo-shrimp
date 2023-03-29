@@ -36,7 +36,7 @@ export default function Counter() {
       text1: 'Awards',
       text2: 'acheivement',
       duration: 2,
-    },
+    }
   ];
   useEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)

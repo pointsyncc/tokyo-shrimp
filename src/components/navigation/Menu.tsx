@@ -4,9 +4,11 @@ import {
   COMPANY_CONTACT_PHONE_NUMBER,
 } from '@/utils/contants';
 import gsap from 'gsap';
+import { Link as RouteTranslateLink } from 'next-translate-routes';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'next-i18next';
 import { FaTimes } from 'react-icons/fa';
 import LocaleSwitcher from '../common/localeSwitcher/LocaleSwitcher';
 import Image from '../ui/image/Image';
@@ -21,6 +23,9 @@ interface IProps {
 export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
   const router = useRouter();
   const comp = useRef(null);
+
+  const { t } = useTranslation('common');
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       const targets = document.querySelectorAll('.menu-anim li');
@@ -69,28 +74,27 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
   const links = [
     {
       href: '/',
-      text: 'Home',
+      text: `${t('dictionary.home')}`,
     },
     {
       href: '/about',
-      text: 'About',
+      text: `${t('dictionary.about')}`,
     },
     {
       href: '/services',
-      text: 'Services',
+      text: `${t('dictionary.services')}`,
     },
     {
       href: '/portfolio',
-      text: 'Portfolio',
+      text: `${t('dictionary.portfolio')}`,
     },
     {
       href: '/team',
-      text: 'Team',
+      text: `${t('dictionary.team')}`,
     },
-
     {
       href: '/contact',
-      text: 'Contact',
+      text: `${t('dictionary.contact')}`,
     },
   ];
   return (
@@ -114,7 +118,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
             {/* </Link> */}
           </div>
           <div className='offcanvas__social'>
-            <h3 className='social-title'>Follow Us</h3>
+            <h3 className='social-title'>{t('menu.social.follow-us')}</h3>
             <ul>
               <li>
                 <Link href='https://www.instagram.com/pointsyncc/' target={'_blank'}>
@@ -136,48 +140,49 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
           <div className='offcanvas__links'>
             {/* <h3 className='social-title'>Trending</h3> */}
             <ul>
+              {/* <li>
+                <RouteTranslateLink href='/about'>{t('dictionary.about')}</RouteTranslateLink>
+              </li> */}
               <li>
-                <Link href='/about'>About</Link>
+                <RouteTranslateLink href='/contact'>{t('dictionary.contact')}</RouteTranslateLink>
               </li>
               <li>
-                <Link href='/contact'>Contact</Link>
+                <RouteTranslateLink href='/career'>{t('dictionary.career')}</RouteTranslateLink>
               </li>
               <li>
-                <Link href='/career'>Career</Link>
-              </li>
-              <li>
-                <Link href='/blog'>Blog</Link>
+                <RouteTranslateLink href='/blog'>{t('dictionary.blog')}</RouteTranslateLink>
               </li>
             </ul>
           </div>
         </div>
         <div className='offcanvas__mid d-flex justify-content-center  flex-column'>
-          {showLangSwitcher ? (
-            <LocaleSwitcher className='align-self-center' contentZIndex={10000} />
-          ) : null}
           <div className='offcanvas__menu-wrapper'>
             <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
-              <ul className='menu-anim d-flex align-items-stretch flex-column text-center'>
+              <ul className='menu-anim d-flex align-items-stretch flex-column justify-content-center text-center gap-2'>
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}>{link.text}</Link>
+                    <RouteTranslateLink href={link.href}>{link.text}</RouteTranslateLink>
                   </li>
                 ))}
               </ul>
             </nav>
           </div>
+                {showLangSwitcher ? (
+                  <LocaleSwitcher className='align-self-center mt-5' contentZIndex={10000} />
+                ) : null}
         </div>
         <div className='offcanvas__right'>
           <div className='offcanvas__search'>
-            <form action='#'>
+            {/* WE NEED TO MAKE THIS WORK LATER ON WITH REAL FUNCTIONALITY */}
+            {/* <form action='#'>
               <input type='text' name='search' placeholder='Search keyword' />
               <button>
                 <i className='fa-solid fa-magnifying-glass'></i>
               </button>
-            </form>
+            </form> */}
           </div>
           <div className='offcanvas__contact'>
-            <h3>Get in touch</h3>
+            <h3>{t('menu.get-in-touch')}</h3>
             <ul>
               <li>
                 <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>{COMPANY_CONTACT_PHONE_NUMBER}</a>
