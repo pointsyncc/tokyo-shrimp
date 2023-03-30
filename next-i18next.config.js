@@ -16,7 +16,7 @@ module.exports = {
   use: [
     require('i18next-locize-backend/cjs')
   ],
-  ns: ['common', 'footer', 'homepage', 'cookie-consent', 'contact', 'team', 'about'], // the namespaces needs to be listed here, to make sure they got preloaded
+  ns: ['common', 'footer', 'homepage', 'cookie-consent', 'contact', 'team', 'about', 'seo'], // the namespaces needs to be listed here, to make sure they got preloaded
   serializeConfig: false, // because of the custom use i18next plugin
   debug: process.env.NODE_ENV === 'development',
   saveMissing: process.env.NODE_ENV === 'development' && isBrowser, // to not saveMissing to true for production

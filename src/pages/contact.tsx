@@ -9,30 +9,23 @@ import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
 
 const Contact: NextPageWithLayout = () => {
-
-  const { t, i18n } = useTranslation([
-    'common',
-    'footer',
-    'cookie-consent',
-    'contact',
-  ], { bindI18n: 'languageChanged loaded' });
+  const { t, i18n, ready } = useTranslation(['common', 'footer', 'cookie-consent', 'contact', 'seo'], {
+    bindI18n: 'languageChanged loaded',
+  });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, [
-      'common',
-      'footer',
-      'cookie-consent',
-      'contact',
-    ]);
+    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer', 'cookie-consent', 'contact', 'seo']);
   }, []);
+
+  const title = ready ? t('pages.contact.title', {ns: 'seo'}) : `${process.env.NEXT_PUBLIC_BASE_URL}`;
+  const description = t('pages.contact.description', {ns: 'seo'});
 
   return (
     <>
       <NextSeo
-        title='Pointsyncc - Contact'
-        description='Contact'
-        canonical='https://www.canonical.ie/'
+        title={title}
+        description={description}
         openGraph={{
           url: 'https://www.url.ie/a',
           title: 'Open Graph Title',
@@ -88,6 +81,7 @@ export const getStaticProps = async ({ locale }: any) => {
     'footer',
     'cookie-consent',
     'contact',
+    'seo'
   ]);
   return {
     props,
@@ -100,7 +94,5 @@ export const getStaticProps = async ({ locale }: any) => {
     //revalidate: 60 * 60, // in seconds
   };
 };
-
-
 
 export default Contact;

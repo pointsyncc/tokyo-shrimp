@@ -66,6 +66,8 @@ const Team: NextPageWithLayout = () => {
                   {t('page.title', { ns: 'team' })}
                 </h2>
                 <p>{t('page.subtitle', { ns: 'team' })}</p>
+                <br />
+                <p>{t('page.subtitle2', { ns: 'team' })}</p>
               </div>
             </div>
           </div>
