@@ -11,7 +11,7 @@ interface IProps {
 }
 export const Logo = ({ className,type = 'primary', width }: IProps) => {
   const logoUrl = type === 'primary' ? logoPrimary : logoSecondary;
-  const logoWidth = width ? width : type === 'primary' ? 30 : 125;
+  const logoWidth = width ? width : type === 'primary' ? 25 : 125;
   const classes = className  ? className : type === 'primary' ? 'logo-primary' : 'logo-secondary';
   return (
     <Link href='/'>
