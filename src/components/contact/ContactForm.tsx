@@ -83,34 +83,6 @@ export const ContactForm = () => {
     reset: UseFormReset<IValues>,
     recaptchaToken?: string | undefined,
   ) => {
-    // const req = pointSynccAPI.sendRequest({
-    //   method: 'post',
-    //   url: '/user/contact',
-    //   body: data,
-    // });
-    // toast.promise(req, {
-    //   loading: 'Sending your feedback...',
-    //   success: 'Your feedback has been submitted',
-    //   error: (err) => `This just happened: ${err.toString()}`
-    // });
-    // try {
-    //   setLoading('contactForm', true);
-    //   toast.loading('Sending your feedback...', {
-    //     duration: 2000,
-    //   });
-    //   await pointSynccAPI.sendRequest({
-    //     method: 'post',
-    //     url: '/user/contact',
-    //     body: data,
-    //   });
-    //   toast.success('Your feedback has been submitted');
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error('Something went wrong');
-    // } finally {
-    //   setLoading('contactForm', false);
-    // }
-
     setLoading('contactForm', true);
     toast.promise(
       pointSynccAPI.sendRequest({
