@@ -28,6 +28,7 @@ specifiers:
   next: 13.2.4
   next-i18next: ^13.1.6
   next-seo: ^5.15.0
+  next-sitemap: ^4.0.6
   next-themes: ^0.2.1
   next-translate-routes: ^1.9.2
   nextjs-progressbar: ^0.0.16
@@ -79,6 +80,7 @@ dependencies:
   next: 13.2.4_lpxbxhvdj65gzxdpbrqknapd3i
   next-i18next: 13.2.2_dt4g7v76vmr3y5vqc353t2czpa
   next-seo: 5.15.0_ld2jel3hspngo3u5lti2kgl2sq
+  next-sitemap: 4.0.6_next@13.2.4
   next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
   next-translate-routes: 1.9.2_next@13.2.4+react@18.2.0
   nextjs-progressbar: 0.0.16_next@13.2.4+react@18.2.0
@@ -316,6 +318,10 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@corex/deepmerge/4.0.37:
+    resolution: {integrity: sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==}
     dev: false
 
   /@eslint/eslintrc/1.4.1:
@@ -3133,6 +3139,19 @@ packages:
       next: 13.2.4_lpxbxhvdj65gzxdpbrqknapd3i
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /next-sitemap/4.0.6_next@13.2.4:
+    resolution: {integrity: sha512-pZ9tynYe6mRR189qZqcOlWVgM1Gxo07BJQW0AjerKmLwQOt+6FQMdaDgifgCt6jDT3Y3EG/+NUDDZRcd0gbPkA==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@next/env': '*'
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': 4.0.37
+      minimist: 1.2.8
+      next: 13.2.4_lpxbxhvdj65gzxdpbrqknapd3i
     dev: false
 
   /next-themes/0.2.1_ld2jel3hspngo3u5lti2kgl2sq:
