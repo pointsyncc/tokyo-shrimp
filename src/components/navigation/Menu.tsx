@@ -14,6 +14,7 @@ import LocaleSwitcher from '../common/localeSwitcher/LocaleSwitcher';
 import Image from '../ui/image/Image';
 import { Logo } from '../ui/logo/Logo';
 import classes from './menu.module.scss';
+import { classNames } from '@/utils/classNames';
 
 interface IProps {
   open: boolean;
@@ -167,9 +168,15 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               </ul>
             </nav>
           </div>
-                {showLangSwitcher ? (
-                  <LocaleSwitcher className='align-self-center mt-5' contentZIndex={10000} />
-                ) : null}
+          {showLangSwitcher ? (
+            <LocaleSwitcher
+              className={classNames(
+                'align-self-center mt-5',
+                'd-flex d-xl-none',
+              )}
+              contentZIndex={10000}
+            />
+          ) : null}
         </div>
         <div className='offcanvas__right'>
           <div className='offcanvas__search'>
