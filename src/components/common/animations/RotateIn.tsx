@@ -15,7 +15,7 @@ export const RotateIn = ({ vars, children, className }: IProps) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: el.current,
-          start: 'top center+=200',
+          start: 'center center',
         },
       });
       tl.set(el.current, { perspective: 600 });
@@ -27,7 +27,7 @@ export const RotateIn = ({ vars, children, className }: IProps) => {
         duration: 1.4,
         // ease: 'power2.out',
       });
-    });
+    },el);
     return () => ctx.revert();
   }, [vars]);
 

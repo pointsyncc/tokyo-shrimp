@@ -9,11 +9,11 @@ interface IProps  extends IImageProps{
 
 }
 
-const AnimatedImage = ({ children,containerClasses,className = '', ...rest }: IProps) => {
+const AnimatedImage = ({ children,containerClasses,className = '',alt, ...rest }: IProps) => {
   const classes = classNames('anim-rotate-in', className);
   return (
     <RotateIn className={containerClasses}>
-      <Image className={classes} {...rest} alt='' />
+      <Image className={classes} {...rest} alt={alt} />
       {children}
     </RotateIn>
   );
