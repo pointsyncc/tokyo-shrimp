@@ -1,8 +1,14 @@
 .locale-switcher {
   padding: 0.6rem 2rem !important;
 
+  &:hover {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+  }
+
   &__content {
     min-width: 152px;
+    color: var(--white) !important;
   }
 
   @media (min-width: 1199px) {

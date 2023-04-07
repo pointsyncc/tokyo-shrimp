@@ -50,7 +50,7 @@ export const MainLayout = ({ children, showFooter }: IProps) => {
     <>
       <div className='cursor1'></div>
       <div className='cursor2'></div>
-      {matches ? <LocaleSwitcher /> : null}
+      {matches ? <LocaleSwitcher className='d-none d-xl-flex' /> : null}
       <Menu open={openMenu} setOpen={setOpenMenu} showLangSwitcher={!matches} />
       <Header openMenu={() => setOpenMenu(!openMenu)} />
       <div id='smooth-wrapper'>

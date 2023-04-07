@@ -19,6 +19,7 @@ const About: NextPageWithLayout = () => {
     'footer',
     'cookie-consent',
     'about',
+    'homepage'
   ], { bindI18n: 'languageChanged loaded' });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
@@ -28,6 +29,7 @@ const About: NextPageWithLayout = () => {
       'footer',
       'cookie-consent',
       'about',
+      'homepage'
     ]);
   }, []);
 
@@ -69,7 +71,7 @@ const About: NextPageWithLayout = () => {
       />
       <Hero />
       <Story />
-      <Counter />
+      {/* <Counter /> */}
       <TeamSlider />
       <Brand />
       <Testimonial />
@@ -88,6 +90,7 @@ export const getStaticProps = async ({ locale }: any) => {
     'footer',
     'cookie-consent',
     'about',
+    'homepage'
   ]);
   return {
     props,

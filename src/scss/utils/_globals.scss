@@ -21,3 +21,16 @@
 .fs-xs {
   font-size: 12px;
 }
+
+#smooth-content,.footer__area{
+  @media #{$xxxl} {
+    margin-left:74px;
+  }
+  @media #{$xxl} {
+    margin-left:74px;
+  }
+  @media #{$xl} {
+    margin-left:74px;
+  }
+
+}

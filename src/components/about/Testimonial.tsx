@@ -1,29 +1,31 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { useTranslation } from 'next-i18next';
 import { FaArrowLeft } from 'react-icons/fa';
 const Testimonial = () => {
+  const { t } = useTranslation('about');
+
   const testimonials = [
     {
-      title: 'Amazing digital service',
-      description:
-        'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So wewe’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
-      author: 'Adam Syndera',
-      role: 'CEO, Agency',
+      title: `${t('page.section.testimonial.title')}`,
+      description: `${t('page.section.testimonial.text')}`,
+      author: 'Kristijan Vidović',
+      role: 'CEO & Software Developer',
     },
-    {
-      title: 'Amazing digital service',
-      description:
-        'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So we’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
-      author: 'Kristijan Vidovic',
-      role: 'CEO, Agency',
-    },
-    {
-      title: 'Amazing digital service',
-      description:
-        'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So wewe’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
-      author: 'Evan yu',
-      role: 'CEO, Agency',
-    },
+    // {
+    //   title: 'Amazing digital service',
+    //   description:
+    //     'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So we’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
+    //   author: 'Kristijan Vidovic',
+    //   role: 'CEO, Agency',
+    // },
+    // {
+    //   title: 'Amazing digital service',
+    //   description:
+    //     'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So wewe’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
+    //   author: 'Evan yu',
+    //   role: 'CEO, Agency',
+    // },
   ];
   return (
     <section className='testimonial__area-2'>
@@ -67,20 +69,22 @@ const Testimonial = () => {
                       </SplideSlide>
                     ))}
                   </SplideTrack>
-                  <div className='testimonial__pagination splide__arrows'>
-                    <div
-                      className='prev-button splide__arrow splide__arrow--prev bg-transparent'
-                      style={{ left: 'unset' }}
-                    >
-                      <FaArrowLeft style={{ fill: 'var(--gray-7)' }} />
+                  {testimonials.length > 1 && (
+                    <div className='testimonial__pagination splide__arrows'>
+                      <div
+                        className='prev-button splide__arrow splide__arrow--prev bg-transparent'
+                        style={{ left: 'unset' }}
+                      >
+                        <FaArrowLeft style={{ fill: 'var(--gray-7)' }} />
+                      </div>
+                      <div
+                        className='next-button splide__arrow splide__arrow--next bg-transparent'
+                        style={{ right: 'unset', fill: 'var(--gray-7)' }}
+                      >
+                        <FaArrowLeft style={{ fill: 'var(--gray-7)' }} />
+                      </div>
                     </div>
-                    <div
-                      className='next-button splide__arrow splide__arrow--next bg-transparent'
-                      style={{ right: 'unset', fill: 'var(--gray-7)' }}
-                    >
-                      <FaArrowLeft style={{ fill: 'var(--gray-7)' }} />
-                    </div>
-                  </div>
+                  )}
                 </div>
               </Splide>
             </div>

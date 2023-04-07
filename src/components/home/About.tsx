@@ -20,8 +20,9 @@ export default function About() {
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: titleAnim.current,
-
+          trigger: comp.current,
+          start: -50,
+          end: "center center",
           scrub: 1,
         }, // start the animation when ".box" enters the viewport (once)
       });

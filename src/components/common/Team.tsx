@@ -1,10 +1,10 @@
-import React from 'react';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { useTranslation } from 'next-i18next';
+import Image from '../ui/image/Image';
 import { Link } from '../ui/link/Link';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
-import Image from '../ui/image/Image';
 
 interface IProps {
   // showHeadingArea?: boolean;
@@ -70,12 +70,15 @@ IProps) => {
       role: 'Financial Advisor',
     },
   ];
+
+  const {t} = useTranslation('common')
+
   return (
     <section className={`pt-140 pb-140 ${alt ? 'bg-transparent' : ''} ${alt ? '' : 'team__area'}`}>
       {!alt && (
         <div className='sec-title-wrapper'>
-          <h2 className='sec-sub-title title-anim'>Our Team</h2>
-          <SectionTitle>How we work</SectionTitle>
+          {/* <h2 className='sec-sub-title title-anim'>{t('page.section.team.subtitle')}</h2> */}
+          <SectionTitle>{t('page.section.team.title')}</SectionTitle>
         </div>
       )}
 
