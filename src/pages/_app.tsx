@@ -70,6 +70,16 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   //DOES NOT WORK FOR 404 PAGE - NEED TO FIX!!!
   const getCurrentPageURL = (lang: string) => {
     if (pathname === '/404') return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname === '/500') return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname === '/de/500') return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname === '/en/500') return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname === '/hr/500') return fileUrlToUrl({ pathname: '/', query }, lang);
+    //or if the pathname starts with /blog  return fileUrlToUrl({ pathname: '/', query }, lang)
+    if (pathname.startsWith('/blog')) return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname.startsWith('/services')) return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname.startsWith('/portfolio')) return fileUrlToUrl({ pathname: '/', query }, lang);
+    if (pathname.startsWith('/team')) return fileUrlToUrl({ pathname: '/', query }, lang);
+    
     return fileUrlToUrl({ pathname, query }, lang);
   };
 
