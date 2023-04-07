@@ -46,14 +46,13 @@ type AppPropsWithLayout = AppProps & {
 type LangAlternateProps = {
   hrefLang: string;
   href: string;
-}
+};
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const { i18n } = useTranslation();
   const getLayout = Component.getLayout || ((page) => page);
 
-  const { pathname, query, locale, locales } = useRouter()
-
+  const { pathname, query, locale, locales } = useRouter();
 
   // const getAlternateURLs = (locale: string) => {
   //   const langAlternateArray = locales?.map((lang) => {
@@ -68,21 +67,25 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   //   return langAlternateArray
   // }
 
-
   //DOES NOT WORK FOR 404 PAGE - NEED TO FIX!!!
   const getCurrentPageURL = (lang: string) => {
-    if(pathname === '/404') return fileUrlToUrl({ pathname: '/', query }, lang)
-    return fileUrlToUrl({ pathname, query }, lang)
-  }
+    if (pathname === '/404') return fileUrlToUrl({ pathname: '/', query }, lang);
+    return fileUrlToUrl({ pathname, query }, lang);
+  };
 
   return (
     <React.Fragment>
       <DefaultSeo
-        {...SEO}
+        openGraph={{
+          type: 'website',
+          locale: `${locale}`,
+          url: `${process.env.NEXT_PUBLIC_BASE_URL}${getCurrentPageURL(locale!)}`,
+          siteName: 'Pointsyncc',
+        }}
         canonical={`${process.env.NEXT_PUBLIC_BASE_URL}${getCurrentPageURL(locale!)}`}
         languageAlternates={[
           //The reserved x-default value is used when no other language/region matches the user's browser setting.
-          //This value is recommended for specifying the fallback page for users whose language settings don't match any of your site's localized versions. 
+          //This value is recommended for specifying the fallback page for users whose language settings don't match any of your site's localized versions.
           {
             hrefLang: 'x-default',
             href: `${process.env.NEXT_PUBLIC_BASE_URL}${getCurrentPageURL('en')}`,

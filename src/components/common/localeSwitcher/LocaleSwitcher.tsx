@@ -1,10 +1,8 @@
 import { IDropdownItem, PSDropdown } from '@/components/ui/dropdown/Dropdown';
-import React, { useState } from 'react';
-
-
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { useInit } from '@/hooks/useInit';
 import { classNames } from '@/utils/classNames';
+import { useRouter } from 'next-translate-routes/router';
 import Image from 'next/image';
 
 
