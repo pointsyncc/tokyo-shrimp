@@ -76,10 +76,6 @@ const Home: NextPageWithLayout = () => {
           cardType: 'summary_large_image',
         }}
       />
-      {/* <Head>
-        <title>Pointsyncc - Home</title>
-        <meta name='description' content='Home' />
-      </Head> */}
       <Hero />
       <Roll />
       <About />

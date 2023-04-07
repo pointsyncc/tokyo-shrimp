@@ -18,7 +18,7 @@ const Story = () => {
 
           <div className='row'>
             <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5 mt-5 mt-sm-0'>
-              <h2 className='sec-sub-title title-anim'>Digital Studio</h2>
+              {/* <h2 className='sec-sub-title title-anim'>Digital Studio</h2> */}
               <SectionTitle>{t('page.section.story.title')}</SectionTitle>
 
             </div>
@@ -73,14 +73,14 @@ const Story = () => {
           </div>
           <div className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
             <div className='story__img-wrapper'>
-              <Image
+              {/* <Image
                 style={{ height: 'auto' }}
                 width={230}
                 height={140}
                 raw={true}
                 src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects%2Ftokyo-shrimp%2Fabout-us%2Fblanket-230x140-01.png'
                 alt='Story Thumbnail'
-              />
+              /> */}
               {/* <img src='/imgs/story/3.jpg' alt='Story Thumbnail' /> */}
               <Image
                 style={{ height: 'auto' }}

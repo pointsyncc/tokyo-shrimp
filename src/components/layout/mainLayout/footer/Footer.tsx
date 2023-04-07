@@ -221,9 +221,9 @@ const Footer = () => {
                 <div className='footer__copyright'>
                   <p>
                     © 2023 | {t('copyright.text', { ns: 'footer' })} |{' '}
-                    <a href='https://wealcoder.com/' target='_blank' rel='noreferrer'>
+                    <Link href='https://www.fininfo.hr/Home/SearchCompaniesFree?CompanyName=POINTSYNCC&RadarList=False&UserId=0' target='_blank' rel='noreferrer'>
                       POINTSYNCC d.o.o
-                    </a>
+                    </Link>
                   </p>
                 </div>
 
@@ -234,10 +234,10 @@ const Footer = () => {
                         type='email'
                         placeholder={`${t('forms.newsletter.placeholder', { ns: 'footer' })}`}
                         {...register('email', {
-                          required: 'Email is required',
+                          required: `${t('forms.newsletter.required', { ns: 'common' })}`,
                           pattern: {
                             value: EMAIL_PATTERN,
-                            message: 'Invalid email address',
+                            message: `${t('forms.newsletter.pattern.invalid-message', { ns: 'common' })}`,
                           },
                         })}
                       />
