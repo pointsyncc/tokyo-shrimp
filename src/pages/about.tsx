@@ -36,7 +36,7 @@ const About: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo
-        title='Pointsyncc - About'
+        title='About | Pointsyncc'
         description='About'
         canonical='https://www.canonical.ie/'
         openGraph={{

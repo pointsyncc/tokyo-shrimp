@@ -5,9 +5,10 @@ import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { getStoryblokApi } from '@storyblok/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextPageWithLayout } from '../_app';
+import { NextSeo } from 'next-seo';
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
-  const { title, author, content, image }: BlogDetailProps = props.story.content;
+  const { title, author, content, image, teaser  }: BlogDetailProps = props.story.content;
 
   //format to locale date
   const formatDate = (date: string) => {
@@ -17,6 +18,39 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
 
   return (
     <>
+    <NextSeo
+        title={`${title} | Pointsyncc`}
+        description={teaser}
+        openGraph={{
+          url: `https://www.pointsyncc.com/blog/${props.story.slug}`,
+          title: title,
+          description: teaser,
+          images: [
+            {
+              url: image,
+              width: 800,
+              height: 600,
+              alt: `Blog about ${title} written by ${author}`,
+              type: 'image/jpeg',
+            },
+            {
+              url: image,
+              width: 900,
+              height: 800,
+              alt: `Blog about ${title} written by ${author}`,
+              type: 'image/jpeg',
+            },
+            { url: image },
+            { url: image },
+          ],
+          siteName: 'Pointsyncc',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <BlogDetail
         title={title}
         author={author}
@@ -35,14 +69,6 @@ SingleBlog.getLayout = function getLayout(page) {
 };
 
 export async function getServerSideProps({ params, locale }: any) {
-  //fetch slug from route
-  // const router = useRouter()
-
-  // const {pid} = router.query
-
-  // load the draft version
-  // const router = useRouter();
-  // const lang = router.locale;
   const { slug } = params;
 
   const storyblokApi = getStoryblokApi();
@@ -51,25 +77,29 @@ export async function getServerSideProps({ params, locale }: any) {
     language: locale,
   });
 
-  const test = true
-
   if (!data) {
     return {
       redirect: {
         destination: '/blog',
         permanent: false,
       },
-    }
+    };
   }
 
   // console.log(data);
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent', 'blog', 'homepage'])),
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'footer',
+        'cookie-consent',
+        'blog',
+        'homepage',
+      ])),
       story: data ? data.story : false,
       key: data ? data.story.id : false,
-    }
+    },
   };
 }
 

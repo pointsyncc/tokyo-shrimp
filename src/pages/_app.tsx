@@ -71,6 +71,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   // }
 
   //DOES NOT WORK FOR 404 PAGE - NEED TO FIX!!!
+  //WRONG LINKS FOR [slug] ROUTES NEED to FIX!!!
   const getCurrentPageURL = (lang: string) => {
     if (pathname === '/404') return fileUrlToUrl({ pathname: '/', query }, lang);
     if (pathname === '/500') return fileUrlToUrl({ pathname: '/', query }, lang);
