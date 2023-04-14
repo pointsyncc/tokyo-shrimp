@@ -1,8 +1,28 @@
 import { SplitCome } from '@/components/common/animations/SplitCome';
 import Image from '@/components/ui/image/Image';
-import React from 'react';
+import { Trans, useTranslation } from 'next-i18next';
+import readingTime from 'reading-time';
+import { render } from 'storyblok-rich-text-react-renderer';
 
-export const BlogDetail = () => {
+export interface BlogDetailProps {
+  title: string;
+  date: string;
+  author: string;
+  image: string;
+  content: string;
+  teaser?: string;
+}
+
+export const BlogDetail = ({ title, date, author, image, content }: BlogDetailProps) => {
+  const { t } = useTranslation(['blog', 'common']);
+
+  const testText =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultrices aliquam, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet lorem. Sed euismod, nisl nec ultrices aliquam, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet lorem.';
+
+  const stats = readingTime(content);
+
+  const readTime = '5';
+
   return (
     <section className='blog__detail'>
       <div className='container g-0 line pt-140'>
@@ -12,13 +32,10 @@ export const BlogDetail = () => {
             <div className='blog__detail-top'>
               <SplitCome type='words'>
                 <h2 className='blog__detail-date animation__word_come'>
-                  Design, Marketing <span>25 Jan 2019</span>
+                  Design, Marketing <span>{date}</span>
                 </h2>
-         
 
-              <h3 className='blog__detail-title animation__word_come'>
-                Donate your design for newest designers to try better
-              </h3>
+                <h1 className='blog__detail-title animation__word_come'>{title}</h1>
               </SplitCome>
               <div className='blog__detail-metalist'>
                 <div className='blog__detail-meta'>
@@ -28,29 +45,34 @@ export const BlogDetail = () => {
                     raw={true}
                     width={50}
                     height={50}
-                    src='/imgs/blog/detail/author.png'
-                    alt='Author Picture'
+                    src={`https://ui-avatars.com/api/?name=${author}&background=0D8ABC&color=fff`}
+                    alt={`Blog about ${title} written by ${author}`}
                   />
+
                   <p>
-                    Writen by <span>Codexpand</span>
+                    {t('blog.written-by', { ns: 'blog' })}: <span>{author}</span>
                   </p>
                 </div>
-                <div className='blog__detail-meta'>
+                {/* <div className='blog__detail-meta'>
                   <p>
-                    Viewed <span>3 min read</span>
+                    {t('blog.read-time', { ns: 'blog' })}: <span>{stats.words} min</span>
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           <div className='col-xxl-12'>
             <div className='blog__detail-thumb'>
-              <Image src='/imgs/blog/detail/1.jpg' alt='Blog Thumbnail' data-speed='0.5' />
+              <Image
+                src={image}
+                alt={`Blog about ${title} written by ${author}`}
+                data-speed='0.5'
+              />
             </div>
           </div>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
             <div className='blog__detail-content'>
-              <p>
+              {/* <p>
                 We love to bring designs to life as a developer, and I aim to do this using whatever
                 front end tools are necessary. My preferred tools are more modern javascript
                 libraries like React.js but I like to use whatever is best for the websites needs.
@@ -95,7 +117,10 @@ export const BlogDetail = () => {
                 following will add a “New!” word to list items that do not have a .old className
                 name, using the ::after pseudo-element:
               </p>
-              <Image src='/imgs/blog/detail/3.jpg' alt='Code' />
+              <Image src='/imgs/blog/detail/3.jpg' alt='Code' /> */}
+
+              {/* BLOG CONTENT */}
+              {render(content)}
             </div>
             <div className='blog__detail-tags'>
               <p className='sub-title-anim'>

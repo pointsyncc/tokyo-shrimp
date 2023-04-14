@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 interface IProps {
   vars?: gsap.TweenVars;
@@ -9,6 +10,9 @@ interface IProps {
   distance?:number,
   direction?:'x' | 'y'
 }
+
+gsap.registerPlugin(ScrollTrigger);
+
 export const FadeIn = ({ vars, children,className,distance=50,direction = 'y' }: IProps) => {
   const el = useRef(null);
 

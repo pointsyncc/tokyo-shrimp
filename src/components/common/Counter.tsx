@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +39,7 @@ export default function Counter() {
       duration: 2,
     }
   ];
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
       let device_width = window.innerWidth;

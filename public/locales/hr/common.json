@@ -1,8 +1,33 @@
 {
+  "brands": {
+    "title": "We are happy to work with global <br/>largest brands"
+  },
   "dictionary": {
-    "contact-us": "dictionary.contact-us",
+    "about": "O nama",
+    "blog": "Blog",
+    "career": "Karijera",
+    "contact": "Kontakt",
+    "contact-us": "Kontaktirajte nas",
+    "email": "E-mail adresa",
+    "home": "Početna",
+    "menu": "dictionary.menu",
+    "message": "Poruka",
+    "name": "Ime",
+    "phone": "Broj telefona",
+    "portfolio": "Portfolio",
     "privacy-policy": "Pravila o privatnosti",
+    "services": "Usluge",
+    "subject": "Predmet",
+    "team": "Naš tim",
     "terms-of-service": "Uvjeti pružanja usluge"
+  },
+  "forms": {
+    "newsletter": {
+      "pattern": {
+        "invalid-message": "Netočna e-mail adresa"
+      },
+      "required": "E-mail adresa je obavezna"
+    }
   },
   "global": {
     "days-in-week": {
@@ -16,8 +41,41 @@
     }
   },
   "google-recaptcha": {
-    "info-text": "Ova je stranica zaštićena reCAPTCHA-om i primjenjuju se Googleova {{- privacyLink}} i {{- termsLink}}.",
+    "info-text": "Ova je stranica zaštićena reCAPTCHA-om i primjenjuje se Googleova {{- privacyLink}} i {{- termsLink}}.",
+    "legal": "Ova je stranica zaštićena reCAPTCHA-om i primjenjuje se Googleova <2>Politika privatnosti</2> i <5>Uvjeti korištenja usluge</5>.",
     "privacy-policy": "Pravila o privatnosti",
     "terms-of-service": "Uvjeti pružanja usluge"
+  },
+  "menu": {
+    "get-in-touch": "Stupimo u kontakt",
+    "social": {
+      "follow-us": "Zapratite nas"
+    }
+  },
+  "page": {
+    "section": {
+      "team": {
+        "subtitle": "Naš tim",
+        "title": "Tim kreativnih individualaca"
+      }
+    }
+  },
+  "pages": {
+    "contact": {
+      "description": "pages.contact.description",
+      "title": "pages.contact.title"
+    }
+  },
+  "text": "Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Molimo pročitajte našu<1>Politiku privatnosti</1> kako biste saznali više o tome kako koristimo kolačiće i kako ih možete kontrolirati.",
+  "toasts": {
+    "contact-us": {
+      "loading": "Šaljemo tvoju poruku...",
+      "success": "Poruka uspješno poslana!"
+    },
+    "newsletter-subscribe": {
+      "error": "Već ste prijavljeni na listu!",
+      "loading": "Šaljemo tvoj zahtjev...",
+      "success": "Uspješno ste se prijavili na listu!"
+    }
   }
 }

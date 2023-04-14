@@ -10,24 +10,26 @@ specifiers:
   '@radix-ui/react-dropdown-menu': ^2.0.3
   '@splidejs/react-splide': ^0.7.12
   '@splidejs/splide-extension-auto-scroll': ^0.5.3
+  '@storyblok/react': ^2.0.17
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   axios: ^1.3.4
   bootstrap: ^5.2.3
   csstype: ^3.1.1
+  date-fns: ^2.29.3
   eslint: 8.34.0
   eslint-config-next: 13.2.1
   font-awesome: ^4.7.0
   gsap: ^3.11.4
   i18n: ^0.15.1
-  i18next: ^22.4.10
+  i18next: ^22.4.13
   i18next-chained-backend: ^4.2.0
   i18next-localstorage-backend: ^4.1.0
   i18next-locize-backend: ^6.2.1
   locize-cli: ^7.14.0
   next: 13.3.0
-  next-i18next: ^13.1.6
+  next-i18next: ^13.2.2
   next-seo: ^5.15.0
   next-sitemap: ^4.0.6
   next-themes: ^0.2.1
@@ -47,9 +49,11 @@ specifiers:
   react-icons: ^4.7.1
   react-intersection-observer: ^9.4.3
   react-scroll-parallax: ^3.3.2
+  reading-time: ^1.5.0
   sass: ^1.58.1
   sharp: ^0.31.3
   split-type: ^0.3.3
+  storyblok-rich-text-react-renderer: ^2.7.4
   typescript: 4.9.5
   yup: ^1.0.0
   zustand: ^4.3.3
@@ -64,12 +68,14 @@ dependencies:
   '@radix-ui/react-dropdown-menu': 2.0.4_zula6vjvt3wdocc4mwcxqa6nzi
   '@splidejs/react-splide': 0.7.12
   '@splidejs/splide-extension-auto-scroll': 0.5.3
+  '@storyblok/react': 2.0.17_biqbaboplfbrettd7655fr4n2y
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   axios: 1.3.4
   bootstrap: 5.2.3_@popperjs+core@2.11.7
   csstype: 3.1.1
+  date-fns: 2.29.3
   eslint: 8.34.0
   eslint-config-next: 13.2.1_7kw3g6rralp5ps6mg3uyzz6azm
   font-awesome: 4.7.0
@@ -99,8 +105,10 @@ dependencies:
   react-icons: 4.8.0_react@18.2.0
   react-intersection-observer: 9.4.3_react@18.2.0
   react-scroll-parallax: 3.3.2_biqbaboplfbrettd7655fr4n2y
+  reading-time: 1.5.0
   sharp: 0.31.3
   split-type: 0.3.3
+  storyblok-rich-text-react-renderer: 2.7.4_react@18.2.0
   typescript: 4.9.5
   yup: 1.0.2
   zustand: 4.3.6_react@18.2.0
@@ -1016,6 +1024,23 @@ packages:
     resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
     dev: false
 
+  /@storyblok/js/2.1.3:
+    resolution: {integrity: sha512-lUnCygXMmw3VJQldM5JyEFwraKz2OYN+rt1FvvlWn/55DQfbB/DIgnoQ1mpRw4tJoBqGPRgEQJGOH8e/Q1Vm7Q==}
+    dependencies:
+      storyblok-js-client: 5.10.2
+    dev: false
+
+  /@storyblok/react/2.0.17_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-cnKF3YhySD94o1X7LuDOh1ousePWM/SGiQngx4/AcqtDF2GXBD2SBHN9nlQV4AtqtDJUPyFxj6WinBfwI39RAQ==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@storyblok/js': 2.1.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@swc/helpers/0.4.14:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
@@ -1612,6 +1637,11 @@ packages:
 
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
+    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
     dev: false
 
   /debug/3.2.7:
@@ -3765,6 +3795,10 @@ packages:
     dependencies:
       picomatch: 2.3.1
 
+  /reading-time/1.5.0:
+    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
+    dev: false
+
   /regenerator-runtime/0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     dev: false
@@ -3968,6 +4002,18 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       internal-slot: 1.0.5
+    dev: false
+
+  /storyblok-js-client/5.10.2:
+    resolution: {integrity: sha512-Im/xN9PApDvZbONPYv3SpzjfIfXK63uPf6/eYJPvdIWnzCiWY5hlc2UYkoCR4YoaQBBOEBP1UUcGr5QjesOULg==}
+    dev: false
+
+  /storyblok-rich-text-react-renderer/2.7.4_react@18.2.0:
+    resolution: {integrity: sha512-pAxaG3YMNvdMRSKXYleHtX8E+9FhB/dG+1wiW9XKeztVm+o9PYnr0fV4loFXlQ22ax2FiiEApSdCSttOLsT2Fw==}
+    peerDependencies:
+      react: '>=16.0.0'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /streamsearch/1.1.0:

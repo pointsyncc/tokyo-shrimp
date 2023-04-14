@@ -8,6 +8,11 @@
     "subtitle": "Kürzliche Posts",
     "title": "Neuigkeiten"
   },
+  "brands": {
+    "subtitle": "Brands",
+    "title": "Einige der Marken, mit denen wir zusammenarbeiten."
+  },
+  "categories": "Kategorien",
   "cta": {
     "button": "cta.Knopf",
     "button-text": "Kontaktieren Sie uns",
@@ -16,11 +21,27 @@
   },
   "hero": {
     "button": "hero.Knopf",
-    "call-to-action": "Entdecken Sie die Optionen",
+    "call-to-action": "Entdecken Sie Digitalisierungsmöglichkeiten.",
     "subtitle": "Test",
     "title": "Treten Sie ein in die digitale Evolution des Geschäfts"
   },
   "page": {
     "title": "Startseite"
+  },
+  "service": {
+    "button": "Alle Dienste anzeigen",
+    "subtitle": "Dienstleistungen",
+    "text": "Mit einer individuellen Herangehensweise können wir innovative Lösungen anbieten, die in enger Zusammenarbeit entstanden sind, gute Kommunikation der Nutzeranforderungen, Einsatz modernster Technologien in der Entwicklung und ein Team, das über den Tellerrand hinausschaut, digital.",
+    "title": "Die Lösungen, die wir anbieten."
+  },
+  "test": "test",
+  "testimonials": {
+    "subtitle": "Rückmeldungen.",
+    "text": "Durch das Feedback unserer Nutzer erhalten wir Erkenntnisse darüber, wie wir unsere Dienstleistungen und Produkte weiter verbessern und so zu einem noch besseren Nutzererlebnis und einer einfacheren Digitalisierung des Geschäfts beitragen können.",
+    "title": "Benutzermeinungen"
+  },
+  "workflow": {
+    "subtitle": "Arbeitsablauf",
+    "title": "Unsere Arbeitsweise"
   }
 }

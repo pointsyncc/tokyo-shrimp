@@ -1,0 +1,23 @@
+{
+  "page": {
+    "hero": {
+      "button": "<0></0> Trendovi i <br/>tehnologija<4></4>",
+      "button-link": "page.hero.button-link",
+      "text": "Kako u prirodi različitost čini ravnotežu, tako i mi činimo ravnotežu i skladnost, kroz razmišljanje i ideje, prilikom rada na svakom projektu.",
+      "title": "Pokretač digitalne evolucije poslovanja"
+    },
+    "section": {
+      "story": {
+        "subtitle": "page.section.story.subtitle",
+        "text": "Misija Pointsyncc-a je kontinuirano stvaranje IT rješenja u digitalnoj evoluciji svake vrste poslovanja. Pointsyncc, kao ekosustav kreativnih i profesionalnih stručnjaka teži neočekivanim izazovima jer upravo u tim okolnostima stvaramo najbolji proizvod, proizvod po mjeri Vašeg poslovanja. Stvaranje Vašeg proizvoda temeljimo na Vašem povjerenju i našoj odgovornosti. ",
+        "text2": "Pointsyncc priželjkuje nove poslovne izazove u kojima dokazuje svoje znanje i kompetencije kretivnosti i različitosti, a sve u konačnici kako bi naš klijent dobio korisničko iskustvo koje zaslužuje.",
+        "text3": "Želja nam je da naš svaki klijent postane dio obitelji Pointsyncc-a te zajedno s nama mijenja svoje poslovanje kroz zelenu i digitalnu tranziciju.",
+        "title": "Stvaramo digitalnu evoluciju zajedno s Vama"
+      },
+      "testimonial": {
+        "text": "We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So wewe’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.",
+        "title": "Personalizirana digitalna rješenja"
+      }
+    }
+  }
+}
