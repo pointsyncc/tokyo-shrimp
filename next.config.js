@@ -10,7 +10,7 @@ const nextConfig = {
   },
   i18n,
   images: {
-    domains: ['tokyo.fra1.cdn.digitaloceanspaces.com', 'tokyo.fra1.digitaloceanspaces.com'],
+    domains: ['tokyo.fra1.cdn.digitaloceanspaces.com', 'tokyo.fra1.digitaloceanspaces.com', 'ui-avatars.com', 'a.storyblok.com'],
   },
 };
 

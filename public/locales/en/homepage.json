@@ -8,6 +8,11 @@
     "subtitle": "Recent posts",
     "title": "News insight"
   },
+  "brands": {
+    "subtitle": "Brands",
+    "title": "Some of the brands that are our <br/>clients"
+  },
+  "categories": "categories",
   "cta": {
     "button-text": "Let's talk",
     "title": "We would love to hear more about your project",
@@ -16,7 +21,7 @@
   "hero": {
     "call-to-action": "Explore the options",
     "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
-    "title": "Enter the digital world"
+    "title": "Step into the digital evolution of business"
   },
   "page": {
     "title": "Homepage"
@@ -24,6 +29,16 @@
   "service": {
     "button": "<0></0> View <br/>all services <4></4>",
     "subtitle": "Services",
-    "text": "With every single one of our clients we bring forth a deep passion for <2>creative problem solving innovations</2> forward thinking brands boundaries"
+    "text": "With an individual approach, we can offer <2>innovative solutions</2> that were created with close cooperation, good communication of user requirements, use of the most modern technologies in development and a team that thinks outside the box, thinks the <2>digital way</2>.",
+    "title": "Services we <br/>offer"
+  },
+  "testimonials": {
+    "subtitle": "Testimonials",
+    "text": "Through feedback from our users, we gain insight into the ways in which we can further improve our services and products and thus contribute to an even better user experience and simpler digitalization of business.",
+    "title": "Clients <br/>feedback"
+  },
+  "workflow": {
+    "subtitle": "Workflow",
+    "title": "How we work"
   }
 }

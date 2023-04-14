@@ -8,6 +8,11 @@
     "subtitle": "Nedavne objave",
     "title": "Novosti"
   },
+  "brands": {
+    "subtitle": "Brendovi",
+    "title": "Neki od brendova s kojima <br/>surađujemo"
+  },
+  "categories": "categories",
   "cta": {
     "button": "cta.button",
     "button-text": "Kontaktirajte nas",
@@ -16,7 +21,7 @@
   },
   "hero": {
     "button": "hero.button",
-    "call-to-action": "Istraži opcije",
+    "call-to-action": "Istraži opcije digitalizacije",
     "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
     "title": "Zakorači u digitalnu evoluciju poslovanja"
   },
@@ -26,8 +31,17 @@
   "service": {
     "button": "<0></0> Pogledaj <br/>sve usluge<4></4>",
     "subtitle": "Usluge",
-    "text": "Sa svakim našim klijentom donosimo duboku strast prema <2>kreativnim inovacijama u rješavanju problema</2> granicama robnih marki koje razmišljaju unaprijed",
+    "text": "Individalnim pristupom možemo ponuditi <2>inovativna rješenja</2> koja su nastala uz blisku suradnju, dobru komunikaciju korisničkih zahtjeva, korištenje najmodernijih tehnologija u razvoju i tim koji razmišlja izvan okvira, razmišlja <2>digitalno</2>.",
     "title": "Riješenja koja <br/>nudimo"
   },
-  "test": "test"
+  "test": "test",
+  "testimonials": {
+    "subtitle": "Povratne informacije",
+    "text": "Kroz povratne informacije naših korisnika dobivamo uvid u načine na koje možemo dodatno poboljšati naše usluge i proizvode te tako doprinjeti još boljem korisničkom iskustvu i jednostavnijoj digitalizaciji poslovanja.",
+    "title": "Mišljenja <br/> korisnika"
+  },
+  "workflow": {
+    "subtitle": "Tijek rada",
+    "title": "Naš način rada"
+  }
 }

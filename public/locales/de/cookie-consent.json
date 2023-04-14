@@ -3,5 +3,8 @@
     "accept": "Ich Akzeptiere",
     "cancel": "Ich lehne ab"
   },
-  "text": "Diese Website verwendet Cookies, um Ihre Erfahrung zu messen und zu verbessern. Bitte lesen Sie unsere Datenschutzrichtlinie, um mehr darüber zu erfahren, wie wir Cookies verwenden und wie Sie sie kontrollieren können."
+  "text": {
+    "banner": "Diese Website verwendet Cookies, um Ihre Erfahrung zu messen und zu verbessern. Bitte lesen Sie unsere <2>Datenschutzerklärung</2>, um mehr darüber zu erfahren, wie wir Cookies verwenden und wie Sie sie kontrollieren können. Durch die weitere Nutzung der Website akzeptieren Sie automatisch alle Cookies.",
+    "legal": "Diese Website verwendet Cookies, um Ihre Erfahrung zu messen und zu verbessern. Bitte lesen Sie unsere Datenschutzerklärung, um mehr darüber zu erfahren, wie wir Cookies verwenden und wie Sie sie kontrollieren können."
+  }
 }
