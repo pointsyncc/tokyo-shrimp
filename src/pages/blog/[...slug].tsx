@@ -1,31 +1,62 @@
 import { BlogDetail, BlogDetailProps } from '@/components/blog/blogDetail/BlogDetail';
-import RelatedBlog from '@/components/blog/relatedBlog/RelatedBlog';
+import RelatedBlog, { RelatedBlogProps } from '@/components/blog/relatedBlog/RelatedBlog';
 import CTA from '@/components/common/CTA';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { getStoryblokApi } from '@storyblok/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextPageWithLayout } from '../_app';
+import { NextSeo } from 'next-seo';
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
-  const { title, author, content, image }: BlogDetailProps = props.story.content;
-
-  //format to locale date
-  const formatDate = (date: string) => {
-    const newDate = new Date(date);
-    return newDate.toLocaleDateString();
-  };
+  const { title,categories, author, content, image, teaser, tags }: BlogDetailProps = props.story.content;
 
   return (
     <>
+    <NextSeo
+        title={`${title} | Pointsyncc`}
+        description={teaser}
+        openGraph={{
+          url: `https://www.pointsyncc.com/blog/${props.story.slug}`,
+          title: title,
+          description: teaser,
+          images: [
+            {
+              url: image,
+              width: 800,
+              height: 600,
+              alt: `Blog about ${title} written by ${author}`,
+              type: 'image/jpeg',
+            },
+            {
+              url: image,
+              width: 900,
+              height: 800,
+              alt: `Blog about ${title} written by ${author}`,
+              type: 'image/jpeg',
+            },
+            { url: image },
+            { url: image },
+          ],
+          siteName: 'Pointsyncc',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <BlogDetail
         title={title}
+        categories={categories}
         author={author}
         content={content}
         image={image}
-        date={formatDate(props.story.first_published_at)}
+        publishedAt={props.story.published_at}
+        firstPublishedAt={props.story.first_published_at}
+        tags={tags}
       />
-      <RelatedBlog />
-      <CTA />
+      {props.numberOfArticles > 0 && <RelatedBlog blogs={props.relatedArticles} />}
+      {/* <CTA /> */}
     </>
   );
 };
@@ -35,14 +66,6 @@ SingleBlog.getLayout = function getLayout(page) {
 };
 
 export async function getServerSideProps({ params, locale }: any) {
-  //fetch slug from route
-  // const router = useRouter()
-
-  // const {pid} = router.query
-
-  // load the draft version
-  // const router = useRouter();
-  // const lang = router.locale;
   const { slug } = params;
 
   const storyblokApi = getStoryblokApi();
@@ -51,25 +74,48 @@ export async function getServerSideProps({ params, locale }: any) {
     language: locale,
   });
 
-  const test = true
+  const articles = await storyblokApi.get(`cdn/stories`, {
+    version: 'draft', // or 'published'
+    language: locale,
+    starts_with: 'articles',
+  });
 
   if (!data) {
     return {
       redirect: {
-        destination: '/blog',
         permanent: false,
+        destination: "/blog",
       },
-    }
+      props:{},
+    };
   }
 
-  // console.log(data);
+  //find articles that have at least one same category as the current article
+  const relatedArticles: RelatedBlogProps | null = articles.data.stories.filter((article: any) => {
+    const articleCategories = article.content.categories;
+    const currentArticleCategories = data.story.content.categories;
+    if (article.id !== data.story.id) {
+      return articleCategories.some((category: any) => currentArticleCategories.includes(category));
+    }
+    return null;
+  });
+
+  console.log("RELATED ARTICLES", relatedArticles);
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent', 'blog', 'homepage'])),
+      ...(await serverSideTranslations(locale, [
+        'common',
+        'footer',
+        'cookie-consent',
+        'blog',
+        'homepage',
+      ])),
       story: data ? data.story : false,
       key: data ? data.story.id : false,
-    }
+      numberOfArticles: articles.data.stories.length,
+      relatedArticles: relatedArticles,
+    },
   };
 }
 

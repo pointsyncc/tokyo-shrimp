@@ -43,7 +43,7 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo
-        title={`Pointsyncc - ${t('page.title', {ns: 'homepage'})}`}
+        title={`${t('page.title', {ns: 'homepage'})} | Pointsyncc`}
         description='Home'
         canonical='https://www.canonical.ie/'
         openGraph={{

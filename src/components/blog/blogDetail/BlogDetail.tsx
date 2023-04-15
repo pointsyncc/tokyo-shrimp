@@ -1,27 +1,51 @@
 import { SplitCome } from '@/components/common/animations/SplitCome';
 import Image from '@/components/ui/image/Image';
+import { compareDesc } from 'date-fns';
 import { Trans, useTranslation } from 'next-i18next';
 import readingTime from 'reading-time';
 import { render } from 'storyblok-rich-text-react-renderer';
 
 export interface BlogDetailProps {
   title: string;
-  date: string;
+  categories: string[];
+  publishedAt: string;
+  firstPublishedAt: string;
   author: string;
   image: string;
   content: string;
   teaser?: string;
+  tags: string[];
 }
 
-export const BlogDetail = ({ title, date, author, image, content }: BlogDetailProps) => {
+export const BlogDetail = ({ title,categories, publishedAt, author, image, content, firstPublishedAt, tags }: BlogDetailProps) => {
   const { t } = useTranslation(['blog', 'common']);
 
-  const testText =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec ultrices aliquam, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet lorem. Sed euismod, nisl nec ultrices aliquam, nisl nisl aliquet nisl, nec aliquet nisl nisl sit amet lorem.';
+  // const compareDates = compareDesc(new Date(publishedAt), new Date(updatedAt));
+  let publishedDate = new Date(publishedAt);
+  let firstPublishedDate = new Date(firstPublishedAt);
 
-  const stats = readingTime(content);
+  const compareDates = compareDesc(publishedDate, firstPublishedDate);
 
-  const readTime = '5';
+  
+  //format to locale date
+  const formatDate = (date: string) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleDateString();
+  };
+
+  const formatedCategories = categories.map((category) => {
+    if (category !== categories[categories.length - 1]) {
+      return `${category}, `;
+    }
+    return category;
+  });
+
+  const formattedTags = tags.map((tag) => {
+    if (tag !== tags[tags.length - 1]) {
+      return `${tag}, `;
+    }
+    return tag;
+  });
 
   return (
     <section className='blog__detail'>
@@ -32,7 +56,12 @@ export const BlogDetail = ({ title, date, author, image, content }: BlogDetailPr
             <div className='blog__detail-top'>
               <SplitCome type='words'>
                 <h2 className='blog__detail-date animation__word_come'>
-                  Design, Marketing <span>{date}</span>
+                  {formatedCategories} <span>{formatDate(firstPublishedAt)}</span>
+                  {compareDates === -1 && (
+                    <span className='blog__detail-date-updated'>
+                      {t('blog.updated-at', { ns: 'blog'})} {formatDate(publishedAt)}
+                    </span>
+                  )}
                 </h2>
 
                 <h1 className='blog__detail-title animation__word_come'>{title}</h1>
@@ -72,60 +101,11 @@ export const BlogDetail = ({ title, date, author, image, content }: BlogDetailPr
           </div>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
             <div className='blog__detail-content'>
-              {/* <p>
-                We love to bring designs to life as a developer, and I aim to do this using whatever
-                front end tools are necessary. My preferred tools are more modern javascript
-                libraries like React.js but I like to use whatever is best for the websites needs.
-                There are several reasons why a business would consider a rebrand and it doesn’t
-                necessarily mean the business has been unsuccessful.{' '}
-              </p>
-              <p>
-                But in order that you may see whence all this born error of those who accuse
-                pleasure and praise pain, I will open the whole matter, and explain the very things
-                which were said by that discoverer of truth and, as it were, the architect of a
-                happy life.
-              </p>
-              <Image src='/imgs/blog/detail/2.jpg' alt='Blog Image' />
-
-              <h2>JavaScript</h2>
-              <p>
-                We love to bring designs to life as a developer, and I aim to do this using whatever
-                front end tools are necessary. My preferred tools are more modern javascript
-                libraries like React.js but I like to use whatever is best for the websites needs.
-                There are several reasons why a business would consider a rebrand and it doesn’t
-                necessarily mean the business has been unsuccessful.
-              </p>
-              <h2>Fremework</h2>
-              <p>
-                Always ready to push the boundaries, especially when it comes to our own platform,
-                Our analytical eye to create a site that was visually engaging and also optimised
-                for maximum performance. It also perfectly reflects the journey to help it tell a
-                story to increase its understanding and drive action. To create a site that was
-                visually engaging for maximum performance.
-              </p>
-              <ul>
-                <li>Brand Development</li>
-                <li>UX/UI Design</li>
-                <li>Front-end Development</li>
-                <li>Copywriting</li>
-                <li>Shopify Development</li>
-              </ul>
-              <h2>Visual Studio</h2>
-              <p>
-                Just like other pseudo-elements and pseudo-className selectors, :not() can be
-                chained with other pseudo-classNamees and pseudo-elements. For example, the
-                following will add a “New!” word to list items that do not have a .old className
-                name, using the ::after pseudo-element:
-              </p>
-              <Image src='/imgs/blog/detail/3.jpg' alt='Code' /> */}
-
-              {/* BLOG CONTENT */}
               {render(content)}
             </div>
             <div className='blog__detail-tags'>
               <p className='sub-title-anim'>
-                tags: <a href='tag.html'>design</a>, <a href='tag.html'>figma</a>,
-                <a href='tag.html'>update</a>
+              {t('blog.tags', { ns: 'blog'})}: <span className='text-decoration-underline'>{formattedTags}</span>
               </p>
             </div>
           </div>
