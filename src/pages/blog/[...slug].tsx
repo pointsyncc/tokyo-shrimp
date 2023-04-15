@@ -8,11 +8,12 @@ import { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
-  const { title,categories, author, content, image, teaser, tags }: BlogDetailProps = props.story.content;
+  const { title, categories, author, content, image, teaser, tags }: BlogDetailProps =
+    props.story.content;
 
   return (
     <>
-    <NextSeo
+      <NextSeo
         title={`${title} | Pointsyncc`}
         description={teaser}
         openGraph={{
@@ -69,54 +70,67 @@ export async function getServerSideProps({ params, locale }: any) {
   const { slug } = params;
 
   const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/articles/${slug}`, {
-    version: 'published', // or 'published'
-    language: locale,
-  });
+  try {
+    let { data } = await storyblokApi.get(`cdn/stories/articles/${slug}`, {
+      version: 'published', // or 'published'
+      language: locale,
+    });
 
-  const articles = await storyblokApi.get(`cdn/stories`, {
-    version: 'draft', // or 'published'
-    language: locale,
-    starts_with: 'articles',
-  });
+    const articles = await storyblokApi.get(`cdn/stories`, {
+      version: 'draft', // or 'published'
+      language: locale,
+      starts_with: 'articles',
+    });
 
-  if (!data) {
+    const relatedArticles: RelatedBlogProps | null = articles.data.stories.filter(
+      (article: any) => {
+        const articleCategories = article.content.categories;
+        const currentArticleCategories = data.story.content.categories;
+        if (article.id !== data.story.id) {
+          return articleCategories.some((category: any) =>
+            currentArticleCategories.includes(category),
+          );
+        }
+        return null;
+      },
+    );
+
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, [
+          'common',
+          'footer',
+          'cookie-consent',
+          'blog',
+          'homepage',
+        ])),
+        story: data ? data.story : false,
+        key: data ? data.story.id : false,
+        numberOfArticles: articles.data.stories.length,
+        relatedArticles: relatedArticles,
+      },
+    };
+  } catch (error) {
     return {
       redirect: {
         permanent: false,
-        destination: "/blog",
+        destination: `/${locale}/404`,
       },
-      props:{},
+      props: {},
     };
   }
 
+  // if (!data) {
+  //   return {
+  //     redirect: {
+  //       permanent: false,
+  //       destination: "/blog",
+  //     },
+  //     props:{},
+  //   };
+  // }
+
   //find articles that have at least one same category as the current article
-  const relatedArticles: RelatedBlogProps | null = articles.data.stories.filter((article: any) => {
-    const articleCategories = article.content.categories;
-    const currentArticleCategories = data.story.content.categories;
-    if (article.id !== data.story.id) {
-      return articleCategories.some((category: any) => currentArticleCategories.includes(category));
-    }
-    return null;
-  });
-
-  console.log("RELATED ARTICLES", relatedArticles);
-
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, [
-        'common',
-        'footer',
-        'cookie-consent',
-        'blog',
-        'homepage',
-      ])),
-      story: data ? data.story : false,
-      key: data ? data.story.id : false,
-      numberOfArticles: articles.data.stories.length,
-      relatedArticles: relatedArticles,
-    },
-  };
 }
 
 // pages/blog/[slug].js
