@@ -1,5 +1,5 @@
 import { BlogDetail, BlogDetailProps } from '@/components/blog/blogDetail/BlogDetail';
-import RelatedBlog from '@/components/blog/relatedBlog/RelatedBlog';
+import RelatedBlog, { RelatedBlogProps } from '@/components/blog/relatedBlog/RelatedBlog';
 import CTA from '@/components/common/CTA';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { getStoryblokApi } from '@storyblok/react';
@@ -8,13 +8,7 @@ import { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
-  const { title, author, content, image, teaser  }: BlogDetailProps = props.story.content;
-
-  //format to locale date
-  const formatDate = (date: string) => {
-    const newDate = new Date(date);
-    return newDate.toLocaleDateString();
-  };
+  const { title,categories, author, content, image, teaser, tags }: BlogDetailProps = props.story.content;
 
   return (
     <>
@@ -53,13 +47,16 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
       />
       <BlogDetail
         title={title}
+        categories={categories}
         author={author}
         content={content}
         image={image}
-        date={formatDate(props.story.first_published_at)}
+        publishedAt={props.story.published_at}
+        firstPublishedAt={props.story.first_published_at}
+        tags={tags}
       />
-      <RelatedBlog />
-      <CTA />
+      {props.numberOfArticles > 0 && <RelatedBlog blogs={props.relatedArticles} />}
+      {/* <CTA /> */}
     </>
   );
 };
@@ -77,16 +74,33 @@ export async function getServerSideProps({ params, locale }: any) {
     language: locale,
   });
 
+  const articles = await storyblokApi.get(`cdn/stories`, {
+    version: 'draft', // or 'published'
+    language: locale,
+    starts_with: 'articles',
+  });
+
   if (!data) {
     return {
       redirect: {
-        destination: '/blog',
         permanent: false,
+        destination: "/blog",
       },
+      props:{},
     };
   }
 
-  // console.log(data);
+  //find articles that have at least one same category as the current article
+  const relatedArticles: RelatedBlogProps | null = articles.data.stories.filter((article: any) => {
+    const articleCategories = article.content.categories;
+    const currentArticleCategories = data.story.content.categories;
+    if (article.id !== data.story.id) {
+      return articleCategories.some((category: any) => currentArticleCategories.includes(category));
+    }
+    return null;
+  });
+
+  console.log("RELATED ARTICLES", relatedArticles);
 
   return {
     props: {
@@ -99,6 +113,8 @@ export async function getServerSideProps({ params, locale }: any) {
       ])),
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      numberOfArticles: articles.data.stories.length,
+      relatedArticles: relatedArticles,
     },
   };
 }
