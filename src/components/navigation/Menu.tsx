@@ -85,10 +85,10 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
       href: '/services',
       text: `${t('dictionary.services')}`,
     },
-    {
-      href: '/portfolio',
-      text: `${t('dictionary.portfolio')}`,
-    },
+    // {
+    //   href: '/portfolio',
+    //   text: `${t('dictionary.portfolio')}`,
+    // },
     {
       href: '/team',
       text: `${t('dictionary.team')}`,
@@ -197,7 +197,9 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               <li>
                 <a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a>
               </li>
-              <li>{COMPANY_ADDRESS}</li>
+              <li>
+                <a href={`https://goo.gl/maps/fRA3HnsYcRCNwjd28`} target='_blank'>{COMPANY_ADDRESS}</a>
+              </li>
             </ul>
           </div>
           <Image

@@ -1,59 +1,27 @@
-import { BlogItem } from '@/components/common/blogItem/BlogItem';
+import { BlogCard } from '@/components/common/blogCard/BlogCard';
 import { useSlideInSection } from '@/hooks/useSlideInSection';
-import React from 'react';
+import { Trans, useTranslation } from 'next-i18next';
 
-export const Articles = () => {
-    const {comp} = useSlideInSection('.blog__animation .blog__item')
-  const blogs = [
-    {
-      id: 1,
-      slug: 'test',
-      image: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      published_at: '02 May 2019',
-    },
-    {
-      id: 2,
-      slug: 'test',
-      image: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      published_at: '02 May 2019',
-    },
-    {
-      id: 3,
-      slug: 'test',
-      image: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      published_at: '02 May 2019',
-    },
-    {
-      id: 4,
-      slug: 'test',
-      image: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      published_at: '02 May 2019',
-    },
-    {
-      id: 5,
-      slug: 'test',
-      image: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      published_at: '02 May 2019',
-    },
-    {
-      id: 6,
-      slug: 'test',
-      image: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      published_at: '02 May 2019',
-    },
-  ];
+// interface ArticlesProps{
+//   articles:
+// }
+
+export const Articles = ({ blogs }: any) => {
+  const { t } = useTranslation(['blog', 'common']);
+
+  const { comp } = useSlideInSection('.blog__animation .blog__item');
+
+  const articles = blogs.map((blog: any) => {
+    return {
+      id: blog.uuid,
+      slug: blog.slug,
+      image: blog.content.image,
+      category: blog.content.categories[0],
+      title: blog.content.title,
+      published_at: blog.published_at,
+    };
+  });
+
   return (
     <section className='blog__area-6 blog__animation' ref={comp}>
       <div className='container g-0 line pt-110 pb-110'>
@@ -61,26 +29,25 @@ export const Articles = () => {
         <div className='row pb-130'>
           <div className='col-xxl-8 col-xl-7 col-lg-6 col-md-6'>
             <div className='sec-title-wrapper'>
-              <h2 className='sec-title-2 animation__char_come'>
-                We always <br />
-                think
-              </h2>
+              <h1 className='hero-title animation__word_come'>
+                <Trans i18nKey={'blog.page.title-new'} t={t} ns={'blog'}>
+                  We think <br />
+                  <del>traditional</del> digital
+                </Trans>
+              </h1>
             </div>
           </div>
           <div className='col-xxl-4 col-xl-5 col-lg-6 col-md-6'>
             <div className='blog__text'>
-              <p>
-                Crafting new bright brands, unique visual systems and digital experience focused on
-                a wide range of original collabs.{' '}
-              </p>
+              <p>{t('blog.page.subtitle', { ns: 'blog' })}</p>
             </div>
           </div>
         </div>
 
         <div className='row reset-grid'>
-          {blogs.map((blog) => (
-            <div key={blog.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
-              <BlogItem {...blog} />
+          {articles.map((article: any) => (
+            <div key={article.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
+              <BlogCard {...article} />
             </div>
           ))}
         </div>

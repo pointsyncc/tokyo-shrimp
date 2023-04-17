@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link as NextLink } from 'next-translate-routes/link';
-
-import { useRouter } from 'next/router';
+import React from 'react';
 import { ComponentAttrs } from '@/types/general';
+import { useRouter } from 'next/router';
 
 export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   activeClassName?: string;
@@ -41,11 +40,9 @@ export const Link = ({
   );
 
   let link = (
-      <NextLink onClick={onClick} href={href} {...rest} passHref={true} legacyBehavior>
-        <a className={classes}>
-        {children}
-        </a>
-      </NextLink>
+    <NextLink onClick={onClick} href={href} {...rest} passHref={true} legacyBehavior>
+      <a className={classes}>{children}</a>
+    </NextLink>
   );
 
   if (typeof href === 'string' && href.startsWith('http')) {
