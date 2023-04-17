@@ -16,6 +16,7 @@ import { useAppStore } from '@/stores/store';
 import { pointSynccAPI } from '@/utils/axios';
 import { PHONE_REGEX } from '@/utils/contants';
 import { Trans, useTranslation } from 'next-i18next';
+import { useRouter } from 'next-translate-routes';
 import { toast } from 'react-hot-toast';
 
 export const ContactForm = () => {
@@ -78,6 +79,9 @@ export const ContactForm = () => {
     },
   ];
 
+  const router = useRouter();
+  const currentLocale = router.locale;
+  
   const onSubmit = async (
     data: IValues,
     reset: UseFormReset<IValues>,
@@ -92,6 +96,11 @@ export const ContactForm = () => {
           ...data,
           recaptchaToken,
         },
+        options: {
+          headers: {
+            locale: currentLocale,
+          },
+        },
       }),
       {
         loading: `${t('toasts.contact-us.loading', { ns: 'common' })}`,
@@ -99,7 +108,7 @@ export const ContactForm = () => {
           setLoading('contactForm', false);
 
           reset();
-          return `${t('toasts.contact-us.success', { ns: 'common' })}`
+          return `${t('toasts.contact-us.success', { ns: 'common' })}`;
         },
         error: (err) => {
           setLoading('contactForm', false);

@@ -12,6 +12,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import gsap from 'gsap';
 import { useTranslation } from 'next-i18next';
 import { useTheme } from 'next-themes';
+import { useRouter } from 'next-translate-routes';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -42,11 +43,19 @@ const Footer = () => {
     formState: { errors },
   } = useForm();
 
+  const router = useRouter();
+  const currentLocale = router.locale;
+
   const sendForm = async (data: any) => {
     await pointSynccAPI.sendRequest({
       method: 'post',
       url: '/user/newsletter',
       body: data,
+      options: {
+        headers: {
+          locale: currentLocale,
+        },
+      },
     });
   };
 
