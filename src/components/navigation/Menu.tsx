@@ -157,7 +157,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               </ul>
             </div>
           </div>
-          <div className='offcanvas__mid d-flex justify-content-center  flex-column'>
+          <div className='offcanvas__mid d-flex justify-content-start flex-column'>
             <div className='offcanvas__menu-wrapper'>
               <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
                 <ul className='menu-anim d-flex align-items-stretch flex-column justify-content-center text-center gap-2'>

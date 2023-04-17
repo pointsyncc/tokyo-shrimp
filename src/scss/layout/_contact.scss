@@ -6,7 +6,6 @@
   // color: var(--primary) !important;
   color: rgb(239 68 68) !important;
   font-size: 1rem;
-
 }
 .contact {
   &__area {
@@ -34,6 +33,7 @@
 
     @media #{$sm} {
       padding-top: 30px;
+      margin-left: 0;
     }
 
     p {
@@ -46,15 +46,16 @@
     padding-top: 65px;
 
     @media #{$sm} {
-      padding-top: 50px;
+      padding-top: 35px;
     }
   }
 
   &__info {
+    display: block;
     padding-top: 15px;
 
     @media #{$sm} {
-      padding-bottom: 50px;
+      display: none;
     }
 
     h3 {
@@ -104,6 +105,8 @@
       z-index: 1;
       background: transparent;
       margin-bottom: 10px;
+      //add transition for border bottom change
+      transition: border-bottom 0.1s ease-in-out;
 
       @media #{$lg} {
         padding: 10px 0;
@@ -116,16 +119,25 @@
       }
 
       @media #{$sm} {
+        padding: 14px 0;
         margin-bottom: 20px;
       }
 
       &:focus {
-        border-bottom: 1px solid var(--black-2);
+        border-bottom: 1.75px solid var(--black-2);
+        background-color: rgb(209, 230, 253);
+        color: black;
+        padding-left: .6rem;
       }
 
       &::placeholder {
         color: var(--black-2);
         opacity: 1;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:focus::placeholder{
+        padding-left: .3rem;
       }
     }
 
@@ -143,6 +155,10 @@
 
       @media (max-width: 1200px) {
         margin-top: 10px;
+      }
+
+      @media #{$sm} {
+        margin: 0 auto;
       }
     }
   }
