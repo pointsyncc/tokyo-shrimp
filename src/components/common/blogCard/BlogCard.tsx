@@ -33,9 +33,9 @@ export const BlogCard = ({ id, slug, title, published_at, image, category }: Art
         </Link>
       </div>
       <h4 className='blog__meta'>
-        <Link href={`/blog/category/${category.replaceAll(' ', '-').toLowerCase()}`}>
+        <span>
           {category}
-        </Link>{' '}
+        </span>
         {formatToLocaleDate(published_at)}
       </h4>
       <h5 title={title}>
