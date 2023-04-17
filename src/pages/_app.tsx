@@ -139,7 +139,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         <main className={kanit.className}>
           <ErrorBoundary FallbackComponent={error} onError={(error) => console.log(error.message)}>
             <ParallaxProvider>
-              <ThemeProvider attribute='class' enableSystem={true}>
+              <ThemeProvider attribute='class' defaultTheme='light'>
                 {getLayout(<Component {...pageProps} />)}
                 <PSToaster />
               </ThemeProvider>
@@ -150,14 +150,5 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     </React.Fragment>
   );
 };
-
-// export async function getStaticProps({ locale }: any) {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent'])),
-//       // Will be passed to the page component as props
-//     },
-//   };
-// }
 
 export default withTranslateRoutes(appWithTranslation(App, nextI18NextConfig));
