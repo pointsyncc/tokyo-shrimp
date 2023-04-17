@@ -1,12 +1,34 @@
-import React from 'react';
 import AnimatedImage from '../ui/image/AnimatedImage';
-import Image from '../ui/image/Image';
 
-import SectionTitle from '../ui/sectionTitle/SectionTitle';
 import { Trans, useTranslation } from 'next-i18next';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
 export default function Testimonial() {
   const { t } = useTranslation(['homepage']);
+
+  const testimonials = [
+    {
+      id: 1,
+      name: 'John Doe',
+      designation: 'CEO, Company',
+      image: '/imgs/testimonial/1/1.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+    {
+      id: 1,
+      name: 'John Doe',
+      designation: 'CEO, Company',
+      image: '/imgs/testimonial/1/1.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+    {
+      id: 1,
+      name: 'John Doe',
+      designation: 'CEO, Company',
+      image: '/imgs/testimonial/1/1.png',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    },
+  ];
 
   return (
     <section className='testimonial__area'>
@@ -26,32 +48,8 @@ export default function Testimonial() {
                     src='/imgs/testimonial/1/1.png'
                     alt='Testimonial Image'
                   />
-                  {/* <div className='testimonial__img b-right'>
-                    <Image
-                      raw={true}
-                      style={{ position: 'relative',height:'auto' }}
-                      width={330}
-                      height={430}
-                      src='/imgs/testimonial/1/1.png'
-                      alt='Testimonial Image'
-                    />
-                  </div> */}
-                  {/* <div className='testimonial__img b-right'> */}
-                  {/* <Image
-                  className='position-relative'
-                  sizes="(max-width: 768px) 100vw,
-                  (max-width: 1200px) 50vw,
-                  33vw"
-                    src='/imgs/testimonial/1/1.png'
-                    alt='Testimonial Image'
-                    width={330}
-                    height={430}
-                  /> */}
-                  {/* <img src='imgs/testimonial/1/1.png' alt='Testimonial Image' /> */}
-                  {/* </div> */}
-
-                  <h2 className='testimonial__title'>Jessica Sherlock</h2>
-                  <h3 className='testimonial__role'>Manager, Oitaka</h3>
+                  <h2 className='testimonial__title'>Suzana Sredić</h2>
+                  <h3 className='testimonial__role'>Voditeljica postrojenja Bohor u Belovaru</h3>
                 </div>
               </div>
               <div className='sec-title-wrapper text-anim'>
@@ -78,19 +76,9 @@ export default function Testimonial() {
                   src='/imgs/testimonial/1/3.png'
                   alt='Testimonial Image'
                 />
-                {/* <div className='testimonial__img b-left'>
-                  <Image
-                    raw={true}
-                    style={{ position: 'relative', height: 'auto' }}
-                    width={220}
-                    height={300}
-                    src='/imgs/testimonial/1/3.png'
-                    alt='Testimonial Image'
-                  />
-                </div> */}
 
-                <h2 className='testimonial__title'>Jessica Sherlock</h2>
-                <h3 className='testimonial__role'>Manager, Oitaka</h3>
+                <h2 className='testimonial__title'>Ivana Kurtov</h2>
+                <h3 className='testimonial__role'>Osnivačica Kindwhenhard.com platforme</h3>
               </div>
             </div>
           </div>
@@ -106,20 +94,12 @@ export default function Testimonial() {
                   src='/imgs/testimonial/1/2.png'
                   alt='Testimonial Image'
                 />
-                {/* <div className='testimonial__img b-left'>
-                  <Image
-                    raw={true}
-                    style={{ position: 'relative', height: 'auto' }}
-                    width={260}
-                    height={360}
-                    src='/imgs/testimonial/1/2.png'
-                    alt='Testimonial Image'
-                  />
- 
-                </div> */}
 
-                <h2 className='testimonial__title'>adam Smith</h2>
-                <h3 className='testimonial__role'>Manager, Oitaka</h3>
+                <h2 className='testimonial__title'>Marijan Marković</h2>
+                <h3 className='testimonial__role'>Predstavnik glazbene grupe Maheri</h3>
+                {/* <p className='testimonial__text'>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p> */}
               </div>
             </div>
           </div>

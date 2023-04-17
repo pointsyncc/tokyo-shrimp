@@ -144,6 +144,10 @@
           text-transform: uppercase;
           background-color: var(--white);
 
+          // &-2{
+          //   line-height: 3rem !important;
+          // }
+
           &-wrapper {
             position: relative;
             padding-left: 330px;
@@ -464,6 +468,7 @@
   // Blog Detail
   &__detail {
     overflow: hidden;
+    margin-bottom: 5rem;
 
     &-top {
       @include zi(1);

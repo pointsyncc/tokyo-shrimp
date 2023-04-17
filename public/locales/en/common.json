@@ -1,7 +1,32 @@
 {
+  "brands": {
+    "title": "We are happy to work with global largest brands"
+  },
   "dictionary": {
+    "about": "About us",
+    "blog": "Blog",
+    "career": "Career",
+    "contact": "Contact",
+    "contact-us": "Contact us",
+    "email": "Email",
+    "home": "Home",
+    "message": "Message",
+    "name": "Name",
+    "phone": "Phone",
+    "portfolio": "Portfolio",
     "privacy-policy": "Terms of condition",
+    "services": "Services",
+    "subject": "Subject",
+    "team": "Our team",
     "terms-of-service": "Terms of service"
+  },
+  "forms": {
+    "newsletter": {
+      "pattern": {
+        "invalid-message": "Invalid e-mail address"
+      },
+      "required": "Email is required"
+    }
   },
   "global": {
     "days-in-week": {
@@ -15,7 +40,35 @@
     }
   },
   "google-recaptcha": {
+    "info-text": "This page is protected by reCAPTCHA and is applied by Google",
+    "legal": "This site is protected by reCAPTCHA and the Google <2>Privacy Policy</2> and <5>Terms of Service</5> apply.",
     "privacy-policy": "Terms of privacy",
     "terms-of-service": "Terms of service"
+  },
+  "menu": {
+    "get-in-touch": "Get in touch",
+    "social": {
+      "follow-us": "Follow us"
+    }
+  },
+  "page": {
+    "section": {
+      "team": {
+        "subtitle": "Our team",
+        "title": "Team of creative individuals"
+      }
+    }
+  },
+  "text": "This site uses cookies to measure and improve your experience. Please read our Privacy Policy to learn more about how we use cookies and how you can control them.",
+  "toasts": {
+    "contact-us": {
+      "loading": "Submitting your message...",
+      "success": "You message is succesfully sent!"
+    },
+    "newsletter-subscribe": {
+      "error": "You are already subscribed to the newsletter!",
+      "loading": "Submitting your request...",
+      "success": "You have succesully subscribed to the newsletter!"
+    }
   }
 }

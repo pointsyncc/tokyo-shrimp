@@ -1,7 +1,33 @@
 {
+  "brands": {
+    "title": "Wir arbeiten gerne mit den weltweit größten Marken zusammen."
+  },
   "dictionary": {
+    "about": "Über uns",
+    "blog": "Blog",
+    "career": "Karriere",
+    "contact": "Kontakt",
+    "contact-us": "Kontaktieren Sie Uns",
+    "email": "E-mail Adresse",
+    "home": "Startseite",
+    "menu": "Wörterbuch-Menü",
+    "message": "Nachricht",
+    "name": "Name",
+    "phone": "Telefonnummer",
+    "portfolio": "Portfolio",
     "privacy-policy": "Datenschutzerklärung",
+    "services": "Dienstleistungen",
+    "subject": "Betreff",
+    "team": "Unserer Team",
     "terms-of-service": "Nutzungsbedingungen"
+  },
+  "forms": {
+    "newsletter": {
+      "pattern": {
+        "invalid-message": "Falsche E-Mail-Adresse."
+      },
+      "required": "Die E-Mail-Adresse ist erforderlich."
+    }
   },
   "global": {
     "days-in-week": {
@@ -12,6 +38,38 @@
       "thursday": "Donnerstag",
       "tuesday": "Dienstag",
       "wednesday": "Mittwoch"
+    }
+  },
+  "google-recaptcha": {
+    "info-text": "Diese Seite ist durch reCAPTCHA geschützt und es gelten die Datenschutzbestimmungen und Nutzungsbedingungen von Google.",
+    "legal": "Diese Seite ist durch reCAPTCHA geschützt und es gelten die Datenschutzbestimmungen und Nutzungsbedingungen von Google.",
+    "privacy-policy": "Datenschutzerklärung",
+    "terms-of-service": "Nutzungsbedingungen"
+  },
+  "menu": {
+    "get-in-touch": "Lassen Sie uns Kontakt aufnehmen",
+    "social": {
+      "follow-us": "Folgen Sie uns"
+    }
+  },
+  "page": {
+    "section": {
+      "team": {
+        "subtitle": "Unser Team",
+        "title": "Team kreativer Individuen"
+      }
+    }
+  },
+  "text": "Diese Website verwendet Cookies, um Ihre Erfahrung zu messen und zu verbessern. Bitte lesen Sie unsere Datenschutzrichtlinie, um mehr darüber zu erfahren, wie wir Cookies verwenden und wie Sie sie kontrollieren können.",
+  "toasts": {
+    "contact-us": {
+      "loading": "Wir senden Ihre Nachricht...",
+      "success": "Nachricht erfolgreich gesendet!"
+    },
+    "newsletter-subscribe": {
+      "error": "Sie sind bereits auf der Liste angemeldet!",
+      "loading": "Wir senden deine Anfrage...",
+      "success": "Sie haben sich erfolgreich auf der Liste angemeldet!"
     }
   }
 }

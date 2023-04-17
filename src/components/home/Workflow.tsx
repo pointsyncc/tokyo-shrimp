@@ -4,36 +4,28 @@ import { useTranslation } from 'next-i18next';
 import { FadeInStagger } from '../common/animations/FadeInStagger';
 import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
-
 export default function Workflow() {
+  const { t } = useTranslation(['homepage', 'common']);
+
   const workflow = [
     {
-      title: 'Audience',
-      text: 'Having these the marketplace to your business',
+      title: t('workflow.step-1.vision.title', {ns: 'homepage'}),
+      text: t('workflow.step-1.vision.description', {ns: 'homepage'}),
     },
     {
-      title: 'Plan & Sketch',
-      text: 'Delicate and long-lasting with vitamins and nutritions',
+      title: t('workflow.step-2.plan.title', {ns: 'homepage'}),
+      text: t('workflow.step-2.plan.description', {ns: 'homepage'}),
     },
     {
-      title: 'Customize',
-      text: 'Creating brand identities for the digital experiences',
+      title: t('workflow.step-2.development.title', {ns: 'homepage'}),
+      text: t('workflow.step-2.development.description', {ns: 'homepage'}),
     },
     {
-      title: 'User Testing',
-      text: 'We look forward to engage with beyond the conventional',
-    },
-    {
-      title: 'Customize',
-      text: 'Creating brand identities for the digital experiences',
-    },
-    {
-      title: 'Plan & Sketch',
-      text: 'Delicate and long-lasting with vitamins and nutritions',
-    },
+      title: t('workflow.step-2.implementation.title', {ns: 'homepage'}),
+      text: t('workflow.step-2.implementation.description', {ns: 'homepage'}),
+    }
   ];
 
-  const {t} = useTranslation(['homepage']);
 
   return (
     <FadeInStagger>
@@ -79,58 +71,13 @@ export default function Workflow() {
               >
                 {workflow.map((item, i) => (
                   <SplideSlide className='workflow__slide fade_left item' key={i}>
-                    <h4 className='workflow__step'>step 0{i + 1}</h4>
+                    <h4 className='workflow__step'>{t('dictionary.step', {ns: 'common'})} 0{i + 1}</h4>
                     <h5 className='workflow__number'>0{i + 1}</h5>
                     <h6 className='workflow__title'>{item.title}</h6>
                     <p>{item.text}</p>
                   </SplideSlide>
                 ))}
               </Splide>
-              {/* <div className='swiper workflow__slider'>
-                <div className='swiper-wrapper'>
-                  <div className='swiper-slide workflow__slide fade_left'>
-                    <h4 className='workflow__step'>step 01</h4>
-                    <h5 className='workflow__number'>01</h5>
-                    <h6 className='workflow__title'>Audience</h6>
-                    <p>Having these the marketplace to your business</p>
-                  </div>
-
-                  <div className='swiper-slide workflow__slide fade_left'>
-                    <h4 className='workflow__step'>step 02</h4>
-                    <h5 className='workflow__number'>02</h5>
-                    <h6 className='workflow__title'>Plan & Sketch</h6>
-                    <p>Delicate and long-lasting with vitamins and nutritions</p>
-                  </div>
-
-                  <div className='swiper-slide workflow__slide fade_left'>
-                    <h4 className='workflow__step'>step 03</h4>
-                    <h5 className='workflow__number'>03</h5>
-                    <h6 className='workflow__title'>Customize</h6>
-                    <p>Creating brand identities for the digital experiences</p>
-                  </div>
-
-                  <div className='swiper-slide workflow__slide fade_left'>
-                    <h4 className='workflow__step'>step 04</h4>
-                    <h5 className='workflow__number'>04</h5>
-                    <h6 className='workflow__title'>User Testing</h6>
-                    <p>We look forward to engage with beyond the conventional</p>
-                  </div>
-
-                  <div className='swiper-slide workflow__slide fade_left'>
-                    <h4 className='workflow__step'>step 05</h4>
-                    <h5 className='workflow__number'>05</h5>
-                    <h6 className='workflow__title'>User Testing</h6>
-                    <p>We look forward to engage with beyond the conventional</p>
-                  </div>
-
-                  <div className='swiper-slide workflow__slide fade_left'>
-                    <h4 className='workflow__step'>step 06</h4>
-                    <h5 className='workflow__number'>06</h5>
-                    <h6 className='workflow__title'>User Testing</h6>
-                    <p>We look forward to engage with beyond the conventional</p>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

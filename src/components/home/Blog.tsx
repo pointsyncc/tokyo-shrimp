@@ -1,81 +1,23 @@
-import useIsomorphicLayoutEffect from '@/utils/useIsomorphicLayoutEffect';
-
-import { useRef } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
-import Image from '../ui/image/Image';
-import SectionTitle from '../ui/sectionTitle/SectionTitle';
-import { useTranslation } from 'next-i18next';
-import { BlogItem } from '../common/blogItem/BlogItem';
 import { useSlideInSection } from '@/hooks/useSlideInSection';
+import { useTranslation } from 'next-i18next';
+import { BlogCard } from '../common/blogCard/BlogCard';
+import SectionTitle from '../ui/sectionTitle/SectionTitle';
 
-export default function Blog() {
-  const {comp} = useSlideInSection('.blog__animation .blog__item')
-  const blogs = [
-    {
-      id: 1,
-      imgSrc: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'Ways of lying to yourself about your new relationship.',
-      date: '02 May 2019',
-    },
-    {
-      id: 2,
-      imgSrc: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'How to manage a talented and successful de sign team.',
-      date: '02 May 2019',
-    },
-    {
-      id: 3,
-      imgSrc: '/imgs/pointsyncc/footer.jpg',
-      category: 'UI Design',
-      title: 'How to bring fold to your startup company with Axtra.',
-      date: '02 May 2019',
-    },
-  ];
-  // const comp = useRef(null);
-  // useIsomorphicLayoutEffect(() => {
-  //   let device_width = window.innerWidth;
-  //   const ctx = gsap.context(() => {
-  //     gsap.set('.blog__animation .blog__item', { x: 50, opacity: 0 });
-
-  //     if (device_width < 1023) {
-  //       const blogList = gsap.utils.toArray('.blog__animation .blog__item');
-  //       blogList.forEach((item, i) => {
-  //         let blogTl = gsap.timeline({
-  //           scrollTrigger: {
-  //             trigger: item as any,
-  //             start: 'top center+=200',
-  //           },
-  //         });
-  //         blogTl.to(item as any, {
-  //           x: 0,
-  //           opacity: 1,
-  //           ease: 'power2.out',
-  //           duration: 1.5,
-  //         });
-  //       });
-  //     } else {
-  //       gsap.to('.blog__animation .blog__item', {
-  //         scrollTrigger: {
-  //           trigger: '.blog__animation .blog__item',
-  //           start: 'top center+=300',
-  //           markers: false,
-  //         },
-  //         x: 0,
-  //         opacity: 1,
-  //         ease: 'power2.out',
-  //         duration: 2,
-  //         stagger: {
-  //           each: 0.3,
-  //         },
-  //       });
-  //     }
-  //   }, comp);
-  //   return () => ctx.revert();
-  // }, []);
-
+export default function Blog({blogs}: any) {
   const { t } = useTranslation('homepage');
+
+  const { comp } = useSlideInSection('.blog__animation .blog__item');
+
+  const articles = blogs.map((blog: any) => {
+    return {
+      id: blog.uuid,
+      slug: blog.slug,
+      image: blog.content.image,
+      category: blog.content.categories[0],
+      title: blog.content.title,
+      published_at: blog.published_at,
+    };
+  });
 
   return (
     <section ref={comp} className='blog__area no-pb blog__animation'>
@@ -88,15 +30,16 @@ export default function Blog() {
               <SectionTitle>{t('blog.title', { ns: 'homepage' })}</SectionTitle>
             </div>
           </div>
-          {blogs.map((blog) => {
+          {/* SHOW ONLY FIRST THREE ARTICLES */}
+          {articles.slice(0, 3).map((article: any) => {
             return (
-              <div key={blog.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
-                <BlogItem {...blog} />
+              <div key={article.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
+                <BlogCard {...article} />
               </div>
             );
           })}
         </div>
-      </div> 
+      </div>
     </section>
   );
 }

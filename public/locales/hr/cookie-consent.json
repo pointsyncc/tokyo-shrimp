@@ -3,5 +3,8 @@
     "accept": "Prihvaćam",
     "cancel": "Odbijam"
   },
-  "text": "Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Molimo pročitajte našu Politiku privatnosti. kako biste saznali više o tome kako koristimo kolačiće i kako ih možete kontrolirati."
+  "text": {
+    "banner": "Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Nastavkom korištenja web stranice automatski prihvaćate našu <2>politiku privatnosti</2>. ",
+    "legal": "Ova stranica koristi kolačiće za mjerenje i poboljšanje vašeg iskustva. Molimo pročitajte našu <2>Politiku privatnosti</2> kako biste saznali više o tome kako koristimo kolačiće i kako ih možete kontrolirati."
+  }
 }

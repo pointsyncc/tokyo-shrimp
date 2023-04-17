@@ -1,23 +1,26 @@
-import '../scss/master.scss';
-import { Kanit } from 'next/font/google';
-import { NextPage } from 'next';
-import { ThemeProvider } from 'next-themes';
-import type { AppProps } from 'next/app';
-import NextNProgress from 'nextjs-progressbar';
-import '../scss/master.scss';
 import { PSToaster } from '@/components/common/toast/Toast';
+import { apiPlugin, storyblokInit } from "@storyblok/react";
+import { NextPage } from 'next';
 import { appWithTranslation, useTranslation } from 'next-i18next';
-import { setLocale } from 'yup';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { fileUrlToUrl, useRouter, withTranslateRoutes } from 'next-translate-routes';
-import nextI18NextConfig from '../../next-i18next.config.js';
-import SEO from '../next-seo.config';
-import React from 'react';
 import { DefaultSeo } from 'next-seo';
-import { ParallaxProvider } from 'react-scroll-parallax';
+import { ThemeProvider } from 'next-themes';
+import { fileUrlToUrl, useRouter, withTranslateRoutes } from 'next-translate-routes';
+import type { AppProps } from 'next/app';
+import { Kanit } from 'next/font/google';
+import NextNProgress from 'nextjs-progressbar';
+import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { ParallaxProvider } from 'react-scroll-parallax';
+import { setLocale } from 'yup';
+import nextI18NextConfig from '../../next-i18next.config.js';
+import '../scss/master.scss';
 import error from './error';
+
+storyblokInit({
+  accessToken: "ATAfmKPqVQixXSpP9dFntgtt",
+  use: [apiPlugin]
+});
 
 setLocale({
   mixed: {
@@ -68,6 +71,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   // }
 
   //DOES NOT WORK FOR 404 PAGE - NEED TO FIX!!!
+  //WRONG LINKS FOR [slug] ROUTES NEED to FIX!!!
   const getCurrentPageURL = (lang: string) => {
     if (pathname === '/404') return fileUrlToUrl({ pathname: '/', query }, lang);
     if (pathname === '/500') return fileUrlToUrl({ pathname: '/', query }, lang);

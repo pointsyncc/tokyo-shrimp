@@ -1,4 +1,8 @@
-import { COMPANY_ADDRESS } from '@/utils/contants';
+import {
+  COMPANY_ADDRESS,
+  COMPANY_CONTACT_EMAIL,
+  COMPANY_CONTACT_PHONE_NUMBER,
+} from '@/utils/contants';
 import { Trans, useTranslation } from 'next-i18next';
 
 const ContactInfo = () => {
@@ -15,17 +19,19 @@ const ContactInfo = () => {
         </h3>
         <ul>
           <li>
-            <a className='d-inline' href='tel:+(2)578365379'>
-              +385 99 2144 802
+            <a className='d-inline' href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>
+              {COMPANY_CONTACT_PHONE_NUMBER}
             </a>
           </li>
           <li>
-            <a className='d-inline' href='mailto:hello@example.com'>
-              info@pointsyncc.com
+            <a className='d-inline' href={`mailto:${COMPANY_CONTACT_EMAIL}`}>
+              {COMPANY_CONTACT_EMAIL}
             </a>
           </li>
           <li>
-            <span>{COMPANY_ADDRESS}</span>
+            <a className='d-inline' href={`https://goo.gl/maps/fRA3HnsYcRCNwjd28`} target='_blank'>
+              {COMPANY_ADDRESS}
+            </a>
           </li>
         </ul>
       </div>
