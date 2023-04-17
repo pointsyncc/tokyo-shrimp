@@ -70,7 +70,7 @@ const Home: NextPageWithLayout = (props: any) => {
         }}
       />
       <Hero />
-      <Roll />
+      {/* <Roll /> */}
       <About />
       <Service />
       {/* <Counter /> */}
@@ -102,7 +102,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }: any) =>
           'homepage',
           'blog',
         ])),
-        articles: storyblokRes.data.stories,
+        articles: storyblokRes.data.stories ? storyblokRes.data.stories : [],
       },
     };
 };
