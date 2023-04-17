@@ -1,4 +1,4 @@
-import { BlogItem } from '@/components/common/blogItem/BlogItem';
+import { BlogCard } from '@/components/common/blogCard/BlogCard';
 import { useSlideInSection } from '@/hooks/useSlideInSection';
 import { useTranslation } from 'next-i18next';
 
@@ -76,7 +76,7 @@ const RelatedBlog = ({ blogs }: any) => {
                 articles.map((article: any) => {
                   return (
                     <div key={article.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
-                      <BlogItem {...article} />
+                      <BlogCard {...article} />
                     </div>
                   );
                 })}

@@ -1,11 +1,12 @@
 import { BlogDetail, BlogDetailProps } from '@/components/blog/blogDetail/BlogDetail';
-import RelatedBlog, { RelatedBlogProps } from '@/components/blog/relatedBlog/RelatedBlog';
-import CTA from '@/components/common/CTA';
+import RelatedBlog from '@/components/blog/relatedBlog/RelatedBlog';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
+import { Article } from '@/types/article';
 import { getStoryblokApi } from '@storyblok/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NextPageWithLayout } from '../_app';
 import { NextSeo } from 'next-seo';
+import { NextPageWithLayout } from '../_app';
+
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
   const { title, categories, author, content, image, teaser, tags }: BlogDetailProps =
@@ -82,7 +83,7 @@ export async function getServerSideProps({ params, locale }: any) {
       starts_with: 'articles',
     });
 
-    const relatedArticles: RelatedBlogProps | null = articles.data.stories.filter(
+    const relatedArticles: any = articles.data.stories.filter(
       (article: any) => {
         const articleCategories = article.content.categories;
         const currentArticleCategories = data.story.content.categories;
@@ -119,36 +120,6 @@ export async function getServerSideProps({ params, locale }: any) {
       props: {},
     };
   }
-
-  // if (!data) {
-  //   return {
-  //     redirect: {
-  //       permanent: false,
-  //       destination: "/blog",
-  //     },
-  //     props:{},
-  //   };
-  // }
-
-  //find articles that have at least one same category as the current article
 }
-
-// pages/blog/[slug].js
-// export async function getStaticPaths() {
-
-//   const storyblokApi = getStoryblokApi();
-//   let {data} = await storyblokApi.get(`cdn/stories`, {
-//     version: "draft", //or 'published'
-//   });
-
-//   const paths = data.stories.map((story: any) => ({
-//     params: { slug: story.slug },
-//   }))
-
-//   return {
-//     paths: [{ params: { slug: 'test'.split('/') } }],
-//     fallback: true, // can also be true or 'blocking'
-//   };
-// }
 
 export default SingleBlog;

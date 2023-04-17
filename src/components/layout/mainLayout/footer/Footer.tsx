@@ -92,7 +92,6 @@ const Footer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
     <footer className='footer__area'>
       <div className='footer__top'>
@@ -108,7 +107,6 @@ const Footer = () => {
       
         />
         </Parallax> */}
-
       </div>
 
       <div className='footer__btm position-relative'>
@@ -192,7 +190,9 @@ const Footer = () => {
                 <div className='footer__widget-3'>
                   <h2 className='footer__widget-title'>{t('contact.title', { ns: 'footer' })}</h2>
                   <ul className='footer__contact'>
-                    <li>{COMPANY_ADDRESS}</li>
+                    <li>
+                      <a href={'https://goo.gl/maps/fRA3HnsYcRCNwjd28'} target='_blank'>{COMPANY_ADDRESS}</a>
+                    </li>
                     <li>
                       <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>
                         {COMPANY_CONTACT_PHONE_NUMBER}
@@ -212,7 +212,7 @@ const Footer = () => {
                       <i className='fa-solid fa-arrow-right'></i>
                     </Link>
                   </div>
-                  <h3 className='contact-time'>09 : 00 AM - 17 : 00 PM</h3>
+                  <h3 className='contact-time'>09 : 00 - 17 : 00 h</h3>
                   <h4 className='contact-day'>
                     {t('global.days-in-week.monday')} - {t('global.days-in-week.friday')}
                   </h4>
@@ -221,7 +221,11 @@ const Footer = () => {
                 <div className='footer__copyright'>
                   <p>
                     © 2023 | {t('copyright.text', { ns: 'footer' })} |{' '}
-                    <Link href='https://www.fininfo.hr/Home/SearchCompaniesFree?CompanyName=POINTSYNCC&RadarList=False&UserId=0' target='_blank' rel='noreferrer'>
+                    <Link
+                      href='https://www.fininfo.hr/Home/SearchCompaniesFree?CompanyName=POINTSYNCC&RadarList=False&UserId=0'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
                       POINTSYNCC d.o.o
                     </Link>
                   </p>
@@ -237,7 +241,9 @@ const Footer = () => {
                           required: `${t('forms.newsletter.required', { ns: 'common' })}`,
                           pattern: {
                             value: EMAIL_PATTERN,
-                            message: `${t('forms.newsletter.pattern.invalid-message', { ns: 'common' })}`,
+                            message: `${t('forms.newsletter.pattern.invalid-message', {
+                              ns: 'common',
+                            })}`,
                           },
                         })}
                       />

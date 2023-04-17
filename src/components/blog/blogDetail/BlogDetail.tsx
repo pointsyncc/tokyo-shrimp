@@ -1,8 +1,7 @@
 import { SplitCome } from '@/components/common/animations/SplitCome';
 import Image from '@/components/ui/image/Image';
 import { compareDesc } from 'date-fns';
-import { Trans, useTranslation } from 'next-i18next';
-import readingTime from 'reading-time';
+import { useTranslation } from 'next-i18next';
 import { render } from 'storyblok-rich-text-react-renderer';
 
 export interface BlogDetailProps {

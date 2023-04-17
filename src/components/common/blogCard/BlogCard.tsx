@@ -1,20 +1,15 @@
 import Image from '@/components/ui/image/Image';
 import { Link } from '@/components/ui/link/Link';
+import { Article } from '@/types/article';
 import { formatToLocaleDate } from '@/utils/formatToLocaleDate';
+import { trimText } from '@/utils/trimText';
+import { Trans, useTranslation } from 'next-i18next';
 import { FaArrowRight } from 'react-icons/fa';
 
-interface IProps {
-  id: number;
-  slug: string;
-  image: string;
-  title: string;
-  published_at: string;
-  category: string;
-}
-
-export const BlogItem = ({ id, slug, title, published_at, image, category }: IProps) => {
+export const BlogCard = ({ id, slug, title, published_at, image, category }: Article) => {
+  const { t } = useTranslation(['blog', 'common']);
   return (
-    <article className='blog__item'>
+    <article className='blog__item' key={id}>
       <div className='blog__img-wrapper'>
         <Link href={`/blog/${slug}`}>
           <div className='img-box'>
@@ -34,8 +29,6 @@ export const BlogItem = ({ id, slug, title, published_at, image, category }: IPr
               src={image}
               alt=''
             />
-            {/* <img className='image-box__item' src='imgs/pointsyncc/footer.jpg' alt='' />
-          <img className='image-box__item' src='imgs/pointsyncc/footer.jpg' alt='' /> */}
           </div>
         </Link>
       </div>
@@ -43,18 +36,20 @@ export const BlogItem = ({ id, slug, title, published_at, image, category }: IPr
         <Link href={`/blog/category/${category.replaceAll(' ', '-').toLowerCase()}`}>
           {category}
         </Link>{' '}
-        . {formatToLocaleDate(published_at)}
+        {formatToLocaleDate(published_at)}
       </h4>
-      <h5>
+      <h5 title={title}>
         <Link href={`/blog/${slug}`} className='blog__title'>
-          {title}
+          {trimText(title, 35)}
         </Link>
       </h5>
       <Link href={`/blog/${slug}`} className='blog__btn'>
-        Read More{' '}
-        <span>
-          <FaArrowRight />
-        </span>
+        <Trans i18nKey='blog.card.button.read-more' t={t} ns='blog'>
+          Read more
+          <span>
+            <FaArrowRight />
+          </span>
+        </Trans>
       </Link>
     </article>
   );

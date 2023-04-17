@@ -1,6 +1,5 @@
 import Brand from '@/components/common/Brand';
 import CTA from '@/components/common/CTA';
-import Counter from '@/components/common/Counter';
 import About from '@/components/home/About';
 import Blog from '@/components/home/Blog';
 import { Hero } from '@/components/home/Hero';
@@ -18,32 +17,26 @@ import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NextPageWithLayout } from './_app';
+import { GetServerSideProps } from 'next';
+import { getAllArticles } from '@/service/StoryblokAPI';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = (props: any) => {
   const router = useRouter();
-  const { t, i18n } = useTranslation([
-    'common',
-    'footer',
-    'cookie-consent',
-    'homepage',
-  ], { bindI18n: 'languageChanged loaded' });
+  const { t, i18n } = useTranslation(['common', 'footer', 'cookie-consent', 'homepage', 'blog'], {
+    bindI18n: 'languageChanged loaded',
+  });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, [
-      'common',
-      'footer',
-      'cookie-consent',
-      'homepage',
-    ]);
+    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer', 'cookie-consent', 'homepage']);
   }, []);
 
   return (
     <>
       <NextSeo
-        title={`${t('page.title', {ns: 'homepage'})} | Pointsyncc`}
+        title={`${t('page.title', { ns: 'homepage' })} | Pointsyncc`}
         description='Home'
         canonical='https://www.canonical.ie/'
         openGraph={{
@@ -82,10 +75,10 @@ const Home: NextPageWithLayout = () => {
       <Service />
       {/* <Counter /> */}
       <Workflow />
-      <Portifolio />
+      {/* <Portifolio /> */}
       <Brand />
       <Testimonial />
-      <Blog />
+      <Blog blogs={props.articles} />
       <CTA />
     </>
   );
@@ -95,23 +88,24 @@ Home.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
 
-export const getStaticProps = async ({ locale }: any) => {
-  const props = await serverSideTranslations(locale, [
-    'common',
-    'footer',
-    'cookie-consent',
-    'homepage',
-  ]);
-  return {
-    props,
-    // if using the approach with the live translation download, meaning using i18next-locize-backend on server side,
-    // there is a reloadInterval for i18next-locize-backend that can be used to reload resources in a specific interval: https://github.com/locize/i18next-locize-backend#backend-options
-    // doing so it is suggested to also use the revalidate option, here:
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every hour
-    // revalidate: 60 * 60, // in seconds
-  };
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }: any) => {
+
+  const storyblokRes = await getAllArticles(locale);
+
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, [
+          'common',
+          'footer',
+          'cookie-consent',
+          'homepage',
+          'blog',
+        ])),
+        articles: storyblokRes.data.stories,
+      },
+    };
 };
+
 
 export default Home;
