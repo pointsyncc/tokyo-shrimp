@@ -76,7 +76,7 @@ const Home: NextPageWithLayout = (props: any) => {
       {/* <Counter /> */}
       <Workflow />
       {/* <Portifolio /> */}
-      <Brand />
+      {/* <Brand /> */}
       <Testimonial />
       <Blog blogs={props.articles} />
       <CTA />
