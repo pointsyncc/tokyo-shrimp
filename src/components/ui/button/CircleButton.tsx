@@ -7,7 +7,7 @@ interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const CircleButton = ({ isLoading = false, children, ...rest }: IProps) => {
   return (
-    <div className='btn_wrapper'>
+    <div className='btn_wrapper mt-4'>
       <button className='wc-btn-primary btn-hover btn-item' {...rest}>
         {isLoading ? <Loader size='sm' /> : children}
       </button>

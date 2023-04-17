@@ -31,7 +31,7 @@ export const Input = <
   register,
   showError = true,
   errors,
-  containerClassName = 'mb-3',
+  containerClassName = 'mb-2',
   as = 'input',
   htmlFor,
   ...rest
