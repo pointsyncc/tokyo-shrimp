@@ -1,7 +1,6 @@
 import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
 import { Link } from '@/components/ui/link/Link';
 import { Logo } from '@/components/ui/logo/Logo';
-import { useAppStore } from '@/stores/store';
 import { pointSynccAPI } from '@/utils/axios';
 import { EMAIL_PATTERN } from '@/utils/constants';
 import {
@@ -33,8 +32,6 @@ const ThemeSwitch = () => {
 };
 
 const Footer = () => {
-  // const currentYear = new Date().getFullYear();
-
   const imageRef = useRef<HTMLImageElement>(null);
 
   const { t } = useTranslation(['common', 'footer'], { bindI18n: 'languageChanged loaded' });
@@ -116,12 +113,6 @@ const Footer = () => {
               <div className='footer__inner'>
                 <div className='footer__widget'>
                   <Logo className='footer__logo' type='secondary' width={220} />
-                  {/* <img
-                    className='footer__logo'
-                    width={220}
-                    src='/imgs/pointsyncc/logo/desktop/transparent.png'
-                    alt='Footer Logo'
-                  /> */}
                   <p>{t('subtitle', { ns: 'footer' })}</p>
                   <ul className='footer__social'>
                     <li>
@@ -153,7 +144,7 @@ const Footer = () => {
                       </a>
                     </li>
                   </ul>
-                  <ThemeSwitch />
+                  {/* <ThemeSwitch /> */}
                 </div>
 
                 <div className='footer__widget-2'>
@@ -191,7 +182,9 @@ const Footer = () => {
                   <h2 className='footer__widget-title'>{t('contact.title', { ns: 'footer' })}</h2>
                   <ul className='footer__contact'>
                     <li>
-                      <a href={'https://goo.gl/maps/fRA3HnsYcRCNwjd28'} target='_blank'>{COMPANY_ADDRESS}</a>
+                      <a href={'https://goo.gl/maps/fRA3HnsYcRCNwjd28'} target='_blank'>
+                        {COMPANY_ADDRESS}
+                      </a>
                     </li>
                     <li>
                       <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>
