@@ -41,12 +41,6 @@ export const Hero = () => {
         <div className='row'>
           <div className='col-xxl-12'>
             <div className='hero__content animation__hero_one'>
-              {/* <a href='#'>
-                Strategy, Design, Solution Development{' '}
-                <span>
-                  <i className='fa-solid fa-arrow-right'></i>
-                </span>
-              </a> */}
               <div className='hero__title-wrapper'>
                 <h1 className='hero__title mb-4 mb-md-5' ref={heroHeading}>
                   
@@ -54,21 +48,13 @@ export const Hero = () => {
                 </h1>
                 <button className='d-flex justify-content-center align-items-center gap-3'>
                   <Link href='/contact' legacyBehavior>
-                    <a className='d-flex align-items-center gap-3'>
+                    <a className='d-flex align-items-center gap-3 fs-base'>
                       {t('hero.call-to-action', {ns: 'homepage' })}
                     <BsFillArrowRightCircleFill className='text-white fs-xl' />
                     </a>
                   </Link>
                 </button>
               </div>
-              {/* <Image priority={true} raw={true} width={120} height={111} src='/imgs/icon/arrow-down-big.png' alt='Arrow Down Icon' /> */}
-              {/* <div className='experience' ref={experience}>
-                <h2 className='title'>25k+</h2>
-                <p>
-                  Projects completed <br />
-                  successfully
-                </p>
-              </div> */}
             </div>
           </div>
         </div>

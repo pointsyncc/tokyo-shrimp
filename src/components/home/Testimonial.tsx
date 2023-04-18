@@ -96,7 +96,13 @@ export default function Testimonial() {
                 />
 
                 <h2 className='testimonial__title'>Marijan Marković</h2>
-                <h3 className='testimonial__role'>Predstavnik glazbene grupe Maheri</h3>
+                <h3 className='testimonial__role'>
+                  Svjesni promjena i kvalitete same konkurencije, smo se odlučili, kao novopečena
+                  glazbena grupa, na digitalizaciju naših usluga, a Pointsyncc tim nam je upravo u
+                  tome i pomogao. Svojom kretivnošću i znanjem, u interakciji s nama, našim
+                  potrebama i željama, dostigli smo zadani cilj i time stvorili priliku za daljnju
+                  suradnju, na obostrano zadovoljstvo
+                </h3>
                 {/* <p className='testimonial__text'>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p> */}
