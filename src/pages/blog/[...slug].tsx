@@ -78,7 +78,7 @@ export async function getServerSideProps({ params, locale }: any) {
     });
 
     const articles = await storyblokApi.get(`cdn/stories`, {
-      version: 'draft', // or 'published'
+      version: 'published', // or 'published'
       language: locale,
       starts_with: 'articles',
     });

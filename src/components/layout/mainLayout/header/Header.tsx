@@ -18,7 +18,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
-      if (window.scrollY > 110 && window.scrollY > lastScrollY) {
+      if (window.scrollY > 115 && window.scrollY > lastScrollY) {
         // if scroll down hide the navbar
         setShow(false);
       } else {
@@ -59,7 +59,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
                 }}
               >
                 {matches ? (
-                  <RxHamburgerMenu fontSize={'1.75rem'} className='text-white icon__social' />
+                  <RxHamburgerMenu fontSize={'1.5rem'} className='text-white icon__social' />
                 ) : (
                   <CgMenuGridO fontSize={'2rem'} className='text-white icon__social' />
                 )}

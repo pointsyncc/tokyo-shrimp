@@ -4,7 +4,8 @@
 
 .offcanvas {
   &__area {
-    background-color: var(--black-2);
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(25px);
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -249,17 +250,17 @@
     top: 30px;
 
     @media #{$sm} {
-      right: 28px;
-      top: 12.5px;
+      right: 29px;
+      top: 16px;
     }
 
     button {
       font-size: 30px;
       width: 60px;
       height: 60px;
-      color: var(--white);
-      background: #232323;
-      border-radius: 100%;
+      color: white;
+      // background: #232323;
+      // border-radius: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -270,9 +271,9 @@
       }
 
       @media #{$sm} {
-        font-size: 24px;
-        width: 42px;
-        height: 42px;
+        font-size: 28px;
+        width: 36px;
+        height: 36px;
       }
     }
   }
