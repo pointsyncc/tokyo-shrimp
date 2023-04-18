@@ -15,6 +15,7 @@ import classes from './menu.module.scss';
 import Image from '../ui/image/Image';
 import { Logo } from '../ui/logo/Logo';
 import { classNames } from '@/utils/classNames';
+import { RxCross2 } from 'react-icons/rx';
 
 interface IProps {
   open: boolean;
@@ -255,7 +256,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
         {/* Mobile menu */}
         <div className='offcanvas__close'>
           <button type='button' id='close_offcanvas' onClick={setOpen.bind(null, false)}>
-            <FaTimes />
+            <RxCross2 fontSize={'1.85rem'} className='text-white icon__social' />
           </button>
         </div>
 

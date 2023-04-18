@@ -34,13 +34,13 @@ export const BlogCard = ({ id, slug, title, published_at, image, category }: Art
       </div>
       <h4 className='blog__meta'>
         <span>
-          {category}
+          {category}{" "}
         </span>
         {formatToLocaleDate(published_at)}
       </h4>
       <h5 title={title}>
         <Link href={`/blog/${slug}`} className='blog__title'>
-          {trimText(title, 35)}
+          {trimText(title, 32)}
         </Link>
       </h5>
       <Link href={`/blog/${slug}`} className='blog__btn'>

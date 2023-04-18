@@ -16,7 +16,16 @@ export interface BlogDetailProps {
   tags: string[];
 }
 
-export const BlogDetail = ({ title,categories, publishedAt, author, image, content, firstPublishedAt, tags }: BlogDetailProps) => {
+export const BlogDetail = ({
+  title,
+  categories,
+  publishedAt,
+  author,
+  image,
+  content,
+  firstPublishedAt,
+  tags,
+}: BlogDetailProps) => {
   const { t } = useTranslation(['blog', 'common']);
 
   // const compareDates = compareDesc(new Date(publishedAt), new Date(updatedAt));
@@ -25,7 +34,6 @@ export const BlogDetail = ({ title,categories, publishedAt, author, image, conte
 
   const compareDates = compareDesc(publishedDate, firstPublishedDate);
 
-  
   //format to locale date
   const formatDate = (date: string) => {
     const newDate = new Date(date);
@@ -54,18 +62,34 @@ export const BlogDetail = ({ title,categories, publishedAt, author, image, conte
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
             <div className='blog__detail-top'>
               <SplitCome type='words'>
-                <h2 className='blog__detail-date animation__word_come'>
-                  {formatedCategories} <span>{formatDate(firstPublishedAt)}</span>
-                  {compareDates === -1 && (
+                <h2 className='blog__detail-date animation__word_come d-none d-md-block'>
+                  {formatedCategories}{' '}
+                  {compareDates === -1 ? (
                     <span className='blog__detail-date-updated'>
-                      {t('blog.updated-at', { ns: 'blog'})} {formatDate(publishedAt)}
+                      {t('blog.updated-at', { ns: 'blog' })} {formatDate(publishedAt)}
+                    </span>
+                  ) : (
+                    <span>
+                      {t('blog.published-on', { ns: 'blog' })} {formatDate(firstPublishedAt)}
                     </span>
                   )}
                 </h2>
 
                 <h1 className='blog__detail-title animation__word_come'>{title}</h1>
+                <h2 className='blog__detail-date animation__word_come d-block d-md-none'>
+                  {formatedCategories}
+                  {compareDates === -1 ? (
+                    <span className='blog__detail-date-updated'>
+                      {t('blog.updated-at', { ns: 'blog' })} {formatDate(publishedAt)}
+                    </span>
+                  ) : (
+                    <span>
+                      {t('blog.published-on', { ns: 'blog' })} {formatDate(firstPublishedAt)}
+                    </span>
+                  )}
+                </h2>
               </SplitCome>
-              <div className='blog__detail-metalist'>
+              <div className='blog__detail-metalist mt-3'>
                 <div className='blog__detail-meta'>
                   <Image
                     className='rounded-circle'
@@ -99,12 +123,11 @@ export const BlogDetail = ({ title,categories, publishedAt, author, image, conte
             </div>
           </div>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
-            <div className='blog__detail-content'>
-              {render(content)}
-            </div>
+            <div className='blog__detail-content'>{render(content)}</div>
             <div className='blog__detail-tags'>
               <p className='sub-title-anim'>
-              {t('blog.tags', { ns: 'blog'})}: <span className='text-decoration-underline'>{formattedTags}</span>
+                {t('blog.tags', { ns: 'blog' })}:{' '}
+                <span className='text-decoration-underline'>{formattedTags}</span>
               </p>
             </div>
           </div>
