@@ -105,7 +105,7 @@ export default function About() {
                 {t('about.subtitle', { ns: 'homepage' })}
                 </p>
 
-                <div className='cursor-btn btn_wrapper'>
+                <div className='cursor-btn btn_wrapper m-auto m-md-0'>
                   <Link className='btn-item wc-btn-primary btn-hover' href='/configurator'>
                     <span></span>   {t('about.call-to-action', { ns: 'homepage' })} <i className='fa-solid fa-arrow-right'></i>
                   </Link>

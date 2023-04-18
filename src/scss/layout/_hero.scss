@@ -830,7 +830,7 @@
     }
 
     @media #{$sm} {
-      font-size: 2.9rem;
+      font-size: 2.3rem;
       line-height: 1.2;
     }
 
@@ -1345,3 +1345,19 @@
   height: 15px;
   background: var(--secondary);
 }
+
+// .hero__action__btn__text{
+//    @media #{$sm} {
+//     display: none;
+// }
+// }
+
+//CSS Support
+@supports (height: 100dvh) {
+  .hero {
+    &__area {
+      height: 100dvh;
+    }
+  }
+}
+

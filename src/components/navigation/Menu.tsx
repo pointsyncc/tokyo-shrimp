@@ -4,16 +4,16 @@ import {
   COMPANY_CONTACT_PHONE_NUMBER,
 } from '@/utils/contants';
 import gsap from 'gsap';
-import { Link as RouteTranslateLink } from 'next-translate-routes';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { FaTimes } from 'react-icons/fa';
+import { Link as RouteTranslateLink} from 'next-translate-routes';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { FaInstagram, FaLinkedinIn, FaTimes } from 'react-icons/fa';
 import LocaleSwitcher from '../common/localeSwitcher/LocaleSwitcher';
+import classes from './menu.module.scss';
 import Image from '../ui/image/Image';
 import { Logo } from '../ui/logo/Logo';
-import classes from './menu.module.scss';
 import { classNames } from '@/utils/classNames';
 
 interface IProps {
@@ -29,8 +29,8 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      const targets = document.querySelectorAll('.menu-anim li');
-      gsap.set(targets, { x: 30, opacity: 0 });
+      const targets = document.querySelectorAll('.mobile-menu-anim li');
+      gsap.set(targets, { x: 40, opacity: 0 });
       const tl = gsap
         .timeline({
           paused: true,
@@ -39,7 +39,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
         .to(
           targets,
           {
-            duration: 1,
+            duration: .6,
             x: 0,
             opacity: 1,
 
@@ -72,16 +72,28 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
     };
   }, [router.events, setOpen]);
 
+  //on open true add body overflow hidden
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [open]);
+
   const links = [
     {
+      id: 1,
       href: '/',
       text: `${t('dictionary.home')}`,
     },
     {
+      id: 2,
       href: '/about',
       text: `${t('dictionary.about')}`,
     },
     {
+      id: 3,
       href: '/services',
       text: `${t('dictionary.services')}`,
     },
@@ -90,14 +102,23 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
     //   text: `${t('dictionary.portfolio')}`,
     // },
     {
+      id: 4,
       href: '/team',
       text: `${t('dictionary.team')}`,
     },
     {
+      id: 5,
       href: '/contact',
       text: `${t('dictionary.contact')}`,
     },
+    {
+      id: 6,
+      href: '/blog',
+      text: `${t('dictionary.blog')}`,
+    },
   ];
+
+  const currentRoute = router.asPath;
   return (
     <>
       <div
@@ -107,7 +128,8 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
           visibility: open ? 'visible' : 'hidden',
         }}
       >
-        <div className='offcanvas__body'>
+        {/* Desktop and tablet menu */}
+        <div className='offcanvas__body desktop__tablet__offcanvas__body'>
           <div className='offcanvas__left'>
             <div className='offcanvas__logo'>
               {/* <Link href='/'> */}
@@ -157,7 +179,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               </ul>
             </div>
           </div>
-          <div className='offcanvas__mid d-flex justify-content-start flex-column'>
+          <div className='offcanvas__mid d-flex justify-content-center flex-column'>
             <div className='offcanvas__menu-wrapper'>
               <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
                 <ul className='menu-anim d-flex align-items-stretch flex-column justify-content-center text-center gap-2'>
@@ -227,6 +249,73 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
             <button type='button' id='close_offcanvas' onClick={setOpen.bind(null, false)}>
               <FaTimes />
             </button>
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        <div className='offcanvas__close'>
+          <button type='button' id='close_offcanvas' onClick={setOpen.bind(null, false)}>
+            <FaTimes />
+          </button>
+        </div>
+
+        <div className='mobile__offcanvas__wrapper d-flex flex-column justify-content-between'>
+          <div className='mobile__offcanvas__menu mt-4'>
+            <nav className={`mobile_offcanvas__menu__items`}>
+              <ul className='mobile_offcanvas__menu__items__primary mobile-menu-anim d-flex flex-column'>
+                {links.slice(0, 3).map((link) => (
+                  <li key={link.id + link.text}>
+                    <RouteTranslateLink
+                      href={link.href}
+                      data-current-route={currentRoute === link.href ? true : false}
+                      data-route={currentRoute}
+                    >
+                      {link.text}
+                    </RouteTranslateLink>
+                  </li>
+                ))}
+              </ul>
+              <ul className='mobile_offcanvas__menu__items__secondary mobile-menu-anim d-flex flex-column gap-1 mt-2'>
+                {links.slice(3, 6).map((link) => (
+                  <li key={link.id + link.text}>
+                    <RouteTranslateLink
+                      href={link.href}
+                      data-current-route={currentRoute === link.href.toLowerCase() ? true : false}
+                    >
+                      {link.text}
+                    </RouteTranslateLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className='pt-4'>
+            <div className='mobile__offcanvas__contact'>
+              <ul className='d-flex flex-column gap-1'>
+                <li>
+                  <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>{COMPANY_CONTACT_PHONE_NUMBER}</a>
+                </li>
+                <li>
+                  <a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a>
+                </li>
+                <li>
+                  <a href={`https://goo.gl/maps/fRA3HnsYcRCNwjd28`} target='_blank'>
+                    {COMPANY_ADDRESS}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className='mobile__offcanvas__footer d-flex flex-row justify-content-between align-items-center mt-4 flex-wrap'>
+              <div className='d-flex flex-row gap-3'>
+                <Link href='https://www.instagram.com/pointsyncc/' target='_blank'>
+                  <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
+                </Link>
+                <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
+                  <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header' />
+                </Link>
+              </div>
+              <div>{showLangSwitcher ? <LocaleSwitcher contentZIndex={10000} /> : null}</div>
+            </div>
           </div>
         </div>
       </div>

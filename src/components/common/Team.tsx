@@ -37,38 +37,38 @@ IProps) => {
     {
       imgSrc: '/imgs/team/4.jpg',
       name: 'Vedran',
-      role: 'Marketing Manager',
+      role: 'CMO & Marketing Manager',
     },
     {
-      imgSrc: '/imgs/team/5.jpg',
+      imgSrc: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/pointsyncc-danijel-bilanovic-433x550-01.jpg',
       name: 'Danijel',
-      role: 'Project Manager',
+      role: 'CTO & QA Manager',
     },
     {
       imgSrc: '/imgs/team/5.jpg',
       name: 'Marko',
       role: 'Project Manager',
     },
-    {
-      imgSrc: '/imgs/team/5.jpg',
-      name: 'Monika',
-      role: 'Social Media Manager',
-    },
-    {
-      imgSrc: '/imgs/team/5.jpg',
-      name: 'Ena',
-      role: 'Social Media Expert',
-    },
+    // {
+    //   imgSrc: '/imgs/team/5.jpg',
+    //   name: 'Monika',
+    //   role: 'Social Media Manager',
+    // },
+    // {
+    //   imgSrc: '/imgs/team/5.jpg',
+    //   name: 'Ena',
+    //   role: 'Social Media Expert',
+    // },
     {
       imgSrc: '/imgs/team/5.jpg',
       name: 'Martina',
       role: 'Lector & Translator',
     },
-    {
-      imgSrc: '/imgs/team/5.jpg',
-      name: 'Marija',
-      role: 'Financial Advisor',
-    },
+    // {
+    //   imgSrc: '/imgs/team/5.jpg',
+    //   name: 'Marija',
+    //   role: 'Financial Advisor',
+    // },
   ];
 
   const {t} = useTranslation('common')
