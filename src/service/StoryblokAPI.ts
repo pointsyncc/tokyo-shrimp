@@ -13,7 +13,7 @@ export async function getAllArticles(locale: string): Promise<ISbResult> {
     const res = storyblokApi.get('cdn/stories', {
       starts_with: 'articles',
       version: 'published', // or 'published'
-    //   cv: Date.now(),
+      cv: Date.now(),
       language: locale,
     });
 
