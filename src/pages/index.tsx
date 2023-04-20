@@ -102,7 +102,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }: any) =>
           'homepage',
           'blog',
         ])),
-        articles: storyblokRes.data.stories ? storyblokRes.data.stories : [],
+        articles: Array.isArray(storyblokRes.data.stories) && storyblokRes.data.stories.length ? storyblokRes.data.stories : [],
       },
     };
 };

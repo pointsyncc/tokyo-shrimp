@@ -1,5 +1,5 @@
 import { PSToaster } from '@/components/common/toast/Toast';
-import { apiPlugin, storyblokInit } from "@storyblok/react";
+import { apiPlugin, storyblokInit } from '@storyblok/react';
 import { NextPage } from 'next';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { DefaultSeo } from 'next-seo';
@@ -18,8 +18,8 @@ import '../scss/master.scss';
 import error from './error';
 
 storyblokInit({
-  accessToken: "ATAfmKPqVQixXSpP9dFntgtt",
-  use: [apiPlugin]
+  accessToken: 'ATAfmKPqVQixXSpP9dFntgtt',
+  use: [apiPlugin],
 });
 
 setLocale({
@@ -57,34 +57,13 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   const { pathname, query, locale, locales } = useRouter();
 
-  // const getAlternateURLs = (locale: string) => {
-  //   const langAlternateArray = locales?.map((lang) => {
-  //     if(lang !== locale) {
-  //       return {
-  //         hrefLang: lang,
-  //         href: fileUrlToUrl({ pathname, query }, lang)
-  //       }
-  //     }
-
-  //   })
-  //   return langAlternateArray
-  // }
-
-  //DOES NOT WORK FOR 404 PAGE - NEED TO FIX!!!
-  //WRONG LINKS FOR [slug] ROUTES NEED to FIX!!!
   const getCurrentPageURL = (lang: string) => {
-    if (pathname === '/404') return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname === '/500') return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname === '/de/500') return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname === '/en/500') return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname === '/hr/500') return fileUrlToUrl({ pathname: '/', query }, lang);
-    //or if the pathname starts with /blog  return fileUrlToUrl({ pathname: '/', query }, lang)
-    if (pathname.startsWith('/blog')) return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname.startsWith('/services')) return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname.startsWith('/portfolio')) return fileUrlToUrl({ pathname: '/', query }, lang);
-    if (pathname.startsWith('/team')) return fileUrlToUrl({ pathname: '/', query }, lang);
-    
-    return fileUrlToUrl({ pathname, query }, lang);
+    try {
+      return fileUrlToUrl(pathname, lang);
+    } catch (error) {
+      console.log('fileUrlToUrl Conversion error: ', error);
+      return fileUrlToUrl({ pathname: '/', query }, lang);
+    }
   };
 
   return (

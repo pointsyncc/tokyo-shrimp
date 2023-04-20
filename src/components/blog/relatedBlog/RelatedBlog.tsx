@@ -57,7 +57,7 @@ const RelatedBlog = ({ blogs }: any) => {
   );
   return (
     <>
-      {articles && articles.length > 0 && (
+      {Array.isArray(articles) && articles.length > 0 && (
         <section ref={comp} className='blog__related blog__animation'>
           <div className='container g-0 line pt-130 pb-140'>
             <span className='line-3'></span>
@@ -72,7 +72,7 @@ const RelatedBlog = ({ blogs }: any) => {
             </div>
 
             <div className='row reset-grid'>
-              {articles &&
+              {Array.isArray(articles) && articles.length &&
                 articles.map((article: any) => {
                   return (
                     <div key={article.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
