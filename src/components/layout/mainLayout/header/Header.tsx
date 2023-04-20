@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 export const Header = ({ openMenu }: HeaderProps) => {
-  const { matches } = useMatchMedia('(max-width: 450px)');
+  const { matches } = useMatchMedia('(max-width: 840px)');
 
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);

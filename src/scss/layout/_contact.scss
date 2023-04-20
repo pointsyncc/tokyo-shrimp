@@ -52,10 +52,14 @@
 
   &__info {
     display: block;
-    padding-top: 15px;
+    margin-top: 15px;
+    max-width: 100%;
+    overflow: hidden;
 
     @media #{$sm} {
-      display: none;
+      display: block;
+      margin-top: 0px;
+      margin-bottom: 24px;
     }
 
     h3 {
