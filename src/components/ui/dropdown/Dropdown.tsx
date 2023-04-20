@@ -49,7 +49,7 @@ export const PSDropdown = ({
       <DropdownMenu.Trigger className={dropdownTriggerClasses} asChild>
         <button className={classes['dropdown__icon-btn']} aria-label='Customise options'>
           {selectedOption.leftSlot ? (
-            <div className='pe-3'>{selectedOption.leftSlot && selectedOption.leftSlot}</div>
+            <div className='pe-3 mobile__lang__switcher__globe__icon'>{selectedOption.leftSlot && selectedOption.leftSlot}</div>
           ) : null}
           {selectedOption.text}
           {selectedOption.rightSlot ? (

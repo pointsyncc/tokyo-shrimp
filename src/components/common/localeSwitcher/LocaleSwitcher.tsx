@@ -4,6 +4,7 @@ import { useInit } from '@/hooks/useInit';
 import { classNames } from '@/utils/classNames';
 import { useRouter } from 'next-translate-routes/router';
 import Image from 'next/image';
+import {BsGlobeAmericas} from 'react-icons/bs'
 
 
 
@@ -11,19 +12,19 @@ const localeDropdownItems = [
   {
     text: 'English',
     textValue: 'en',
-    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    leftSlot:<BsGlobeAmericas size={18} color="#D8D8D8" />
     // rightSlot: <ReactCountryFlag countryCode='US' svg />,
   },
   {
-    text: 'German',
+    text: 'Deutsch',
     textValue: 'de',
-    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    leftSlot:<BsGlobeAmericas size={18} color="#D8D8D8" />
     // rightSlot: <ReactCountryFlag countryCode='HR' svg />,
   },
   {
-    text: 'Croatian',
+    text: 'Hrvatski',
     textValue: 'hr',
-    leftSlot:<Image src="/imgs/pointsyncc/globe.svg" width={18} height={18} alt="globe"/>
+    leftSlot:<BsGlobeAmericas size={18} color="#D8D8D8" />
     // rightSlot: <ReactCountryFlag countryCode='HR' svg />,
   },
 ];
