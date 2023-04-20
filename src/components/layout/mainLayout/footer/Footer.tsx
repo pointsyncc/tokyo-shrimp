@@ -252,7 +252,7 @@ const Footer = () => {
                       <ErrorMessage
                         errors={errors}
                         name='email'
-                        render={({ message }) => <p className='form__error__message'>{message}</p>}
+                        render={({ message }) => <p className='form__error__message mt-2'>{message}</p>}
                       />
                     </div>
                     <GoogleRecaptchaText />
