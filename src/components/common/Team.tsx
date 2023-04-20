@@ -35,7 +35,7 @@ IProps) => {
       role: 'Lead Backend Developer',
     },
     {
-      imgSrc: '/imgs/team/4.jpg',
+      imgSrc: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/team-vedran-sredic-432x550-01.jpg',
       name: 'Vedran',
       role: 'CMO & Marketing Manager',
     },
