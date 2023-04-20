@@ -13,7 +13,7 @@ export default function Blog({blogs}: any) {
       id: blog.uuid,
       slug: blog.slug,
       image: blog.content.image,
-      category: blog.content.categories[0] ? blog.content.categories[0].name : '',
+      category: Array.isArray(blog.content.categories) && blog.content.categories.length ? blog.content.categories[0].name : '',
       title: blog.content.title,
       published_at: blog.published_at,
     };
