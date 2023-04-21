@@ -86,7 +86,7 @@ export default function Testimonial() {
             <div className='testimonial__item item-3 img-'>
               <div className='button modal-trigger-3'>
                 <AnimatedImage
-                  containerClasses='testimonial__img b-left'
+                  containerClasses='testimonial__img b-left z-index-1'
                   raw={true}
                   style={{ position: 'relative', height: 'auto' }}
                   width={260}
