@@ -62,7 +62,7 @@ const Hero = () => {
               </video> */}
               <Image
                 style={{ height: 'auto' }}
-                width={1618}
+                width={1500}
                 height={910}
                 raw={true}
                 src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects%2Ftokyo-shrimp%2Fabout-us%2Fabout-page-hero-image-1618x910-01.jpg'

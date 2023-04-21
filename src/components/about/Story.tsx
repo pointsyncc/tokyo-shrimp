@@ -8,7 +8,7 @@ const Story = () => {
   const {t} = useTranslation('about')
 
   return (
-    <section className='story__area'>
+    <section className='story__area mb-5'>
       <div className='container g-0 line pt-140'>
         <span className='line-3'></span>
         <div className='sec-title-wrapper'>
