@@ -16,7 +16,7 @@ export const Articles = ({ blogs }: any) => {
       id: blog.uuid,
       slug: blog.slug,
       image: blog.content.image,
-      category: blog.content.categories[0],
+      category: Array.isArray(blog.content.categories) && blog.content.categories.length ? blog.content.categories[0] : '',
       title: blog.content.title,
       published_at: blog.published_at,
     };
@@ -45,7 +45,7 @@ export const Articles = ({ blogs }: any) => {
         </div>
 
         <div className='row reset-grid'>
-          {articles.map((article: any) => (
+          {Array.isArray(articles) && articles.length && articles.map((article: any) => (
             <div key={article.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
               <BlogCard {...article} />
             </div>

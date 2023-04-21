@@ -5,7 +5,7 @@ import {
 } from '@/utils/contants';
 import gsap from 'gsap';
 import { useTranslation } from 'next-i18next';
-import { Link as RouteTranslateLink} from 'next-translate-routes';
+import { Link as RouteTranslateLink } from 'next-translate-routes';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
@@ -15,6 +15,7 @@ import classes from './menu.module.scss';
 import Image from '../ui/image/Image';
 import { Logo } from '../ui/logo/Logo';
 import { classNames } from '@/utils/classNames';
+import { RxCross2 } from 'react-icons/rx';
 
 interface IProps {
   open: boolean;
@@ -39,7 +40,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
         .to(
           targets,
           {
-            duration: .6,
+            duration: 0.6,
             x: 0,
             opacity: 1,
 
@@ -85,16 +86,31 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
     {
       id: 1,
       href: '/',
+      langPaths: {
+        hr: '',
+        en: '/en',
+        de: '/de',
+      },
       text: `${t('dictionary.home')}`,
     },
     {
       id: 2,
       href: '/about',
+      langPaths: {
+        hr: '/o-nama',
+        en: '/en/about-us',
+        de: '/de/uber-uns',
+      },
       text: `${t('dictionary.about')}`,
     },
     {
       id: 3,
       href: '/services',
+      langPaths: {
+        hr: 'naše-usluge',
+        en: '/en/services',
+        de: '/de/dienstleistungen',
+      },
       text: `${t('dictionary.services')}`,
     },
     // {
@@ -109,11 +125,21 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
     {
       id: 5,
       href: '/contact',
+      langPaths: {
+        hr: 'kontakt',
+        en: '/en/contact',
+        de: '/de/kontakt',
+      },
       text: `${t('dictionary.contact')}`,
     },
     {
       id: 6,
       href: '/blog',
+      langPaths: {
+        hr: 'blog',
+        en: '/en/blog',
+        de: '/de/blog',
+      },
       text: `${t('dictionary.blog')}`,
     },
   ];
@@ -255,7 +281,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
         {/* Mobile menu */}
         <div className='offcanvas__close'>
           <button type='button' id='close_offcanvas' onClick={setOpen.bind(null, false)}>
-            <FaTimes />
+            <RxCross2 fontSize={'1.85rem'} className='text-white icon__social' />
           </button>
         </div>
 

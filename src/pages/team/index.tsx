@@ -8,6 +8,7 @@ import { NextSeo } from 'next-seo';
 import { NextPageWithLayout } from '../_app';
 import { Trans, useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
+import { Link } from '@/components/ui/link/Link';
 
 const Team: NextPageWithLayout = () => {
   const { t, i18n } = useTranslation(['common', 'footer', 'cookie-consent', 'team'], {
@@ -81,13 +82,13 @@ const Team: NextPageWithLayout = () => {
 
         <div className='team__join-btn'>
           <div className='btn_wrapper'>
-            <a href='contact.html' className='wc-btn-primary btn-item btn-hover'>
+            <Link href='/contact' className='wc-btn-primary btn-item btn-hover'>
               <Trans i18nKey='page.call-to-action' t={t} ns='team'>
                 <span></span> Join our <br />
                 talented team
                 <i className='fa-solid fa-arrow-right'></i>
               </Trans>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

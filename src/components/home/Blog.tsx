@@ -8,12 +8,12 @@ export default function Blog({blogs}: any) {
 
   const { comp } = useSlideInSection('.blog__animation .blog__item');
 
-  const articles = blogs.length > 0 && blogs.map((blog: any) => {
+  const articles = Array.isArray(blogs) && blogs.length > 0 && blogs.map((blog: any) => {
     return {
       id: blog.uuid,
       slug: blog.slug,
       image: blog.content.image,
-      category: blog.content.categories[0] ? blog.content.categories[0].name : '',
+      category: Array.isArray(blog.content.categories) && blog.content.categories.length ? blog.content.categories[0].name : '',
       title: blog.content.title,
       published_at: blog.published_at,
     };
@@ -31,7 +31,7 @@ export default function Blog({blogs}: any) {
             </div>
           </div>
           {/* SHOW ONLY FIRST THREE ARTICLES */}
-          {articles.length > 0 && articles.slice(0, 3).map((article: any) => {
+          {Array.isArray(articles) && articles.length > 0 && articles.slice(0, 3).map((article: any) => {
             return (
               <div key={article.id} className='col-xxl-4 col-xl-4 col-lg-4 col-md-4'>
                 <BlogCard {...article} />

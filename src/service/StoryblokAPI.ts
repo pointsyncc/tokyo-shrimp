@@ -12,8 +12,8 @@ export async function getAllArticles(locale: string): Promise<ISbResult> {
   try {
     const res = storyblokApi.get('cdn/stories', {
       starts_with: 'articles',
-      version: 'draft', // or 'published'
-    //   cv: Date.now(),
+      version: 'published', // or 'published'
+      cv: Date.now(),
       language: locale,
     });
 

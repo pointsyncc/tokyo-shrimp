@@ -124,7 +124,7 @@ const Footer = () => {
                   <Logo className='footer__logo' type='secondary' width={220} />
                   <p>{t('subtitle', { ns: 'footer' })}</p>
                   <ul className='footer__social'>
-                    <li>
+                    {/* <li>
                       <a href='#'>
                         <span>
                           <FaFacebookF />
@@ -137,20 +137,20 @@ const Footer = () => {
                           <FaTwitter />
                         </span>
                       </a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a href='#'>
+                      <Link href='https://www.instagram.com/pointsyncc/' target='_blank'>
                         <span>
                           <FaInstagram />
                         </span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href='#'>
+                      <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
                         <span>
                           <FaLinkedinIn />
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                   {/* <ThemeSwitch /> */}
@@ -172,7 +172,7 @@ const Footer = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link href='/services'>
+                      <Link href='/configuration'>
                         {t('list.information.items.configuration', { ns: 'footer' })}
                       </Link>
                     </li>
@@ -252,7 +252,7 @@ const Footer = () => {
                       <ErrorMessage
                         errors={errors}
                         name='email'
-                        render={({ message }) => <p className='form__error__message'>{message}</p>}
+                        render={({ message }) => <p className='form__error__message mt-2'>{message}</p>}
                       />
                     </div>
                     <GoogleRecaptchaText />
