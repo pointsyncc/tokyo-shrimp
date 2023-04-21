@@ -73,7 +73,7 @@ const About: NextPageWithLayout = () => {
       <Story />
       {/* <Counter /> */}
       <TeamSlider />
-      <Brand />
+      {/* <Brand /> */}
       <Testimonial />
       <CTA />
     </>

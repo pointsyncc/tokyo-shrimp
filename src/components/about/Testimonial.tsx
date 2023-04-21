@@ -2,6 +2,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useTranslation } from 'next-i18next';
 import { FaArrowLeft } from 'react-icons/fa';
+import Image from '../ui/image/Image';
 const Testimonial = () => {
   const { t } = useTranslation('about');
 
@@ -10,34 +11,36 @@ const Testimonial = () => {
       title: `${t('page.section.testimonial.title')}`,
       description: `${t('page.section.testimonial.text')}`,
       author: 'Kristijan Vidović',
+      imgURL: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/team-kristijan-vidovic-432x550-upscaled.jpg',
       role: 'CEO & Software Developer',
     },
-    // {
-    //   title: 'Amazing digital service',
-    //   description:
-    //     'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So we’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
-    //   author: 'Kristijan Vidovic',
-    //   role: 'CEO, Agency',
-    // },
-    // {
-    //   title: 'Amazing digital service',
-    //   description:
-    //     'We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So wewe’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.',
-    //   author: 'Evan yu',
-    //   role: 'CEO, Agency',
-    // },
+    {
+      title: `${t('page.section.testimonial-2.title')}`,
+      description: `${t('page.section.testimonial-2.text')}`,
+      author: 'Kristijan Vidović',
+      imgURL: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/team-kristijan-vidovic-432x550-upscaled.jpg',
+      role: 'CEO & Software Developer',
+    },
+    {
+      title: `${t('page.section.testimonial-3.title')}`,
+      description: `${t('page.section.testimonial-3.text')}`,
+      author: 'Kristijan Vidović',
+      imgURL: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/team-kristijan-vidovic-432x550-upscaled.jpg',
+      role: 'CEO & Software Developer',
+    },
   ];
   return (
-    <section className='testimonial__area-2'>
+    <section className='testimonial__area-2 mt-5'>
       <div className='container g-0 line pb-140'>
         <span className='line-3'></span>
 
         <div className='row g-0'>
           <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5'>
             <div className='testimonial__video'>
-              <video autoPlay={true} muted loop>
+              {/* <video autoPlay={true} muted loop>
                 <source src='/video/testimonial.mp4' type='video/mp4' />
-              </video>
+              </video> */}
+              <Image src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/team-kristijan-vidovic-432x550-upscaled.jpg' alt='testimonial' />
             </div>
           </div>
 

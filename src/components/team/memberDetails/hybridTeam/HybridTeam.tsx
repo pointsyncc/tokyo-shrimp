@@ -7,7 +7,7 @@ const HybridTeam = () => {
   const {t} = useTranslation('team')
 
   return (
-    <section className='team__btm'>
+    <section className='team__btm mb-5'>
       <div className='container g-0 line'>
         <span className='line-3'></span>
         <div className='row'>
