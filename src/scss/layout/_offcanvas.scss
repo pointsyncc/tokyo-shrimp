@@ -257,8 +257,8 @@
     top: 30px;
 
     @media #{$sm} {
-      right: 29px;
-      top: 16px;
+      right: 20px;
+      top: 10px;
     }
 
     button {
@@ -279,8 +279,25 @@
 
       @media #{$sm} {
         font-size: 28px;
-        width: 36px;
-        height: 36px;
+        width: 54px;
+        height: 48px;
+        //improve touch area
+        padding: 0;
+        &:hover {
+          color: var(--gray-2);
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:active {
+          outline: none;
+        }
+
+        &:focus-visible {
+          outline: none;
+        }
       }
     }
   }
