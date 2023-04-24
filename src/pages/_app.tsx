@@ -1,5 +1,6 @@
 import { PSToaster } from '@/components/common/toast/Toast';
 import { apiPlugin, storyblokInit } from '@storyblok/react';
+import { Analytics } from '@vercel/analytics/react';
 import { NextPage } from 'next';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 import { DefaultSeo } from 'next-seo';
@@ -126,6 +127,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           </ErrorBoundary>
         </main>
       </GoogleReCaptchaProvider>
+      <Analytics />
     </React.Fragment>
   );
 };
