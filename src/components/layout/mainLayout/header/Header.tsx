@@ -59,17 +59,17 @@ export const Header = ({ openMenu }: HeaderProps) => {
                 }}
               >
                 {matches ? (
-                  <RxHamburgerMenu fontSize={'1.5rem'} className='text-white icon__social' />
+                  <RxHamburgerMenu fontSize={'1.5rem'} className='text-white icon__social' aria-label='Open menu' />
                 ) : (
-                  <CgMenuGridO fontSize={'2rem'} className='text-white icon__social' />
+                  <CgMenuGridO fontSize={'2rem'} className='text-white icon__social' aria-label='Open menu' />
                 )}
               </button>
             </div>
             <div className='header__support d-none d-xl-flex flex-column justify-content-center gap-3 '>
-              <Link href='https://www.instagram.com/pointsyncc/' target='_blank'>
+              <Link href='https://www.instagram.com/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc Instagram profile page'>
                 <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
               </Link>
-              <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
+              <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc LinkedIn profile page'>
                 <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header' />
               </Link>
             </div>

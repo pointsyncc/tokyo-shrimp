@@ -73,9 +73,9 @@ export default function About() {
         <div className='row'>
           <div className='col-xxl-12'>
             <div className='about__title-wrapper'>
-              <h3 className='sec-title title-anim' ref={titleAnim}>
+              <h2 className='sec-title title-anim' ref={titleAnim}>
                 {t('about.title', { ns: 'homepage' })}
-              </h3>
+              </h2>
             </div>
 
             <div className='about__content-wrapper'>
