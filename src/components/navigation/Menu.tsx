@@ -171,17 +171,17 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               <h3 className='social-title'>{t('menu.social.follow-us')}</h3>
               <ul>
                 <li>
-                  <Link href='https://www.instagram.com/pointsyncc/' target={'_blank'}>
+                  <Link href='https://www.instagram.com/pointsyncc/' target={'_blank'} aria-label='Visit Pointsyncc Instagram profile page'>
                     Instagram
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href='https://www.facebook.com/pointsyncc/' target={'_blank'}>
                     Facebook
                   </Link>
-                </li>
+                </li> */}
                 <li>
-                  <Link href='https://www.linkedin.com/pointsyncc/' target={'_blank'}>
+                  <Link href='https://www.linkedin.com/pointsyncc/' target={'_blank'} aria-label='Visit Pointsyncc LinkedIn profile page'>
                     LinkedIn
                   </Link>
                 </li>
@@ -333,11 +333,11 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
             </div>
             <div className='mobile__offcanvas__footer d-flex flex-row justify-content-between align-items-center mt-4 flex-wrap'>
               <div className='d-flex flex-row gap-3'>
-                <Link href='https://www.instagram.com/pointsyncc/' target='_blank'>
+                <Link href='https://www.instagram.com/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc Instagram profile page'>
                   <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
                 </Link>
-                <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
-                  <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header' />
+                <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc LinkedIn profile page'>
+                  <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header'/>
                 </Link>
               </div>
               <div>{showLangSwitcher ? <LocaleSwitcher contentZIndex={10000} /> : null}</div>
