@@ -25,7 +25,7 @@ IProps) => {
       role: 'CEO & Software Developer',
     },
     {
-      imgSrc: '/imgs/team/2.jpg',
+      imgSrc: '/imgs/team/shumas.jpg',
       name: 'Shumas',
       role: 'Lead Frontend Developer',
     },
