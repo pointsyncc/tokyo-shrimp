@@ -8,5 +8,10 @@
         "default": "politika-privatnosti",
         "de": "datenschutz",
         "en": "privacy-policy"
+    },
+    "terms-and-conditions": {
+        "default": "uvjeti-korištenja",
+        "de": "geschäftsbedingungen",
+        "en": "terms-and-conditions"
     }
 }

@@ -1,29 +1,58 @@
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
-import Image from '@/components/ui/image/Image';
-import Head from 'next/head';
-import { NextPageWithLayout } from './_app';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Trans, useTranslation } from 'next-i18next';
-import { useEffect } from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NextSeo } from 'next-seo';
 import { Link as RouteLink } from 'next-translate-routes';
-import Link from 'next/link';
+import { useEffect } from 'react';
+import { NextPageWithLayout } from './_app';
+
+const ns = ['common', 'footer', 'cookie-consent', '500', 'seo'];
 
 const Custom500: NextPageWithLayout = () => {
-  const { t, i18n } = useTranslation(['common', 'footer', 'cookie-consent', '500'], {
+  const { t, i18n } = useTranslation(ns, {
     bindI18n: 'languageChanged loaded',
   });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer', '500']);
+    i18n.reloadResources(i18n.resolvedLanguage, ns);
   }, []);
 
   return (
     <>
-      <Head>
-        <title>Pointsyncc - 505 Server error</title>
-        <meta name='description' content='505 Server error' />
-      </Head>
+      <NextSeo
+        title={`${t('pages.500.title', { ns: 'seo' })} | Pointsyncc`}
+        description={`${t('pages.500.meta_description', { ns: 'seo' })}`}
+        openGraph={{
+          url: 'https://www.url.ie/a',
+          title: 'Open Graph Title',
+          description: 'Open Graph Description',
+          images: [
+            {
+              url: 'https://www.example.ie/og-image-01.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+              type: 'image/jpeg',
+            },
+            {
+              url: 'https://www.example.ie/og-image-02.jpg',
+              width: 900,
+              height: 800,
+              alt: 'Og Image Alt Second',
+              type: 'image/jpeg',
+            },
+            { url: 'https://www.example.ie/og-image-03.jpg' },
+            { url: 'https://www.example.ie/og-image-04.jpg' },
+          ],
+          siteName: 'SiteName',
+        }}
+        twitter={{
+          handle: '@handle',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
       <div className='has-smooth' id='has_smooth'></div>
 
       <button id='scroll_top' className='scroll-top'>
@@ -56,14 +85,14 @@ const Custom500: NextPageWithLayout = () => {
                           if the problem persists.
                         </p>
                       </Trans>
-                      <div className='btn_wrapper'>
+                      {/* <div className='btn_wrapper'>
                         <Link className='wc-btn-primary btn-hover btn-item' href='/'>
                         <Trans t={t} i18nKey='page.action-button.text' ns='500'>
                           <span></span> Back to <br />
                           Homepage <i className='fa-solid fa-arrow-right'></i>
                         </Trans>
                         </Link>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -81,7 +110,7 @@ Custom500.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async ({ locale }: any) => {
-  const props = await serverSideTranslations(locale, ['common', 'footer', 'cookie-consent', '500']);
+  const props = await serverSideTranslations(locale, ns);
   return {
     props,
     // if using the approach with the live translation download, meaning using i18next-locize-backend on server side,
