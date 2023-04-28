@@ -1,30 +1,31 @@
 import CTA from '@/components/common/CTA';
-import Counter from '@/components/common/Counter';
 import { TeamSlider } from '@/components/common/Team';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import HybridTeam from '@/components/team/memberDetails/hybridTeam/HybridTeam';
+import { Link } from '@/components/ui/link/Link';
+import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
-import { NextPageWithLayout } from '../_app';
-import { Trans, useTranslation } from 'next-i18next';
 import { useEffect } from 'react';
-import { Link } from '@/components/ui/link/Link';
+import { NextPageWithLayout } from '../_app';
+
+const ns = ['common', 'footer', 'cookie-consent', 'team', 'homepage', 'seo'];
 
 const Team: NextPageWithLayout = () => {
-  const { t, i18n } = useTranslation(['common', 'footer', 'cookie-consent', 'team'], {
+  const { t, i18n } = useTranslation(ns, {
     bindI18n: 'languageChanged loaded',
   });
   // bindI18n: loaded is needed because of the reloadResources call
   // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
   useEffect(() => {
-    i18n.reloadResources(i18n.resolvedLanguage, ['common', 'footer', 'cookie-consent', 'contact', 'homepage']);
+    i18n.reloadResources(i18n.resolvedLanguage, ns);
   }, []);
 
   return (
     <>
       <NextSeo
-        title='Pointsyncc - Team'
-        description='Team'
+        title={`${t('pages.our-team.title', { ns: 'seo' })} | Pointsyncc`}
+        description={`${t('pages.our-team.meta_description', { ns: 'seo' })}`}
         canonical='https://www.canonical.ie/'
         openGraph={{
           url: 'https://www.url.ie/a',
@@ -107,13 +108,7 @@ Team.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async ({ locale }: any) => {
-  const props = await serverSideTranslations(locale, [
-    'common',
-    'footer',
-    'cookie-consent',
-    'team',
-    'homepage'
-  ]);
+  const props = await serverSideTranslations(locale, ns);
   return {
     props,
     // if using the approach with the live translation download, meaning using i18next-locize-backend on server side,

@@ -1,17 +1,14 @@
-import { ContactForm } from '@/components/contact/ContactForm';
-import ContactHeader from '@/components/contact/ContactHeader';
-import ContactInfo from '@/components/contact/ContactInfo';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
-import { NextPageWithLayout } from './_app';
+import { NextPageWithLayout } from '../_app';
 
-const ns = ['common', 'footer', 'cookie-consent', 'contact', 'seo'];
+const ns = ['common', 'footer', 'cookie-consent', 'homepage', 'seo', 'terms-and-conditions'];
 
-const Contact: NextPageWithLayout = () => {
-  const { t, i18n, ready } = useTranslation(ns, {
+const TermsAndCondition: NextPageWithLayout = () => {
+  const { t, i18n } = useTranslation(ns, {
     bindI18n: 'languageChanged loaded',
   });
   // bindI18n: loaded is needed because of the reloadResources call
@@ -19,17 +16,12 @@ const Contact: NextPageWithLayout = () => {
   useEffect(() => {
     i18n.reloadResources(i18n.resolvedLanguage, ns);
   }, []);
-
-  // const title = ready
-  //   ? t('pages.contact.title', { ns: 'seo' })
-  //   : `${process.env.NEXT_PUBLIC_BASE_URL}`;
-  // const description = t('pages.contact.description', { ns: 'seo' });
-
   return (
     <>
       <NextSeo
-        title={`${t('pages.contact.title', { ns: 'seo' })} | Pointsyncc`}
-        description={`${t('pages.contact.meta_description', { ns: 'seo' })}`}
+        title={`${t('pages.terms-and-conditions.title', { ns: 'seo' })} | Pointsyncc`}
+        description={`${t('pages.terms-and-conditions.meta_description', { ns: 'seo' })}`}
+        canonical='https://www.canonical.ie/'
         openGraph={{
           url: 'https://www.url.ie/a',
           title: 'Open Graph Title',
@@ -60,22 +52,12 @@ const Contact: NextPageWithLayout = () => {
           cardType: 'summary_large_image',
         }}
       />
-
-      <section className='contact__area-6'>
-        <div className='container g-0 line pt-120 pb-110'>
-          <span className='line-3'></span>
-          <ContactHeader />
-          <div className='row contact__btm'>
-            <ContactInfo />
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+      <div>Terms And Condition</div>
     </>
   );
 };
 
-Contact.getLayout = function getLayout(page) {
+TermsAndCondition.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
 
@@ -93,4 +75,4 @@ export const getStaticProps = async ({ locale }: any) => {
   };
 };
 
-export default Contact;
+export default TermsAndCondition;
