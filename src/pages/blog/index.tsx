@@ -1,25 +1,29 @@
 import { Articles } from '@/components/blog/articles/Articles';
 import CTA from '@/components/common/CTA';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NextPageWithLayout } from '../_app';
-import { getStoryblokApi } from '@storyblok/react';
-import { GetServerSideProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { getAllArticles } from '@/service/StoryblokAPI';
-import { NextSeo } from 'next-seo';
+import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NextSeo } from 'next-seo';
+import { useEffect } from 'react';
+import { NextPageWithLayout } from '../_app';
+
+const ns = ['common', 'footer', 'cookie-consent', 'blog', 'homepage', 'seo'];
 
 const Blog: NextPageWithLayout = (props: any) => {
-
-  const {t} = useTranslation(['seo']);
-
-  const title = t('pages.blog.title', {ns: 'seo'});
+  const { t, i18n } = useTranslation(ns, { bindI18n: 'languageChanged loaded' });
+  // bindI18n: loaded is needed because of the reloadResources call
+  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
+  useEffect(() => {
+    i18n.reloadResources(i18n.resolvedLanguage, ns);
+  }, []);
 
   return (
     <>
-     <NextSeo
-        title={`${title} | Pointsyncc`}
-        description={`${t('pages.blog.description', {ns: 'seo'})} | Pointsyncc`}
+      <NextSeo
+        title={`${t('pages.blog.title', { ns: 'seo' })} | Pointsyncc`}
+        description={`${t('pages.blog.meta_description', { ns: 'seo' })}`}
         canonical='https://www.canonical.ie/'
         openGraph={{
           url: 'https://www.url.ie/a',
@@ -62,22 +66,17 @@ Blog.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }: any) => {
-
   const storyblokRes = await getAllArticles(locale);
 
-    return {
-      props: {
-        ...(await serverSideTranslations(locale, [
-          'common',
-          'footer',
-          'cookie-consent',
-          'blog',
-          'homepage',
-          'seo'
-        ])),
-        articles: Array.isArray(storyblokRes.data.stories) && storyblokRes.data.stories.length ? storyblokRes.data.stories : [],
-      },
-    };
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ns)),
+      articles:
+        Array.isArray(storyblokRes.data.stories) && storyblokRes.data.stories.length
+          ? storyblokRes.data.stories
+          : [],
+    },
+  };
 };
 
 export default Blog;
