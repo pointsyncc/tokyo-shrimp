@@ -24,16 +24,16 @@ IProps) => {
       name: 'Kristijan',
       role: 'CEO & Software Developer',
     },
-    {
-      imgSrc: '/imgs/team/shumas.jpg',
-      name: 'Shumas',
-      role: 'Lead Frontend Developer',
-    },
-    {
-      imgSrc: '/imgs/team/3.jpg',
-      name: 'Musab',
-      role: 'Lead Backend Developer',
-    },
+    // {
+    //   imgSrc: '/imgs/team/shumas.jpg',
+    //   name: 'Shumas',
+    //   role: 'Lead Frontend Developer',
+    // },
+    // {
+    //   imgSrc: '/imgs/team/3.jpg',
+    //   name: 'Musab',
+    //   role: 'Lead Backend Developer',
+    // },
     {
       imgSrc: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/team/team-vedran-sredic-432x550-01.jpg',
       name: 'Vedran',
