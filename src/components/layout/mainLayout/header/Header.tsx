@@ -12,7 +12,7 @@ interface HeaderProps {
 
 export const Header = ({ openMenu }: HeaderProps) => {
   const { matches } = useMatchMedia('(max-width: 840px)');
-/* 
+  /* 
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -52,15 +52,20 @@ export const Header = ({ openMenu }: HeaderProps) => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = () => {
-    if (typeof window !== 'undefined') { 
-      if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
-        setShow(false); 
-      } else { // if scroll up show the navbar
-        setShow(true);  
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > 68 && window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+ /*        setTimeout(() => {
+          setShow(true);
+        }, 200); */
+        setShow(true);
       }
 
       // remember current page location to use in the next move
-      setLastScrollY(window.scrollY); 
+      setLastScrollY(window.scrollY);
     }
   };
 
@@ -92,17 +97,33 @@ export const Header = ({ openMenu }: HeaderProps) => {
                 }}
               >
                 {matches ? (
-                  <RxHamburgerMenu fontSize={'1.5rem'} className='text-white icon__social' aria-label='Open menu' />
+                  <RxHamburgerMenu
+                    fontSize={'1.5rem'}
+                    className='text-white icon__social'
+                    aria-label='Open menu'
+                  />
                 ) : (
-                  <CgMenuGridO fontSize={'1.85rem'} className='text-white icon__social' aria-label='Open menu' />
+                  <CgMenuGridO
+                    fontSize={'1.85rem'}
+                    className='text-white icon__social'
+                    aria-label='Open menu'
+                  />
                 )}
               </button>
             </div>
             <div className='header__support d-none d-xl-flex flex-column justify-content-center gap-3 '>
-              <Link href='https://www.instagram.com/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc Instagram profile page'>
+              <Link
+                href='https://www.instagram.com/pointsyncc/'
+                target='_blank'
+                aria-label='Visit Pointsyncc Instagram profile page'
+              >
                 <FaInstagram fontSize={'1.35rem'} className='icon__header' />
               </Link>
-              <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc LinkedIn profile page'>
+              <Link
+                href='https://www.linkedin.com/company/pointsyncc/'
+                target='_blank'
+                aria-label='Visit Pointsyncc LinkedIn profile page'
+              >
                 <FaLinkedinIn fontSize={'1.35rem'} className='icon__header' />
               </Link>
             </div>
