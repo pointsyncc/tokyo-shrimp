@@ -4,7 +4,7 @@ import {
   COMPANY_CONTACT_PHONE_NUMBER,
   COMPANY_INSTAGRAM,
   COMPANY_LINKEDIN,
-} from '@/utils/contants';
+} from '@/utils/constants';
 import gsap from 'gsap';
 import { useTranslation } from 'next-i18next';
 import { Link as RouteTranslateLink } from 'next-translate-routes';

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "dev-https": "next-dev-https --https --qr --port 4430",
     "build": "next build",
-    "postbuild": "node ./scripts/generate-sitemap.mjs",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
