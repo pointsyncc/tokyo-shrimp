@@ -288,6 +288,10 @@
 
     @media #{$sm} {
 
+      .footer__logo{
+        display:none;
+      }
+
       &__social{
         display:block;
       }

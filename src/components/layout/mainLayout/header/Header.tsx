@@ -12,7 +12,7 @@ interface HeaderProps {
 
 export const Header = ({ openMenu }: HeaderProps) => {
   const { matches } = useMatchMedia('(max-width: 840px)');
-
+/* 
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -33,6 +33,34 @@ export const Header = ({ openMenu }: HeaderProps) => {
 
       // remember current page location to use in the next move
       setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && matches) {
+      window.addEventListener('scroll', controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [ matches]);
+ */
+
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') { 
+      if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+        setShow(false); 
+      } else { // if scroll up show the navbar
+        setShow(true);  
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY); 
     }
   };
 
