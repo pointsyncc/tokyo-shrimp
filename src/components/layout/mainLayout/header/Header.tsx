@@ -65,7 +65,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
                 {matches ? (
                   <RxHamburgerMenu fontSize={'1.5rem'} className='text-white icon__social' aria-label='Open menu' />
                 ) : (
-                  <CgMenuGridO fontSize={'2rem'} className='text-white icon__social' aria-label='Open menu' />
+                  <CgMenuGridO fontSize={'1.85rem'} className='text-white icon__social' aria-label='Open menu' />
                 )}
               </button>
             </div>
