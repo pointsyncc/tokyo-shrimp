@@ -14,7 +14,7 @@ interface IValues {
 
 import { useAppStore } from '@/stores/store';
 import { pointSynccAPI } from '@/utils/axios';
-import { PHONE_REGEX } from '@/utils/contants';
+import { PHONE_REGEX } from '@/utils/constants';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next-translate-routes';
 import { toast } from 'react-hot-toast';

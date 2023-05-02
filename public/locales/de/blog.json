@@ -1,0 +1,24 @@
+{
+  "blog": {
+    "card": {
+      "button": {
+        "read-more": "Weiterlesen"
+      }
+    },
+    "page": {
+      "subtitle": "Ist Pointsyncc noch nicht Teil deines Ökosystems?! Gib uns eine Chance, lies unsere Beiträge und finde heraus, warum wir die richtige Wahl für dein Geschäft sind!",
+      "title": "Wir denken immer digital",
+      "title-new": "Wir denken traditionell digital"
+    },
+    "published-on": "Veröffentlicht",
+    "read-time": "Lesezeit",
+    "section": {
+      "related-articles": {
+        "title": "Verwandte Artikel"
+      }
+    },
+    "tags": "Tags",
+    "updated-at": "Aktualisiert",
+    "written-by": "Autor:"
+  }
+}

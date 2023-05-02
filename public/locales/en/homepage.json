@@ -10,7 +10,7 @@
   },
   "brands": {
     "subtitle": "Brands",
-    "title": "Some of the brands that are our <br/>clients"
+    "title": "Some of the brands that are our clients"
   },
   "categories": "categories",
   "cta": {
@@ -21,7 +21,7 @@
   "hero": {
     "call-to-action": "Explore the options",
     "subtitle": "With every single one of our clients, we bring forth deep passion for creative problem solving which is what we deliver.",
-    "title": "Step into the digital evolution of business"
+    "title": "Step into the digital evolution"
   },
   "page": {
     "title": "Homepage"
@@ -33,12 +33,36 @@
     "title": "Services we <br/>offer"
   },
   "testimonials": {
-    "subtitle": "Testimonials",
+    "subtitle": "Feedbacks",
     "text": "Through feedback from our users, we gain insight into the ways in which we can further improve our services and products and thus contribute to an even better user experience and simpler digitalization of business.",
-    "title": "Clients <br/>feedback"
+    "title": "Clients feedback"
   },
   "workflow": {
+    "step-1": {
+      "plan": {
+        "description": "Plan is the first step to achieving visions",
+        "title": "Plan"
+      },
+      "vision": {
+        "description": "Vision is a look into the new business development",
+        "title": "Vision"
+      }
+    },
+    "step-2": {
+      "development": {
+        "description": "Development of your visions from the very start to the end with quality control",
+        "title": "Development"
+      },
+      "implementation": {
+        "description": "Product implementation presents new starting point your's business",
+        "title": "Implementation"
+      },
+      "plan": {
+        "description": "Plan is the first step in achieving visions",
+        "title": "Plan"
+      }
+    },
     "subtitle": "Workflow",
-    "title": "How we work"
+    "title": "How do we work"
   }
 }

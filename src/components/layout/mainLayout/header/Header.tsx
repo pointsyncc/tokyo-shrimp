@@ -23,7 +23,11 @@ export const Header = ({ openMenu }: HeaderProps) => {
         setShow(false);
       } else {
         // if scroll up show the navbar
-        setShow(true);
+        //delay the navbar show to avoid flickering
+        setTimeout(() => {
+          setShow(true);
+        }
+        , 300);
       }
 
       // remember current page location to use in the next move
@@ -61,7 +65,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
                 {matches ? (
                   <RxHamburgerMenu fontSize={'1.5rem'} className='text-white icon__social' aria-label='Open menu' />
                 ) : (
-                  <CgMenuGridO fontSize={'2rem'} className='text-white icon__social' aria-label='Open menu' />
+                  <CgMenuGridO fontSize={'1.85rem'} className='text-white icon__social' aria-label='Open menu' />
                 )}
               </button>
             </div>
