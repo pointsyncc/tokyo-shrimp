@@ -41,6 +41,34 @@
     "title": "Mišljenja <br/> korisnika"
   },
   "workflow": {
+    "step-1": {
+      "audience": {
+        "description": "workflow.step-1.audience.description",
+        "title": "workflow.step-1.audience.title"
+      },
+      "plan": {
+        "description": "Plan je prvi korak u ostvarivanju vizije",
+        "title": "Plan"
+      },
+      "vision": {
+        "description": "Vizija je pogled u novi razvoj poslovanja",
+        "title": "Vizija"
+      }
+    },
+    "step-2": {
+      "development": {
+        "description": "Razvoj vaše vizija od početka do kraja uz kontrolu kvalitete",
+        "title": "Razvoj"
+      },
+      "implementation": {
+        "description": "Implementacija proizvoda predstavlja novu polazišnu točku tvoga poslovanja",
+        "title": "Implementacija"
+      },
+      "plan": {
+        "description": "Plan je prvi korak u ostvarivanju vizije",
+        "title": "Plan"
+      }
+    },
     "subtitle": "Tijek rada",
     "title": "Naš način rada"
   }

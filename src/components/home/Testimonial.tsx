@@ -73,12 +73,20 @@ export default function Testimonial() {
                   style={{ position: 'relative', height: 'auto' }}
                   width={220}
                   height={300}
-                  src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/testimonials/pointsyncc-testimonial-ivana-kurtov-220x300-01.jpg'
+                  src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/testimonials/PSC-testimonial-ivana-kurtov-original-220x300.jpg'
                   alt='Testimonial Image'
                 />
 
-                <h2 className='testimonial__title'>Ivana Kurtov</h2>
-                <h3 className='testimonial__role'>Osnivačica Kindwhenhard.com platforme</h3>
+                <h2 className='testimonial__title'>
+                  Ivana Kurtov, Socijalna pedagoginja, terapeutkinja
+                </h2>
+                <h3 className='testimonial__role'>
+                  Kristijan i njegov tim iznimno su mi pomogli u postavljanju online platforme.
+                  Kristijan je jako vješt u programerskom poslu, ali ono što je meni bilo još
+                  važnije je da komunicira jezikom koji je razumljiv i onima koji vrlo malo znaju o
+                  tome. Uz to, dobila sam puno prijedloga i poticaja za moje buduće ideje. Zaista
+                  sada mislim da je puno toga moguće uz njihovu podršku i pomoć.
+                </h3>
               </div>
             </div>
           </div>
@@ -95,7 +103,7 @@ export default function Testimonial() {
                   alt='Testimonial Image'
                 />
 
-                <h2 className='testimonial__title'>Marijan Marković</h2>
+                <h2 className='testimonial__title text-left ml-0 m-0'>Marijan Marković</h2>
                 <h3 className='testimonial__role'>
                   Svjesni promjena i kvalitete same konkurencije, smo se odlučili, kao novopečena
                   glazbena grupa, na digitalizaciju naših usluga, a Pointsyncc tim nam je upravo u

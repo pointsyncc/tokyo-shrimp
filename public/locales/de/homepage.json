@@ -21,9 +21,9 @@
   },
   "hero": {
     "button": "hero.Knopf",
-    "call-to-action": "Entdecken Sie Digitalisierungsmöglichkeiten.",
+    "call-to-action": "Entdecken Sie die Optionen",
     "subtitle": "Test",
-    "title": "Treten Sie ein in die digitale Evolution des Geschäfts"
+    "title": "Treten Sie ein in die digitale Evolution"
   },
   "page": {
     "title": "Startseite"
@@ -41,6 +41,30 @@
     "title": "Benutzermeinungen"
   },
   "workflow": {
+    "step-1": {
+      "plan": {
+        "description": "Ein Plan ist der erste Schritt zur Verwirklichung einer Vision.",
+        "title": "Plan"
+      },
+      "vision": {
+        "description": "Eine Vision ist ein Blick auf die neue Geschäftsentwicklung.",
+        "title": "Vision"
+      }
+    },
+    "step-2": {
+      "development": {
+        "description": "Entwicklung Ihrer Vision von Anfang bis Ende mit Qualitätskontrolle.",
+        "title": "Entwicklung"
+      },
+      "implementation": {
+        "description": "Die Implementierung des Produkts stellt einen neuen Ausgangspunkt für Ihr Geschäft dar.",
+        "title": "Implementierung"
+      },
+      "plan": {
+        "description": "Ein Plan ist der erste Schritt zur Verwirklichung einer Vision.",
+        "title": "Plan"
+      }
+    },
     "subtitle": "Arbeitsablauf",
     "title": "Unsere Arbeitsweise"
   }

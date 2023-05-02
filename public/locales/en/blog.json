@@ -1,0 +1,23 @@
+{
+  "blog": {
+    "card": {
+      "button": {
+        "read-more": "Read more<1><0></0></1>"
+      }
+    },
+    "page": {
+      "subtitle": "Pointsyncc is not part of your ecosystem yet?! Give us a chance, read the news and find out why are we the perfect choice for your business!",
+      "title-new": "We think <br/><2>traditional</2> digital"
+    },
+    "published-on": "Published",
+    "read-time": "Read time",
+    "section": {
+      "related-articles": {
+        "title": "Related articles"
+      }
+    },
+    "tags": "Tags",
+    "updated-at": "Updated",
+    "written-by": "Author"
+  }
+}

@@ -1,8 +1,43 @@
 {
   "pages": {
+    "404": {
+      "meta_description": "404 - Page not found",
+      "title": "404 - Page not found"
+    },
+    "500": {
+      "meta_description": "500 - Server error",
+      "title": "500 - Server error"
+    },
+    "about": {
+      "meta_description": "Let us introduce ourselves!",
+      "title": "About us"
+    },
+    "blog": {
+      "description": "Posts",
+      "title": "Posts"
+    },
     "contact": {
-      "description": "We would gladly like to hear you visions!",
+      "description": "We would gladly like to hear you visions in mind!",
+      "meta_description": "We would gladly like to hear what you have in mind!",
       "title": "Contact"
+    },
+    "homepage": {
+      "meta_description": "Elevate your digital game with our expert web design, development and mobile app services. Trust us to bring your ideas to life.",
+      "title": "Revolutionize Your Online Presence with Our Digital Solutions"
+    },
+    "our-team": {
+      "meta_description": "Empowering dreams. Meet our young motivated team!",
+      "title": "Our Team"
+    },
+    "privacy-policy": {
+      "title": "Privacy policy"
+    },
+    "services": {
+      "meta_description": "See the services we offer that can help you fulfill your dreams!",
+      "title": "Our services"
+    },
+    "terms-and-conditions": {
+      "title": "Terms and Conditions"
     }
   }
 }

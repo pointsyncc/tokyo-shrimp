@@ -1,0 +1,10 @@
+{
+  "page": {
+    "action-button": {
+      "text": "<0></0> Back to <br/>Homepage <4></4>"
+    },
+    "subtitle": "------",
+    "subtitle-new": "<0>It looks like something happened on our end. Please try again or<1> contact us </1>if the problem persists.</0>",
+    "title": "Sorry! Server error."
+  }
+}

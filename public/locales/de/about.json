@@ -1,6 +1,7 @@
 {
   "page": {
     "hero": {
+      "button": "Trends und Technologie",
       "text": "Wie in der Natur Vielfalt das Gleichgewicht schafft, schaffen wir durch Denken und Ideen das Gleichgewicht und die Harmonie bei der Arbeit an jedem Projekt.",
       "title": "Treibende Kraft der digitalen Geschäftsevolution"
     },
@@ -11,7 +12,15 @@
         "text3": "Unser Wunsch ist es, dass jeder unserer Kunden Teil der Pointsyncc-Familie wird und gemeinsam mit uns sein Geschäft durch die grüne und digitale Transition verändert",
         "title": "Wir schaffen gemeinsam mit Ihnen eine digitale Evolution"
       },
+      "testimonial-2": {
+        "text": "Unternehmen stehen täglich vor Herausforderungen, die durch Marktveränderungen, insbesondere digitale, initiiert werden. Die schnelle und effiziente Transition von Geschäftseinheiten sowie regelmäßige Kostensenkungen und kontinuierliche Investitionen in bestehende Infrastruktur stellen für andere ein Problem dar. Daher können Sie heute wettbewerbsfähig sein, aber das bedeutet nicht, dass Sie es morgen auch sein werden!\n\nAus diesem Grund hat Pointsyncc sein Produkt namens \"Formsyncc AI\" entwickelt, künstliche Intelligenz wird zur Realität und infiltriert schneller als alles andere unser tägliches Leben. Durch die Anwendung von \"Formsyncc AI\" in jedem Unternehmen bedeutet dies, dass Sie ein neues Teammitglied erhalten, das Sie wettbewerbsfähig hält und Sie durch den grünen und digitalen Übergang führt.",
+        "title": "Formsyncc AI als Assistent bei der digitalen Evolution von Geschäften."
+      },
+      "testimonial-3": {
+        "text": "Herausforderungen sind der Antrieb der Inspiration eines jeden von uns, Inspiration schafft Ideen, Ideen schaffen Produkte und Produkte schaffen Veränderungen. Damit jedes Produkt eine Veränderung schafft, muss es einen digitalen Rahmen haben, digital sein oder digital dargestellt werden, das macht es nützlich und notwendig. Also begegnen Sie Ihren Herausforderungen, sie werden die Veränderung hervorrufen, die Ihr Unternehmen verdient."
+      },
       "testimonial": {
+        "text": "Als junges Unternehmen in der turbulenten IT-Landschaft streben wir danach, unseren Kunden mit innovativen Lösungen im Bereich Web- und Desktop-Entwicklung sowie kundenspezifischen Softwarelösungen einen neuen digitalen Rahmen zu bieten - einen personalisierten Rahmen. Der personalisierte Ansatz für Kunden und die damit verbundenen Herausforderungen stellen für uns einen Schritt nach vorne dar, sowohl auf persönlicher als auch auf geschäftlicher Ebene für unsere Kunden. Unser Ziel ist es, dass jeder unserer bestehenden und zukünftigen Kunden sich auf dem Markt zugehörig fühlt, dass er oder sie wettbewerbsfähig ist und durch seine Produkte und Dienstleistungen das tägliche Leben aller erleichtert.",
         "title": "Personalisierte digitale Lösungen"
       }
     }

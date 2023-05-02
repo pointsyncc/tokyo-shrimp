@@ -2,7 +2,7 @@ import {
   COMPANY_ADDRESS,
   COMPANY_CONTACT_EMAIL,
   COMPANY_CONTACT_PHONE_NUMBER,
-} from '@/utils/contants';
+} from '@/utils/constants';
 import { Trans, useTranslation } from 'next-i18next';
 
 const ContactInfo = () => {

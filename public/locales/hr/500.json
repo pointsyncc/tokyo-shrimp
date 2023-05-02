@@ -1,0 +1,10 @@
+{
+  "page": {
+    "action-button": {
+      "text": "<0></0> Povratak na <br/>početnu<4></4>"
+    },
+    "subtitle": "page.subtitle",
+    "subtitle-new": "<0>Izgleda da je došlo do greške sa naše strane. Molimo pokušajte ponovno ili nas<1> kontaktirajte</1> ako se problem nastavi.</0>",
+    "title": "Došlo je do greške na poslužitelju"
+  }
+}
