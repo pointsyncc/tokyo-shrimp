@@ -336,7 +336,11 @@
     }
 
     .icon__header{
-      color: var(--gray-2);
+      color: var(--secondary);
+
+      &:hover {
+        color: white;
+      }
     }
 
     p {

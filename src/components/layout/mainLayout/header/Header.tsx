@@ -20,6 +20,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
     if (typeof window !== 'undefined') {
       if (window.scrollY > 115 && window.scrollY > lastScrollY) {
         // if scroll down hide the navbar
+        setLastScrollY(window.scrollY);
         setShow(false);
       } else {
         // if scroll up show the navbar
@@ -27,7 +28,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
         setTimeout(() => {
           setShow(true);
         }
-        , 300);
+        , 350);
       }
 
       // remember current page location to use in the next move
@@ -71,10 +72,10 @@ export const Header = ({ openMenu }: HeaderProps) => {
             </div>
             <div className='header__support d-none d-xl-flex flex-column justify-content-center gap-3 '>
               <Link href='https://www.instagram.com/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc Instagram profile page'>
-                <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
+                <FaInstagram fontSize={'1.35rem'} className='icon__header' />
               </Link>
               <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc LinkedIn profile page'>
-                <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header' />
+                <FaLinkedinIn fontSize={'1.35rem'} className='icon__header' />
               </Link>
             </div>
           </div>
