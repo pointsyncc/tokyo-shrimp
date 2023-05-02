@@ -1,0 +1,10 @@
+{
+  "page": {
+    "action-button": {
+      "text": "Zurück zur Startseite"
+    },
+    "subtitle": "--------",
+    "subtitle-new": "Es scheint, als ob ein Fehler von unserer Seite aufgetreten ist. Bitte versuchen Sie es erneut oder kontaktieren Sie uns, wenn das Problem weiterhin besteht.",
+    "title": "Es ist ein Serverfehler aufgetreten."
+  }
+}

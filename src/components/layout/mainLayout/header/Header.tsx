@@ -23,7 +23,11 @@ export const Header = ({ openMenu }: HeaderProps) => {
         setShow(false);
       } else {
         // if scroll up show the navbar
-        setShow(true);
+        //delay the navbar show to avoid flickering
+        setTimeout(() => {
+          setShow(true);
+        }
+        , 300);
       }
 
       // remember current page location to use in the next move

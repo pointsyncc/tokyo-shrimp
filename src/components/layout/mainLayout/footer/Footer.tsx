@@ -121,38 +121,28 @@ const Footer = () => {
             <div className='col-xxl-12'>
               <div className='footer__inner'>
                 <div className='footer__widget'>
-                  <Logo className='footer__logo' type='secondary' width={220} />
-                  <p>{t('subtitle', { ns: 'footer' })}</p>
-                  <ul className='footer__social'>
-                    {/* <li>
-                      <a href='#'>
-                        <span>
-                          <FaFacebookF />
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href='#'>
-                        <span>
-                          <FaTwitter />
-                        </span>
-                      </a>
-                    </li> */}
-                    <li>
-                      <Link href='https://www.instagram.com/pointsyncc/' target='_blank'>
-                        <span>
-                          <FaInstagram />
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
-                        <span>
-                          <FaLinkedinIn />
-                        </span>
-                      </Link>
-                    </li>
-                  </ul>
+                  <Logo className='footer__logo' type='secondary' version='icon' width={60} />
+                  <div className='footer__widget__social'>
+                    <h2 className='footer__widget-title'>
+                      {t('list.social-media.title', { ns: 'footer' })}
+                    </h2>
+                    <ul className='footer__social'>
+                      <li>
+                        <Link href='https://www.instagram.com/pointsyncc/' target='_blank'>
+                          <span>
+                            <FaInstagram />
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
+                          <span>
+                            <FaLinkedinIn />
+                          </span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                   {/* <ThemeSwitch /> */}
                 </div>
 
@@ -252,7 +242,9 @@ const Footer = () => {
                       <ErrorMessage
                         errors={errors}
                         name='email'
-                        render={({ message }) => <p className='form__error__message mt-2'>{message}</p>}
+                        render={({ message }) => (
+                          <p className='form__error__message mt-2'>{message}</p>
+                        )}
                       />
                     </div>
                     <GoogleRecaptchaText />

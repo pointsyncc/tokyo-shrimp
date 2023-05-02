@@ -2,6 +2,8 @@ import {
   COMPANY_ADDRESS,
   COMPANY_CONTACT_EMAIL,
   COMPANY_CONTACT_PHONE_NUMBER,
+  COMPANY_INSTAGRAM,
+  COMPANY_LINKEDIN,
 } from '@/utils/contants';
 import gsap from 'gsap';
 import { useTranslation } from 'next-i18next';
@@ -159,7 +161,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
           <div className='offcanvas__left'>
             <div className='offcanvas__logo'>
               {/* <Link href='/'> */}
-              <Logo className='logo' type='secondary' width={180} />
+              <Logo version='icon' className='logo' type='secondary' width={70} />
               {/* <img
                 width={180}
                 src='imgs/pointsyncc/logo/desktop/transparent.png'
@@ -168,11 +170,45 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
               {/* </Link> */}
             </div>
             <div className='offcanvas__social'>
-              <h3 className='social-title'>{t('menu.social.follow-us')}</h3>
+              {/* <h3 className='social-title'>{t('menu.social.follow-us')}</h3>
+              <ul className='d-flex gap-3'>
+                <li>
+                  <Link className='d-flex align-items-center gap-3' href={COMPANY_INSTAGRAM} target={'_blank'} aria-label='Visit Pointsyncc Instagram profile page'>
+                  <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
+                  </Link>
+                </li>
+                <li>
+                  <Link className='d-flex align-items-center gap-3' href={COMPANY_LINKEDIN} target={'_blank'} aria-label='Visit Pointsyncc LinkedIn profile page'>
+                  <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header' />
+                  </Link>
+                </li>
+              </ul> */}
+              {/*  <h3>{t('menu.get-in-touch')}</h3>
               <ul>
                 <li>
-                  <Link href='https://www.instagram.com/pointsyncc/' target={'_blank'} aria-label='Visit Pointsyncc Instagram profile page'>
-                    Instagram
+                  <a href={`tel:${COMPANY_CONTACT_PHONE_NUMBER}`}>{COMPANY_CONTACT_PHONE_NUMBER}</a>
+                </li>
+                <li>
+                  <a href={`mailto:${COMPANY_CONTACT_EMAIL}`}>{COMPANY_CONTACT_EMAIL}</a>
+                </li>
+                <li>
+                  <a href={`https://goo.gl/maps/fRA3HnsYcRCNwjd28`} target='_blank'>
+                    {COMPANY_ADDRESS}
+                  </a>
+                </li>
+              </ul> */}
+            </div>
+            <div className='offcanvas__links'>
+              <h6 className='social-title font-weight-bold'>{t('menu.social.follow-us')}</h6>
+              <ul className='d-flex gap-2'>
+                <li>
+                  <Link
+                    className='d-flex align-items-center gap-3'
+                    href={COMPANY_INSTAGRAM}
+                    target={'_blank'}
+                    aria-label='Visit Pointsyncc Instagram profile page'
+                  >
+                    <FaInstagram fontSize={'1.25rem'} className='icon__social icon__header' />
                   </Link>
                 </li>
                 {/* <li>
@@ -181,26 +217,14 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
                   </Link>
                 </li> */}
                 <li>
-                  <Link href='https://www.linkedin.com/pointsyncc/' target={'_blank'} aria-label='Visit Pointsyncc LinkedIn profile page'>
-                    LinkedIn
+                  <Link
+                    className='d-flex align-items-center gap-3'
+                    href={COMPANY_LINKEDIN}
+                    target={'_blank'}
+                    aria-label='Visit Pointsyncc LinkedIn profile page'
+                  >
+                    <FaLinkedinIn fontSize={'1.25rem'} className='icon__social icon__header' />
                   </Link>
-                </li>
-              </ul>
-            </div>
-            <div className='offcanvas__links'>
-              {/* <h3 className='social-title'>Trending</h3> */}
-              <ul>
-                {/* <li>
-                <RouteTranslateLink href='/about'>{t('dictionary.about')}</RouteTranslateLink>
-              </li> */}
-                <li>
-                  <RouteTranslateLink href='/contact'>{t('dictionary.contact')}</RouteTranslateLink>
-                </li>
-                <li>
-                  <RouteTranslateLink href='/career'>{t('dictionary.career')}</RouteTranslateLink>
-                </li>
-                <li>
-                  <RouteTranslateLink href='/blog'>{t('dictionary.blog')}</RouteTranslateLink>
                 </li>
               </ul>
             </div>
@@ -208,10 +232,16 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
           <div className='offcanvas__mid d-flex justify-content-center flex-column'>
             <div className='offcanvas__menu-wrapper'>
               <nav className={`offcanvas__menu ${classes['offcanvas__menu']}`}>
-                <ul className='menu-anim d-flex align-items-stretch flex-column justify-content-center text-center gap-2'>
+                <ul className='menu-anim d-flex align-items-stretch flex-column justify-content-start text-left gap-2'>
                   {links.map((link) => (
-                    <li key={link.href}>
-                      <RouteTranslateLink href={link.href}>{link.text}</RouteTranslateLink>
+                    <li key={link.href} className=''>
+                      <RouteTranslateLink
+                        href={link.href}
+                        data-current-route={currentRoute === link.href ? true : false}
+                        data-route={currentRoute}
+                      >
+                        {link.text}
+                      </RouteTranslateLink>
                     </li>
                   ))}
                 </ul>
@@ -333,11 +363,19 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
             </div>
             <div className='mobile__offcanvas__footer d-flex flex-row justify-content-between align-items-center mt-4 flex-wrap'>
               <div className='d-flex flex-row gap-3'>
-                <Link href='https://www.instagram.com/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc Instagram profile page'>
+                <Link
+                  href={COMPANY_INSTAGRAM}
+                  target='_blank'
+                  aria-label='Visit Pointsyncc Instagram profile page'
+                >
                   <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
                 </Link>
-                <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank' aria-label='Visit Pointsyncc LinkedIn profile page'>
-                  <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header'/>
+                <Link
+                  href={COMPANY_LINKEDIN}
+                  target='_blank'
+                  aria-label='Visit Pointsyncc LinkedIn profile page'
+                >
+                  <FaLinkedinIn fontSize={'1.35rem'} className='icon__social icon__header' />
                 </Link>
               </div>
               <div>{showLangSwitcher ? <LocaleSwitcher contentZIndex={10000} /> : null}</div>

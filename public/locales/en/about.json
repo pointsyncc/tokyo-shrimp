@@ -2,18 +2,25 @@
   "page": {
     "hero": {
       "button": "Trends and Technology",
-      "text": "Think of the world's most iconica and successful brands easily findable, impactful. Interactional and exceptional designs.",
+      "text": "Just as diversity creates balance in nature, we too create balance and harmony through thinking and ideas when working on each project.",
       "title": "Driver of digital business evolution"
     },
     "section": {
       "story": {
+        "subtitle": "-----",
         "text": "The mission of Pointsyncc is to continuously create IT solutions in the digital evolution of all types of businesses. Pointsyncc, as an ecosystem of creative and professional experts, strives for unexpected challenges because it is in these circumstances that we create the best product, tailored to your business. We base the creation of your product on your trust and our responsibility",
         "text2": "Pointsyncc wishes for new business challenges in which it can demonstrate its knowledge, creativity, and diversity competencies, all in order to ultimately provide our client with the user experience they deserve.",
         "text3": "Our desire is for every client to become a part of the Pointsyncc family and change their business together with us through green and digital transition.",
         "title": "We are creating digital evolution together with you"
       },
+      "testimonial-2": {
+        "text": "Everyday companies face challenges, which are initiated by market changes, primarily digital ones. Fast and efficient transition of business entities, along with regular reduction of their costs and continuous investments in existing infrastructure, present a problem for others. Therefore, you may be competitive today, but that doesn't mean you will be tomorrow!\n\nThat is why Pointsyncc has developed its product called \"Formsyncc AI\", artificial intelligence becomes a reality and infiltrates our daily lives faster than anything else. By applying \"Formsyncc AI\" in every business, it means that you are getting a new team member, one who will keep you competitive and one who will guide you through the green and digital transition."
+      },
+      "testimonial-3": {
+        "text": "Challenges are the drivers of inspiration for each of us; inspiration creates ideas, ideas create products, and products create change. In order for every product to create change, it must have a digital framework, be digital, or be digitally represented, making it useful and necessary. So, meet your challenges; they will initiate the change that your company deserves."
+      },
       "testimonial": {
-        "text": "We were there right at the beginning just when the concept for search engine optimisation taking office and the full of internet. So wewe’ve grown to employ than 50 talented specialists with diverse experiences and broad skill sets of huge markers.",
+        "text": "As a young company in the turbulent IT ecosystem, we strive to offer our clients a new digital framework, a personalized one, through our innovative solutions in web and desktop development as well as custom software solutions. Personalized client approach and the challenges that come with it represent a step forward for us, both on a personal and client's business level. Our goal is for each of our existing and future clients to feel a sense of belonging in the market, to feel how competitive they are, and how their products and services make our everyday life easier.",
         "title": "Personalized digital solutions"
       }
     }

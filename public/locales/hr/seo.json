@@ -1,8 +1,46 @@
 {
   "pages": {
+    "404": {
+      "meta_description": "404 - Stranica nije pronađena",
+      "title": "404 - Stranica nije pronađena"
+    },
+    "500": {
+      "meta_description": "500 - Greška poslužitelja",
+      "title": "500 - Greška poslužitelja"
+    },
+    "about": {
+      "meta_description": "Dopustite da se predstavimo!",
+      "title": "O nama"
+    },
+    "blog": {
+      "description": "Objave",
+      "meta_description": "pages.blog.meta_description",
+      "title": "Objave"
+    },
     "contact": {
       "description": "Rado bismo htjeli znati kakvu ideju imaš na umu!",
+      "meta_description": "Rado bismo htjeli znati kakvu ideju imaš na umu!",
       "title": "Kontakt"
+    },
+    "homepage": {
+      "meta_description": "Podignite svoju digitalnu scenu s našim stručnim uslugama web dizajna, razvoja i izrada mobilnih aplikacija. Pouzdajte se u nas da ćemo vaše ideje pretvoriti u stvarnost.",
+      "title": "Modernizirajte svoje poslovanje s našim digitalnim rješenjima"
+    },
+    "our-team": {
+      "meta_description": "Uz nas snovi su stvarnost. Upoznajte naš mladi motivirani tim!",
+      "title": "Naš tim!"
+    },
+    "privacy-policy": {
+      "meta_description": "pages.privacy-policy.meta_description",
+      "title": "Politika privatnosti"
+    },
+    "services": {
+      "meta_description": "Pogledajte kako možemo biti dio vaše ideje!",
+      "title": "Naše usluge"
+    },
+    "terms-and-conditions": {
+      "meta_description": "pages.terms-and-conditions.meta_description",
+      "title": "Uvjeti korištenja"
     }
   }
 }

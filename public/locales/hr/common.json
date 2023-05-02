@@ -1,4 +1,8 @@
 {
+  "blog": {
+    "meta-description": "blog.meta-description",
+    "title": "blog.title"
+  },
   "brands": {
     "title": "We are happy to work with global <br/>largest brands"
   },
@@ -17,6 +21,7 @@
     "portfolio": "Portfolio",
     "privacy-policy": "Pravila o privatnosti",
     "services": "Usluge",
+    "step": "Korak",
     "subject": "Predmet",
     "team": "Naš tim",
     "terms-of-service": "Uvjeti pružanja usluge"
@@ -24,7 +29,7 @@
   "forms": {
     "newsletter": {
       "pattern": {
-        "invalid-message": "Netočna e-mail adresa"
+        "invalid-message": "Neispravan format e-mail adrese"
       },
       "required": "E-mail adresa je obavezna"
     }
