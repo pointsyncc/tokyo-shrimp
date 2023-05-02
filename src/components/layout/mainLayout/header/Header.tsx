@@ -58,7 +58,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
         setShow(false);
       } else {
         // if scroll up show the navbar
- /*        setTimeout(() => {
+        /*        setTimeout(() => {
           setShow(true);
         }, 200); */
         setShow(true);
@@ -82,54 +82,52 @@ export const Header = ({ openMenu }: HeaderProps) => {
 
   return (
     <>
-      {show && (
-        <header className='header__area'>
-          <div className='header__inner'>
-            <div className='header__logo'>
-              <Logo />
-              <Logo type='secondary' />
-            </div>
-            <div className='header__nav-icon'>
-              <button
-                id='open_offcanvas'
-                onClick={() => {
-                  openMenu();
-                }}
-              >
-                {matches ? (
-                  <RxHamburgerMenu
-                    fontSize={'1.5rem'}
-                    className='text-white icon__social'
-                    aria-label='Open menu'
-                  />
-                ) : (
-                  <CgMenuGridO
-                    fontSize={'1.85rem'}
-                    className='text-white icon__social'
-                    aria-label='Open menu'
-                  />
-                )}
-              </button>
-            </div>
-            <div className='header__support d-none d-xl-flex flex-column justify-content-center gap-3 '>
-              <Link
-                href='https://www.instagram.com/pointsyncc/'
-                target='_blank'
-                aria-label='Visit Pointsyncc Instagram profile page'
-              >
-                <FaInstagram fontSize={'1.35rem'} className='icon__header' />
-              </Link>
-              <Link
-                href='https://www.linkedin.com/company/pointsyncc/'
-                target='_blank'
-                aria-label='Visit Pointsyncc LinkedIn profile page'
-              >
-                <FaLinkedinIn fontSize={'1.35rem'} className='icon__header' />
-              </Link>
-            </div>
+      <header className='header__area'>
+        <div className='header__inner'>
+          <div className='header__logo'>
+            <Logo />
+            <Logo type='secondary' />
           </div>
-        </header>
-      )}
+          <div className='header__nav-icon'>
+            <button
+              id='open_offcanvas'
+              onClick={() => {
+                openMenu();
+              }}
+            >
+              {matches ? (
+                <RxHamburgerMenu
+                  fontSize={'1.5rem'}
+                  className='text-white icon__social'
+                  aria-label='Open menu'
+                />
+              ) : (
+                <CgMenuGridO
+                  fontSize={'1.85rem'}
+                  className='text-white icon__social'
+                  aria-label='Open menu'
+                />
+              )}
+            </button>
+          </div>
+          <div className='header__support d-none d-xl-flex flex-column justify-content-center gap-3 '>
+            <Link
+              href='https://www.instagram.com/pointsyncc/'
+              target='_blank'
+              aria-label='Visit Pointsyncc Instagram profile page'
+            >
+              <FaInstagram fontSize={'1.35rem'} className='icon__header' />
+            </Link>
+            <Link
+              href='https://www.linkedin.com/company/pointsyncc/'
+              target='_blank'
+              aria-label='Visit Pointsyncc LinkedIn profile page'
+            >
+              <FaLinkedinIn fontSize={'1.35rem'} className='icon__header' />
+            </Link>
+          </div>
+        </div>
+      </header>
     </>
   );
 };
