@@ -1,7 +1,7 @@
 import GoogleRecaptchaText from '@/components/common/googleRecaptchaText/GoogleRecaptchaText';
 import { Link } from '@/components/ui/link/Link';
 import { Logo } from '@/components/ui/logo/Logo';
-import { pointSynccAPI } from '@/utils/axios';
+import { POINTSYNCC_API } from '@/utils/axios';
 
 import {
   COMPANY_ADDRESS,
@@ -48,7 +48,7 @@ const Footer = () => {
   const currentLocale = router.locale;
 
   const sendForm = async (data: any) => {
-    await pointSynccAPI.sendRequest({
+    await POINTSYNCC_API.sendRequest({
       method: 'post',
       url: '/user/newsletter',
       body: data,

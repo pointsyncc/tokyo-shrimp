@@ -13,7 +13,7 @@ interface IValues {
 }
 
 import { useAppStore } from '@/stores/store';
-import { pointSynccAPI } from '@/utils/axios';
+import { POINTSYNCC_API } from '@/utils/axios';
 import { PHONE_REGEX } from '@/utils/constants';
 import { Trans, useTranslation } from 'next-i18next';
 import { useRouter } from 'next-translate-routes';
@@ -89,7 +89,7 @@ export const ContactForm = () => {
   ) => {
     setLoading('contactForm', true);
     toast.promise(
-      pointSynccAPI.sendRequest({
+      POINTSYNCC_API.sendRequest({
         method: 'post',
         url: '/user/contact',
         body: {
