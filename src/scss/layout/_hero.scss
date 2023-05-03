@@ -1353,11 +1353,11 @@
 // }
 
 //CSS Support
-@supports (height: 100dvh) {
+/* @supports (height: 100dvh) {
   .hero {
     &__area {
       height: 100dvh;
     }
   }
-}
+} */
 
