@@ -48,23 +48,16 @@ export const Header = ({ openMenu }: HeaderProps) => {
   }, [ matches]);
  */
 
-  const [show, setShow] = useState(true);
+/*   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
       if (window.scrollY > 68 && window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
         setShow(false);
       } else {
-        // if scroll up show the navbar
-        /*        setTimeout(() => {
-          setShow(true);
-        }, 200); */
         setShow(true);
       }
-
-      // remember current page location to use in the next move
       setLastScrollY(window.scrollY);
     }
   };
@@ -78,7 +71,7 @@ export const Header = ({ openMenu }: HeaderProps) => {
         window.removeEventListener('scroll', controlNavbar);
       };
     }
-  }, [lastScrollY, matches]);
+  }, [lastScrollY, matches]); */
 
   return (
     <>
