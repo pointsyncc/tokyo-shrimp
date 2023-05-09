@@ -215,7 +215,7 @@ const Footer = () => {
                   <p>
                     © 2023 | {t('copyright.text', { ns: 'footer' })} |{' '}
                     <Link
-                      href='https://www.fininfo.hr/Home/SearchCompaniesFree?CompanyName=POINTSYNCC&RadarList=False&UserId=0'
+                      href='https://www.fininfo.hr/Poduzece/Pregled/pointsyncc/Detaljno/872729'
                       target='_blank'
                       rel='noreferrer'
                     >
