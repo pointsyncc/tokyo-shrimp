@@ -12,7 +12,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "sync": "locize sync dev --path ./public/locales --project-id b59ed47c-3553-4983-923f-e48008c88b26 --api-key ce92c5d5-b438-49b4-bde7-e00d94f4d4c9 --reference-language-only false",
-    "download:locales": "locize download --project-id=b59ed47c-3553-4983-923f-e48008c88b26 --ver=latest --clean=true --path=./public/locales"
+    "download:locales": "locize download --project-id=b59ed47c-3553-4983-923f-e48008c88b26 --ver=latest --clean=true --path=./public/locales",
+    "scan": "npx unlighthouse --site fireship.io"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
@@ -62,12 +63,9 @@
     "react-icons": "^4.7.1",
     "react-intersection-observer": "^9.4.3",
     "react-scroll-parallax": "^3.3.2",
-    "reading-time": "^1.5.0",
-    "sharp": "^0.31.3",
     "split-type": "^0.3.3",
     "storyblok-rich-text-react-renderer": "^2.7.4",
-    "yup": "^1.0.0",
-    "zustand": "^4.3.6"
+    "yup": "^1.0.0"
   },
   "devDependencies": {
     "globby": "^13.1.4",
