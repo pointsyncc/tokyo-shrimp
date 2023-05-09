@@ -103,7 +103,7 @@ export default function Service() {
             </div>
             <div className='col-xxl-8 col-xl-8 col-lg-12 col-md-12'>
               <div className='service__list'>
-                <a href='service-details.html' className={`${activeEl === 0 ? 'active' : ''}`}>
+                <a href='/' className={`${activeEl === 0 ? 'active' : ''}`}>
                   <div
                     className='service__item animation_home1_service'
                     data-service='1'
@@ -129,7 +129,7 @@ export default function Service() {
                   </div>
                 </a>
 
-                <a href='service-details.html' className={`${activeEl === 1 ? 'active' : ''}`}>
+                <a href='/' className={`${activeEl === 1 ? 'active' : ''}`}>
                   <div
                     className='service__item  animation_home1_service'
                     data-service='2'
@@ -158,7 +158,7 @@ export default function Service() {
                   </div>
                 </a>
 
-                <a href='service-details.html' className={`${activeEl === 2 ? 'active' : ''}`}>
+                <a href='/' className={`${activeEl === 2 ? 'active' : ''}`}>
                   <div
                     className='service__item  animation_home1_service'
                     data-service='3'
@@ -187,7 +187,7 @@ export default function Service() {
                   </div>
                 </a>
 
-                <a href='service-details.html' className={`${activeEl === 3 ? 'active' : ''}`}>
+                <a href='/' className={`${activeEl === 3 ? 'active' : ''}`}>
                   <div
                     className='service__item  animation_home1_service'
                     data-service='4'
