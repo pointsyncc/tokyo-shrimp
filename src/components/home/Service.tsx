@@ -103,7 +103,7 @@ export default function Service() {
             </div>
             <div className='col-xxl-8 col-xl-8 col-lg-12 col-md-12'>
               <div className='service__list'>
-                <a href='service-details.html' className={`${activeEl === 0 ? 'active' : ''}`}>
+                <Link href='/' className={`${activeEl === 0 ? 'active' : ''}`}>
                   <div
                     className='service__item animation_home1_service'
                     data-service='1'
@@ -127,9 +127,9 @@ export default function Service() {
                       </p>
                     </div>
                   </div>
-                </a>
+                </Link>
 
-                <a href='service-details.html' className={`${activeEl === 1 ? 'active' : ''}`}>
+                <Link href='/' className={`${activeEl === 1 ? 'active' : ''}`}>
                   <div
                     className='service__item  animation_home1_service'
                     data-service='2'
@@ -156,9 +156,9 @@ export default function Service() {
                       </p>
                     </div>
                   </div>
-                </a>
+                </Link>
 
-                <a href='service-details.html' className={`${activeEl === 2 ? 'active' : ''}`}>
+                <Link href='/' className={`${activeEl === 2 ? 'active' : ''}`}>
                   <div
                     className='service__item  animation_home1_service'
                     data-service='3'
@@ -185,9 +185,9 @@ export default function Service() {
                       </p>
                     </div>
                   </div>
-                </a>
+                </Link>
 
-                <a href='service-details.html' className={`${activeEl === 3 ? 'active' : ''}`}>
+                <Link href='/' className={`${activeEl === 3 ? 'active' : ''}`}>
                   <div
                     className='service__item  animation_home1_service'
                     data-service='4'
@@ -211,7 +211,7 @@ export default function Service() {
                       </p>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

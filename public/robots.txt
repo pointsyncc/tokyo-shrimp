@@ -7,4 +7,3 @@ Host: https://www.pointsyncc.com
 
 # Sitemaps
 Sitemap: https://www.pointsyncc.com/sitemap.xml
-Sitemap: https://www.pointsyncc.com/server-sitemap.xml
