@@ -67,7 +67,7 @@
     "split-type": "^0.3.3",
     "storyblok-rich-text-react-renderer": "^2.7.4",
     "yup": "^1.0.0",
-    "zustand": "^4.3.3"
+    "zustand": "^4.3.6"
   },
   "devDependencies": {
     "globby": "^13.1.4",

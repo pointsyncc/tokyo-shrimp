@@ -7,7 +7,6 @@ export default function Document() {
     <Html lang={currentLocale}>
       <Head>
         <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
         <link rel='shortcut icon' href='/favicon.svg' />
         <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />

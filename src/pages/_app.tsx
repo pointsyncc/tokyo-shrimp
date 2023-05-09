@@ -17,6 +17,7 @@ import { setLocale } from 'yup';
 import nextI18NextConfig from '../../next-i18next.config.js';
 import '../scss/master.scss';
 import error from './error';
+import Head from 'next/head.js';
 
 storyblokInit({
   accessToken: 'ATAfmKPqVQixXSpP9dFntgtt',
@@ -72,6 +73,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return (
     <React.Fragment>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <DefaultSeo
         openGraph={{
           type: 'website',
@@ -107,7 +111,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         language={i18n.language}
         scriptProps={{
           async: false, // optional, default to false,
-          defer: false, // optional, default to false
+          defer: true, // optional, default to false
           nonce: undefined, // optional, default undefined
         }}
         container={{
