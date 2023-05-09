@@ -60,6 +60,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   const getCurrentPageURL = (lang: string) => {
     try {
+/*       console.log("PATHNAME", pathname)
+      console.log("QUERY", query)
+      console.log("LOCALE", locale) */
       return fileUrlToUrl(pathname, lang);
     } catch (error) {
       console.log('fileUrlToUrl Conversion error: ', error);
