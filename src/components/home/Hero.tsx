@@ -59,7 +59,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <Image raw={true} priority={true} fill={true} src='/imgs/hero/1/1-bg.png' alt='image' className='hero1_bg' />
+      <Image raw={true} priority={true} fill={true} src='https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/1-bg.webp' alt='image' className='hero1_bg' />
     </section>
   );
 };
