@@ -232,7 +232,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
                     className='d-flex align-items-center gap-3'
                     href={COMPANY_LINKEDIN}
                     target={'_blank'}
-                    aria-label='Visit Pointsyncc LinkedIn profile page'
+                    aria-label='Visit Pointsyncc Facebook profile page'
                   >
                     <FaLinkedinIn fontSize={'1.25rem'} className='icon__social icon__header' />
                   </Link>
@@ -380,6 +380,13 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
                   aria-label='Visit Pointsyncc Instagram profile page'
                 >
                   <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
+                </Link>
+                <Link
+                  href={COMPANY_FACEBOOK}
+                  target='_blank'
+                  aria-label='Visit Pointsyncc Facebook profile page'
+                >
+                  <FaFacebook fontSize={'1.35rem'} className='icon__social icon__header' />
                 </Link>
                 <Link
                   href={COMPANY_LINKEDIN}
