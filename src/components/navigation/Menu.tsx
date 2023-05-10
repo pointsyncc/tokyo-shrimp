@@ -2,6 +2,7 @@ import {
   COMPANY_ADDRESS,
   COMPANY_CONTACT_EMAIL,
   COMPANY_CONTACT_PHONE_NUMBER,
+  COMPANY_FACEBOOK,
   COMPANY_INSTAGRAM,
   COMPANY_LINKEDIN,
 } from '@/utils/constants';
@@ -11,7 +12,7 @@ import { Link as RouteTranslateLink } from 'next-translate-routes';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
-import { FaInstagram, FaLinkedinIn, FaTimes } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedinIn, FaTimes } from 'react-icons/fa';
 import LocaleSwitcher from '../common/localeSwitcher/LocaleSwitcher';
 import classes from './menu.module.scss';
 import Image from '../ui/image/Image';
@@ -200,7 +201,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
             </div>
             <div className='offcanvas__links'>
               <h6 className='social-title font-weight-bold'>{t('menu.social.follow-us')}</h6>
-              <ul className='d-flex gap-2'>
+              <ul className='d-flex gap-3'>
                 <li>
                   <Link
                     className='d-flex align-items-center gap-3'
@@ -219,9 +220,19 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
                 <li>
                   <Link
                     className='d-flex align-items-center gap-3'
-                    href={COMPANY_LINKEDIN}
+                    href={COMPANY_FACEBOOK}
                     target={'_blank'}
                     aria-label='Visit Pointsyncc LinkedIn profile page'
+                  >
+                    <FaFacebook fontSize={'1.25rem'} className='icon__social icon__header' />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className='d-flex align-items-center gap-3'
+                    href={COMPANY_LINKEDIN}
+                    target={'_blank'}
+                    aria-label='Visit Pointsyncc Facebook profile page'
                   >
                     <FaLinkedinIn fontSize={'1.25rem'} className='icon__social icon__header' />
                   </Link>
@@ -369,6 +380,13 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
                   aria-label='Visit Pointsyncc Instagram profile page'
                 >
                   <FaInstagram fontSize={'1.35rem'} className='icon__social icon__header' />
+                </Link>
+                <Link
+                  href={COMPANY_FACEBOOK}
+                  target='_blank'
+                  aria-label='Visit Pointsyncc Facebook profile page'
+                >
+                  <FaFacebook fontSize={'1.35rem'} className='icon__social icon__header' />
                 </Link>
                 <Link
                   href={COMPANY_LINKEDIN}

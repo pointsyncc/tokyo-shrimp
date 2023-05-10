@@ -1,9 +1,10 @@
 import { Logo } from '@/components/ui/logo/Logo';
 import { useMatchMedia } from '@/hooks/useMatchMedia';
+import { COMPANY_FACEBOOK, COMPANY_INSTAGRAM, COMPANY_LINKEDIN } from '@/utils/constants';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { CgMenuGridO } from 'react-icons/cg';
-import { FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 interface HeaderProps {
@@ -113,18 +114,25 @@ export const Header = ({ openMenu }: HeaderProps) => {
             </div>
             <div className='header__support d-none d-xl-flex flex-column justify-content-center gap-3 '>
               <Link
-                href='https://www.instagram.com/pointsyncc/'
+                href={COMPANY_INSTAGRAM}
                 target='_blank'
                 aria-label='Visit Pointsyncc Instagram profile page'
               >
                 <FaInstagram fontSize={'1.35rem'} className='icon__header' />
               </Link>
               <Link
-                href='https://www.linkedin.com/company/pointsyncc/'
+                href={COMPANY_LINKEDIN}
                 target='_blank'
                 aria-label='Visit Pointsyncc LinkedIn profile page'
               >
                 <FaLinkedinIn fontSize={'1.35rem'} className='icon__header' />
+              </Link>
+              <Link
+                href={COMPANY_FACEBOOK}
+                target='_blank'
+                aria-label='Visit Pointsyncc LinkedIn profile page'
+              >
+                <FaFacebook fontSize={'1.35rem'} className='icon__header' />
               </Link>
             </div>
           </div>
