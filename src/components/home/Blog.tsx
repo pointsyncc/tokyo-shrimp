@@ -12,9 +12,11 @@ export default function Blog({blogs}: any) {
     return {
       id: blog.uuid,
       slug: blog.slug,
+      preview_image: blog.content.article_preview_image ? blog.content.article_preview_image : blog.content.image,
       image: blog.content.image,
       category: Array.isArray(blog.content.categories) && blog.content.categories.length ? blog.content.categories[0].name : '',
       title: blog.content.title,
+      description: blog.content.teaser,
       published_at: blog.published_at,
     };
   });

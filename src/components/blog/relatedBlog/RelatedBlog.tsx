@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 type relatedArticle = {
   id: number;
+  preview_image: string;
   image: string;
   category?: string;
   title: string;
@@ -48,9 +49,11 @@ const RelatedBlog = ({ blogs }: any) => {
     return {
       id: blog.uuid,
       slug: blog.slug,
+      preview_image: blog.content.article_preview_image ? blog.content.article_preview_image : blog.content.image,
       image: blog.content.image,
       category: blog.content.categories[0],
       title: blog.content.title,
+      description: blog.content.teaser,
       published_at: blog.published_at,
     };
   }

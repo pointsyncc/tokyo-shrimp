@@ -61,7 +61,7 @@ export default function Service() {
         <div className='service__list-wrapper'>
           <div className='row'>
             <div className='col-xxl-4 col-xl-4 col-lg-0 col-md-0'>
-              <div className='service__img-wrapper'>
+             {/*  <div className='service__img-wrapper'>
                 <div className={'image-container'}>
                   <Image
                     src={'/imgs/pointsyncc/homepage/christopher-gower-m_HRfLhgABo-unsplash.jpg'}
@@ -99,7 +99,7 @@ export default function Service() {
                 <span className={`shape-box-2 ${activeEl === 1 ? 'current' : ''}`}></span>
                 <span className={`shape-box-3 ${activeEl === 2 ? 'current' : ''}`}></span>
                 <span className={`shape-box-4 ${activeEl === 3 ? 'current' : ''}`}></span>
-              </div>
+              </div> */}
             </div>
             <div className='col-xxl-8 col-xl-8 col-lg-12 col-md-12'>
               <div className='service__list'>

@@ -6,7 +6,7 @@ import { trimText } from '@/utils/trimText';
 import { Trans, useTranslation } from 'next-i18next';
 import { FaArrowRight } from 'react-icons/fa';
 
-export const BlogCard = ({ id, slug, title, published_at, image, category }: Article) => {
+export const BlogCard = ({ id, slug, title, description, published_at, preview_image, image, category }: Article) => {
   const { t } = useTranslation(['blog', 'common']);
   return (
     <article className='blog__item' key={id}>
@@ -18,7 +18,7 @@ export const BlogCard = ({ id, slug, title, published_at, image, category }: Art
               width={777}
               height={425}
               className='image-box__item'
-              src={image}
+              src={preview_image}
               alt=''
             />
             <Image
@@ -26,7 +26,7 @@ export const BlogCard = ({ id, slug, title, published_at, image, category }: Art
               height={425}
               raw={true}
               className='image-box__item'
-              src={image}
+              src={preview_image}
               alt=''
             />
           </div>
@@ -34,15 +34,18 @@ export const BlogCard = ({ id, slug, title, published_at, image, category }: Art
       </div>
       <h4 className='blog__meta'>
         <span>
-          {category}{" "}
+          {category}{category && ", "}
         </span>
-        {formatToLocaleDate(published_at)}
+        {t('blog.published-on', { ns: 'blog' })}: {formatToLocaleDate(published_at)}
       </h4>
       <h5 title={title}>
         <Link href={`/blog/${slug}`} className='blog__title'>
           {trimText(title, 32)}
         </Link>
       </h5>
+      <p title={description} className='blog__description mb-2'>
+          {trimText(description, 102)}
+      </p>
       <Link href={`/blog/${slug}`} className='blog__btn'>
         <Trans i18nKey='blog.card.button.read-more' t={t} ns='blog'>
           Read more

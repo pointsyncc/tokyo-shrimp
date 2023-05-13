@@ -17,7 +17,7 @@ import { useRouter } from 'next-translate-routes';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -139,6 +139,13 @@ const Footer = () => {
                         <Link href='https://www.linkedin.com/company/pointsyncc/' target='_blank'>
                           <span>
                             <FaLinkedinIn />
+                          </span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href='https://web.facebook.com/people/Pointsyncc/100092466915141/' target='_blank'>
+                          <span>
+                            <FaFacebook/>
                           </span>
                         </Link>
                       </li>
