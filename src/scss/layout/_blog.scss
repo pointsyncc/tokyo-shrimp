@@ -566,14 +566,18 @@
     }
 
     &-thumb {
-      @include img_anim(100%, 70vh, 120%);
+      /* @include img_anim(100%, 70vh, 120%); */
 
-      @media #{$sm} {
-        padding-bottom: 40px;
-      }
+  
 
       img {
         width: 100%;
+      }
+      img[data-scale-image-on-mobile] {
+        @media #{$sm} {
+          transform: scale(1.5);
+          margin-top: 30px;
+        }
       }
     }
 

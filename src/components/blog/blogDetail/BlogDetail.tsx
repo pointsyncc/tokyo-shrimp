@@ -9,6 +9,7 @@ export interface BlogDetailProps {
   categories: string[];
   publishedAt: string;
   firstPublishedAt: string;
+  scale_article_cover_image: string;
   author: string;
   image: string;
   content: string;
@@ -24,6 +25,7 @@ export const BlogDetail = ({
   image,
   content,
   firstPublishedAt,
+  scale_article_cover_image,
   tags,
 }: BlogDetailProps) => {
   const { t } = useTranslation(['blog', 'common']);
@@ -117,7 +119,8 @@ export const BlogDetail = ({
             <div className='blog__detail-thumb'>
               <Image
                 src={image}
-                alt={`Blog about ${title} written by ${author}`}
+                alt={`Blog about "${title}" written by ${author}`}
+                data-scale-image-on-mobile={scale_article_cover_image}
                 data-speed='0.5'
               />
             </div>
