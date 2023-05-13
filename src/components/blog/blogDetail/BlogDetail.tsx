@@ -1,7 +1,7 @@
 import { SplitCome } from '@/components/common/animations/SplitCome';
 import Image from '@/components/ui/image/Image';
 import { compareDesc } from 'date-fns';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 import { render } from 'storyblok-rich-text-react-renderer';
 
 export interface BlogDetailProps {
@@ -15,6 +15,8 @@ export interface BlogDetailProps {
   content: string;
   teaser?: string;
   tags: string[];
+  requestedLocale: string;
+  showNotAvailableInRequestedLocale: boolean;
 }
 
 export const BlogDetail = ({
@@ -27,6 +29,8 @@ export const BlogDetail = ({
   firstPublishedAt,
   scale_article_cover_image,
   tags,
+  requestedLocale,
+  showNotAvailableInRequestedLocale,
 }: BlogDetailProps) => {
   const { t } = useTranslation(['blog', 'common']);
 
@@ -56,13 +60,41 @@ export const BlogDetail = ({
     return tag;
   });
 
+  const getRequestedLangName = (locale: string) => {
+    if (locale === 'en') {
+      return 'English';
+    }
+    if (locale === 'de') {
+      return 'Deutsch';
+    }
+    if (locale === 'hr') {
+      return 'Hrvatski';
+    }
+  };
+
   return (
     <section className='blog__detail'>
-      <div className='container g-0 line pt-140'>
+      <div className='container g-0 line pt-100'>
         <span className='line-3'></span>
         <div className='row'>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
-            <div className='blog__detail-top'>
+            {showNotAvailableInRequestedLocale && (
+              <div className='warning__container py-3 px-4 mt-4 mb-md-3'>
+                <div className='warning__content'>
+                  <p className='warning__text text-white'>
+                    <span className='warning__emoji' role='img' aria-label='emoji'>
+                      Note:{' '}
+                    </span>
+                    This article is not available in {getRequestedLangName(requestedLocale)} so we
+                    are showing you the Croatian version.
+                  </p>
+                </div>
+              </div>
+            )}
+            <div
+              className='blog__detail-top'
+              data-no-requested-locale={showNotAvailableInRequestedLocale}
+            >
               <SplitCome type='words'>
                 <h2 className='blog__detail-date animation__word_come d-none d-md-block'>
                   {formatedCategories}{' '}
@@ -133,6 +165,12 @@ export const BlogDetail = ({
                 <span className='text-decoration-underline'>{formattedTags}</span>
               </p>
             </div>
+{/*             <div className='blog__detail-tags mt-2'>
+              <p className='sub-title-anim'>
+                {t('blog.share-on-social', { ns: 'blog' })}:{' '}
+                <span className='text-decoration-underline'>{formattedTags}</span>
+              </p>
+            </div> */}
           </div>
         </div>
       </div>

@@ -88,7 +88,7 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }: any) => {
-  const storyblokRes = await getAllArticles(locale);
+  const storyblokRes = await getAllArticles("hr");
 
   return {
     props: {

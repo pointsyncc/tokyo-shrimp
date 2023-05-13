@@ -6,11 +6,25 @@ import { getStoryblokApi } from '@storyblok/react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
 import { NextPageWithLayout } from '../_app';
-
+import { useRouter } from 'next-translate-routes';
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
-  const { title, categories, author, content, image, teaser,scale_article_cover_image, tags }: BlogDetailProps =
-    props.story.content;
+  const {
+    title,
+    categories,
+    author,
+    content,
+    image,
+    teaser,
+    scale_article_cover_image,
+    tags,
+  }: BlogDetailProps = props.story.content;
+
+  const router = useRouter();
+
+  //get requestedLocale and showNotAvailableInRequestedLocale param from router
+  const { requestedLocale, showNotAvailableInRequestedLocale } = router.query;
+  const currentLocale = router.locale;
 
   return (
     <>
@@ -39,7 +53,7 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
             { url: image },
             { url: image },
           ],
-          siteName: 'Pointsyncc',
+          siteName: 'POINTSYNCC',
         }}
         twitter={{
           handle: '@handle',
@@ -56,11 +70,13 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
         publishedAt={props.story.published_at}
         firstPublishedAt={props.story.first_published_at}
         scale_article_cover_image={scale_article_cover_image}
+        showNotAvailableInRequestedLocale={showNotAvailableInRequestedLocale ? true : false}
+        requestedLocale={requestedLocale ? requestedLocale : ''}
         tags={tags}
       />
-     <section className='mb-5'>
-     {props.numberOfArticles > 0 && <RelatedBlog blogs={props.relatedArticles} />}
-     </section>
+      <section className='mb-5'>
+        {props.numberOfArticles > 0 && <RelatedBlog blogs={props.relatedArticles} />}
+      </section>
       {/* <CTA /> */}
     </>
   );
@@ -86,18 +102,16 @@ export async function getServerSideProps({ params, locale }: any) {
       starts_with: 'articles',
     });
 
-    const relatedArticles: any = articles.data.stories.filter(
-      (article: any) => {
-        const articleCategories = article.content.categories;
-        const currentArticleCategories = data.story.content.categories;
-        if (article.id !== data.story.id) {
-          return articleCategories.some((category: any) =>
-            currentArticleCategories.includes(category),
-          );
-        }
-        return null;
-      },
-    );
+    const relatedArticles: any = articles.data.stories.filter((article: any) => {
+      const articleCategories = article.content.categories;
+      const currentArticleCategories = data.story.content.categories;
+      if (article.id !== data.story.id) {
+        return articleCategories.some((category: any) =>
+          currentArticleCategories.includes(category),
+        );
+      }
+      return null;
+    });
 
     return {
       props: {
@@ -114,13 +128,12 @@ export async function getServerSideProps({ params, locale }: any) {
         relatedArticles: relatedArticles,
       },
     };
-  } catch (error) {
+  } catch (error: any) {
     return {
       redirect: {
+        destination: `/blog/${slug}?requestedLocale=${locale}&showNotAvailableInRequestedLocale=true`,
         permanent: false,
-        destination: `/${locale}/404`,
       },
-      props: {},
     };
   }
 }
