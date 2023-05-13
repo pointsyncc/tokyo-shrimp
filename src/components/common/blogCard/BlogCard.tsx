@@ -34,9 +34,9 @@ export const BlogCard = ({ id, slug, title, description, published_at, preview_i
       </div>
       <h4 className='blog__meta'>
         <span>
-          {category}{" "}
+          {category}{category && ", "}
         </span>
-        {formatToLocaleDate(published_at)}
+        {t('blog.published-on', { ns: 'blog' })}: {formatToLocaleDate(published_at)}
       </h4>
       <h5 title={title}>
         <Link href={`/blog/${slug}`} className='blog__title'>

@@ -9,7 +9,7 @@ import { NextPageWithLayout } from '../_app';
 
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
-  const { title, categories, author, content, image, teaser, tags }: BlogDetailProps =
+  const { title, categories, author, content, image, teaser,scale_article_cover_image, tags }: BlogDetailProps =
     props.story.content;
 
   return (
@@ -55,9 +55,12 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
         image={image}
         publishedAt={props.story.published_at}
         firstPublishedAt={props.story.first_published_at}
+        scale_article_cover_image={scale_article_cover_image}
         tags={tags}
       />
-      {props.numberOfArticles > 0 && <RelatedBlog blogs={props.relatedArticles} />}
+     <section className='mb-5'>
+     {props.numberOfArticles > 0 && <RelatedBlog blogs={props.relatedArticles} />}
+     </section>
       {/* <CTA /> */}
     </>
   );

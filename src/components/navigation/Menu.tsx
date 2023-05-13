@@ -106,7 +106,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
       },
       text: `${t('dictionary.about')}`,
     },
-    {
+   /*  {
       id: 3,
       href: '/services',
       langPaths: {
@@ -115,7 +115,7 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
         de: '/de/dienstleistungen',
       },
       text: `${t('dictionary.services')}`,
-    },
+    }, */
     // {
     //   href: '/portfolio',
     //   text: `${t('dictionary.portfolio')}`,

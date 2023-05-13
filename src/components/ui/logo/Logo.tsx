@@ -13,8 +13,8 @@ interface IProps {
 export const Logo = ({ className, type = 'primary', width, version }: IProps) => {
   const logoUrl = type === 'primary' ? logoPrimary : logoSecondary;
   const iconURL =
-    'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-pointsyncc-icon-logo-28x28-accent-03.webp';
-  const logoWidth = width ? width : type === 'primary' ? 22 : 28;
+    'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-70x70-trimmed.png';
+  const logoWidth = width ? width : type === 'primary' ? 22 : 116;
   const classes = className ? className : type === 'primary' ? 'logo-primary' : 'logo-secondary';
   return (
     <Link href='/'>
