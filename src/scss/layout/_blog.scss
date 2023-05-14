@@ -478,12 +478,16 @@
       @include zi(1);
 
       @media #{$md} {
-        padding-top: 90px;
+        padding-top: 60px;
       }
 
       @media #{$sm} {
         padding-top: 60px;
       }
+    }
+
+    &-top[data-no-requested-locale="true"]{
+      padding-top: 20px;
     }
 
     &-date {
@@ -573,7 +577,7 @@
       img {
         width: 100%;
       }
-      img[data-scale-image-on-mobile] {
+      img[data-scale-image-on-mobile="true"] {
         @media #{$sm} {
           transform: scale(1.5);
           margin-top: 30px;
@@ -886,4 +890,11 @@
   @media #{$md} {
     --bs-gutter-x: 20px;
   }
+}
+
+
+.warning__container{
+  background-color: rgb(250, 78, 78);
+  border-radius: 8px;
+  width: fit-content;
 }

@@ -13,7 +13,6 @@ import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NextPageWithLayout } from './_app';
 
@@ -22,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 const locizeNamespaces = ['common', 'footer', 'cookie-consent', 'homepage', 'blog', 'seo'];
 
 const Home: NextPageWithLayout = (props: any) => {
-  const router = useRouter();
+
   const { t, i18n } = useTranslation(locizeNamespaces, {
     bindI18n: 'languageChanged loaded',
   });
@@ -88,7 +87,7 @@ Home.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }: any) => {
-  const storyblokRes = await getAllArticles(locale);
+  const storyblokRes = await getAllArticles("hr");
 
   return {
     props: {

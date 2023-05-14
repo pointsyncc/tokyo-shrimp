@@ -3,5 +3,6 @@
         "default": "objave",
         "de": "blog",
         "en": "blog"
-    }
+    },
+    "[slug]": ":slug(\\w+)"
 }

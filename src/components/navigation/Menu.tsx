@@ -8,8 +8,7 @@ import {
 } from '@/utils/constants';
 import gsap from 'gsap';
 import { useTranslation } from 'next-i18next';
-import { Link as RouteTranslateLink } from 'next-translate-routes';
-import { useRouter } from 'next/router';
+import { Link as RouteTranslateLink, useRouter } from 'next-translate-routes';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaTimes } from 'react-icons/fa';
