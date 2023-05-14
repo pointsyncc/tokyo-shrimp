@@ -62,7 +62,7 @@ const RelatedBlog = ({ blogs }: any) => {
     <>
       {Array.isArray(articles) && articles.length > 0 && (
         <section ref={comp} className='blog__related blog__animation'>
-          <div className='container g-0 line pt-130 pb-140'>
+          <div className='container g-0 line pt-5 pb-140'>
             <span className='line-3'></span>
             <div className='row'>
               <div className='col-xxl-12'>
