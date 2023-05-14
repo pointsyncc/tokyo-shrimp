@@ -31,9 +31,9 @@ const Contact: NextPageWithLayout = () => {
         title={`${t('pages.contact.title', { ns: 'seo' })} | Pointsyncc`}
         description={`${t('pages.contact.meta_description', { ns: 'seo' })}`}
         openGraph={{
-          url: 'https://www.url.ie/a',
-          title: 'Open Graph Title',
-          description: 'Open Graph Description',
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}`,
+          title: `${t('pages.homepage.title', { ns: 'seo' })}`,
+          description: `${t('pages.homepage.meta_description', { ns: 'seo' })}`,
           images: [
             {
               url: 'https://www.example.ie/og-image-01.jpg',

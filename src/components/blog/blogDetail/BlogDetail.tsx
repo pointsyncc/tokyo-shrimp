@@ -31,6 +31,7 @@ export interface BlogDetailProps {
   showNotAvailableInRequestedLocale: boolean | null;
   currentURL: string;
   shareTitle: string;
+  article_preview_image?: string;
 }
 
 export const BlogDetail = ({
