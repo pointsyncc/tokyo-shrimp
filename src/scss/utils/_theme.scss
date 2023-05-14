@@ -67,7 +67,7 @@ img {
 .line {
   position: relative;
 
-  &::before {
+ /*  &::before {
     position: absolute;
     content: '';
     width: 1px;
@@ -85,9 +85,9 @@ img {
     left: calc(50% - 1px);
     top: 0;
     background: var(--white-4);
-  }
+  } */
 
-  &-3 {
+/*   &-3 {
     position: absolute;
     content: '';
     width: 1px;
@@ -95,7 +95,7 @@ img {
     right: 0;
     top: 0;
     background: var(--white-4);
-  }
+  } */
 }
 
 // Shape

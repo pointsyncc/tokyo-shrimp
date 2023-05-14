@@ -2,6 +2,18 @@ import { SplitCome } from '@/components/common/animations/SplitCome';
 import Image from '@/components/ui/image/Image';
 import { compareDesc } from 'date-fns';
 import { useTranslation } from 'next-i18next';
+import {
+  EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from 'react-share';
 import { render } from 'storyblok-rich-text-react-renderer';
 
 export interface BlogDetailProps {
@@ -15,6 +27,10 @@ export interface BlogDetailProps {
   content: string;
   teaser?: string;
   tags: string[];
+  requestedLocale: string | null;
+  showNotAvailableInRequestedLocale: boolean | null;
+  currentURL: string;
+  shareTitle: string;
 }
 
 export const BlogDetail = ({
@@ -27,6 +43,10 @@ export const BlogDetail = ({
   firstPublishedAt,
   scale_article_cover_image,
   tags,
+  requestedLocale,
+  showNotAvailableInRequestedLocale,
+  currentURL,
+  shareTitle,
 }: BlogDetailProps) => {
   const { t } = useTranslation(['blog', 'common']);
 
@@ -56,13 +76,41 @@ export const BlogDetail = ({
     return tag;
   });
 
+  const getRequestedLangName = (locale: string | null) => {
+    if (locale === 'en') {
+      return 'English';
+    }
+    if (locale === 'de') {
+      return 'Deutsch';
+    }
+    if (locale === 'hr') {
+      return 'Hrvatski';
+    }
+  };
+
   return (
     <section className='blog__detail'>
-      <div className='container g-0 line pt-140'>
+      <div className='container g-0 line pt-100'>
         <span className='line-3'></span>
         <div className='row'>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
-            <div className='blog__detail-top'>
+            {showNotAvailableInRequestedLocale && (
+              <div className='warning__container py-3 px-4 mt-4 mb-md-3'>
+                <div className='warning__content'>
+                  <p className='warning__text text-white'>
+                    <span className='warning__emoji' role='img' aria-label='emoji'>
+                      Note:{' '}
+                    </span>
+                    This article is not available in {getRequestedLangName(requestedLocale)} so we
+                    are showing you the Croatian version.
+                  </p>
+                </div>
+              </div>
+            )}
+            <div
+              className='blog__detail-top'
+              data-no-requested-locale={showNotAvailableInRequestedLocale}
+            >
               <SplitCome type='words'>
                 <h2 className='blog__detail-date animation__word_come d-none d-md-block'>
                   {formatedCategories}{' '}
@@ -107,11 +155,6 @@ export const BlogDetail = ({
                     {t('blog.written-by', { ns: 'blog' })}: <span>{author}</span>
                   </p>
                 </div>
-                {/* <div className='blog__detail-meta'>
-                  <p>
-                    {t('blog.read-time', { ns: 'blog' })}: <span>{stats.words} min</span>
-                  </p>
-                </div> */}
               </div>
             </div>
           </div>
@@ -127,11 +170,55 @@ export const BlogDetail = ({
           </div>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
             <div className='blog__detail-content'>{render(content)}</div>
-            <div className='blog__detail-tags'>
-              <p className='sub-title-anim'>
-                {t('blog.tags', { ns: 'blog' })}:{' '}
-                <span className='text-decoration-underline'>{formattedTags}</span>
-              </p>
+            <div className='d-flex  flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 gap-md-0'>
+              <div className='blog__detail-tags'>
+                <p className='sub-title-anim'>
+                  {t('blog.tags', { ns: 'blog' })}:{' '}
+                  <span className='text-decoration-underline'>{formattedTags}</span>
+                </p>
+              </div>
+              <div className='blog__detail-tags d-flex gap-3 align-items-center'>
+                <p className='sub-title-anim'>{t('blog.share-article', { ns: 'blog' })} </p>
+                <div className='d-flex gap-2 align-items-center'>
+                  <FacebookShareButton
+                    url={currentURL}
+                    quote={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <FacebookIcon size={32} round={true} />
+                  </FacebookShareButton>
+                  <TwitterShareButton
+                    url={currentURL}
+                    title={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <TwitterIcon size={32} round={true} />
+                  </TwitterShareButton>
+                  <LinkedinShareButton
+                    url={currentURL}
+                    title={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <LinkedinIcon size={32} round={true} />
+                  </LinkedinShareButton>
+                  <WhatsappShareButton
+                    url={currentURL}
+                    title={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <WhatsappIcon size={32} round={true} />
+                  </WhatsappShareButton>
+                  <EmailShareButton
+                    url={currentURL}
+                    subject={shareTitle}
+                    body={`${t('blog.read-this-article', { ns: 'blog' })}`}
+                    className='blog__detail-share-btn'
+                  >
+                    <EmailIcon size={32} round={true} />
+                  </EmailShareButton>
+                  {/*   <CopyButton /> */}
+                </div>
+              </div>
             </div>
           </div>
         </div>
