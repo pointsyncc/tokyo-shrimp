@@ -77,7 +77,7 @@ PrivacyPolicy.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
 
-export const getStaticProps = async ({ locale }: any) => {
+export const getServerSideProps = async ({ locale }: any) => {
   const props = await serverSideTranslations(locale, ns);
 
   try {
