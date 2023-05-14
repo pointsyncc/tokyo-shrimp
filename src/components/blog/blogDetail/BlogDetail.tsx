@@ -1,7 +1,19 @@
 import { SplitCome } from '@/components/common/animations/SplitCome';
 import Image from '@/components/ui/image/Image';
 import { compareDesc } from 'date-fns';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
+import {
+  EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from 'react-share';
 import { render } from 'storyblok-rich-text-react-renderer';
 
 export interface BlogDetailProps {
@@ -15,8 +27,10 @@ export interface BlogDetailProps {
   content: string;
   teaser?: string;
   tags: string[];
-  requestedLocale: string;
-  showNotAvailableInRequestedLocale: boolean;
+  requestedLocale: string | null;
+  showNotAvailableInRequestedLocale: boolean | null;
+  currentURL: string;
+  shareTitle: string;
 }
 
 export const BlogDetail = ({
@@ -31,6 +45,8 @@ export const BlogDetail = ({
   tags,
   requestedLocale,
   showNotAvailableInRequestedLocale,
+  currentURL,
+  shareTitle,
 }: BlogDetailProps) => {
   const { t } = useTranslation(['blog', 'common']);
 
@@ -60,7 +76,7 @@ export const BlogDetail = ({
     return tag;
   });
 
-  const getRequestedLangName = (locale: string) => {
+  const getRequestedLangName = (locale: string | null) => {
     if (locale === 'en') {
       return 'English';
     }
@@ -139,11 +155,6 @@ export const BlogDetail = ({
                     {t('blog.written-by', { ns: 'blog' })}: <span>{author}</span>
                   </p>
                 </div>
-                {/* <div className='blog__detail-meta'>
-                  <p>
-                    {t('blog.read-time', { ns: 'blog' })}: <span>{stats.words} min</span>
-                  </p>
-                </div> */}
               </div>
             </div>
           </div>
@@ -159,18 +170,56 @@ export const BlogDetail = ({
           </div>
           <div className='col-xxl-8 col-xl-10 offset-xxl-2 offset-xl-1'>
             <div className='blog__detail-content'>{render(content)}</div>
-            <div className='blog__detail-tags'>
-              <p className='sub-title-anim'>
-                {t('blog.tags', { ns: 'blog' })}:{' '}
-                <span className='text-decoration-underline'>{formattedTags}</span>
-              </p>
+            <div className='d-flex  flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 gap-md-0'>
+              <div className='blog__detail-tags'>
+                <p className='sub-title-anim'>
+                  {t('blog.tags', { ns: 'blog' })}:{' '}
+                  <span className='text-decoration-underline'>{formattedTags}</span>
+                </p>
+              </div>
+              <div className='blog__detail-tags d-flex gap-3 align-items-center'>
+                <p className='sub-title-anim'>{t('blog.share-article', { ns: 'blog' })} </p>
+                <div className='d-flex gap-2 align-items-center'>
+                  <FacebookShareButton
+                    url={currentURL}
+                    quote={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <FacebookIcon size={32} round={true} />
+                  </FacebookShareButton>
+                  <TwitterShareButton
+                    url={currentURL}
+                    title={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <TwitterIcon size={32} round={true} />
+                  </TwitterShareButton>
+                  <LinkedinShareButton
+                    url={currentURL}
+                    title={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <LinkedinIcon size={32} round={true} />
+                  </LinkedinShareButton>
+                  <WhatsappShareButton
+                    url={currentURL}
+                    title={shareTitle}
+                    className='blog__detail-share-btn'
+                  >
+                    <WhatsappIcon size={32} round={true} />
+                  </WhatsappShareButton>
+                  <EmailShareButton
+                    url={currentURL}
+                    subject={shareTitle}
+                    body={`${t('blog.read-this-article', { ns: 'blog' })}`}
+                    className='blog__detail-share-btn'
+                  >
+                    <EmailIcon size={32} round={true} />
+                  </EmailShareButton>
+                  {/*   <CopyButton /> */}
+                </div>
+              </div>
             </div>
-{/*             <div className='blog__detail-tags mt-2'>
-              <p className='sub-title-anim'>
-                {t('blog.share-on-social', { ns: 'blog' })}:{' '}
-                <span className='text-decoration-underline'>{formattedTags}</span>
-              </p>
-            </div> */}
           </div>
         </div>
       </div>

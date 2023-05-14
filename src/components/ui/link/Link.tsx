@@ -1,7 +1,7 @@
+import { ComponentAttrs } from '@/types/general';
+import { useRouter } from 'next-translate-routes';
 import { Link as NextLink } from 'next-translate-routes/link';
 import React from 'react';
-import { ComponentAttrs } from '@/types/general';
-import { useRouter } from 'next/router';
 
 export interface IProps extends ComponentAttrs, React.AnchorHTMLAttributes<HTMLAnchorElement> {
   activeClassName?: string;

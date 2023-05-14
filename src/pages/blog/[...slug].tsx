@@ -1,14 +1,25 @@
 import { BlogDetail, BlogDetailProps } from '@/components/blog/blogDetail/BlogDetail';
 import RelatedBlog from '@/components/blog/relatedBlog/RelatedBlog';
 import { MainLayout } from '@/components/layout/mainLayout/MainLayout';
-import { Article } from '@/types/article';
 import { getStoryblokApi } from '@storyblok/react';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from 'next-seo';
+import { useEffect } from 'react';
 import { NextPageWithLayout } from '../_app';
-import { useRouter } from 'next-translate-routes';
+import { useRouter } from 'next/router';
+
+const locizeNamespaces = ['common', 'footer', 'cookie-consent', 'blog', 'seo', 'homepage'];
 
 const SingleBlog: NextPageWithLayout = (props: any) => {
+  const { t, i18n } = useTranslation(locizeNamespaces, {
+    bindI18n: 'languageChanged loaded',
+  });
+  // bindI18n: loaded is needed because of the reloadResources call
+  // if all pages use the reloadResources mechanism, the bindI18n option can also be defined in next-i18next.config.js
+  useEffect(() => {
+    i18n.reloadResources(i18n.resolvedLanguage, locizeNamespaces);
+  }, []);
   const {
     title,
     categories,
@@ -20,11 +31,12 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
     tags,
   }: BlogDetailProps = props.story.content;
 
-  const router = useRouter();
+  const requestedLocale = props.requestedLocale;
+  const showNotAvailableInRequestedLocale = props.showNotAvailableInRequestedLocale;
 
-  //get requestedLocale and showNotAvailableInRequestedLocale param from router
-  const { requestedLocale, showNotAvailableInRequestedLocale } = router.query;
-  const currentLocale = router.locale;
+  const currentURL = `${process.env.NEXT_PUBLIC_SITE_URL}${useRouter().asPath}`;
+  const shareTitle =
+    'POINTSYNCC: ' + '"' + title + '" ' + `${t('blog.share.written-by', { ns: 'blog' })}` + ' ' + author;
 
   return (
     <>
@@ -71,7 +83,9 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
         firstPublishedAt={props.story.first_published_at}
         scale_article_cover_image={scale_article_cover_image}
         showNotAvailableInRequestedLocale={showNotAvailableInRequestedLocale ? true : false}
-        requestedLocale={requestedLocale ? requestedLocale : ''}
+        requestedLocale={requestedLocale && requestedLocale}
+        currentURL={currentURL}
+        shareTitle={shareTitle}
         tags={tags}
       />
       <section className='mb-5'>
@@ -86,7 +100,7 @@ SingleBlog.getLayout = function getLayout(page) {
   return <MainLayout showFooter>{page}</MainLayout>;
 };
 
-export async function getServerSideProps({ params, locale }: any) {
+export async function getServerSideProps({ params, locale, query }: any) {
   const { slug } = params;
 
   const storyblokApi = getStoryblokApi();
@@ -115,17 +129,13 @@ export async function getServerSideProps({ params, locale }: any) {
 
     return {
       props: {
-        ...(await serverSideTranslations(locale, [
-          'common',
-          'footer',
-          'cookie-consent',
-          'blog',
-          'homepage',
-        ])),
+        ...(await serverSideTranslations(locale, locizeNamespaces)),
         story: data ? data.story : false,
         key: data ? data.story.id : false,
         numberOfArticles: articles.data.stories.length,
         relatedArticles: relatedArticles,
+        showNotAvailableInRequestedLocale: query.showNotAvailableInRequestedLocale ? true : false,
+        requestedLocale: query.requestedLocale ? query.requestedLocale : null,
       },
     };
   } catch (error: any) {

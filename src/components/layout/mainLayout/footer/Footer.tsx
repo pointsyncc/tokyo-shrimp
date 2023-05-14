@@ -169,17 +169,22 @@ const Footer = () => {
                         {t('list.information.items.services', { ns: 'footer' })}
                       </Link>
                     </li>
-                    <li>
+{/*                     <li>
                       <Link href='/configuration'>
                         {t('list.information.items.configuration', { ns: 'footer' })}
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link href='/blog'>{t('list.information.items.blog', { ns: 'footer' })}</Link>
                     </li>
-                    <li>
+      {/*               <li>
                       <Link href='/contact'>
                         {t('list.information.items.contact-us', { ns: 'footer' })}
+                      </Link>
+                    </li> */}
+                    <li>
+                      <Link href='/legal/privacy-policy'>
+                        {t('list.information.items.privacy-policy', { ns: 'footer' })}
                       </Link>
                     </li>
                   </ul>
@@ -219,7 +224,7 @@ const Footer = () => {
                 </div>
 
                 <div className='footer__copyright'>
-                  <p>
+                  <p className=''>
                     © 2023 | {t('copyright.text', { ns: 'footer' })} |{' '}
                     <Link
                       href='https://www.fininfo.hr/Poduzece/Pregled/pointsyncc/Detaljno/872729'

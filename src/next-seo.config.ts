@@ -1,6 +1,4 @@
 import { DefaultSeoProps } from 'next-seo';
-import { useRouter } from 'next-translate-routes';
-
 
 const config: DefaultSeoProps = {
   openGraph: {

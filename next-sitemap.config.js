@@ -2,7 +2,7 @@
 
 const baseUrl = process.env.SITE_URL || 'https://www.pointsyncc.com';
 const locales = ['en', 'de', 'hr'];
-const excludePaths = ['/404', '/500', '/configuration', '/status/coming-soon', '/error', '/portfolio', '/services', '/services__DRAFT'];
+const excludePaths = ['/404', '/500', '/configuration', '/status/coming-soon', '/error', '/portfolio', '/services', '/services__DRAFT', '/legal/terms-and-conditions'];
 
 const crawlersAllow = [
   {

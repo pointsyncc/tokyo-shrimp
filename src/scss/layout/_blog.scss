@@ -486,7 +486,7 @@
       }
     }
 
-    &-top[data-no-requested-locale]{
+    &-top[data-no-requested-locale="true"]{
       padding-top: 20px;
     }
 
@@ -577,7 +577,7 @@
       img {
         width: 100%;
       }
-      img[data-scale-image-on-mobile] {
+      img[data-scale-image-on-mobile="true"] {
         @media #{$sm} {
           transform: scale(1.5);
           margin-top: 30px;
