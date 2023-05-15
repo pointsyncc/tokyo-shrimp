@@ -42,7 +42,7 @@ module.exports = {
     },
   ],
   generateRobotsTxt: true,
-  changefreq: 'monthly',
+  changefreq: 'always',
   exclude: excludePaths,
   robotsTxtOptions: {
     policies: process.env.NODE_ENV === 'production' ? crawlersAllow : crawlersDisallow,
