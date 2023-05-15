@@ -29,25 +29,16 @@ const Team: NextPageWithLayout = () => {
         canonical='https://www.canonical.ie/'
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/team`,
-          title: `${t('pages.homepage.title', { ns: 'seo' })}`,
-          description: `${t('pages.homepage.meta_description', { ns: 'seo' })}`,
+          title: `${t('pages.our-team.title', { ns: 'seo' })}`,
+          description: `${t('pages.our-team.meta_description', { ns: 'seo' })}`,
           images: [
             {
-              url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-main-logo-accent-03.pngg',
-              width: 800,
-              height: 600,
-              alt: 'POINTSYNCC Icon',
+              url: `https://www.pointsyncc.com/api/page-og-1200x630?title=${t('pages.our-team.title', { ns: 'seo' })}&description=${t('pages.our-team.meta_description', { ns: 'seo' })}`,
+              width: 1200,
+              height: 630,
+              alt: `${t('pages.our-team.title', { ns: 'seo' })}`,
               type: 'image/jpeg',
-            },
-            {
-              url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-main-logo-accent-03.png',
-              width: 900,
-              height: 800,
-              alt: 'POINTSYNCC Icon',
-              type: 'image/jpeg',
-            },
-            { url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-74x74-trimmed.png' },
-            { url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-74x74-trimmed.png' },
+            }
           ],
           siteName: 'POINTSYNCC',
         }}

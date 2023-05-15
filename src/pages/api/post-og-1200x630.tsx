@@ -15,8 +15,12 @@ export default function handler(request: NextRequest) {
     const hasTitle = searchParams.has('title');
     const hasDescription = searchParams.has('description');
     const hasArticleImageURL = searchParams.has('articleImageURL');
-    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'Stiže nešto novo i drukačije za tvoje poslovanje';
-    const description = hasDescription  ? searchParams.get('description')?.slice(0, 150) : 'Ususret velikom iskazanom interesu za našim digitalnim proizvodima odlučili smo se za razvoj konfiguratora za naše privatne i poslovne korisnike.';
+    const title = hasTitle
+      ? searchParams.get('title')?.slice(0, 100)
+      : 'Stiže nešto novo i drukačije za tvoje poslovanje';
+    const description = hasDescription
+      ? searchParams.get('description')?.slice(0, 150)
+      : 'Ususret velikom iskazanom interesu za našim digitalnim proizvodima odlučili smo se za razvoj konfiguratora za naše privatne i poslovne korisnike.';
     const articleImageURL = hasArticleImageURL
       ? searchParams.get('articleImageURL')
       : 'https://a.storyblok.com/f/198973/400x500/e474e1f816/web-cover-01.png';
@@ -37,11 +41,13 @@ export default function handler(request: NextRequest) {
             <div tw='flex flex-col p-6'>
               <div tw='flex flex-col p-6'>
                 <div tw='text-5xl text-white font-bold w-165'>{title}</div>
-                <div tw='text-2xl text-white mt-6 w-160'>
-                  {description}
-                </div>
-                <div tw='flex flex-row items-center justify-between mt-52 w-165'>
-                  <div tw='flex text-white text-xl'>www.pointsyncc.com</div>
+                <div tw='text-2xl text-white mt-6 w-160'>{description}</div>
+                <div tw='flex flex-row items-center justify-between mt-40 w-165'>
+                  <div tw='flex flex-col gap-3'>
+                    <div tw='flex text-white text-xl'>+385 99 214 482</div>
+                    <div tw='flex text-white text-xl'>info@pointsyncc.com</div>
+                    <div tw='flex text-white text-xl'>www.pointsyncc.com</div>
+                  </div>
                   <img
                     alt='Vercel'
                     height={52}

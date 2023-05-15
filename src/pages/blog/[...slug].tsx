@@ -50,7 +50,7 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
           description: teaser,
           images: [
             {
-              url: `https://www.pointsyncc.com/api/og?title=${title}&description=${teaser}&articleImageURL=${article_preview_image}`,
+              url: `https://www.pointsyncc.com/api/post-og-1200x630?title=${title}&description=${teaser}&articleImageURL=${article_preview_image}`,
               width: 1200,
               height: 630,
               alt: `Blog about ${title} written by ${author}`,

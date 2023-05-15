@@ -36,21 +36,12 @@ const Contact: NextPageWithLayout = () => {
           description: `${t('pages.homepage.meta_description', { ns: 'seo' })}`,
           images: [
             {
-              url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-main-logo-accent-03.pngg',
-              width: 800,
-              height: 600,
-              alt: 'POINTSYNCC Icon',
+              url: `https://www.pointsyncc.com/api/page-og-1200x630?title=${t('pages.contact.title', { ns: 'seo' })}&description=${t('pages.contact.meta_description', { ns: 'seo' })}`,
+              width: 1200,
+              height: 630,
+              alt: `${t('pages.contact.title', { ns: 'seo' })}`,
               type: 'image/jpeg',
-            },
-            {
-              url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-main-logo-accent-03.png',
-              width: 900,
-              height: 800,
-              alt: 'POINTSYNCC Icon',
-              type: 'image/jpeg',
-            },
-            { url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-74x74-trimmed.png' },
-            { url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-74x74-trimmed.png' },
+            }
           ],
           siteName: 'POINTSYNCC',
         }}
