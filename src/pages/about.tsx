@@ -32,23 +32,23 @@ const About: NextPageWithLayout = () => {
           description: `${t('pages.homepage.meta_description', { ns: 'seo' })}`,
           images: [
             {
-              url: 'https://www.example.ie/og-image-01.jpg',
+              url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-main-logo-accent-03.pngg',
               width: 800,
               height: 600,
-              alt: 'Og Image Alt',
+              alt: 'POINTSYNCC Icon',
               type: 'image/jpeg',
             },
             {
-              url: 'https://www.example.ie/og-image-02.jpg',
+              url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/PSC-main-logo-accent-03.png',
               width: 900,
               height: 800,
-              alt: 'Og Image Alt Second',
+              alt: 'POINTSYNCC Icon',
               type: 'image/jpeg',
             },
-            { url: 'https://www.example.ie/og-image-03.jpg' },
-            { url: 'https://www.example.ie/og-image-04.jpg' },
+            { url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-74x74-trimmed.png' },
+            { url: 'https://tokyo.fra1.cdn.digitaloceanspaces.com/projects/tokyo-shrimp/assets/logo-icon-transparent-74x74-trimmed.png' },
           ],
-          siteName: 'SiteName',
+          siteName: 'POINTSYNCC',
         }}
         twitter={{
           handle: '@handle',
