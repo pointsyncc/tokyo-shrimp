@@ -29,12 +29,13 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
     teaser,
     scale_article_cover_image,
     tags,
+    article_preview_image,
   }: BlogDetailProps = props.story.content;
 
   const requestedLocale = props.requestedLocale;
   const showNotAvailableInRequestedLocale = props.showNotAvailableInRequestedLocale;
 
-  const currentURL = `${process.env.NEXT_PUBLIC_SITE_URL}${useRouter().asPath}`;
+  const currentURL = `${"https://www.pointsyncc.com"}${useRouter().asPath}`;
   const shareTitle =
     'POINTSYNCC: ' + '"' + title + '" ' + `${t('blog.share.written-by', { ns: 'blog' })}` + ' ' + author;
 
@@ -49,21 +50,12 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
           description: teaser,
           images: [
             {
-              url: image,
-              width: 800,
-              height: 600,
+              url: `https://www.pointsyncc.com/api/og?title=${title}&description=${teaser}&articleImageURL=${article_preview_image}`,
+              width: 1200,
+              height: 630,
               alt: `Blog about ${title} written by ${author}`,
               type: 'image/jpeg',
-            },
-            {
-              url: image,
-              width: 900,
-              height: 800,
-              alt: `Blog about ${title} written by ${author}`,
-              type: 'image/jpeg',
-            },
-            { url: image },
-            { url: image },
+            }
           ],
           siteName: 'POINTSYNCC',
         }}
