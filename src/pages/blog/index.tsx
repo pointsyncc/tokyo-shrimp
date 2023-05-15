@@ -26,28 +26,19 @@ const Blog: NextPageWithLayout = (props: any) => {
         description={`${t('pages.blog.meta_description', { ns: 'seo' })}`}
         canonical='https://www.canonical.ie/'
         openGraph={{
-          url: 'https://www.url.ie/a',
-          title: 'Open Graph Title',
-          description: 'Open Graph Description',
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+          title: `${t('pages.blog.title', { ns: 'seo' })}`,
+          description: `${t('pages.blog.meta_description', { ns: 'seo' })}`,
           images: [
             {
-              url: 'https://www.example.ie/og-image-01.jpg',
-              width: 800,
-              height: 600,
-              alt: 'Og Image Alt',
+              url: `https://www.pointsyncc.com/api/page-og-1200x630?title=${t('pages.blog.title', { ns: 'seo' })}&description=${t('pages.blog.meta_description', { ns: 'seo' })}`,
+              width: 1200,
+              height: 630,
+              alt: `${t('pages.blog.title', { ns: 'seo' })}`,
               type: 'image/jpeg',
-            },
-            {
-              url: 'https://www.example.ie/og-image-02.jpg',
-              width: 900,
-              height: 800,
-              alt: 'Og Image Alt Second',
-              type: 'image/jpeg',
-            },
-            { url: 'https://www.example.ie/og-image-03.jpg' },
-            { url: 'https://www.example.ie/og-image-04.jpg' },
+            }
           ],
-          siteName: 'SiteName',
+          siteName: 'POINTSYNCC',
         }}
         twitter={{
           handle: '@handle',
