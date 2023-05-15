@@ -25,7 +25,7 @@ module.exports = {
   siteUrl: baseUrl,
   alternateRefs: [
     {
-      href: baseUrl,
+      href: baseUrl + '/en',
       hreflang: 'x-default',
     },
     {
