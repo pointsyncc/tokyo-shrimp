@@ -13,7 +13,7 @@ export default function Document() {
         <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
         <link rel='manifest' href='/site.webmanifest' />
-        <meta property='og:title' content='POINTSYNCC' />
+       {/*  <meta property='og:title' content='POINTSYNCC' />
         <meta property='og:description' content='Enter the digital world.' />
         <meta
           property='og:image'
@@ -32,7 +32,7 @@ export default function Document() {
           content='https://pointsyncc.com/imgs/pointsyncc/logo/desktop/color.png'
         />
         <meta name='twitter:image:alt' content='Pointsyncc logo' />
-        <meta name='twitter:domain' content='pointsyncc.com' />
+        <meta name='twitter:domain' content='pointsyncc.com' /> */}
       </Head>
       <body>
         <Main />
