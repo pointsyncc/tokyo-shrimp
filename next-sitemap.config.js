@@ -25,7 +25,7 @@ module.exports = {
   siteUrl: baseUrl,
   alternateRefs: [
     {
-      href: baseUrl,
+      href: baseUrl + '/en',
       hreflang: 'x-default',
     },
     {
@@ -42,7 +42,7 @@ module.exports = {
     },
   ],
   generateRobotsTxt: true,
-  changefreq: 'monthly',
+  changefreq: 'always',
   exclude: excludePaths,
   robotsTxtOptions: {
     policies: process.env.NODE_ENV === 'production' ? crawlersAllow : crawlersDisallow,
