@@ -35,7 +35,7 @@ const SingleBlog: NextPageWithLayout = (props: any) => {
   const requestedLocale = props.requestedLocale;
   const showNotAvailableInRequestedLocale = props.showNotAvailableInRequestedLocale;
 
-  const currentURL = `${process.env.NEXT_PUBLIC_SITE_URL}${useRouter().asPath}`;
+  const currentURL = `${"https://www.pointsyncc.com"}${useRouter().asPath}`;
   const shareTitle =
     'POINTSYNCC: ' + '"' + title + '" ' + `${t('blog.share.written-by', { ns: 'blog' })}` + ' ' + author;
 
