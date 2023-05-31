@@ -17,9 +17,13 @@
         "blog": "Blog",
         "configuration": "Configurator",
         "contact-us": "Contact us",
+        "privacy-policy": "Privacy policy",
         "services": "Services"
       },
       "title": "Links"
+    },
+    "social-media": {
+      "title": "Social media"
     }
   },
   "sidebar": {

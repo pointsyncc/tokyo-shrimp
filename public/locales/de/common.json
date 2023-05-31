@@ -25,7 +25,7 @@
   "forms": {
     "newsletter": {
       "pattern": {
-        "invalid-message": "Falsche E-Mail-Adresse."
+        "invalid-message": "Falsches E-Mail-Adressformat."
       },
       "required": "Die E-Mail-Adresse ist erforderlich."
     }
@@ -43,7 +43,7 @@
   },
   "google-recaptcha": {
     "info-text": "Diese Seite ist durch reCAPTCHA geschützt und es gelten die Datenschutzbestimmungen und Nutzungsbedingungen von Google.",
-    "legal": "Diese Seite ist durch reCAPTCHA geschützt und es gelten die Datenschutzbestimmungen und Nutzungsbedingungen von Google.",
+    "legal": "Diese Seite ist durch reCAPTCHA geschützt und es gelten die <2>Datenschutzbestimmungen</2> und <5>Nutzungsbedingungen</5> von Google.",
     "privacy-policy": "Datenschutzerklärung",
     "terms-of-service": "Nutzungsbedingungen"
   },
