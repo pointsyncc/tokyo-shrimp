@@ -17,9 +17,13 @@
         "blog": "Blog",
         "configuration": "Konfigurator",
         "contact-us": "Kontaktirajte nas",
+        "privacy-policy": "Politika privatnosti",
         "services": "Usluge"
       },
       "title": "Korisni linkovi"
+    },
+    "social-media": {
+      "title": "Društvene mreže"
     }
   },
   "sidebar": {

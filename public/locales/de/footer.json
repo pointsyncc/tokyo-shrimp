@@ -17,9 +17,13 @@
         "blog": "Blog",
         "configuration": "Konfigurator",
         "contact-us": "Kontaktieren Sie uns",
+        "privacy-policy": "Datenschutz-Bestimmungen",
         "services": "Dienstleistungen"
       },
       "title": "Nützliche Links"
+    },
+    "social-media": {
+      "title": "Soziale Netzwerke."
     }
   },
   "sidebar": {

@@ -5,16 +5,22 @@
         "read-more": "Read more<1><0></0></1>"
       }
     },
+    "not-available-in-requested-locale": "<0>Note: </0>This article is not available in English so we are showing you the Croatian version.",
     "page": {
-      "subtitle": "Pointsyncc is not part of your ecosystem yet?! Give us a chance, read the news and find out why are we the perfect choice for your business!",
+      "subtitle": "Pointsyncc is not yet part of your ecosystem?! Give us a chance, read our posts and find out why we are the right choice for your business!",
       "title-new": "We think <br/><2>traditional</2> digital"
     },
     "published-on": "Published",
+    "read-this-article": "Read this interesting article: ",
     "read-time": "Read time",
     "section": {
       "related-articles": {
         "title": "Related articles"
       }
+    },
+    "share-article": "Share the article",
+    "share": {
+      "written-by": "written by"
     },
     "tags": "Tags",
     "updated-at": "Updated",

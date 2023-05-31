@@ -5,17 +5,23 @@
         "read-more": "Weiterlesen"
       }
     },
+    "not-available-in-requested-locale": "<0>Anmerkungen: </0>Da dieser Artikel nicht auf Deutsch verfügbar ist, zeigen wir Ihnen die Kroatische Version.",
     "page": {
       "subtitle": "Ist Pointsyncc noch nicht Teil deines Ökosystems?! Gib uns eine Chance, lies unsere Beiträge und finde heraus, warum wir die richtige Wahl für dein Geschäft sind!",
       "title": "Wir denken immer digital",
-      "title-new": "Wir denken traditionell digital"
+      "title-new": "Wir denken <br/><2> traditionell </2> digital"
     },
     "published-on": "Veröffentlicht",
+    "read-this-article": "Lies diesen interessanten Artikel:",
     "read-time": "Lesezeit",
     "section": {
       "related-articles": {
         "title": "Verwandte Artikel"
       }
+    },
+    "share-article": "Teile den Artikel.",
+    "share": {
+      "written-by": "Wer hat es geschrieben?"
     },
     "tags": "Tags",
     "updated-at": "Aktualisiert",
