@@ -7,7 +7,9 @@ module.exports = {
   i18n: {
     defaultLocale: 'hr',
     locales: ['hr','en', 'de'],
-    localePath: path.resolve('./public/locales')
+    localePath:  typeof window === 'undefined'
+    ? require('path').resolve('./public/locales')
+    : './public/locales',
   },
 /*   ns: ['common', 'footer', 'homepage', 'cookie-consent', 'contact', 'team', 'about', 'seo', 'blog', '404', '505', 'terms-and-conditions', 'privacy-policy'], // the namespaces needs to be listed here, to make sure they got preloaded
  *//*   backend: {

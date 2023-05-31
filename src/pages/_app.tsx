@@ -139,4 +139,4 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   );
 };
 
-export default withTranslateRoutes(appWithTranslation(App, nextI18NextConfig));
+export default withTranslateRoutes(appWithTranslation(App));
