@@ -5,17 +5,24 @@
         "read-more": "Pročitaj više<1><0></0></1>"
       }
     },
+    "not-available-in-requested-locale": "<0>Note: </0>This article is not available in Deutsch so we are showing you the Croatian version.",
     "page": {
       "subtitle": "Pointsyncc još nije dio tvoga ekosustava?! Daj nam priliku, pročitaj naše objave i saznaj zašto smo baš mi pravi izbor za tvoje poslovanje!",
       "title": "We always <br/><2>think</2>digital",
       "title-new": "Mi razmišljamo <br/><2>tradicionalno</2> digitalno"
     },
     "published-on": "Objavljeno",
+    "read-this-article": "Pročitaj ovaj zanimljivi članak: ",
     "read-time": "Vrijeme potrebno za pročitat",
     "section": {
       "related-articles": {
         "title": "Povezani članci"
       }
+    },
+    "share-article": "Podijeli članak",
+    "share-on-social": "blog.share-on-social",
+    "share": {
+      "written-by": "koji je napisao"
     },
     "tags": "Oznake",
     "updated-at": "Ažurirano",

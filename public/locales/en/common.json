@@ -24,7 +24,7 @@
   "forms": {
     "newsletter": {
       "pattern": {
-        "invalid-message": "Invalid e-mail address"
+        "invalid-message": "Invalid e-mail address format"
       },
       "required": "Email is required"
     }

@@ -1,11 +1,12 @@
 {
   "pages": {
     "404": {
+      "meta_description": "404 - Seite nicht gefunden",
       "title": "404 - Seite nicht gefunden"
     },
     "500": {
-      "meta_description": "500 - Serverfehler",
-      "title": "500 - Serverfehler"
+      "meta_description": "500 - Serverfehler.",
+      "title": "500 - Serverfehler."
     },
     "about": {
       "meta_description": "Lassen Sie uns vorstellen!",
@@ -21,21 +22,22 @@
       "title": "Kontakt"
     },
     "homepage": {
-      "meta_description": "Verbessern Sie Ihr digitales Spiel mit unseren Experten Webdesign, Entwicklungs und mobilen App-Dienstleistungen. Vertrauen Sie uns, um Ihre Ideen zum Leben zu erwecken.",
-      "title": "Revolutionieren Sie Ihre Online Präsenz mit unseren digitalen Lösungen!"
+      "meta_description": "Heben Sie Ihre digitale Präsenz mit unseren professionellen Dienstleistungen für Webdesign, Entwicklung und Erstellung von mobilen Anwendungen an. Vertrauen Sie uns, um Ihre Ideen in die Realität umzusetzen.",
+      "title": "Modernisieren Sie Ihr Geschäft mit unseren digitalen Lösungen."
     },
     "our-team": {
-      "meta_description": "Bei uns werden Träume Wirklichkeit. Lernen Sie unser junges motiviertes Team kennen!"
+      "meta_description": "Mit uns werden Träume zur Realität. Lernen Sie unser junges, motiviertes Team kennen!",
+      "title": "Unser team!"
     },
     "privacy-policy": {
-      "title": "Datenschutz-Bestimmungen"
+      "title": "Datenschutzrichtlinie"
     },
     "services": {
-      "meta_description": "Sehen Sie, wie wir Teil Ihrer Idee sein können!",
+      "meta_description": "Schauen Sie, wie wir Teil Ihrer Idee sein können!",
       "title": "Unsere Dienste"
     },
     "terms-and-conditions": {
-      "title": "Nutzungsbedingungen"
+      "title": "Nutzungsbedingungen."
     }
   }
 }
