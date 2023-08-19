@@ -445,6 +445,18 @@
 .logo_rotated {
   transform: rotate(-90deg);
   margin-top: 4rem ;
+
+  @media #{$lg} {
+    display: none;
+  }
+
+  @media #{$md} {
+    display: none;
+  }
+
+  @media #{$sm} {
+    display: none;
+  }
 }
 
 // Dark Version
