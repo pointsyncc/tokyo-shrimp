@@ -160,7 +160,6 @@ export default function Menu({ open, setOpen, showLangSwitcher }: IProps) {
         <div className='offcanvas__body desktop__tablet__offcanvas__body'>
           <div className='offcanvas__left'>
             <div className='offcanvas__logo'>
-              {/* <Link href='/'> */}
               <Logo version='icon' className='logo' type='secondary' width={70} />
               {/* <img
                 width={180}

@@ -87,8 +87,8 @@ export const Header = ({ openMenu }: HeaderProps) => {
         <header className='header__area'>
           <div className='header__inner'>
             <div className='header__logo'>
-              <Logo />
-              <Logo type='secondary' />
+              <Logo className='logo_rotated' />
+              <Logo type='secondary'  />
             </div>
             <div className='header__nav-icon'>
               <button

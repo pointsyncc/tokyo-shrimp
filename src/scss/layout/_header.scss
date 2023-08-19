@@ -442,6 +442,11 @@
   }
 }
 
+.logo_rotated {
+  transform: rotate(-90deg);
+  margin-top: 4rem ;
+}
+
 // Dark Version
 .dark {
   .menu-icon img {
